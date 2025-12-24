@@ -9,6 +9,13 @@ toc: false
 
 ## December 2025
 
+**[Airline passengers up 2.2% in October 2025](/en/airline-passengers-october-2025/)**
+<br><span style="font-size: 0.875rem; color: #666;">Released: 2025-12-23 · Table 23-10-0079</span>
+
+Major Canadian airlines carried 7.1 million passengers in October 2025, up 2.2% year over year. Load factor rose to 83.3%, the first year-over-year increase since December 2024.
+
+---
+
 **[Consumer prices up 2.2% year over year in November 2025](/en/cpi-november-2025/)**
 <br><span style="font-size: 0.875rem; color: #666;">Released: 2025-12-22 · Table 18-10-0004</span>
 
@@ -16,17 +23,24 @@ The Consumer Price Index rose 2.2% in November compared with the same month a ye
 
 ---
 
-**[Employment up 54,000 in November 2025, unemployment rate falls to 6.5%](/en/lfs-november-2025/)**
-<br><span style="font-size: 0.875rem; color: #666;">Released: 2025-12-05 · Table 14-10-0287</span>
-
-Employment rose by 54,000 in November 2025, and the unemployment rate fell 0.4 percentage points to 6.5%.
-
----
-
 **[Retail sales down 0.2% in October 2025](/en/retail-trade-october-2025/)**
 <br><span style="font-size: 0.875rem; color: #666;">Released: 2025-12-20 · Table 20-10-0008</span>
 
 Retail sales decreased 0.2% to $67.0 billion in October 2025, following a 0.5% gain in September.
+
+---
+
+**[New housing prices unchanged in November 2025](/en/new-housing-price-index-november-2025/)**
+<br><span style="font-size: 0.875rem; color: #666;">Released: 2025-12-19 · Table 18-10-0205</span>
+
+The New Housing Price Index was unchanged (0.0%) in November 2025. Year over year, new housing prices were down 1.9%.
+
+---
+
+**[Housing starts at 254,058 units in November 2025](/en/housing-starts-november-2025/)**
+<br><span style="font-size: 0.875rem; color: #666;">Released: 2025-12-19 · Table 34-10-0158</span>
+
+Housing starts rose 9.4% to a seasonally adjusted annual rate of 254,058 units in November 2025.
 
 ---
 
@@ -48,3 +62,24 @@ Merchandise exports increased 6.3% to $64.2 billion in October 2025, while impor
 <br><span style="font-size: 0.875rem; color: #666;">Released: 2025-12-17 · Table 34-10-0066</span>
 
 The total value of building permits decreased 3.4% to $11.8 billion in October 2025.
+
+---
+
+**[Gasoline prices up 1.7% in November 2025](/en/gasoline-prices-november-2025/)**
+<br><span style="font-size: 0.875rem; color: #666;">Released: 2025-12-15 · Table 18-10-0001</span>
+
+Average gasoline prices rose 1.7% to 139.6 cents per litre in November 2025. Year over year, prices were down 7.8%.
+
+---
+
+**[Wholesale sales up 0.1% in October 2025](/en/wholesale-trade-october-2025/)**
+<br><span style="font-size: 0.875rem; color: #666;">Released: 2025-12-12 · Table 20-10-0003</span>
+
+Wholesale sales increased 0.1% to $86.0 billion in October 2025. Motor vehicle and agricultural product sales led the gains.
+
+---
+
+**[Employment up 54,000 in November 2025, unemployment rate falls to 6.5%](/en/lfs-november-2025/)**
+<br><span style="font-size: 0.875rem; color: #666;">Released: 2025-12-05 · Table 14-10-0287</span>
+
+Employment rose by 54,000 in November 2025, and the unemployment rate fell 0.4 percentage points to 6.5%.

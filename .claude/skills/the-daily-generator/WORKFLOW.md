@@ -150,6 +150,63 @@ Add: Consumer prices up 2.2% year over year in November 2025
 - Reference period: November 2025
 ```
 
+## Dataset Discovery with cansim Package
+
+The `cansim` R package provides powerful functions for discovering and exploring StatCan data tables.
+
+### Finding Tables by Keyword
+
+```r
+library(cansim)
+
+# Search for tables by keyword
+search_cansim_cubes("housing price")
+search_cansim_cubes("consumer price index")
+search_cansim_cubes("employment")
+```
+
+### Listing All Available Cubes
+
+```r
+# Get all 8000+ available cubes with metadata
+all_cubes <- list_cansim_cubes()
+
+# Filter for recent monthly data
+recent_monthly <- all_cubes %>%
+  filter(frequencyCode == "6") %>%           # 6 = Monthly
+  filter(cubeEndDate >= "2025-10-01") %>%    # Data through Oct 2025+
+  arrange(desc(cubeEndDate))
+```
+
+### Frequency Codes
+
+| Code | Frequency |
+|------|-----------|
+| 6 | Monthly |
+| 9 | Quarterly |
+| 12 | Annual |
+
+### Table Discovery Workflow
+
+1. **Search by topic** using `search_cansim_cubes("keyword")`
+2. **Filter results** by frequencyCode (monthly = 6) and cubeEndDate (recent data)
+3. **Fetch sample data** with `get_cansim("XX-XX-XXXX")` to verify structure
+4. **Check column names** - varies by table (e.g., "Products and product groups" vs "Operating statistic")
+5. **Verify data coverage** - some tables deprecated, check cubeEndDate
+
+### Common Pitfalls
+
+- **Deprecated tables**: Table 18-10-0052 (NHPI) only has data to 2016. Current table is 18-10-0205.
+- **Column name variations**: Always check `names(df)` after fetching
+- **Regional vs National**: Some tables only have CMA-level data (e.g., manufacturing)
+
+### Cross-Validation
+
+Always verify fetched data against:
+1. StatCan table viewer (web interface)
+2. Recent StatCan Daily releases (via web search)
+3. Third-party sources when available (CMHC, industry reports)
+
 ## Common Issues
 
 **R script fails to download:**
