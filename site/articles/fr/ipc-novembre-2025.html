@@ -1,0 +1,494 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Les prix à la consommation en hausse de 2.2 % d'une année à l'autre en novembre 2025 - The D-AI-LY</title>
+  <script src="https://cdn.jsdelivr.net/npm/d3@7"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@observablehq/plot@0.6"></script>
+  <style>
+    :root {
+      --statcan-red: #AF3C43;
+      --statcan-dark: #333333;
+      --statcan-gray: #666666;
+      --statcan-light: #f5f5f5;
+      --positive: #2e7d32;
+      --negative: #c62828;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+      line-height: 1.6;
+      color: var(--statcan-dark);
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 2rem;
+      background: white;
+    }
+
+    header {
+      border-bottom: 3px solid var(--statcan-red);
+      padding-bottom: 1rem;
+      margin-bottom: 2rem;
+    }
+
+    .masthead {
+      font-size: 0.875rem;
+      color: var(--statcan-gray);
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      margin-bottom: 0.5rem;
+    }
+
+    .masthead a {
+      color: var(--statcan-red);
+      text-decoration: none;
+    }
+
+    h1 {
+      font-size: 1.75rem;
+      font-weight: 600;
+      margin: 0 0 0.5rem 0;
+      color: var(--statcan-dark);
+    }
+
+    h2 {
+      font-size: 1.25rem;
+      font-weight: 600;
+      margin: 2rem 0 1rem 0;
+      color: var(--statcan-dark);
+      border-bottom: 2px solid var(--statcan-light);
+      padding-bottom: 0.5rem;
+    }
+
+    .release-date {
+      font-size: 0.875rem;
+      color: var(--statcan-gray);
+    }
+
+    .highlights {
+      background: var(--statcan-light);
+      border-left: 4px solid var(--statcan-red);
+      padding: 1rem 1.5rem;
+      margin: 1.5rem 0;
+    }
+
+    .highlights h2 {
+      font-size: 1rem;
+      font-weight: 600;
+      margin: 0 0 0.75rem 0;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      border: none;
+      padding: 0;
+    }
+
+    .highlights ul {
+      margin: 0;
+      padding-left: 1.25rem;
+    }
+
+    .highlights li {
+      margin-bottom: 0.5rem;
+    }
+
+    .highlights li:last-child {
+      margin-bottom: 0;
+    }
+
+    article {
+      margin: 2rem 0;
+    }
+
+    article p {
+      margin: 1rem 0;
+    }
+
+    .chart-container {
+      margin: 2rem 0;
+      padding: 1rem;
+      background: var(--statcan-light);
+      border-radius: 4px;
+    }
+
+    .chart-container h3 {
+      font-size: 1rem;
+      margin: 0 0 1rem 0;
+      color: var(--statcan-dark);
+    }
+
+    .chart {
+      width: 100%;
+    }
+
+    .charts-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1rem;
+      margin: 2rem 0;
+    }
+
+    @media (max-width: 768px) {
+      .charts-row {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    /* Data tables */
+    .data-table-container {
+      margin: 2rem 0;
+      overflow-x: auto;
+    }
+
+    .data-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.875rem;
+    }
+
+    .data-table caption {
+      font-weight: 600;
+      text-align: left;
+      padding: 0.75rem 0;
+      font-size: 1rem;
+      color: var(--statcan-dark);
+    }
+
+    .data-table th {
+      background: var(--statcan-dark);
+      color: white;
+      padding: 0.75rem 1rem;
+      text-align: left;
+      font-weight: 500;
+    }
+
+    .data-table th:not(:first-child) {
+      text-align: right;
+    }
+
+    .data-table td {
+      padding: 0.75rem 1rem;
+      border-bottom: 1px solid #ddd;
+    }
+
+    .data-table td:not(:first-child) {
+      text-align: right;
+      font-variant-numeric: tabular-nums;
+    }
+
+    .data-table tr:hover {
+      background: var(--statcan-light);
+    }
+
+    .data-table .positive {
+      color: var(--positive);
+    }
+
+    .data-table .negative {
+      color: var(--negative);
+    }
+
+    .note-to-readers {
+      margin-top: 3rem;
+      padding-top: 1rem;
+      border-top: 1px solid #ddd;
+      font-size: 0.875rem;
+      color: var(--statcan-gray);
+    }
+
+    .note-to-readers h2 {
+      font-size: 0.875rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      margin: 0 0 0.75rem 0;
+      border: none;
+      padding: 0;
+    }
+
+    .definitions {
+      margin-top: 1rem;
+    }
+
+    .definitions dt {
+      font-weight: 600;
+      margin-top: 0.75rem;
+    }
+
+    .definitions dd {
+      margin-left: 0;
+      color: var(--statcan-gray);
+    }
+
+    .source {
+      margin-top: 2rem;
+      padding-top: 1rem;
+      border-top: 1px solid #ddd;
+      font-size: 0.75rem;
+      color: var(--statcan-gray);
+    }
+
+    .ai-disclosure {
+      margin-top: 1rem;
+      padding: 0.75rem;
+      background: #fff3cd;
+      border: 1px solid #ffc107;
+      border-radius: 4px;
+      font-size: 0.75rem;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="masthead">
+      <a href="/">The D-AI-LY</a> | An AI-generated statistical bulletin
+    </div>
+    <h1>Les prix à la consommation en hausse de 2.2 % d'une année à l'autre en novembre 2025</h1>
+    <div class="release-date">Released: 22 décembre 2025</div>
+  </header>
+
+  <section class="highlights">
+    <h2>Highlights</h2>
+    <ul>
+            <li>L'Indice des prix à la consommation a augmenté de 2.2 % d'une année à l'autre en novembre 2025.</li>
+      <li>Les prix de la catégorie food ont augmenté de 4.2 %, la plus forte hausse parmi les principales composantes.</li>
+      <li>D'un mois à l'autre, l'IPC a augmenté de 0.1 % par rapport à octobre 2025.</li>
+      <li>Manitoba a enregistré la hausse annuelle la plus élevée, soit 3.3 %.</li>
+    </ul>
+  </section>
+
+  <article>
+        <p>L'Indice des prix à la consommation (IPC) s'établissait à 165.4 en novembre 2025, en hausse de 2.2 % par rapport au même mois un an plus tôt. Il y a un an, l'indice s'établissait à 161.8.</p>
+    <p>D'un mois à l'autre, l'indice a augmenté de 0.06 %, passant de 165.3 en octobre 2025 à 165.4 en novembre 2025.</p>
+    <p>Au cours des deux dernières années, le taux d'inflation d'une année à l'autre a varié entre 1.6 % et 3.4 %.</p>
+  </article>
+
+  <div class="chart-container">
+    <h3>Indice des prix à la consommation, décembre 2023 à novembre 2025</h3>
+    <div id="chart-main" class="chart"></div>
+  </div>
+
+  
+  <h2>Prix selon les principales composantes</h2>
+  <p>Parmi les principales composantes, les prix de la catégorie food ont enregistré la plus forte hausse annuelle, soit 4.2 %, suivie de la catégorie household operations, furnishings and equipment (3.3 %).</p><p>Les prix de la catégorie recreation, education and reading ont affiché la plus faible hausse, soit 0.4 %.</p>
+
+  <div class="data-table-container">
+    <table class="data-table">
+      <caption>Indice des prix à la consommation selon la composante principale, novembre 2025</caption>
+      <thead>
+        <tr>
+          <th>Composante</th>
+          <th>novembre 2025</th>
+          <th>Month-over-month change</th>
+          <th>Year-over-year change</th>
+        </tr>
+      </thead>
+      <tbody id="subseries-table-body">
+      </tbody>
+    </table>
+  </div>
+
+  <div class="chart-container">
+    <h3>Variation annuelle selon la composante</h3>
+    <div id="chart-subseries" class="chart"></div>
+  </div>
+  
+
+  
+  <h2>Provincial and territorial highlights</h2>
+  <p>Les hausses de prix d'une année à l'autre ont varié d'une province à l'autre. Manitoba a enregistré la hausse la plus élevée, soit 3.3 %, tandis que Prince Edward Island a affiché la plus faible, soit 1.4 %.</p>
+
+  <div class="data-table-container">
+    <table class="data-table">
+      <caption>Indice des prix à la consommation selon la province, novembre 2025</caption>
+      <thead>
+        <tr>
+          <th>Province or territory</th>
+          <th>novembre 2025</th>
+          <th>Month-over-month change</th>
+          <th>Year-over-year change</th>
+        </tr>
+      </thead>
+      <tbody id="provincial-table-body">
+      </tbody>
+    </table>
+  </div>
+  
+
+  <section class="note-to-readers">
+    <h2>Note to readers</h2>
+    <p>L'Indice des prix à la consommation (IPC) mesure le taux de variation des prix payés par les consommateurs canadiens. Il est calculé en comparant le coût d'un panier fixe de biens et de services achetés par les consommateurs au fil du temps. L'IPC n'est pas désaisonnalisé. Pour plus d'information, consultez le portail de l'Indice des prix à la consommation de Statistique Canada.</p>
+    
+  </section>
+
+  <div class="source">
+    <strong>Source:</strong> Statistics Canada, Table <a href="https://www150.statcan.gc.ca/t1/tbl1/en/tv.action?pid=1810000401" target="_blank">18-10-0004</a>
+    (formerly CANSIM 326-0020)<br>
+    <strong>Survey:</strong> Indice des prix à la consommation (2301)<br>
+    <strong>Reference period:</strong> novembre 2025<br>
+    <strong>Release date:</strong> 15 décembre 2025<br>
+    <a href="https://www150.statcan.gc.ca/n1/tbl/csv/18100004-eng.zip" target="_blank">Download complete dataset (CSV)</a>
+  </div>
+
+  <div class="ai-disclosure">
+    <strong>AI Disclosure:</strong> This article was generated by The D-AI-LY, an experimental AI system.
+    While the data comes from official Statistics Canada sources, the analysis and narrative were
+    produced by a large language model. Please verify important figures with
+    <a href="https://www.statcan.gc.ca">Statistics Canada</a>.
+  </div>
+
+  <script>
+    // Data embedded from processing
+    const timeSeriesData = [{"date": "2023-12-01", "ref_date": "2023-12", "value": 158.3, "mom_pct_change": -0.31, "yoy_pct_change": 3.4}, {"date": "2024-01-01", "ref_date": "2024-01", "value": 158.3, "mom_pct_change": 0, "yoy_pct_change": 2.86}, {"date": "2024-02-01", "ref_date": "2024-02", "value": 158.8, "mom_pct_change": 0.32, "yoy_pct_change": 2.78}, {"date": "2024-03-01", "ref_date": "2024-03", "value": 159.8, "mom_pct_change": 0.63, "yoy_pct_change": 2.9}, {"date": "2024-04-01", "ref_date": "2024-04", "value": 160.6, "mom_pct_change": 0.5, "yoy_pct_change": 2.69}, {"date": "2024-05-01", "ref_date": "2024-05", "value": 161.5, "mom_pct_change": 0.56, "yoy_pct_change": 2.87}, {"date": "2024-06-01", "ref_date": "2024-06", "value": 161.4, "mom_pct_change": -0.06, "yoy_pct_change": 2.67}, {"date": "2024-07-01", "ref_date": "2024-07", "value": 162.1, "mom_pct_change": 0.43, "yoy_pct_change": 2.53}, {"date": "2024-08-01", "ref_date": "2024-08", "value": 161.8, "mom_pct_change": -0.19, "yoy_pct_change": 1.95}, {"date": "2024-09-01", "ref_date": "2024-09", "value": 161.1, "mom_pct_change": -0.43, "yoy_pct_change": 1.64}, {"date": "2024-10-01", "ref_date": "2024-10", "value": 161.8, "mom_pct_change": 0.43, "yoy_pct_change": 2.02}, {"date": "2024-11-01", "ref_date": "2024-11", "value": 161.8, "mom_pct_change": 0, "yoy_pct_change": 1.89}, {"date": "2024-12-01", "ref_date": "2024-12", "value": 161.2, "mom_pct_change": -0.37, "yoy_pct_change": 1.83}, {"date": "2025-01-01", "ref_date": "2025-01", "value": 161.3, "mom_pct_change": 0.06, "yoy_pct_change": 1.9}, {"date": "2025-02-01", "ref_date": "2025-02", "value": 163, "mom_pct_change": 1.05, "yoy_pct_change": 2.64}, {"date": "2025-03-01", "ref_date": "2025-03", "value": 163.5, "mom_pct_change": 0.31, "yoy_pct_change": 2.32}, {"date": "2025-04-01", "ref_date": "2025-04", "value": 163.4, "mom_pct_change": -0.06, "yoy_pct_change": 1.74}, {"date": "2025-05-01", "ref_date": "2025-05", "value": 164.3, "mom_pct_change": 0.55, "yoy_pct_change": 1.73}, {"date": "2025-06-01", "ref_date": "2025-06", "value": 164.4, "mom_pct_change": 0.06, "yoy_pct_change": 1.86}, {"date": "2025-07-01", "ref_date": "2025-07", "value": 164.9, "mom_pct_change": 0.3, "yoy_pct_change": 1.73}, {"date": "2025-08-01", "ref_date": "2025-08", "value": 164.8, "mom_pct_change": -0.06, "yoy_pct_change": 1.85}, {"date": "2025-09-01", "ref_date": "2025-09", "value": 164.9, "mom_pct_change": 0.06, "yoy_pct_change": 2.36}, {"date": "2025-10-01", "ref_date": "2025-10", "value": 165.3, "mom_pct_change": 0.24, "yoy_pct_change": 2.16}, {"date": "2025-11-01", "ref_date": "2025-11", "value": 165.4, "mom_pct_change": 0.06, "yoy_pct_change": 2.22}];
+    const subseriesData = {"category": ["Food", "Household operations, furnishings and equipment", "Health and personal care", "Shelter", "Alcoholic beverages, tobacco products and recreational cannabis", "Clothing and footwear", "Transportation", "Recreation, education and reading"], "value": [199.5, 134.3, 156.1, 189.6, 201.1, 95, 171.6, 127.4], "mom_pct_change": [1.32, -0.52, 0.26, 0.11, 0.05, 0.32, 0.29, -2], "yoy_pct_change": [4.18, 3.31, 2.97, 2.32, 1.41, 0.85, 0.7, 0.39]};
+    const provincialData = {"category": ["Manitoba", "Quebec", "New Brunswick", "Nova Scotia", "Newfoundland and Labrador", "Saskatchewan", "British Columbia", "Ontario", "Alberta", "Prince Edward Island"], "value": [166.5, 162.6, 165.9, 169.1, 165.6, 166.7, 159.5, 166.6, 173.4, 168.2], "mom_pct_change": [0.18, -0.18, 0.55, 0.18, 0.24, -0.06, 0.06, 0.12, 0.12, 0.24], "yoy_pct_change": [3.29, 3.04, 2.66, 2.36, 2.16, 2.14, 2.05, 1.9, 1.88, 1.39]};
+    const seriesName = "Consumer Price Index";
+    const yLabel = "Indice (2002=100)";
+
+    // Parse dates for main time series
+    const data = timeSeriesData.map(d => ({
+      date: new Date(d.date),
+      value: d.value,
+      yoy: d.yoy_pct_change,
+      mom: d.mom_pct_change
+    }));
+
+    // Helper to format change values
+    function formatChange(value) {
+      if (value === null || value === undefined) return '-';
+      const sign = value > 0 ? '+' : '';
+      return sign + value.toFixed(1) + '%';
+    }
+
+    function getChangeClass(value) {
+      if (value > 0) return 'positive';
+      if (value < 0) return 'negative';
+      return '';
+    }
+
+    // Main chart - value over time
+    const mainChart = Plot.plot({
+      width: 800,
+      height: 300,
+      marginLeft: 60,
+      marginBottom: 40,
+      style: {
+        fontSize: "12px",
+        fontFamily: "-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif"
+      },
+      x: {
+        type: "time",
+        label: null,
+        tickFormat: d3.timeFormat("%b %Y")
+      },
+      y: {
+        label: yLabel,
+        grid: true
+      },
+      marks: [
+        Plot.line(data, {
+          x: "date",
+          y: "value",
+          stroke: "#AF3C43",
+          strokeWidth: 2
+        }),
+        Plot.dot(data.slice(-1), {
+          x: "date",
+          y: "value",
+          fill: "#AF3C43",
+          r: 5
+        }),
+        Plot.text(data.slice(-1), {
+          x: "date",
+          y: "value",
+          text: d => d.value.toFixed(1),
+          dy: -12,
+          fill: "#AF3C43",
+          fontWeight: "bold"
+        })
+      ]
+    });
+    document.getElementById("chart-main").appendChild(mainChart);
+
+    // Subseries table and chart
+    if (subseriesData && subseriesData.category && subseriesData.category.length > 0) {
+      const tbody = document.getElementById("subseries-table-body");
+      if (tbody) {
+        // Sort by YoY change descending
+        const indices = subseriesData.category.map((_, i) => i);
+        indices.sort((a, b) => (subseriesData.yoy_pct_change[b] || 0) - (subseriesData.yoy_pct_change[a] || 0));
+
+        indices.forEach(i => {
+          const row = document.createElement("tr");
+          row.innerHTML = `
+            <td>${subseriesData.category[i]}</td>
+            <td>${subseriesData.value[i].toFixed(1)}</td>
+            <td class="${getChangeClass(subseriesData.mom_pct_change[i])}">${formatChange(subseriesData.mom_pct_change[i])}</td>
+            <td class="${getChangeClass(subseriesData.yoy_pct_change[i])}">${formatChange(subseriesData.yoy_pct_change[i])}</td>
+          `;
+          tbody.appendChild(row);
+        });
+      }
+
+      // Subseries bar chart
+      const subseriesChartData = subseriesData.category.map((cat, i) => ({
+        category: cat.length > 30 ? cat.substring(0, 27) + '...' : cat,
+        yoy: subseriesData.yoy_pct_change[i] || 0
+      })).sort((a, b) => b.yoy - a.yoy);
+
+      const subseriesChart = Plot.plot({
+        width: 800,
+        height: 300,
+        marginLeft: 200,
+        marginBottom: 40,
+        style: {
+          fontSize: "11px",
+          fontFamily: "-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif"
+        },
+        x: {
+          label: "Year-over-year change (%)",
+          grid: true
+        },
+        y: {
+          label: null
+        },
+        marks: [
+          Plot.barX(subseriesChartData, {
+            y: "category",
+            x: "yoy",
+            fill: d => d.yoy >= 0 ? "#AF3C43" : "#666666",
+            sort: { y: "-x" }
+          }),
+          Plot.ruleX([0])
+        ]
+      });
+      const subseriesContainer = document.getElementById("chart-subseries");
+      if (subseriesContainer) subseriesContainer.appendChild(subseriesChart);
+    }
+
+    // Provincial table
+    if (provincialData && provincialData.category && provincialData.category.length > 0) {
+      const tbody = document.getElementById("provincial-table-body");
+      if (tbody) {
+        const indices = provincialData.category.map((_, i) => i);
+        indices.sort((a, b) => (provincialData.yoy_pct_change[b] || 0) - (provincialData.yoy_pct_change[a] || 0));
+
+        indices.forEach(i => {
+          const row = document.createElement("tr");
+          row.innerHTML = `
+            <td>${provincialData.category[i]}</td>
+            <td>${provincialData.value[i].toFixed(1)}</td>
+            <td class="${getChangeClass(provincialData.mom_pct_change[i])}">${formatChange(provincialData.mom_pct_change[i])}</td>
+            <td class="${getChangeClass(provincialData.yoy_pct_change[i])}">${formatChange(provincialData.yoy_pct_change[i])}</td>
+          `;
+          tbody.appendChild(row);
+        });
+      }
+    }
+  </script>
+</body>
+</html>

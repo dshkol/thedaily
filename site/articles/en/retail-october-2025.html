@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Retail sales down 0.2% in October 2025 - The D-AI-LY</title>
+  <script src="https://cdn.jsdelivr.net/npm/d3@7"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@observablehq/plot@0.6"></script>
+  <style>
+    :root {
+      --statcan-red: #AF3C43;
+      --statcan-dark: #333333;
+      --statcan-gray: #666666;
+      --statcan-light: #f5f5f5;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+      line-height: 1.6;
+      color: var(--statcan-dark);
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 2rem;
+      background: white;
+    }
+
+    header {
+      border-bottom: 3px solid var(--statcan-red);
+      padding-bottom: 1rem;
+      margin-bottom: 2rem;
+    }
+
+    .masthead {
+      font-size: 0.875rem;
+      color: var(--statcan-gray);
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      margin-bottom: 0.5rem;
+    }
+
+    .masthead a {
+      color: var(--statcan-red);
+      text-decoration: none;
+    }
+
+    h1 {
+      font-size: 1.75rem;
+      font-weight: 600;
+      margin: 0 0 0.5rem 0;
+      color: var(--statcan-dark);
+    }
+
+    .release-date {
+      font-size: 0.875rem;
+      color: var(--statcan-gray);
+    }
+
+    .highlights {
+      background: var(--statcan-light);
+      border-left: 4px solid var(--statcan-red);
+      padding: 1rem 1.5rem;
+      margin: 1.5rem 0;
+    }
+
+    .highlights h2 {
+      font-size: 1rem;
+      font-weight: 600;
+      margin: 0 0 0.75rem 0;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+
+    .highlights ul {
+      margin: 0;
+      padding-left: 1.25rem;
+    }
+
+    .highlights li {
+      margin-bottom: 0.5rem;
+    }
+
+    .highlights li:last-child {
+      margin-bottom: 0;
+    }
+
+    article {
+      margin: 2rem 0;
+    }
+
+    article p {
+      margin: 1rem 0;
+    }
+
+    .chart-container {
+      margin: 2rem 0;
+      padding: 1rem;
+      background: var(--statcan-light);
+      border-radius: 4px;
+    }
+
+    .chart-container h3 {
+      font-size: 1rem;
+      margin: 0 0 1rem 0;
+      color: var(--statcan-dark);
+    }
+
+    #chart {
+      width: 100%;
+    }
+
+    .note-to-readers {
+      margin-top: 3rem;
+      padding-top: 1rem;
+      border-top: 1px solid #ddd;
+      font-size: 0.875rem;
+      color: var(--statcan-gray);
+    }
+
+    .note-to-readers h2 {
+      font-size: 0.875rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      margin: 0 0 0.75rem 0;
+    }
+
+    .source {
+      margin-top: 2rem;
+      padding-top: 1rem;
+      border-top: 1px solid #ddd;
+      font-size: 0.75rem;
+      color: var(--statcan-gray);
+    }
+
+    .ai-disclosure {
+      margin-top: 1rem;
+      padding: 0.75rem;
+      background: #fff3cd;
+      border: 1px solid #ffc107;
+      border-radius: 4px;
+      font-size: 0.75rem;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="masthead">
+      <a href="/">The D-AI-LY</a> | An AI-generated statistical bulletin
+    </div>
+    <h1>Retail sales down 0.2% in October 2025</h1>
+    <div class="release-date">Released: December 21, 2025</div>
+  </header>
+
+  <section class="highlights">
+    <h2>Highlights</h2>
+    <ul>
+            <li>Retail sales decreased 0.2% to $69.4 billion in October 2025.</li>
+      <li>Sales were up 2.0% compared with October of last year.</li>
+      <li>The year-over-year rate was 1.9 percentage points lower than in July 2025.</li>
+    </ul>
+  </section>
+
+  <article>
+        <p>Retail sales totalled $69.4 billion in October 2025, down 0.2% from the previous month. Sales were 2.0% higher than in the same month last year.</p>
+    <p>On a month-over-month basis, retail sales decreased from $69.6 billion in September 2025.</p>
+    <p>Over the past two years, year-over-year retail sales growth has ranged from -0.3% to 6.4%.</p>
+  </article>
+
+  <div class="chart-container">
+    <h3>Retail Sales, November 2023 to October 2025</h3>
+    <div id="chart"></div>
+  </div>
+
+  <section class="note-to-readers">
+    <h2>Note to readers</h2>
+    <p>Retail trade sales represent the value of all sales made through retail channels, including both in-store and online transactions. Data are seasonally adjusted to account for regular seasonal patterns. Values are expressed in current dollars. For more information, consult Statistics Canada's retail trade portal.</p>
+  </section>
+
+  <div class="source">
+    <strong>Source:</strong> Statistics Canada, CANSIM Table 20-10-0067<br>
+    <strong>Reference period:</strong> October 2025
+  </div>
+
+  <div class="ai-disclosure">
+    <strong>AI Disclosure:</strong> This article was generated by The D-AI-LY, an experimental AI system.
+    While the data comes from official Statistics Canada sources, the analysis and narrative were
+    produced by a large language model. Please verify important figures with
+    <a href="https://www.statcan.gc.ca">Statistics Canada</a>.
+  </div>
+
+  <script>
+    // Time series data embedded from R output
+    const timeSeriesData = [{"date": "2023-11-01", "ref_date": "2023-11", "value": 66558, "mom_pct_change": 0.07, "yoy_pct_change": 1.75}, {"date": "2023-12-01", "ref_date": "2023-12", "value": 66325, "mom_pct_change": -0.35, "yoy_pct_change": 2.54}, {"date": "2024-01-01", "ref_date": "2024-01", "value": 66085, "mom_pct_change": -0.36, "yoy_pct_change": -0.28}, {"date": "2024-02-01", "ref_date": "2024-02", "value": 66244, "mom_pct_change": 0.24, "yoy_pct_change": 0.88}, {"date": "2024-03-01", "ref_date": "2024-03", "value": 66158, "mom_pct_change": -0.13, "yoy_pct_change": 1.24}, {"date": "2024-04-01", "ref_date": "2024-04", "value": 66779, "mom_pct_change": 0.94, "yoy_pct_change": 1.75}, {"date": "2024-05-01", "ref_date": "2024-05", "value": 65963, "mom_pct_change": -1.22, "yoy_pct_change": 0.46}, {"date": "2024-06-01", "ref_date": "2024-06", "value": 65893, "mom_pct_change": -0.11, "yoy_pct_change": -0.16}, {"date": "2024-07-01", "ref_date": "2024-07", "value": 66888, "mom_pct_change": 1.51, "yoy_pct_change": 1.52}, {"date": "2024-08-01", "ref_date": "2024-08", "value": 67100, "mom_pct_change": 0.32, "yoy_pct_change": 1.77}, {"date": "2024-09-01", "ref_date": "2024-09", "value": 67513, "mom_pct_change": 0.62, "yoy_pct_change": 1.4}, {"date": "2024-10-01", "ref_date": "2024-10", "value": 68041, "mom_pct_change": 0.78, "yoy_pct_change": 2.3}, {"date": "2024-11-01", "ref_date": "2024-11", "value": 68299, "mom_pct_change": 0.38, "yoy_pct_change": 2.62}, {"date": "2024-12-01", "ref_date": "2024-12", "value": 70027, "mom_pct_change": 2.53, "yoy_pct_change": 5.58}, {"date": "2025-01-01", "ref_date": "2025-01", "value": 69652, "mom_pct_change": -0.54, "yoy_pct_change": 5.4}, {"date": "2025-02-01", "ref_date": "2025-02", "value": 69189, "mom_pct_change": -0.66, "yoy_pct_change": 4.45}, {"date": "2025-03-01", "ref_date": "2025-03", "value": 69797, "mom_pct_change": 0.88, "yoy_pct_change": 5.5}, {"date": "2025-04-01", "ref_date": "2025-04", "value": 70015, "mom_pct_change": 0.31, "yoy_pct_change": 4.85}, {"date": "2025-05-01", "ref_date": "2025-05", "value": 69158, "mom_pct_change": -1.22, "yoy_pct_change": 4.84}, {"date": "2025-06-01", "ref_date": "2025-06", "value": 70139, "mom_pct_change": 1.42, "yoy_pct_change": 6.44}, {"date": "2025-07-01", "ref_date": "2025-07", "value": 69532, "mom_pct_change": -0.87, "yoy_pct_change": 3.95}, {"date": "2025-08-01", "ref_date": "2025-08", "value": 70221, "mom_pct_change": 0.99, "yoy_pct_change": 4.65}, {"date": "2025-09-01", "ref_date": "2025-09", "value": 69603, "mom_pct_change": -0.88, "yoy_pct_change": 3.1}, {"date": "2025-10-01", "ref_date": "2025-10", "value": 69435, "mom_pct_change": -0.24, "yoy_pct_change": 2.05}];
+
+    // Parse dates
+    const data = timeSeriesData.map(d => ({
+      date: new Date(d.date),
+      value: d.value,
+      yoy: d.yoy_pct_change
+    }));
+
+    // Create chart with Observable Plot
+    const chart = Plot.plot({
+      width: 700,
+      height: 350,
+      marginLeft: 50,
+      marginBottom: 40,
+      style: {
+        fontSize: "12px",
+        fontFamily: "-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif"
+      },
+      x: {
+        type: "time",
+        label: null,
+        tickFormat: d3.timeFormat("%b %Y")
+      },
+      y: {
+        label: "Sales ($ millions)",
+        grid: true,
+        domain: [Math.min(...data.map(d => d.value)) - 2, Math.max(...data.map(d => d.value)) + 2]
+      },
+      marks: [
+        Plot.line(data, {
+          x: "date",
+          y: "value",
+          stroke: "#AF3C43",
+          strokeWidth: 2
+        }),
+        Plot.dot(data.slice(-1), {
+          x: "date",
+          y: "value",
+          fill: "#AF3C43",
+          r: 5
+        }),
+        Plot.text(data.slice(-1), {
+          x: "date",
+          y: "value",
+          text: d => d.value.toFixed(1),
+          dy: -12,
+          fill: "#AF3C43",
+          fontWeight: "bold"
+        })
+      ]
+    });
+
+    document.getElementById("chart").appendChild(chart);
+  </script>
+</body>
+</html>
