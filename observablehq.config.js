@@ -4,6 +4,9 @@ import {slugMap} from "./src/lang-map.js";
 export default {
   title: "The D-AI-LY",
 
+  // Base path for subdirectory deployment (dshkol.com/thedaily)
+  base: "/thedaily",
+
   root: "docs",
   output: "dist",
   style: "style.css",
@@ -18,29 +21,31 @@ export default {
   pager: false,
 
   // Clean header matching the original static site
+  // Note: Links use defined base path (/thedaily) for subdirectory deployment
   header: `<div style="display: flex; align-items: baseline; gap: 0.5rem; font-size: 0.8125rem; letter-spacing: 0.02em; padding: 0.5rem 0; border-bottom: 3px solid #AF3C43; margin-bottom: 1.5rem;">
-    <a href="/" style="font-weight: 600; text-decoration: none; color: #AF3C43; text-transform: uppercase;">The D-AI-LY</a>
+    <a href="/thedaily/" style="font-weight: 600; text-decoration: none; color: #AF3C43; text-transform: uppercase;">The D-AI-LY</a>
     <span style="color: #999;">|</span>
     <span style="color: #666; text-transform: uppercase; font-size: 0.6875rem;">An AI-Generated Statistical Bulletin</span>
     <span style="flex: 1;"></span>
-    <a id="lang-en" href="/en/" style="text-decoration: none; color: #666; font-size: 0.75rem;">English</a>
-    <a id="lang-fr" href="/fr/" style="text-decoration: none; color: #666; font-size: 0.75rem; margin-left: 0.75rem;">Français</a>
+    <a id="lang-en" href="/thedaily/en/" style="text-decoration: none; color: #666; font-size: 0.75rem;">English</a>
+    <a id="lang-fr" href="/thedaily/fr/" style="text-decoration: none; color: #666; font-size: 0.75rem; margin-left: 0.75rem;">Français</a>
   </div>
   <script>
     (function() {
+      const base = '/thedaily';
       const slugMap = ${JSON.stringify(slugMap)};
       const path = window.location.pathname;
-      const enMatch = path.match(/^\\/en\\/([^\\/]+)/);
-      const frMatch = path.match(/^\\/fr\\/([^\\/]+)/);
+      const enMatch = path.match(/\\/thedaily\\/en\\/([^\\/]+)/);
+      const frMatch = path.match(/\\/thedaily\\/fr\\/([^\\/]+)/);
       if (enMatch) {
         const enSlug = enMatch[1];
         const frSlug = slugMap[enSlug] || enSlug;
-        document.getElementById('lang-fr').href = '/fr/' + frSlug + '/';
+        document.getElementById('lang-fr').href = base + '/fr/' + frSlug + '/';
         document.getElementById('lang-en').href = path;
       } else if (frMatch) {
         const frSlug = frMatch[1];
         const enSlug = Object.keys(slugMap).find(k => slugMap[k] === frSlug) || frSlug;
-        document.getElementById('lang-en').href = '/en/' + enSlug + '/';
+        document.getElementById('lang-en').href = base + '/en/' + enSlug + '/';
         document.getElementById('lang-fr').href = path;
       }
     })();

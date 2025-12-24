@@ -1,28 +1,28 @@
 ---
 title: Les prix à la consommation en hausse de 2,2 % d'une année à l'autre en novembre 2025
+toc: false
 ---
 
 # Les prix à la consommation en hausse de 2,2 % d'une année à l'autre en novembre 2025
 
-<p class="release-date">Diffusé : 2025-12-22</p>
-
-<div class="metric-box">
-  <div class="value">+2,2 %</div>
-  <div class="label">Variation annuelle de l'Indice des prix à la consommation, novembre 2025</div>
-</div>
-
-L'Indice des prix à la consommation (IPC) a augmenté de 2,2 % en novembre 2025 par rapport au même mois un an plus tôt. L'indice s'établissait à 165,4, en hausse par rapport à 161,8 en novembre 2024. D'un mois à l'autre, les prix ont augmenté de 0,1 % par rapport à octobre (165,3).
+<p class="release-date">Diffusion : 22 décembre 2025 <span class="article-type-tag release">Nouvelle publication</span></p>
 
 <div class="highlights">
 
 **Faits saillants**
 
-- L'Indice des prix à la consommation a augmenté de 2,2 % d'une année à l'autre en novembre
-- Les coûts du logement ont augmenté de 4,2 %, soit le principal facteur d'inflation
-- Les prix des aliments ont augmenté de 2,8 % par rapport à novembre 2024
-- Les prix de l'énergie étaient en hausse de 3,1 % par rapport à l'an dernier
+- L'Indice des prix à la consommation a augmenté de 2,2 % d'une année à l'autre en novembre 2025, égalant la hausse d'octobre
+- Les prix des aliments achetés en magasin ont augmenté de 4,2 %, sous l'effet du bœuf (+17,7 %) et du café (+27,8 %)
+- La baisse des prix des voyages organisés et le ralentissement de la croissance des loyers ont exercé une pression à la baisse sur l'IPC
+- Le Manitoba a affiché la plus forte hausse provinciale à 3,3 %; l'Île-du-Prince-Édouard la plus faible à 1,4 %
 
 </div>
+
+L'Indice des prix à la consommation (IPC) a augmenté de 2,2 % d'une année à l'autre en novembre 2025, égalant la hausse d'octobre. L'indice s'établissait à 165,4, en hausse par rapport à 161,8 un an plus tôt.
+
+La baisse des prix des voyages organisés et de l'hébergement pour voyageurs, ainsi que le ralentissement de la croissance des loyers, ont exercé une pression à la baisse sur l'IPC d'ensemble. Ces baisses ont été compensées par la hausse des prix des biens, attribuable aux augmentations des prix des aliments achetés en magasin ainsi qu'à un recul moins prononcé des prix de l'essence.
+
+En excluant l'essence, l'IPC a augmenté de 2,6 % pour un troisième mois consécutif.
 
 ## Tendance de l'inflation d'une année à l'autre
 
@@ -56,29 +56,29 @@ display(Plot.plot({
 }));
 ```
 
-## Prix selon les principales composantes
+## L'inflation des prix des aliments s'accélère
 
-Parmi les huit principales composantes de l'IPC, les prix du logement ont affiché la plus forte hausse d'une année à l'autre, soit 4,2 %. Les coûts d'intérêt hypothécaire et les loyers ont continué d'exercer une pression à la hausse sur cette catégorie.
+Les prix des aliments achetés en magasin ont augmenté de 4,2 % d'une année à l'autre en novembre, soit la plus forte hausse depuis la fin de 2023. Les principaux facteurs de cette accélération ont été les fruits frais (+4,4 %), sous l'effet de la hausse des prix des petits fruits, et les autres préparations alimentaires (+6,6 %).
 
-Les prix des aliments ont augmenté de 2,8 %, les aliments achetés au restaurant étant en hausse de 4,1 % et les aliments achetés en magasin de 2,2 %. Le transport a augmenté de 1,9 %, modéré par la baisse des prix de l'essence par rapport aux sommets atteints plus tôt dans l'année.
+Les prix du bœuf frais ou congelé (+17,7 %) et du café (+27,8 %) ont continué de contribuer de façon importante à l'inflation globale des aliments sur une base annuelle. La hausse des prix du bœuf s'explique en partie par la diminution des stocks de bovins en Amérique du Nord. Les prix du café ont été touchés par des conditions météorologiques défavorables dans les régions productrices et ont augmenté dans le contexte des tarifs américains sur les pays producteurs de café.
 
 ```js
 const components = [
-  {name: "Logement", change: 4.2},
-  {name: "Aliments", change: 2.8},
-  {name: "Dépenses du ménage", change: 2.4},
-  {name: "Santé et soins personnels", change: 2.2},
-  {name: "Transport", change: 1.9},
-  {name: "Loisirs", change: 1.5},
-  {name: "Vêtements", change: 0.8},
-  {name: "Boissons alcoolisées", change: 2.1}
+  {name: "Aliments", change: 4.2},
+  {name: "Dépenses courantes, ameublement et équipement du ménage", change: 3.3},
+  {name: "Santé et soins personnels", change: 3.0},
+  {name: "Logement", change: 2.3},
+  {name: "Boissons alcoolisées, produits du tabac et cannabis récréatif", change: 1.4},
+  {name: "Vêtements et chaussures", change: 0.8},
+  {name: "Transport", change: 0.7},
+  {name: "Loisirs, formation et lecture", change: 0.4}
 ];
 
 display(Plot.plot({
   title: "Variation annuelle selon la composante (%)",
   width: 640,
   height: 320,
-  marginLeft: 160,
+  marginLeft: 140,
   x: {domain: [-1, 5], grid: true, label: "Variation en pourcentage"},
   y: {label: null},
   marks: [
@@ -100,20 +100,26 @@ display(Plot.plot({
 }));
 ```
 
-## Variation provinciale
+## Faits saillants régionaux
 
-Les hausses de prix ont varié d'une province et d'un territoire à l'autre. L'Alberta a enregistré la plus forte hausse d'une année à l'autre, soit 2,8 %, en raison de la hausse des coûts du logement et du transport. Le Québec a affiché la plus faible hausse, soit 1,7 %.
+Sur une base annuelle en novembre, les prix ont augmenté à un rythme plus rapide dans cinq provinces, sont demeurés inchangés dans deux provinces et ont augmenté à un rythme plus lent dans les trois autres par rapport à octobre.
 
-| Province | Variation annuelle |
-|----------|-------------------|
-| Alberta | +2,8 % |
-| Colombie-Britannique | +2,4 % |
-| Ontario | +2,3 % |
-| Manitoba | +2,1 % |
-| Saskatchewan | +2,0 % |
-| Nouvelle-Écosse | +1,9 % |
-| Nouveau-Brunswick | +1,8 % |
-| Québec | +1,7 % |
+De toutes les provinces, c'est au Manitoba que les prix ont le plus accéléré, en hausse de 3,3 % d'une année à l'autre en novembre — le taux provincial le plus élevé. Les coûts du logement plus élevés, particulièrement les intérêts hypothécaires, ont été un facteur clé. À l'autre extrémité, l'Île-du-Prince-Édouard a enregistré la plus faible hausse à 1,4 %, bien en dessous de la moyenne nationale de 2,2 %.
+
+Le Québec (+3,0 %) et le Nouveau-Brunswick (+2,7 %) ont également dépassé le taux national, tandis que l'Ontario (+1,9 %) et l'Alberta (+1,9 %) sont demeurés en deçà. L'écart de 1,9 point de pourcentage entre le Manitoba et l'Île-du-Prince-Édouard témoigne d'une variation régionale importante des pressions inflationnistes à travers le pays.
+
+| Province | Variation annuelle | vs nationale |
+|----------|-------------------|--------------|
+| Manitoba | +3,3 % | +1,1 pp |
+| Québec | +3,0 % | +0,8 pp |
+| Nouveau-Brunswick | +2,7 % | +0,5 pp |
+| Nouvelle-Écosse | +2,4 % | +0,2 pp |
+| Terre-Neuve-et-Labrador | +2,2 % | — |
+| Saskatchewan | +2,1 % | -0,1 pp |
+| Colombie-Britannique | +2,0 % | -0,2 pp |
+| Ontario | +1,9 % | -0,3 pp |
+| Alberta | +1,9 % | -0,3 pp |
+| Île-du-Prince-Édouard | +1,4 % | -0,8 pp |
 
 <div class="note-to-readers">
 

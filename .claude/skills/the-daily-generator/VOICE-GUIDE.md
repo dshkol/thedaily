@@ -50,14 +50,37 @@ Statistics Canada's "The Daily" has a distinctive voice: neutral, clinical, and 
 | alarming | significant |
 | good/bad news | [omit entirely] |
 
-### Avoid Causal Claims
+### Contextual Causation (Hedged Language)
 
-| Avoid | Use Instead |
-|-------|-------------|
-| "due to" | "coincided with" |
-| "caused by" | "occurred alongside" |
-| "because of" | [describe correlation only] |
-| "led to" | [avoid causal language] |
+For major price movers (>10% change), provide context using **hedged language** that describes correlation without asserting direct causation.
+
+**Hedged connectors (safe to use):**
+- "amid" - "Coffee prices rose 27.8% amid supply disruptions in producing regions"
+- "coinciding with" - "Beef prices increased coinciding with tight cattle supply"
+- "following" - "Gasoline prices fell following declines in crude oil markets"
+- "in the context of" - "Rent increases moderated in the context of new housing supply"
+- "as markets responded to" - "Lumber prices rose as markets responded to supply constraints"
+
+**Stronger causation (use only when sourced from StatCan or verified):**
+- "driven by" - Only when StatCan's Daily explicitly states this
+- "due to" - Only when citing official analysis
+- "caused by" - Avoid unless quoting an authoritative source
+
+**Known patterns (high confidence):**
+These economic relationships are well-established and can be referenced:
+- Gasoline ↔ crude oil prices
+- Beef ↔ North American cattle inventories
+- Coffee ↔ weather in producing regions, trade policy
+- Mortgage interest ↔ Bank of Canada rate decisions
+- Rent ↔ housing supply conditions
+- Airfare ↔ fuel costs, travel demand
+
+**When no context is available:**
+Fall back to trend language without causation:
+- "Beef prices (+17.7%) continued their upward trend"
+- "Coffee prices rose for the sixth consecutive month"
+
+See `r-tools/fetch_context.R` for the context-fetching utility.
 
 ## Article Structure
 
@@ -82,9 +105,18 @@ Statistics Canada's "The Daily" has a distinctive voice: neutral, clinical, and 
 - Use data tables for detailed numbers
 
 ### 5. Regional Analysis (if applicable)
-- Provincial variations
-- Highest and lowest regions
-- Use data tables
+
+Open with a summary of provincial movement patterns:
+- "On an annual basis in November, prices rose at a faster pace in five provinces, were unchanged in two, and rose at a slower pace in the remaining three compared with October."
+
+Highlight the leader and laggard with context:
+- "Of all the provinces, [Province] recorded the [largest/smallest] increase at X.X%, [brief driver if known]. At the other end, [Province] recorded the [lowest/highest] at X.X%."
+
+Add comparative context:
+- "[Province] (+X.X%) and [Province] (+X.X%) also exceeded the national rate, while [Province] (+X.X%) remained below it."
+- "The X.X percentage point spread between [highest] and [lowest] reflects significant regional variation."
+
+Include table with "vs. National" column showing percentage point differences.
 
 ### 6. Note to Readers
 - Brief methodology explanation
@@ -120,6 +152,31 @@ Always provide context with comparisons:
 5. **Superlatives** - Avoid "highest ever", "worst in decades" without verification
 6. **Exclamation marks** - Never use them
 7. **Questions** - Don't pose rhetorical questions
+
+## Article Type Tags
+
+Each article should be tagged with its generation type:
+
+| Type | Tag (EN) | Tag (FR) | CSS Class | When to Use |
+|------|----------|----------|-----------|-------------|
+| **New Release** | `New Release` | `Nouvelle publication` | `.release` | Article generated in response to fresh StatCan data release |
+| **Deep Dive** | `Deep Dive` | `Analyse approfondie` | `.dive` | Article analyzing existing data series, historical patterns, or thematic analysis |
+
+### Implementation
+
+In article frontmatter or release date line:
+```html
+<p class="release-date">Released: December 22, 2025 <span class="article-type-tag release">New Release</span></p>
+```
+
+On landing page cards:
+```html
+<span class="article-type-tag release">New Release</span>
+```
+
+### Visual Style
+- **New Release**: Red background (#AF3C43) - signals time-sensitive, fresh data
+- **Deep Dive**: Gray background (#6c757d) - signals evergreen analysis
 
 ## Examples
 

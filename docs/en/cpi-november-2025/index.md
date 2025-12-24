@@ -5,24 +5,24 @@ toc: false
 
 # Consumer prices up 2.2% year over year in November 2025
 
-<p class="release-date">Released: December 22, 2025</p>
+<p class="release-date">Released: December 22, 2025 <span class="article-type-tag release">New Release</span></p>
 
 <div class="highlights">
 
 **Highlights**
 
-- The Consumer Price Index rose 2.2% year over year in November 2025
-- Food costs increased 4.2%, the largest contributor to inflation
-- Household operations, furnishings and equipment prices rose 3.3% compared to November last year
-- Manitoba recorded the highest increase at 3.3%
+- The Consumer Price Index rose 2.2% year over year in November 2025, matching the increase in October
+- Grocery prices rose 4.2%, driven by beef (+17.7%) and coffee (+27.8%)
+- Lower prices for travel tours and slower rent growth put downward pressure on the CPI
+- Manitoba led provincial increases at 3.3%; Prince Edward Island lowest at 1.4%
 
 </div>
 
-The Consumer Price Index (CPI) stood at 165.4 in November 2025, up 2.2% compared with the same month a year earlier. A year ago, the index was 161.8.
+The Consumer Price Index (CPI) rose 2.2% on a year-over-year basis in November 2025, matching the increase in October. The index stood at 165.4, up from 161.8 a year earlier.
 
-On a month-over-month basis, the index increased 0.06% from 165.3 in October 2025 to 165.4 in November 2025.
+Lower prices for travel tours and traveller accommodation, in addition to slower growth for rent prices, put downward pressure on the all-items CPI. Offsetting this were higher prices for goods, driven by price increases for groceries as well as a smaller decline for gasoline prices.
 
-Over the past two years, the year-over-year inflation rate has ranged from 1.6% to 3.4%.
+Excluding gasoline, the CPI rose 2.6% for the third consecutive month.
 
 ```js
 import * as Plot from "npm:@observablehq/plot";
@@ -97,11 +97,11 @@ display(Plot.plot({
 }));
 ```
 
-## Prices by major component
+## Grocery price inflation accelerates
 
-Among the eight major components of the CPI, food prices showed the largest year-over-year increase at 4.2%. Mortgage interest costs and rent continued to put upward pressure on this category.
+Prices for food purchased from stores rose 4.2% year over year in November, the largest increase since late 2023. The main contributors to the acceleration were fresh fruit (+4.4%), led by higher prices for berries, and other food preparations (+6.6%).
 
-Food prices rose 4.2%.
+Prices for fresh or frozen beef (+17.7%) and coffee (+27.8%) continued to be significant contributors to overall grocery inflation on an annual basis. Higher beef prices have been driven, in part, by lower cattle inventories in North America. Coffee prices have been impacted by adverse weather conditions in growing regions and rose amid American tariffs on coffee-producing countries.
 
 ```js
 const components = [
@@ -141,22 +141,26 @@ display(Plot.plot({
 }));
 ```
 
-## Provincial variation
+## Regional highlights
 
-Price increases varied across provinces and territories. Manitoba recorded the highest year-over-year increase at 3.3%, driven by rising shelter and transportation costs. Prince Edward Island showed the lowest increase at 1.4%.
+On an annual basis in November, prices rose at a faster pace in five provinces, were unchanged in two, and rose at a slower pace in the remaining three compared with October.
 
-| Province | Year-over-year change |
-|----------|----------------------|
-| Manitoba | +3.3% |
-| Quebec | +3.0% |
-| New Brunswick | +2.7% |
-| Nova Scotia | +2.4% |
-| Newfoundland and Labrador | +2.2% |
-| Saskatchewan | +2.1% |
-| British Columbia | +2.0% |
-| Ontario | +1.9% |
-| Alberta | +1.9% |
-| Prince Edward Island | +1.4% |
+Of all the provinces, prices accelerated the most in Manitoba, rising 3.3% year over year in November—the highest provincial rate. Higher shelter costs, particularly mortgage interest, were a key driver. At the other end, Prince Edward Island recorded the slowest increase at 1.4%, well below the national average of 2.2%.
+
+Quebec (+3.0%) and New Brunswick (+2.7%) also exceeded the national rate, while Ontario (+1.9%) and Alberta (+1.9%) remained below it. The 1.9 percentage point spread between Manitoba and Prince Edward Island reflects significant regional variation in inflation pressures across the country.
+
+| Province | Year-over-year change | vs. National |
+|----------|----------------------|--------------|
+| Manitoba | +3.3% | +1.1 pp |
+| Quebec | +3.0% | +0.8 pp |
+| New Brunswick | +2.7% | +0.5 pp |
+| Nova Scotia | +2.4% | +0.2 pp |
+| Newfoundland and Labrador | +2.2% | — |
+| Saskatchewan | +2.1% | -0.1 pp |
+| British Columbia | +2.0% | -0.2 pp |
+| Ontario | +1.9% | -0.3 pp |
+| Alberta | +1.9% | -0.3 pp |
+| Prince Edward Island | +1.4% | -0.8 pp |
 
 <div class="note-to-readers">
 
