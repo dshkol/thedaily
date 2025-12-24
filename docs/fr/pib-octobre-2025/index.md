@@ -5,7 +5,7 @@ toc: false
 
 # Le produit intérieur brut réel en baisse de 0,3 % en octobre 2025
 
-<p class="release-date">Diffusion : 23 décembre 2025</p>
+<p class="release-date">Diffusion : 23 décembre 2025 <span class="article-type-tag release">Nouvelle publication</span></p>
 
 <div class="highlights">
 

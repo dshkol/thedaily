@@ -76,9 +76,9 @@ const components = [
 
 display(Plot.plot({
   title: "Variation annuelle selon la composante (%)",
-  width: 640,
+  width: 700,
   height: 320,
-  marginLeft: 140,
+  marginLeft: 380,
   x: {domain: [-1, 5], grid: true, label: "Variation en pourcentage"},
   y: {label: null},
   marks: [

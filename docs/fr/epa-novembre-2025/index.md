@@ -5,7 +5,7 @@ toc: false
 
 # L'emploi augmente de 54 000 en novembre 2025, le taux de chômage recule à 6,5 %
 
-<p class="release-date">Diffusion : 5 décembre 2025</p>
+<p class="release-date">Diffusion : 5 décembre 2025 <span class="article-type-tag release">Nouvelle publication</span></p>
 
 <div class="highlights">
 

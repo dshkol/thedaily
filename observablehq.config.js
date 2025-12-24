@@ -23,12 +23,12 @@ export default {
   // Clean header matching the original static site
   // Note: Links use defined base path (/thedaily) for subdirectory deployment
   header: `<div style="display: flex; align-items: baseline; gap: 0.5rem; font-size: 0.8125rem; letter-spacing: 0.02em; padding: 0.5rem 0; border-bottom: 3px solid #AF3C43; margin-bottom: 1.5rem;">
-    <a href="/thedaily/" style="font-weight: 600; text-decoration: none; color: #AF3C43; text-transform: uppercase;">The D-AI-LY</a>
+    <a id="home-link" href="/" style="font-weight: 600; text-decoration: none; color: #AF3C43; text-transform: uppercase;">The D-AI-LY</a>
     <span style="color: #999;">|</span>
     <span style="color: #666; text-transform: uppercase; font-size: 0.6875rem;">An AI-Generated Statistical Bulletin</span>
     <span style="flex: 1;"></span>
-    <a id="lang-en" href="/thedaily/en/" style="text-decoration: none; color: #666; font-size: 0.75rem;">English</a>
-    <a id="lang-fr" href="/thedaily/fr/" style="text-decoration: none; color: #666; font-size: 0.75rem; margin-left: 0.75rem;">Français</a>
+    <a id="lang-en" href="/en/" style="text-decoration: none; color: #666; font-size: 0.75rem;">English</a>
+    <a id="lang-fr" href="/fr/" style="text-decoration: none; color: #666; font-size: 0.75rem; margin-left: 0.75rem;">Français</a>
   </div>
   <script>
     (function() {

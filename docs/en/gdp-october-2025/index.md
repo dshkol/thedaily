@@ -5,7 +5,7 @@ toc: false
 
 # Real gross domestic product down 0.3% in October 2025
 
-<p class="release-date">Released: December 23, 2025</p>
+<p class="release-date">Released: December 23, 2025 <span class="article-type-tag release">New Release</span></p>
 
 <div class="highlights">
 
@@ -117,7 +117,7 @@ display(Plot.plot({
     }),
     Plot.text(sectorData, {
       y: "sector",
-      x: d => d.change >= 0 ? 2 : -1.5,
+      x: "change",
       text: d => (d.change >= 0 ? "+" : "") + d.change.toFixed(2) + "%",
       textAnchor: d => d.change >= 0 ? "start" : "end",
       dx: d => d.change >= 0 ? 5 : -5,

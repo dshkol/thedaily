@@ -117,9 +117,9 @@ const components = [
 
 display(Plot.plot({
   title: "Year-over-year change by component (%)",
-  width: 640,
+  width: 700,
   height: 320,
-  marginLeft: 140,
+  marginLeft: 340,
   x: {domain: [-1, 5], grid: true, label: "Percent change"},
   y: {label: null},
   marks: [
