@@ -136,18 +136,168 @@ print_results <- function(results) {
   cat("\n")
 }
 
+# Analyze regional variance for a given table
+analyze_regional_variance <- function(table_number) {
+  cat(sprintf("Analyzing regional variance for %s...\n", table_number))
+
+  tryCatch({
+    df <- get_cansim(table_number)
+
+    # Get unique geographies
+    geos <- unique(df$GEO)
+    provinces <- c("Ontario", "Quebec", "British Columbia", "Alberta",
+                   "Manitoba", "Saskatchewan", "Nova Scotia", "New Brunswick",
+                   "Newfoundland and Labrador", "Prince Edward Island",
+                   "Northwest Territories", "Yukon", "Nunavut")
+
+    has_provinces <- any(geos %in% provinces)
+    has_cmas <- any(grepl("Toronto|Vancouver|Montréal|Calgary|Edmonton|Ottawa", geos))
+    has_canada <- "Canada" %in% geos
+
+    # Get latest reference date
+    latest_date <- max(df$REF_DATE, na.rm = TRUE)
+
+    # Calculate provincial variance if available
+    variance_info <- NULL
+    if (has_provinces && has_canada) {
+      prov_data <- df %>%
+        filter(REF_DATE == latest_date) %>%
+        filter(GEO %in% provinces) %>%
+        group_by(GEO) %>%
+        summarise(value = mean(VALUE, na.rm = TRUE), .groups = "drop") %>%
+        filter(!is.na(value))
+
+      if (nrow(prov_data) >= 3) {
+        canada_val <- df %>%
+          filter(REF_DATE == latest_date, GEO == "Canada") %>%
+          summarise(value = mean(VALUE, na.rm = TRUE)) %>%
+          pull(value)
+
+        variance_info <- list(
+          range = max(prov_data$value) - min(prov_data$value),
+          leader = prov_data$GEO[which.max(prov_data$value)],
+          laggard = prov_data$GEO[which.min(prov_data$value)],
+          leader_value = max(prov_data$value),
+          laggard_value = min(prov_data$value),
+          canada_value = canada_val,
+          n_provinces = nrow(prov_data)
+        )
+      }
+    }
+
+    list(
+      table = table_number,
+      has_provinces = has_provinces,
+      has_cmas = has_cmas,
+      has_canada = has_canada,
+      n_geos = length(geos),
+      latest_date = latest_date,
+      variance = variance_info,
+      sample_geos = head(geos, 10)
+    )
+  }, error = function(e) {
+    list(table = table_number, error = e$message)
+  })
+}
+
+# Find regional stories across multiple tables
+find_regional_stories <- function(table_numbers, min_variance_pct = 10) {
+  results <- lapply(table_numbers, function(tbl) {
+    info <- analyze_regional_variance(tbl)
+    if (!is.null(info$variance)) {
+      # Calculate variance as percentage of Canada value
+      if (info$variance$canada_value != 0) {
+        info$variance_pct <- (info$variance$range / abs(info$variance$canada_value)) * 100
+      } else {
+        info$variance_pct <- NA
+      }
+    }
+    info
+  })
+
+  # Filter to tables with significant regional variance
+  regional_stories <- Filter(function(x) {
+    !is.null(x$variance) &&
+    !is.null(x$variance_pct) &&
+    !is.na(x$variance_pct) &&
+    x$variance_pct >= min_variance_pct
+  }, results)
+
+  # Sort by variance
+  regional_stories <- regional_stories[order(
+    -sapply(regional_stories, function(x) x$variance_pct)
+  )]
+
+  regional_stories
+}
+
+# Print regional story results
+print_regional_results <- function(results) {
+  cat("\n")
+  cat("═══════════════════════════════════════════════════════════════════\n")
+  cat(sprintf("REGIONAL STORY DISCOVERY - %s\n", Sys.Date()))
+  cat("═══════════════════════════════════════════════════════════════════\n\n")
+
+  if (length(results) == 0) {
+    cat("No significant regional variance found.\n")
+    return()
+  }
+
+  for (i in seq_along(results)) {
+    r <- results[[i]]
+    cat(sprintf("\n%d. TABLE %s (Variance: %.1f%%)\n",
+                i, r$table, r$variance_pct))
+    cat(sprintf("   Leader: %s (%.1f)\n", r$variance$leader, r$variance$leader_value))
+    cat(sprintf("   Laggard: %s (%.1f)\n", r$variance$laggard, r$variance$laggard_value))
+    cat(sprintf("   Canada: %.1f\n", r$variance$canada_value))
+    cat(sprintf("   Provinces covered: %d\n", r$variance$n_provinces))
+
+    # Suggest story angle
+    if (r$variance$leader_value > r$variance$canada_value * 1.1) {
+      cat(sprintf("   → Story: \"%s leads with value %.0f%% above national average\"\n",
+                  r$variance$leader,
+                  (r$variance$leader_value / r$variance$canada_value - 1) * 100))
+    }
+    if (r$variance$laggard_value < r$variance$canada_value * 0.9) {
+      cat(sprintf("   → Story: \"%s lags at %.0f%% below national average\"\n",
+                  r$variance$laggard,
+                  (1 - r$variance$laggard_value / r$variance$canada_value) * 100))
+    }
+  }
+  cat("\n")
+}
+
 # Run if executed directly
 if (!interactive()) {
   args <- commandArgs(trailingOnly = TRUE)
 
-  # Parse existing sectors from args (e.g., "prices,labour,trade")
-  existing_sectors <- c()
-  if (length(args) > 0) {
-    existing_sectors <- strsplit(args[1], ",")[[1]]
-    cat(sprintf("Excluding recently covered sectors: %s\n",
-                paste(existing_sectors, collapse = ", ")))
-  }
+  # Check for --regional flag
+  if ("--regional" %in% args) {
+    # Regional analysis mode
+    table_args <- args[!args %in% c("--regional")]
+    if (length(table_args) > 0) {
+      tables <- strsplit(table_args[1], ",")[[1]]
+      cat(sprintf("Analyzing regional variance for: %s\n",
+                  paste(tables, collapse = ", ")))
+      results <- find_regional_stories(tables, min_variance_pct = 5)
+      print_regional_results(results)
+    } else {
+      # Default tables for regional analysis
+      default_tables <- c("18-10-0205", "34-10-0158", "14-10-0287", "18-10-0004")
+      cat("Analyzing regional variance for default tables...\n")
+      results <- find_regional_stories(default_tables, min_variance_pct = 5)
+      print_regional_results(results)
+    }
+  } else {
+    # Standard topic discovery mode
+    existing_sectors <- c()
+    if (length(args) > 0) {
+      existing_sectors <- strsplit(args[1], ",")[[1]]
+      cat(sprintf("Excluding recently covered sectors: %s\n",
+                  paste(existing_sectors, collapse = ", ")))
+    }
 
-  results <- discover_topics(existing_sectors = existing_sectors)
-  print_results(results)
+    results <- discover_topics(existing_sectors = existing_sectors)
+    print_results(results)
+  }
 }

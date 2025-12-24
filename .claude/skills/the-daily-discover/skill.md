@@ -123,10 +123,98 @@ Top recommendation: 23-10-0079 (Airline operating statistics)
 - Sector gap: No transport coverage in last 30 days
 ```
 
+## Regional Story Discovery
+
+Beyond national aggregates, sub-national data offers rich story potential:
+
+### Geographic Levels in CANSIM
+
+| Level | Description | Story Potential |
+|-------|-------------|-----------------|
+| **Canada** | National totals | Headline indicators |
+| **Provincial/Territorial** | 13 jurisdictions | Regional divergence, provincial spotlight |
+| **CMA** | Census Metropolitan Areas | City comparisons, metro-specific trends |
+| **Economic Region** | Sub-provincial regions | Local economic conditions |
+
+### Regional Story Types
+
+**1. Divergence Stories**
+When regions move in opposite directions:
+```r
+# Find tables with high provincial variance
+provincial_data %>%
+  group_by(REF_DATE) %>%
+  summarise(
+    range = max(yoy_change) - min(yoy_change),
+    leader = GEO[which.max(yoy_change)],
+    laggard = GEO[which.min(yoy_change)]
+  ) %>%
+  filter(range > 5)  # >5 percentage points spread
+```
+
+**2. Metro Spotlight**
+Deep-dive on a specific CMA:
+- Toronto housing market dynamics
+- Vancouver cost of living
+- Calgary energy sector employment
+- Montreal manufacturing
+
+**3. Provincial Rankings**
+League tables comparing provinces:
+- Unemployment rates by province
+- Housing affordability index
+- Retail sales per capita
+
+**4. Regional Outliers**
+One region bucking the national trend:
+- "Saskatchewan leads provincial gains..."
+- "Atlantic Canada bucks national decline..."
+
+### Identifying Regional Stories
+
+```r
+# Check if table has sub-national data
+check_geo_coverage <- function(table_number) {
+  df <- get_cansim(table_number)
+  geos <- unique(df$GEO)
+
+  list(
+    has_provinces = any(geos %in% c("Ontario", "Quebec", "British Columbia")),
+    has_cmas = any(grepl("CMA|Toronto|Vancouver|Montreal", geos)),
+    geo_count = length(geos),
+    geo_list = head(geos, 10)
+  )
+}
+```
+
+### Regional Story Scoring
+
+Add to candidate scoring:
+
+| Factor | Score Boost | Condition |
+|--------|-------------|-----------|
+| High provincial variance | +15 | Range > 5 pp |
+| Clear leader/laggard | +10 | One province dominates |
+| CMA data available | +5 | Metro-level granularity |
+| Regional trend reversal | +20 | Province bucks national trend |
+
+### Example Regional Articles
+
+- "Toronto housing starts surge while Vancouver stalls"
+- "Prairie provinces lead employment gains in November"
+- "Quebec inflation outpaces national average for 6th month"
+- "Atlantic Canada gasoline prices hit 18-month low"
+
 ## Integration with Generator
 
 After discovery, hand off to the generator skill:
 
 ```
 /the-daily-generator 23-10-0079 --slug airline-passengers-october-2025
+```
+
+For regional stories, specify the geographic focus:
+
+```
+/the-daily-generator 34-10-0158 --slug ontario-housing-starts-november-2025 --geo Ontario
 ```
