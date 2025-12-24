@@ -1,0 +1,17 @@
+{
+  "name": "the-daily",
+  "version": "1.0.0",
+  "description": "An LLM-driven version of Statistics Canada's \"The Daily\" - generating automated statistical bulletins from CANSIM data.",
+  "type": "module",
+  "scripts": {
+    "dev": "observable preview",
+    "build": "observable build",
+    "clean": "rm -rf dist .observablehq"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@observablehq/framework": "^1.13.3"
+  }
+}
