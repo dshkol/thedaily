@@ -87,3 +87,37 @@ Les ventes en gros ont augmenté de 0,1 % pour atteindre 86,0 milliards de dolla
 <br><span style="font-size: 0.875rem; color: #666;">Diffusé : 2025-12-05 · Tableau 14-10-0287</span>
 
 L'emploi a augmenté de 54 000 en novembre 2025, et le taux de chômage a reculé de 0,4 point de pourcentage pour s'établir à 6,5 %.
+
+---
+
+## Novembre 2025
+
+**[Les prix à la consommation en hausse de 2,2 % d'une année à l'autre en octobre 2025](/fr/ipc-october-2025/)**
+<br><span style="font-size: 0.875rem; color: #666;">Diffusé : 2025-11-19 · Tableau 18-10-0004</span>
+
+L'Indice des prix à la consommation a augmenté de 2,2 % en octobre par rapport au même mois un an plus tôt.
+
+---
+
+## Octobre 2025
+
+**[Les prix à la consommation en hausse de 2,4 % d'une année à l'autre en septembre 2025](/fr/ipc-september-2025/)**
+<br><span style="font-size: 0.875rem; color: #666;">Diffusé : 2025-10-15 · Tableau 18-10-0004</span>
+
+L'Indice des prix à la consommation a augmenté de 2,4 % en septembre par rapport au même mois un an plus tôt, en hausse par rapport à 1,9 % en août.
+
+---
+
+## Septembre 2025
+
+**[Les prix à la consommation en hausse de 1,9 % d'une année à l'autre en août 2025](/fr/ipc-august-2025/)**
+<br><span style="font-size: 0.875rem; color: #666;">Diffusé : 2025-09-17 · Tableau 18-10-0004</span>
+
+L'Indice des prix à la consommation a augmenté de 1,9 % en août par rapport au même mois un an plus tôt.
+
+---
+
+**[Les prix à la consommation en hausse de 1,7 % d'une année à l'autre en juillet 2025](/fr/ipc-july-2025/)**
+<br><span style="font-size: 0.875rem; color: #666;">Diffusé : 2025-08-20 · Tableau 18-10-0004</span>
+
+L'Indice des prix à la consommation a augmenté de 1,7 % en juillet par rapport au même mois un an plus tôt.

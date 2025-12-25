@@ -6,6 +6,10 @@ export const slugMap = {
   // Articles
   'airline-passengers-october-2025': 'passagers-aeriens-octobre-2025',
   'cpi-november-2025': 'ipc-novembre-2025',
+  'cpi-october-2025': 'ipc-october-2025',
+  'cpi-september-2025': 'ipc-september-2025',
+  'cpi-august-2025': 'ipc-august-2025',
+  'cpi-july-2025': 'ipc-july-2025',
   'lfs-november-2025': 'epa-novembre-2025',
   'retail-trade-october-2025': 'commerce-detail-octobre-2025',
   'new-housing-price-index-november-2025': 'indice-prix-logements-neufs-novembre-2025',

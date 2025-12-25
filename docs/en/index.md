@@ -87,3 +87,37 @@ Wholesale sales increased 0.1% to $86.0 billion in October 2025. Motor vehicle a
 <br><span style="font-size: 0.875rem; color: #666;">Released: 2025-12-05 · Table 14-10-0287</span>
 
 Employment rose by 54,000 in November 2025, and the unemployment rate fell 0.4 percentage points to 6.5%.
+
+---
+
+## November 2025
+
+**[Consumer prices up 2.2% year over year in October 2025](/en/cpi-october-2025/)**
+<br><span style="font-size: 0.875rem; color: #666;">Released: 2025-11-19 · Table 18-10-0004</span>
+
+The Consumer Price Index rose 2.2% in October compared with the same month a year earlier, matching the previous month's rate.
+
+---
+
+## October 2025
+
+**[Consumer prices up 2.4% year over year in September 2025](/en/cpi-september-2025/)**
+<br><span style="font-size: 0.875rem; color: #666;">Released: 2025-10-15 · Table 18-10-0004</span>
+
+The Consumer Price Index rose 2.4% in September compared with the same month a year earlier, up from 1.9% in August.
+
+---
+
+## September 2025
+
+**[Consumer prices up 1.9% year over year in August 2025](/en/cpi-august-2025/)**
+<br><span style="font-size: 0.875rem; color: #666;">Released: 2025-09-17 · Table 18-10-0004</span>
+
+The Consumer Price Index rose 1.9% in August compared with the same month a year earlier.
+
+---
+
+**[Consumer prices up 1.7% year over year in July 2025](/en/cpi-july-2025/)**
+<br><span style="font-size: 0.875rem; color: #666;">Released: 2025-08-20 · Table 18-10-0004</span>
+
+The Consumer Price Index rose 1.7% in July compared with the same month a year earlier, matching the lowest annual inflation rate since March 2021.

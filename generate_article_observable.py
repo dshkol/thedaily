@@ -187,6 +187,73 @@ def validate_data(data: Dict[str, Any], strict: bool = False) -> ValidationResul
 
 
 # =============================================================================
+# DATA REBASING FOR HISTORICAL PERIODS
+# =============================================================================
+
+def rebase_data_to_period(data: Dict[str, Any], target_ref_date: str) -> Dict[str, Any]:
+    """
+    Rebase data to a historical reference period.
+
+    Finds the target period in time_series and updates the 'latest' object
+    to point to that period's values.
+
+    Args:
+        data: Original data dictionary
+        target_ref_date: Target reference date (e.g., "2025-10")
+
+    Returns:
+        Modified data dictionary with 'latest' pointing to target period
+
+    Raises:
+        ValueError: If target period not found in time_series
+    """
+    import copy
+    data = copy.deepcopy(data)  # Don't mutate original
+
+    time_series = data.get("time_series", [])
+
+    # Find the target period in time series
+    target_entry = None
+    for entry in time_series:
+        if entry.get("ref_date") == target_ref_date:
+            target_entry = entry
+            break
+
+    if not target_entry:
+        available = [e.get("ref_date") for e in time_series[-12:]]
+        raise ValueError(
+            f"Reference date '{target_ref_date}' not found in time series. "
+            f"Recent available periods: {available}"
+        )
+
+    # Build new 'latest' object from the target entry
+    new_latest = {
+        "date": target_entry.get("date"),
+        "ref_date": target_ref_date,
+        "value": target_entry.get("value"),
+        "mom_change": target_entry.get("mom_change", target_entry.get("value", 0) * target_entry.get("mom_pct_change", 0) / 100),
+        "mom_pct_change": target_entry.get("mom_pct_change", 0),
+        "yoy_change": target_entry.get("yoy_change", target_entry.get("value", 0) * target_entry.get("yoy_pct_change", 0) / 100),
+        "yoy_pct_change": target_entry.get("yoy_pct_change", 0),
+    }
+
+    data["latest"] = new_latest
+
+    # Update metadata reference_period
+    if "metadata" in data:
+        data["metadata"]["reference_period"] = target_ref_date
+
+    # Trim time_series to end at target period
+    trimmed_series = [e for e in time_series if e.get("ref_date", "") <= target_ref_date]
+    data["time_series"] = trimmed_series
+
+    logger.info(f"Rebased data to reference period: {target_ref_date}")
+    logger.info(f"  Value: {new_latest['value']}, YoY: {new_latest['yoy_pct_change']}%")
+
+    return data
+
+
+# =============================================================================
 # POST-GENERATION SELF-REVIEW
 # =============================================================================
 
@@ -948,7 +1015,8 @@ def generate_provincial_narrative(data: Dict[str, Any]) -> str:
 
 
 def generate_article(data_path: str, output_dir: str, lang: str = "en",
-                     strict: bool = False, skip_validation: bool = False) -> str:
+                     strict: bool = False, skip_validation: bool = False,
+                     ref_date: Optional[str] = None) -> str:
     """
     Generate a complete Observable markdown article from data JSON.
 
@@ -958,6 +1026,7 @@ def generate_article(data_path: str, output_dir: str, lang: str = "en",
         lang: Language for article generation ('en' or 'fr')
         strict: Treat validation warnings as errors
         skip_validation: Skip validation (not recommended)
+        ref_date: Optional reference date to generate article for (e.g., "2025-10")
 
     Returns:
         Path to the generated article
@@ -970,6 +1039,10 @@ def generate_article(data_path: str, output_dir: str, lang: str = "en",
     # Load data
     with open(data_path, "r") as f:
         data = json.load(f)
+
+    # Rebase to historical period if requested
+    if ref_date:
+        data = rebase_data_to_period(data, ref_date)
 
     # Run pre-generation validation
     if not skip_validation:
@@ -1147,6 +1220,8 @@ if __name__ == "__main__":
                         help="Skip data validation (not recommended)")
     parser.add_argument("--validate-only", action="store_true",
                         help="Only validate data, don't generate article")
+    parser.add_argument("--ref-date", type=str, default=None,
+                        help="Reference date for article (e.g., 2025-10). Defaults to latest available.")
 
     args = parser.parse_args()
 
@@ -1172,8 +1247,9 @@ if __name__ == "__main__":
             args.output_dir,
             lang=args.lang,
             strict=args.strict,
-            skip_validation=args.skip_validation
+            skip_validation=args.skip_validation,
+            ref_date=args.ref_date
         )
-    except ValidationError as e:
+    except (ValidationError, ValueError) as e:
         logger.error(str(e))
         sys.exit(1)
