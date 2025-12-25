@@ -104,20 +104,26 @@ display(Plot.plot({
 - Sort bars by value with `sort: {y: "-x"}`
 - Position labels with `dx: 20` (positive values) or handle negative separately
 
-### Handling Negative Value Labels
+### Handling Mixed Positive/Negative Labels
 
-When bars can be negative, position labels dynamically:
+**Recommended approach:** Place ALL labels at a fixed right-edge position to avoid overlap:
 
 ```js
 Plot.text(data, {
   y: "name",
-  x: d => d.change >= 0 ? domainMax : domainMin,
+  x: domainMax,  // Fixed position at right edge (e.g., 12 if domain is [-5, 12])
   text: d => (d.change >= 0 ? "+" : "") + d.change.toFixed(1) + "%",
-  textAnchor: d => d.change >= 0 ? "start" : "end",
-  dx: d => d.change >= 0 ? 5 : -5,
-  fill: "currentColor"
+  textAnchor: "end",
+  fill: "currentColor",
+  fontSize: 11
 })
 ```
+
+**Why this approach:**
+- Labels aligned at the bar end can overlap when bars have similar lengths
+- A fixed right-edge position keeps all labels readable and consistently positioned
+- Set `marginRight: 60` to ensure labels have space
+- Expand the x-domain slightly beyond the max value to accommodate labels
 
 ## Reference Lines
 

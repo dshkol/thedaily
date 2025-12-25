@@ -100,22 +100,24 @@ display(Plot.plot({
   width: 600,
   height: 280,
   marginLeft: 200,
-  x: {grid: true, label: "Variation en pourcentage"},
+  marginRight: 60,
+  x: {domain: [-5, 20], grid: true, label: "Variation en pourcentage"},
   y: {label: null},
   marks: [
     Plot.ruleX([0]),
     Plot.barX(subsectorData, {
       y: "sector",
       x: "change",
-      fill: d => d.change >= 0 ? "#AF3C43" : "#1f77b4",
+      fill: d => d.change >= 0 ? "#AF3C43" : "#2e7d32",
       sort: {y: "-x"}
     }),
     Plot.text(subsectorData, {
       y: "sector",
-      x: d => d.change >= 0 ? d.change + 0.5 : d.change - 0.5,
+      x: 20,
       text: d => (d.change >= 0 ? "+" : "") + d.change.toFixed(1).replace(".", ",") + " %",
-      textAnchor: d => d.change >= 0 ? "start" : "end",
-      fill: "currentColor"
+      textAnchor: "end",
+      fill: "currentColor",
+      fontSize: 11
     })
   ]
 }));

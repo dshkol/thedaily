@@ -176,11 +176,11 @@ display(Plot.plot({
     }),
     Plot.text(typeData, {
       y: "type",
-      x: d => d.change >= 0 ? 70 : -20,
+      x: 70,
       text: d => (d.change >= 0 ? "+" : "") + d.change.toFixed(1).replace(".", ","),
-      textAnchor: d => d.change >= 0 ? "start" : "end",
-      dx: d => d.change >= 0 ? 5 : -5,
-      fill: "currentColor"
+      textAnchor: "end",
+      fill: "currentColor",
+      fontSize: 11
     })
   ]
 }));

@@ -99,22 +99,24 @@ display(Plot.plot({
   width: 550,
   height: 200,
   marginLeft: 200,
-  x: {grid: true, label: "Variation en pourcentage"},
+  marginRight: 60,
+  x: {domain: [-15, 12], grid: true, label: "Variation en pourcentage"},
   y: {label: null},
   marks: [
     Plot.ruleX([0]),
     Plot.barX(trafficData, {
       y: "segment",
       x: "yoyChange",
-      fill: d => d.yoyChange >= 0 ? "#AF3C43" : "#1f77b4",
+      fill: d => d.yoyChange >= 0 ? "#AF3C43" : "#2e7d32",
       sort: {y: "-x"}
     }),
     Plot.text(trafficData, {
       y: "segment",
-      x: d => d.yoyChange >= 0 ? d.yoyChange + 0.8 : d.yoyChange - 0.8,
+      x: 12,
       text: d => (d.yoyChange >= 0 ? "+" : "") + d.yoyChange.toFixed(1).replace(".", ",") + " %",
-      textAnchor: d => d.yoyChange >= 0 ? "start" : "end",
-      fill: "currentColor"
+      textAnchor: "end",
+      fill: "currentColor",
+      fontSize: 11
     })
   ]
 }));

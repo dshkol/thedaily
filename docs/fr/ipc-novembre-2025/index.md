@@ -114,7 +114,7 @@ Le Québec (+3,0 %) et le Nouveau-Brunswick (+2,7 %) ont également dépassé le
 | Québec | +3,0 % | +0,8 pp |
 | Nouveau-Brunswick | +2,7 % | +0,5 pp |
 | Nouvelle-Écosse | +2,4 % | +0,2 pp |
-| Terre-Neuve-et-Labrador | +2,2 % | — |
+| Terre-Neuve-et-Labrador | +2,2 % | 0,0 pp |
 | Saskatchewan | +2,1 % | -0,1 pp |
 | Colombie-Britannique | +2,0 % | -0,2 pp |
 | Ontario | +1,9 % | -0,3 pp |
