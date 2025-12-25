@@ -74,73 +74,153 @@ Rscript r-tools/fetch_cansim_enhanced.R <table-number> output
 }
 ```
 
-## Step 2: Article Generation
+## Step 2: Article Generation (Observable Framework)
 
-**Command:**
-```bash
-python3 generate_article_enhanced.py <data.json> <output.html>
-```
+Create markdown files directly in the Observable Framework structure:
+
+**English article:** `docs/en/<slug>/index.md`
+**French article:** `docs/fr/<slug-fr>/index.md`
 
 **Naming convention for slugs:**
-- CPI: `cpi-<month>-<year>.html` (e.g., `cpi-november-2025.html`)
-- Retail: `retail-<month>-<year>.html`
-- Labour: `employment-<month>-<year>.html`
-- Generic: `<short-title>-<month>-<year>.html`
 
-**What it generates:**
-1. **Headline** - Max 15 words, leads with key statistic
-2. **Highlights** - 3-5 bullet points with key findings
-3. **Narrative sections** - Lede, analysis, comparisons
-4. **Main chart** - Time series line chart (last 24 months)
-5. **Data tables** - Component and provincial breakdowns
-6. **Bar chart** - YoY changes by component
-7. **Source section** - StatCan links, release date, table number
+| Type | English Slug | French Slug |
+|------|-------------|-------------|
+| CPI | `cpi-november-2025` | `ipc-novembre-2025` |
+| Retail | `retail-trade-october-2025` | `commerce-detail-octobre-2025` |
+| Labour | `lfs-november-2025` | `epa-novembre-2025` |
+| GDP | `gdp-october-2025` | `pib-octobre-2025` |
+| Generic | `<indicator>-<month>-<year>` | `<indicateur>-<mois>-<année>` |
 
-## Step 3: Quality Review
+**Article template structure:**
 
-**Open in browser:**
+```markdown
+---
+title: Consumer prices up 2.2% year over year in November 2025
+toc: false
+---
+
+# Consumer prices up 2.2% year over year in November 2025
+
+<p class="release-date">Released: December 22, 2025 <span class="article-type-tag release">New Release</span></p>
+
+<div class="highlights">
+
+**Highlights**
+
+- Key finding 1 with specific number
+- Key finding 2 with comparison
+- Regional highlight
+- Secondary finding
+
+</div>
+
+[Body paragraphs with analysis]
+
+\`\`\`js
+import * as Plot from "npm:@observablehq/plot";
+
+// Real data from Statistics Canada Table XX-XX-XXXX
+const data = [...];
+
+display(Plot.plot({...}));
+\`\`\`
+
+[More sections, charts, tables]
+
+<div class="note-to-readers">
+
+## Note to readers
+
+[Methodology explanation]
+
+</div>
+
+<div class="source-info">
+
+**Source:** Statistics Canada, [Table XX-XX-XXXX](https://www150.statcan.gc.ca/t1/tbl1/en/tv.action?pid=XXXXXXXXXX)
+**Survey:** Survey Name
+**Reference period:** Month Year
+**DOI:** [https://doi.org/10.25318/XXXXXXXXXX-eng](https://doi.org/10.25318/XXXXXXXXXX-eng)
+
+</div>
+```
+
+See [CHART-STYLE-GUIDE.md](/CHART-STYLE-GUIDE) for chart conventions.
+
+## Step 3: Update Language Mapping
+
+**Critical step!** The language switcher won't work without this.
+
+**File:** `src/lang-map.js`
+
+Add the EN/FR slug pair:
+
+```js
+export const slugMap = {
+  // ... existing mappings
+  'new-article-slug': 'nouvel-article-slug',
+};
+```
+
+**Example mappings:**
+```js
+'cpi-november-2025': 'ipc-novembre-2025',
+'lfs-november-2025': 'epa-novembre-2025',
+'gdp-october-2025': 'pib-octobre-2025',
+```
+
+## Step 4: Update Index Pages
+
+Add the new article to both feed pages:
+
+**English:** `docs/en/index.md`
+**French:** `docs/fr/index.md`
+
+Entry format:
+```markdown
+### [Consumer prices up 2.2% year over year in November 2025](./cpi-november-2025/)
+
+Released: 2025-12-22 · Table 18-10-0004
+
+The Consumer Price Index rose 2.2% year over year in November 2025...
+```
+
+## Step 5: Quality Review
+
+**Preview locally:**
 ```bash
-open output/articles/<slug>.html
-# or use browser automation to display
+npm run dev
+# Opens at http://localhost:3000
 ```
 
 **Checklist:**
-- [ ] Headline is accurate and leads with key number
-- [ ] Highlights capture the most newsworthy points
-- [ ] YoY and MoM percentages match the data
-- [ ] Charts render correctly
+- [ ] Headline leads with key statistic
+- [ ] Highlights capture most newsworthy points
+- [ ] YoY and MoM percentages match JSON data
+- [ ] Charts render with correct colors (#AF3C43)
 - [ ] Data tables are sorted and formatted properly
 - [ ] Source links point to correct StatCan pages
+- [ ] Language switcher toggles between EN/FR versions
 - [ ] Voice is neutral (no "surged", "plummeted", etc.)
+- [ ] French uses comma decimals (2,2 % not 2.2%)
 
-**If issues found:**
-- Edit `generate_article_enhanced.py` for systematic fixes
-- Or manually adjust the HTML for one-off corrections
-- Regenerate if needed
+## Step 6: Build and Deploy
 
-## Step 4: Site Build
-
-**Command:**
+**Build the site:**
 ```bash
-python3 build_site.py
+npm run build
 ```
 
-**What it does:**
-- Scans `output/articles/` for all HTML files
-- Extracts metadata (title, date, table number) from each
-- Generates `site/index.html` with latest 5 articles
-- Generates `site/archive.html` with all articles by month
-- Copies articles to `site/articles/`
-- Saves `site/articles.json` with full metadata
+This runs Observable Framework build plus the Safari path fix script.
 
-## Step 5: Publish
-
-**Commands:**
+**Commit and push:**
 ```bash
-git add output/ site/
+git add docs/ src/
 git commit -m "Add: <headline from article>"
 git push
 ```
+
+GitHub Actions will auto-deploy to Netlify.
 
 **Commit message format:**
 ```
@@ -207,22 +287,76 @@ Always verify fetched data against:
 2. Recent StatCan Daily releases (via web search)
 3. Third-party sources when available (CMHC, industry reports)
 
-## Common Issues
+## Troubleshooting
+
+### R Script Issues
 
 **R script fails to download:**
 - Check internet connection
 - Verify table number format (XX-XX-XXXX)
 - Table may be deprecated; check StatCan for replacement
+- Try `--refresh` flag to force re-download: `Rscript r-tools/fetch_cansim_enhanced.R 18-10-0004 output --refresh`
+
+**"Error: object 'X' not found":**
+- Column name may differ from expected
+- Run `names(df)` in R to see actual column names
+- Table structure may have changed; update detection logic
 
 **Missing subseries data:**
 - Table may not have component breakdowns
 - Check `breakdown_dimension` in JSON output
+- Some tables only have Canada-level aggregates
+
+### Observable Framework Issues
 
 **Charts not rendering:**
-- Ensure browser has JavaScript enabled
-- Check console for errors
-- Verify `time_series` array has data points
+- Check browser console for JavaScript errors
+- Verify import statement is at top of first code block only
+- Ensure data array has values (not empty)
+- Check for syntax errors in Plot.plot() call
+
+**CSS not loading (Safari):**
+- Run `npm run build` - the post-build script fixes paths
+- Clear browser cache
+- Check that paths start with `/thedaily/` not `./`
+
+**Language switcher broken:**
+- Verify slug is added to `src/lang-map.js`
+- Check slug spelling matches folder name exactly
+- Rebuild with `npm run build`
+
+**"Module not found" error:**
+- Run `npm install` to ensure dependencies installed
+- Check import path is `"npm:@observablehq/plot"` not a file path
+
+### Article Content Issues
 
 **Wrong date extracted:**
-- Check filename matches expected pattern
-- Verify `REF_DATE` in JSON output
+- Check REF_DATE in JSON output
+- Verify date format is YYYY-MM
+- Some tables have different date granularity
+
+**Numbers don't match StatCan website:**
+- Check if data is seasonally adjusted vs not
+- Verify you're comparing same reference period
+- Some tables have revisions; refetch with `--refresh`
+
+**French decimals showing period instead of comma:**
+- Use `.replace(".", ",")` on formatted numbers
+- Check CHART-STYLE-GUIDE.md for French formatting
+
+### Build/Deploy Issues
+
+**Build fails:**
+- Run `npm run clean` then `npm run build`
+- Check for syntax errors in markdown files
+- Verify all Observable code blocks are valid JS
+
+**Changes not appearing on live site:**
+- Wait 1-2 minutes for Netlify deploy
+- Check GitHub Actions for deploy status
+- Hard refresh browser (Cmd+Shift+R)
+
+**Tests failing:**
+- Run `npm test` to see specific failures
+- Check that fix-paths.js hasn't been modified incorrectly

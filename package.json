@@ -6,7 +6,8 @@
   "scripts": {
     "dev": "observable preview",
     "build": "observable build && node scripts/fix-paths.js",
-    "clean": "rm -rf dist .observablehq"
+    "clean": "rm -rf dist .observablehq",
+    "test": "node --test scripts/*.test.js"
   },
   "keywords": [],
   "author": "",
