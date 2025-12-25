@@ -1,0 +1,151 @@
+{
+  "18-10-0004": {
+    "name": "Consumer Price Index",
+    "headline": "Consumer prices",
+    "unit": "index",
+    "scale": 1,
+    "filters": {
+      "GEO": "Canada",
+      "Products and product groups": "All-items"
+    },
+    "breakdown_dimension": "Products and product groups",
+    "breakdown_values": ["Food", "Shelter", "Transportation", "Health and personal care"],
+    "provincial": true
+  },
+  "14-10-0287": {
+    "name": "Labour Force Survey",
+    "headline": "Unemployment rate",
+    "unit": "percent",
+    "scale": 1,
+    "filters": {
+      "GEO": "Canada",
+      "Labour force characteristics": "Unemployment rate",
+      "Sex": "Both sexes",
+      "Age group": "15 years and over"
+    },
+    "breakdown_dimension": "Labour force characteristics",
+    "provincial": true
+  },
+  "16-10-0047": {
+    "name": "Manufacturing Sales",
+    "headline": "Manufacturing sales",
+    "unit": "dollars",
+    "scale": 1000000,
+    "scale_label": "billions",
+    "filters": {
+      "Seasonal adjustment": "Seasonally adjusted",
+      "North American Industry Classification System (NAICS)": "Manufacturing [31-33]"
+    },
+    "value_filter": "Sales of goods manufactured",
+    "breakdown_dimension": "North American Industry Classification System (NAICS)"
+  },
+  "20-10-0008": {
+    "name": "Retail Trade",
+    "headline": "Retail sales",
+    "unit": "dollars",
+    "scale": 1000000,
+    "scale_label": "billions",
+    "filters": {
+      "GEO": "Canada",
+      "North American Industry Classification System (NAICS)": "Retail trade [44-45]",
+      "Adjustments": "Seasonally adjusted"
+    },
+    "breakdown_dimension": "North American Industry Classification System (NAICS)"
+  },
+  "34-10-0158": {
+    "name": "Housing Starts",
+    "headline": "Housing starts",
+    "unit": "units (SAAR, thousands)",
+    "scale": 1,
+    "scale_label": "thousands",
+    "filters": {
+      "GEO": "Canada"
+    },
+    "breakdown_dimension": "GEO",
+    "note": "Values are seasonally adjusted annual rates (SAAR) in thousands"
+  },
+  "18-10-0205": {
+    "name": "New Housing Price Index",
+    "headline": "New housing prices",
+    "unit": "index",
+    "scale": 1,
+    "filters": {
+      "GEO": "Canada",
+      "New housing price indexes": "Total (house and land)"
+    },
+    "breakdown_dimension": "GEO"
+  },
+  "36-10-0434": {
+    "name": "GDP by Industry",
+    "headline": "Real GDP",
+    "unit": "dollars",
+    "scale": 1000000,
+    "scale_label": "billions",
+    "filters": {
+      "North American Industry Classification System (NAICS)": "All industries [T001]",
+      "Seasonal adjustment": "Seasonally adjusted at annual rates",
+      "Prices": "Chained (2017) dollars"
+    },
+    "breakdown_dimension": "North American Industry Classification System (NAICS)"
+  },
+  "23-10-0079": {
+    "name": "Airline Statistics",
+    "headline": "Airline passengers",
+    "unit": "thousands of passengers",
+    "scale": 1,
+    "scale_label": "thousands",
+    "filters": {
+      "Operational and financial statistics": "Passengers"
+    },
+    "breakdown_dimension": "Operational and financial statistics"
+  },
+  "12-10-0011": {
+    "name": "International Trade",
+    "headline": "Merchandise exports",
+    "unit": "dollars",
+    "scale": 1000000,
+    "scale_label": "billions",
+    "filters": {
+      "Trade": "Export",
+      "Principal trading partners": "All countries",
+      "Seasonal adjustment": "Seasonally adjusted"
+    },
+    "breakdown_dimension": "Principal trading partners"
+  },
+  "21-10-0019": {
+    "name": "Food Services",
+    "headline": "Food services sales",
+    "unit": "dollars",
+    "scale": 1000000,
+    "scale_label": "billions",
+    "filters": {
+      "GEO": "Canada",
+      "North American Industry Classification System (NAICS)": "Food services and drinking places [722]"
+    },
+    "breakdown_dimension": "North American Industry Classification System (NAICS)"
+  },
+  "25-10-0015": {
+    "name": "Electric Power Generation",
+    "headline": "Electric power generation",
+    "unit": "gigawatt hours",
+    "scale": 1000,
+    "scale_label": "terawatt hours",
+    "filters": {
+      "GEO": "Canada",
+      "Type of electricity generation": "Total electricity generation"
+    },
+    "breakdown_dimension": "Type of electricity generation"
+  },
+  "20-10-0074": {
+    "name": "Wholesale Trade",
+    "headline": "Wholesale sales",
+    "unit": "dollars",
+    "scale": 1000000,
+    "scale_label": "billions",
+    "filters": {
+      "GEO": "Canada",
+      "North American Industry Classification System (NAICS)": "Wholesale trade [41]"
+    },
+    "breakdown_dimension": "North American Industry Classification System (NAICS)"
+  }
+}
