@@ -13,31 +13,59 @@ toc: false
 
 ## December 2025
 
-**[Manufacturing sales down 1.0% in October 2025](/en/manufacturing-sales-october-2025/)**
-<br><span style="font-size: 0.875rem; color: #666;">Released: 2025-12-25 · Table 16-10-0047</span>
+**[Real GDP down 0.3% in October 2025](/en/gdp-october-2025/)**
+<br><span style="font-size: 0.875rem; color: #666;">Released: 2025-12-23 · Table 36-10-0434</span>
 
-Manufacturing sales fell 1.0% to $71.5 billion in October 2025. Food manufacturing led all industries at $13.2 billion.
-
----
-
-**[Food services sales up 0.6% in October 2025](/en/food-services-october-2025/)**
-<br><span style="font-size: 0.875rem; color: #666;">Released: 2025-12-25 · Table 21-10-0019</span>
-
-Food services and drinking places sales rose 0.6% to $8.5 billion in October 2025, up 5.2% year over year.
-
----
-
-**[Electric power generation down 6.7% in September 2025](/en/electricity-generation-september-2025/)**
-<br><span style="font-size: 0.875rem; color: #666;">Released: 2025-12-25 · Table 25-10-0015</span>
-
-Electric power generation fell to 44.4 TWh in September. Hydroelectric power accounted for 52% of total generation.
+Real gross domestic product decreased 0.3% in October 2025, following a 0.2% gain in September. Year over year, GDP was up 0.4%.
 
 ---
 
 **[Airline passengers up 2.2% in October 2025](/en/airline-passengers-october-2025/)**
 <br><span style="font-size: 0.875rem; color: #666;">Released: 2025-12-23 · Table 23-10-0079</span>
 
-Major Canadian airlines carried 7.1 million passengers in October 2025, up 2.2% year over year. Load factor rose to 83.3%, the first year-over-year increase since December 2024.
+Major Canadian airlines carried 7.1 million passengers in October 2025, up 2.2% year over year. Load factor rose to 83.3%.
+
+---
+
+**[Manufacturing sales down 1.0% in October 2025](/en/manufacturing-sales-october-2025/)**
+<br><span style="font-size: 0.875rem; color: #666;">Released: 2025-12-22 · Table 16-10-0047</span>
+
+Manufacturing sales fell 1.0% to $71.5 billion in October 2025. Food manufacturing led all industries at $13.2 billion.
+
+---
+
+**[Housing starts at 254,058 units in November 2025](/en/housing-starts-november-2025/)**
+<br><span style="font-size: 0.875rem; color: #666;">Released: 2025-12-19 · Table 34-10-0158</span>
+
+Housing starts rose 9.4% to a seasonally adjusted annual rate of 254,058 units in November 2025.
+
+---
+
+**[New housing prices unchanged in November 2025](/en/new-housing-price-index-november-2025/)**
+<br><span style="font-size: 0.875rem; color: #666;">Released: 2025-12-19 · Table 18-10-0205</span>
+
+The New Housing Price Index was unchanged (0.0%) in November 2025. Year over year, new housing prices were down 1.9%.
+
+---
+
+**[Merchandise exports up 6.3% in October 2025](/en/trade-october-2025/)**
+<br><span style="font-size: 0.875rem; color: #666;">Released: 2025-12-18 · Table 12-10-0011</span>
+
+Merchandise exports increased 6.3% to $64.2 billion in October 2025, while imports declined 4.1% to $66.8 billion.
+
+---
+
+**[Food services sales up 0.6% in October 2025](/en/food-services-october-2025/)**
+<br><span style="font-size: 0.875rem; color: #666;">Released: 2025-12-17 · Table 21-10-0019</span>
+
+Food services and drinking places sales rose 0.6% to $8.5 billion in October 2025, up 5.2% year over year.
+
+---
+
+**[Electric power generation down 6.7% in September 2025](/en/electricity-generation-september-2025/)**
+<br><span style="font-size: 0.875rem; color: #666;">Released: 2025-12-16 · Table 25-10-0015</span>
+
+Electric power generation fell to 44.4 TWh in September. Hydroelectric power accounted for 52% of total generation.
 
 ---
 
