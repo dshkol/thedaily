@@ -104,8 +104,8 @@ display(Plot.plot({
   width: 640,
   height: 380,
   marginLeft: 220,
-  marginRight: 60,
-  x: {domain: [-1.5, 2], grid: true, label: "Variation en pourcentage"},
+  marginRight: 70,
+  x: {domain: [-1.5, 2.5], grid: true, label: "Variation en pourcentage"},
   y: {label: null},
   marks: [
     Plot.ruleX([0]),
@@ -117,11 +117,11 @@ display(Plot.plot({
     }),
     Plot.text(sectorData, {
       y: "sector",
-      x: d => d.change >= 0 ? 2 : -1.5,
-      text: d => (d.change >= 0 ? "+" : "") + d.change.toFixed(2).replace(".", ",") + " %",
-      textAnchor: d => d.change >= 0 ? "start" : "end",
-      dx: d => d.change >= 0 ? 5 : -5,
-      fill: "currentColor"
+      x: 2.5,
+      text: d => (d.change >= 0 ? "+" : "") + d.change.toFixed(1).replace(".", ",") + " %",
+      textAnchor: "end",
+      fill: "currentColor",
+      fontSize: 11
     })
   ]
 }));
@@ -132,8 +132,8 @@ display(Plot.plot({
 | Secteur | Octobre 2025 (en milliards $) | Variation mensuelle |
 |---------|------------------------------|---------------------|
 | Ensemble des industries | 2 325,9 | -0,3 % |
-| Industries productrices de services | — | — |
-| Industries productrices de biens | — | — |
+| Industries productrices de services | 1 621,4 | +0,1 % |
+| Industries productrices de biens | 704,5 | +0,7 % |
 
 *Remarque : Les ventilations détaillées par secteur sont disponibles dans le tableau 36-10-0434.*
 
