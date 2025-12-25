@@ -13,6 +13,27 @@ toc: false
 
 ## December 2025
 
+**[Manufacturing sales down 1.0% in October 2025](/en/manufacturing-sales-october-2025/)**
+<br><span style="font-size: 0.875rem; color: #666;">Released: 2025-12-25 · Table 16-10-0047</span>
+
+Manufacturing sales fell 1.0% to $71.5 billion in October 2025. Food manufacturing led all industries at $13.2 billion.
+
+---
+
+**[Food services sales up 0.6% in October 2025](/en/food-services-october-2025/)**
+<br><span style="font-size: 0.875rem; color: #666;">Released: 2025-12-25 · Table 21-10-0019</span>
+
+Food services and drinking places sales rose 0.6% to $8.5 billion in October 2025, up 5.2% year over year.
+
+---
+
+**[Electric power generation down 6.7% in September 2025](/en/electricity-generation-september-2025/)**
+<br><span style="font-size: 0.875rem; color: #666;">Released: 2025-12-25 · Table 25-10-0015</span>
+
+Electric power generation fell to 44.4 TWh in September. Hydroelectric power accounted for 52% of total generation.
+
+---
+
 **[Airline passengers up 2.2% in October 2025](/en/airline-passengers-october-2025/)**
 <br><span style="font-size: 0.875rem; color: #666;">Released: 2025-12-23 · Table 23-10-0079</span>
 
