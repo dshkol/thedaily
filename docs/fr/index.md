@@ -5,6 +5,10 @@ toc: false
 
 # Le Quotidien — Dernières publications
 
+<p class="feed-links">
+<a href="./archive/">Parcourir tous les articles dans les archives</a>
+</p>
+
 ---
 
 ## Décembre 2025
@@ -44,10 +48,10 @@ Les mises en chantier ont augmenté de 9,4 % pour atteindre un taux annualisé e
 
 ---
 
-**[Le PIB réel en hausse de 0,2 % en octobre 2025](/fr/pib-octobre-2025/)**
-<br><span style="font-size: 0.875rem; color: #666;">Diffusé : 2025-12-19 · Tableau 36-10-0434</span>
+**[Le PIB réel en baisse de 0,3 % en octobre 2025](/fr/pib-octobre-2025/)**
+<br><span style="font-size: 0.875rem; color: #666;">Diffusé : 2025-12-23 · Tableau 36-10-0434</span>
 
-Le produit intérieur brut réel a progressé de 0,2 % en octobre 2025, stimulé par les gains dans le secteur de la fabrication.
+Le produit intérieur brut réel a diminué de 0,3 % en octobre 2025, après une hausse de 0,2 % en septembre.
 
 ---
 

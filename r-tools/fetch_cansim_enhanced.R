@@ -252,6 +252,53 @@ if ("Products and product groups" %in% names(data)) {
 
   provincial_series <- NULL
 
+} else if ("Principal statistics" %in% names(data) ||
+           grepl("Manufacturers|Manufacturing", table_info$`Cube Title`, ignore.case = TRUE)) {
+  # Manufacturing table structure (e.g., 16-10-0047)
+  cat("Detected: Manufacturing table\n")
+  series_name <- "Manufacturing Sales"
+
+  naics_col <- names(data)[grepl("NAICS|Industry", names(data), ignore.case = TRUE)][1]
+  stats_col <- names(data)[grepl("Principal statistics|Operating|Statistic", names(data), ignore.case = TRUE)][1]
+
+  if (!is.null(naics_col) && !is.na(naics_col)) {
+    # Main series: Total manufacturing, Sales of goods manufactured
+    main_series <- data %>%
+      filter(
+        grepl("Manufacturing$|^Total, all|All industries", .data[[naics_col]], ignore.case = TRUE),
+        grepl("Sales of goods|Total sales|Sales$", .data[[stats_col]], ignore.case = TRUE)
+      ) %>%
+      arrange(Date)
+
+    # If no match, try broader filter
+    if (nrow(main_series) == 0) {
+      main_series <- data %>%
+        filter(grepl("Manufacturing|Total", .data[[naics_col]], ignore.case = TRUE)) %>%
+        slice(1:1000) %>%  # Limit to avoid memory issues
+        arrange(Date)
+    }
+
+    # Sub-series: Major manufacturing subsectors
+    sub_series <- data %>%
+      filter(
+        !grepl("Manufacturing$|^Total|All industries", .data[[naics_col]], ignore.case = TRUE),
+        grepl("Sales of goods|Total sales|Sales$", .data[[stats_col]], ignore.case = TRUE)
+      ) %>%
+      group_by(.data[[naics_col]]) %>%
+      filter(n() > 12) %>%
+      ungroup() %>%
+      arrange(.data[[naics_col]], Date)
+
+    breakdown_dimension <- naics_col
+  } else {
+    main_series <- data %>%
+      filter(GEO == "Canada" | is.na(GEO))
+    sub_series <- NULL
+    breakdown_dimension <- NULL
+  }
+
+  provincial_series <- NULL
+
 } else {
   # Generic: take Canada-level data
   cat("Detected: Generic table\n")
@@ -383,6 +430,220 @@ if (!is.null(cube_notes) && nrow(cube_notes) > 0) {
   }
 }
 
+# =============================================================================
+# DATA VALIDATION
+# =============================================================================
+cat("\n=== Running Data Validation ===\n")
+
+validation_results <- list(
+  passed = TRUE,
+  warnings = list(),
+  errors = list()
+)
+
+# 1. Data freshness check
+# Most monthly tables should have data within 2-3 months of current date
+validate_freshness <- function(latest_date, max_lag_months = 3) {
+  if (is.null(latest_date) || is.na(latest_date)) {
+    return(list(passed = FALSE, message = "No valid latest date found"))
+  }
+
+  today <- Sys.Date()
+  latest <- as.Date(latest_date)
+  lag_months <- as.numeric(difftime(today, latest, units = "days")) / 30
+
+  if (lag_months > max_lag_months) {
+    return(list(
+      passed = FALSE,
+      message = sprintf("Data is %.1f months old (max allowed: %d)", lag_months, max_lag_months),
+      lag_months = round(lag_months, 1)
+    ))
+  }
+
+  return(list(passed = TRUE, message = "Data freshness OK", lag_months = round(lag_months, 1)))
+}
+
+freshness_check <- validate_freshness(latest$Date)
+if (!freshness_check$passed) {
+  validation_results$warnings <- c(validation_results$warnings, list(freshness = freshness_check$message))
+  cat("WARNING:", freshness_check$message, "\n")
+} else {
+  cat("Freshness check:", freshness_check$message, "(lag:", freshness_check$lag_months, "months)\n")
+}
+
+# 2. Time series continuity check (detect gaps)
+validate_continuity <- function(df, expected_freq = "monthly") {
+  if (is.null(df) || nrow(df) < 2) {
+    return(list(passed = TRUE, message = "Not enough data to check continuity", gaps = list()))
+  }
+
+  dates <- sort(unique(df$Date))
+  gaps <- list()
+
+  for (i in 2:length(dates)) {
+    diff_days <- as.numeric(difftime(dates[i], dates[i-1], units = "days"))
+
+    # For monthly data, expect ~28-31 days between observations
+    if (expected_freq == "monthly" && diff_days > 45) {
+      gaps <- c(gaps, list(list(
+        from = as.character(dates[i-1]),
+        to = as.character(dates[i]),
+        days = diff_days
+      )))
+    }
+  }
+
+  if (length(gaps) > 0) {
+    return(list(
+      passed = FALSE,
+      message = sprintf("Found %d gap(s) in time series", length(gaps)),
+      gaps = gaps
+    ))
+  }
+
+  return(list(passed = TRUE, message = "No gaps detected", gaps = list()))
+}
+
+continuity_check <- validate_continuity(main_processed)
+if (!continuity_check$passed) {
+  validation_results$warnings <- c(validation_results$warnings, list(continuity = continuity_check$message))
+  cat("WARNING:", continuity_check$message, "\n")
+} else {
+  cat("Continuity check:", continuity_check$message, "\n")
+}
+
+# 3. Outlier detection (using 3 standard deviations)
+validate_outliers <- function(df, value_col = "VALUE", threshold = 3) {
+  if (is.null(df) || nrow(df) < 10) {
+    return(list(passed = TRUE, message = "Not enough data for outlier detection", outliers = list()))
+  }
+
+  values <- df[[value_col]]
+  values <- values[!is.na(values)]
+
+  if (length(values) < 10) {
+    return(list(passed = TRUE, message = "Not enough valid values", outliers = list()))
+  }
+
+  mean_val <- mean(values)
+  sd_val <- sd(values)
+
+  # For percentage changes, check those too
+  if ("mom_pct_change" %in% names(df)) {
+    pct_changes <- df$mom_pct_change[!is.na(df$mom_pct_change)]
+    mean_pct <- mean(pct_changes)
+    sd_pct <- sd(pct_changes)
+
+    outlier_pct <- df %>%
+      filter(!is.na(mom_pct_change)) %>%
+      filter(abs(mom_pct_change - mean_pct) > threshold * sd_pct)
+
+    if (nrow(outlier_pct) > 0) {
+      return(list(
+        passed = FALSE,
+        message = sprintf("Found %d unusual month-over-month changes", nrow(outlier_pct)),
+        outliers = outlier_pct %>%
+          select(Date, REF_DATE, VALUE, mom_pct_change) %>%
+          mutate(Date = as.character(Date)) %>%
+          as.list()
+      ))
+    }
+  }
+
+  return(list(passed = TRUE, message = "No outliers detected", outliers = list()))
+}
+
+outlier_check <- validate_outliers(main_processed)
+if (!outlier_check$passed) {
+  validation_results$warnings <- c(validation_results$warnings, list(outliers = outlier_check$message))
+  cat("WARNING:", outlier_check$message, "\n")
+} else {
+  cat("Outlier check:", outlier_check$message, "\n")
+}
+
+# 4. Required fields validation
+validate_required_fields <- function(latest_row) {
+  missing_fields <- c()
+
+  if (is.null(latest_row$VALUE) || is.na(latest_row$VALUE)) {
+    missing_fields <- c(missing_fields, "VALUE")
+  }
+  if (is.null(latest_row$REF_DATE) || is.na(latest_row$REF_DATE)) {
+    missing_fields <- c(missing_fields, "REF_DATE")
+  }
+  if (is.null(latest_row$mom_pct_change) || is.na(latest_row$mom_pct_change)) {
+    missing_fields <- c(missing_fields, "mom_pct_change")
+  }
+
+  if (length(missing_fields) > 0) {
+    return(list(
+      passed = FALSE,
+      message = paste("Missing required fields:", paste(missing_fields, collapse = ", ")),
+      missing = missing_fields
+    ))
+  }
+
+  return(list(passed = TRUE, message = "All required fields present", missing = list()))
+}
+
+required_check <- validate_required_fields(latest)
+if (!required_check$passed) {
+  validation_results$errors <- c(validation_results$errors, list(required = required_check$message))
+  validation_results$passed <- FALSE
+  cat("ERROR:", required_check$message, "\n")
+} else {
+  cat("Required fields check:", required_check$message, "\n")
+}
+
+# 5. Value range validation (sanity checks)
+validate_value_ranges <- function(latest_row, series_type) {
+  issues <- c()
+
+  # For CPI, values should be roughly 100-200 (2002=100 base)
+  if (series_type == "Consumer Price Index") {
+    if (!is.na(latest_row$VALUE) && (latest_row$VALUE < 50 || latest_row$VALUE > 300)) {
+      issues <- c(issues, sprintf("CPI value %.1f outside expected range (50-300)", latest_row$VALUE))
+    }
+  }
+
+  # MoM changes typically shouldn't exceed ±10% for most economic indicators
+  if (!is.na(latest_row$mom_pct_change) && abs(latest_row$mom_pct_change) > 10) {
+    issues <- c(issues, sprintf("MoM change %.2f%% seems unusually large", latest_row$mom_pct_change))
+  }
+
+  # YoY changes typically shouldn't exceed ±50%
+  if (!is.na(latest_row$yoy_pct_change) && abs(latest_row$yoy_pct_change) > 50) {
+    issues <- c(issues, sprintf("YoY change %.2f%% seems unusually large", latest_row$yoy_pct_change))
+  }
+
+  if (length(issues) > 0) {
+    return(list(passed = FALSE, message = paste(issues, collapse = "; "), issues = issues))
+  }
+
+  return(list(passed = TRUE, message = "Value ranges OK", issues = list()))
+}
+
+range_check <- validate_value_ranges(latest, series_name)
+if (!range_check$passed) {
+  validation_results$warnings <- c(validation_results$warnings, list(ranges = range_check$message))
+  cat("WARNING:", range_check$message, "\n")
+} else {
+  cat("Value ranges check:", range_check$message, "\n")
+}
+
+# Update overall validation status
+if (length(validation_results$errors) > 0) {
+  validation_results$passed <- FALSE
+}
+
+cat("\nValidation result:", if (validation_results$passed) "PASSED" else "FAILED/WARNINGS", "\n")
+if (length(validation_results$warnings) > 0) {
+  cat("Warnings:", length(validation_results$warnings), "\n")
+}
+if (length(validation_results$errors) > 0) {
+  cat("Errors:", length(validation_results$errors), "\n")
+}
+
 # Build comprehensive output structure
 output <- list(
   metadata = list(
@@ -455,7 +716,21 @@ output <- list(
   } else NULL,
 
   # Definitions and notes
-  definitions = definitions
+  definitions = definitions,
+
+  # Validation results
+  validation = list(
+    passed = validation_results$passed,
+    warnings = validation_results$warnings,
+    errors = validation_results$errors,
+    checks = list(
+      freshness = freshness_check,
+      continuity = continuity_check,
+      outliers = outlier_check,
+      required_fields = required_check,
+      value_ranges = range_check
+    )
+  )
 )
 
 # Write output

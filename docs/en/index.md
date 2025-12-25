@@ -5,6 +5,10 @@ toc: false
 
 # The Daily — Latest Releases
 
+<p class="feed-links">
+<a href="./archive/">Browse all articles in the archive</a>
+</p>
+
 ---
 
 ## December 2025
@@ -44,10 +48,10 @@ Housing starts rose 9.4% to a seasonally adjusted annual rate of 254,058 units i
 
 ---
 
-**[Real GDP up 0.2% in October 2025](/en/gdp-october-2025/)**
-<br><span style="font-size: 0.875rem; color: #666;">Released: 2025-12-19 · Table 36-10-0434</span>
+**[Real GDP down 0.3% in October 2025](/en/gdp-october-2025/)**
+<br><span style="font-size: 0.875rem; color: #666;">Released: 2025-12-23 · Table 36-10-0434</span>
 
-Real gross domestic product increased 0.2% in October 2025, driven by gains in manufacturing.
+Real gross domestic product decreased 0.3% in October 2025, following a gain of 0.2% in September.
 
 ---
 

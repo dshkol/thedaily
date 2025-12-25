@@ -12,10 +12,173 @@ import re
 from pathlib import Path
 from datetime import datetime
 from typing import Dict, List, Any, Optional
+import logging
+import sys
+
+# Set up logging
+logging.basicConfig(
+    level=logging.INFO,
+    format='%(levelname)s: %(message)s'
+)
+logger = logging.getLogger(__name__)
 
 # Global translations dictionary (loaded at runtime)
 TRANSLATIONS: Dict[str, Any] = {}
 LANG: str = "en"
+
+
+# =============================================================================
+# PRE-GENERATION VALIDATION
+# =============================================================================
+
+class ValidationError(Exception):
+    """Raised when data validation fails critically."""
+    pass
+
+
+class ValidationResult:
+    """Result of data validation with errors and warnings."""
+    def __init__(self):
+        self.errors: List[str] = []
+        self.warnings: List[str] = []
+
+    def add_error(self, msg: str):
+        self.errors.append(msg)
+        logger.error(msg)
+
+    def add_warning(self, msg: str):
+        self.warnings.append(msg)
+        logger.warning(msg)
+
+    @property
+    def is_valid(self) -> bool:
+        return len(self.errors) == 0
+
+    def summary(self) -> str:
+        if self.is_valid and not self.warnings:
+            return "Validation passed with no issues"
+        elif self.is_valid:
+            return f"Validation passed with {len(self.warnings)} warning(s)"
+        else:
+            return f"Validation FAILED: {len(self.errors)} error(s), {len(self.warnings)} warning(s)"
+
+
+def validate_data(data: Dict[str, Any], strict: bool = False) -> ValidationResult:
+    """
+    Validate JSON data before article generation.
+
+    Args:
+        data: The loaded JSON data from R script
+        strict: If True, treat warnings as errors
+
+    Returns:
+        ValidationResult with errors and warnings
+    """
+    result = ValidationResult()
+
+    # 1. Check required top-level fields
+    required_fields = ["metadata", "latest", "time_series"]
+    for field in required_fields:
+        if field not in data:
+            result.add_error(f"Missing required field: {field}")
+        elif data[field] is None:
+            result.add_error(f"Field '{field}' is null")
+
+    if not result.is_valid:
+        return result  # Can't continue without these fields
+
+    # 2. Validate metadata
+    metadata = data.get("metadata", {})
+    required_metadata = ["table_number", "table_title", "reference_period"]
+    for field in required_metadata:
+        if not metadata.get(field):
+            result.add_error(f"Missing metadata field: {field}")
+
+    # 3. Validate latest data point
+    latest = data.get("latest", {})
+    if latest.get("value") is None:
+        result.add_error("Latest value is missing or null")
+    if latest.get("ref_date") is None:
+        result.add_error("Latest ref_date is missing")
+
+    if latest.get("mom_pct_change") is None:
+        result.add_warning("Month-over-month change is missing")
+    if latest.get("yoy_pct_change") is None:
+        result.add_warning("Year-over-year change is missing")
+
+    # 4. Validate date freshness
+    if latest.get("ref_date"):
+        try:
+            ref_date = datetime.strptime(latest["ref_date"], "%Y-%m")
+            age_days = (datetime.now() - ref_date).days
+            age_months = age_days / 30
+
+            if age_months > 6:
+                result.add_error(f"Data is too old: {age_months:.1f} months (max 6)")
+            elif age_months > 3:
+                result.add_warning(f"Data is {age_months:.1f} months old")
+        except ValueError:
+            result.add_warning(f"Could not parse ref_date: {latest['ref_date']}")
+
+    # 5. Validate time series length
+    time_series = data.get("time_series", [])
+    if isinstance(time_series, list):
+        ts_length = len(time_series)
+        if ts_length < 6:
+            result.add_error(f"Time series too short: {ts_length} points (min 6)")
+        elif ts_length < 12:
+            result.add_warning(f"Time series has only {ts_length} points (recommend 12+)")
+    else:
+        result.add_error("Time series is not a list")
+
+    # 6. Check for subseries and provincial data (optional but informative)
+    if not data.get("subseries"):
+        result.add_warning("No subseries breakdown data available")
+    if not data.get("provincial"):
+        result.add_warning("No provincial breakdown data available")
+
+    # 7. Check R script validation results if present
+    r_validation = data.get("validation", {})
+    if r_validation:
+        if not r_validation.get("passed", True):
+            r_errors = r_validation.get("errors", {})
+            for key, msg in r_errors.items() if isinstance(r_errors, dict) else []:
+                result.add_error(f"R validation error ({key}): {msg}")
+
+        r_warnings = r_validation.get("warnings", {})
+        if isinstance(r_warnings, dict):
+            for key, msg in r_warnings.items():
+                result.add_warning(f"R validation warning ({key}): {msg}")
+        elif isinstance(r_warnings, list):
+            for msg in r_warnings:
+                result.add_warning(f"R validation: {msg}")
+
+    # 8. Sanity check values
+    if latest.get("value") is not None:
+        value = latest["value"]
+        series_name = metadata.get("series_name", "")
+
+        if series_name == "Consumer Price Index":
+            if value < 50 or value > 300:
+                result.add_error(f"CPI value {value:.1f} outside expected range (50-300)")
+
+        if latest.get("mom_pct_change") is not None:
+            mom = latest["mom_pct_change"]
+            if abs(mom) > 15:
+                result.add_warning(f"Large month-over-month change: {mom:.1f}%")
+
+        if latest.get("yoy_pct_change") is not None:
+            yoy = latest["yoy_pct_change"]
+            if abs(yoy) > 50:
+                result.add_warning(f"Large year-over-year change: {yoy:.1f}%")
+
+    # Convert warnings to errors if strict mode
+    if strict and result.warnings:
+        for warning in result.warnings:
+            result.errors.append(f"[strict] {warning}")
+        result.warnings.clear()
+
+    return result
 
 
 def load_translations(lang: str = "en") -> Dict[str, Any]:
@@ -97,6 +260,22 @@ def generate_headline(data: Dict[str, Any]) -> str:
             else:
                 return f"Retail sales unchanged in {period}"
 
+    elif series_name == "Manufacturing Sales":
+        if LANG == "fr":
+            if mom_change > 0:
+                return f"Les ventes du secteur de la fabrication en hausse de {mom_change:.1f} % en {period}"
+            elif mom_change < 0:
+                return f"Les ventes du secteur de la fabrication en baisse de {abs(mom_change):.1f} % en {period}"
+            else:
+                return f"Les ventes du secteur de la fabrication inchangées en {period}"
+        else:
+            if mom_change > 0:
+                return f"Manufacturing sales up {mom_change:.1f}% in {period}"
+            elif mom_change < 0:
+                return f"Manufacturing sales down {abs(mom_change):.1f}% in {period}"
+            else:
+                return f"Manufacturing sales unchanged in {period}"
+
     else:
         title_short = metadata["table_title"].split(",")[0]
         if mom_change != 0:
@@ -129,6 +308,10 @@ def generate_slug(data: Dict[str, Any]) -> str:
         if LANG == "fr":
             return f"ventes-detail-{month}-{year}"
         return f"retail-sales-{month}-{year}"
+    elif series_name == "Manufacturing Sales":
+        if LANG == "fr":
+            return f"fabrication-{month}-{year}"
+        return f"manufacturing-{month}-{year}"
     else:
         slug = series_name.lower().replace(" ", "-")
         return f"{slug}-{month}-{year}"
@@ -210,6 +393,23 @@ def generate_lede(data: Dict[str, Any]) -> str:
         if LANG == "fr":
             return f"Les ventes au détail ont totalisé {value_str} en {period}."
         return f"Retail sales totalled {value_str} in {period}."
+
+    elif series_name == "Manufacturing Sales":
+        value_str = f"${value/1000:.1f} billion"
+        if LANG == "fr":
+            direction = "augmenté" if mom > 0 else "diminué"
+            lede = f"Les ventes du secteur de la fabrication ont {direction} de {abs(mom):.1f} % en {period}"
+            lede += f", totalisant {value_str}."
+            if yoy is not None and yoy != 0:
+                lede += f" Par rapport au même mois un an plus tôt, les ventes ont augmenté de {yoy:.1f} %."
+            return lede
+        else:
+            direction = "increased" if mom > 0 else "decreased"
+            lede = f"Manufacturing sales {direction} {abs(mom):.1f}% in {period}"
+            lede += f", totalling {value_str}."
+            if yoy is not None and yoy != 0:
+                lede += f" Compared with the same month a year earlier, sales were up {yoy:.1f}%."
+            return lede
 
     return ""
 
@@ -426,6 +626,16 @@ def generate_note_to_readers(data: Dict[str, Any]) -> str:
             return "Les ventes au détail représentent la valeur de toutes les ventes effectuées par l'intermédiaire des canaux de vente au détail. Les données sont désaisonnalisées."
         return "Retail sales represent the value of all sales made through retail channels. Data are seasonally adjusted."
 
+    elif series_name == "Manufacturing Sales":
+        if LANG == "fr":
+            p1 = "L'enquête mensuelle sur les industries manufacturières mesure les ventes de biens fabriqués, les stocks et les commandes dans le secteur de la fabrication."
+            p2 = "Les données sont désaisonnalisées pour tenir compte des variations saisonnières régulières."
+            return f"{p1}\n\n{p2}"
+        else:
+            p1 = "The Monthly Survey of Manufacturing measures sales of goods manufactured, inventories and orders in the manufacturing sector."
+            p2 = "Data are seasonally adjusted to account for regular seasonal variations."
+            return f"{p1}\n\n{p2}"
+
     return ""
 
 
@@ -497,13 +707,41 @@ def generate_provincial_narrative(data: Dict[str, Any]) -> str:
         return f"Price increases varied across provinces and territories. {top_prov} recorded the highest year-over-year increase at {top_yoy:.1f}%, driven by rising shelter and transportation costs. {bottom_prov} showed the lowest increase at {bottom_yoy:.1f}%."
 
 
-def generate_article(data_path: str, output_dir: str, lang: str = "en") -> str:
-    """Generate a complete Observable markdown article from data JSON."""
+def generate_article(data_path: str, output_dir: str, lang: str = "en",
+                     strict: bool = False, skip_validation: bool = False) -> str:
+    """
+    Generate a complete Observable markdown article from data JSON.
+
+    Args:
+        data_path: Path to the JSON data file
+        output_dir: Output directory for Observable site
+        lang: Language for article generation ('en' or 'fr')
+        strict: Treat validation warnings as errors
+        skip_validation: Skip validation (not recommended)
+
+    Returns:
+        Path to the generated article
+
+    Raises:
+        ValidationError: If data validation fails
+    """
     load_translations(lang)
 
     # Load data
     with open(data_path, "r") as f:
         data = json.load(f)
+
+    # Run pre-generation validation
+    if not skip_validation:
+        logger.info(f"Validating data from {data_path}...")
+        validation = validate_data(data, strict=strict)
+        logger.info(validation.summary())
+
+        if not validation.is_valid:
+            raise ValidationError(
+                f"Data validation failed: {validation.errors}\n"
+                "Use --skip-validation to bypass (not recommended)"
+            )
 
     # Generate content
     headline = generate_headline(data)
@@ -647,7 +885,39 @@ if __name__ == "__main__":
                         help="Output directory for Observable site (default: docs)")
     parser.add_argument("--lang", choices=["en", "fr"], default="en",
                         help="Language for article generation (default: en)")
+    parser.add_argument("--strict", action="store_true",
+                        help="Treat validation warnings as errors")
+    parser.add_argument("--skip-validation", action="store_true",
+                        help="Skip data validation (not recommended)")
+    parser.add_argument("--validate-only", action="store_true",
+                        help="Only validate data, don't generate article")
 
     args = parser.parse_args()
 
-    generate_article(args.data_path, args.output_dir, lang=args.lang)
+    # Validate-only mode
+    if args.validate_only:
+        with open(args.data_path, "r") as f:
+            data = json.load(f)
+        result = validate_data(data, strict=args.strict)
+        print(result.summary())
+        if result.warnings:
+            print("\nWarnings:")
+            for w in result.warnings:
+                print(f"  - {w}")
+        if result.errors:
+            print("\nErrors:")
+            for e in result.errors:
+                print(f"  - {e}")
+        sys.exit(0 if result.is_valid else 1)
+
+    try:
+        generate_article(
+            args.data_path,
+            args.output_dir,
+            lang=args.lang,
+            strict=args.strict,
+            skip_validation=args.skip_validation
+        )
+    except ValidationError as e:
+        logger.error(str(e))
+        sys.exit(1)

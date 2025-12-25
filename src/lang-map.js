@@ -1,6 +1,9 @@
 // Language slug mapping: EN slug -> FR slug
 // This file is updated automatically when new articles are generated
 export const slugMap = {
+  // Static pages
+  'archive': 'archive',
+  // Articles
   'airline-passengers-october-2025': 'passagers-aeriens-octobre-2025',
   'cpi-november-2025': 'ipc-novembre-2025',
   'lfs-november-2025': 'epa-novembre-2025',
