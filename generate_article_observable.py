@@ -36,6 +36,11 @@ class ValidationError(Exception):
     pass
 
 
+class ReviewError(Exception):
+    """Raised when article review finds unfixable issues."""
+    pass
+
+
 class ValidationResult:
     """Result of data validation with errors and warnings."""
     def __init__(self):
@@ -179,6 +184,241 @@ def validate_data(data: Dict[str, Any], strict: bool = False) -> ValidationResul
         result.warnings.clear()
 
     return result
+
+
+# =============================================================================
+# POST-GENERATION SELF-REVIEW
+# =============================================================================
+
+class ReviewResult:
+    """Result of article self-review with issues found/fixed."""
+    def __init__(self):
+        self.issues_found: List[str] = []
+        self.issues_fixed: List[str] = []
+        self.issues_unfixed: List[str] = []
+
+    def add_found(self, issue: str):
+        self.issues_found.append(issue)
+        logger.info(f"Review found: {issue}")
+
+    def add_fixed(self, issue: str, fix_description: str):
+        self.issues_fixed.append(f"{issue} -> {fix_description}")
+        logger.info(f"Review fixed: {issue} -> {fix_description}")
+
+    def add_unfixed(self, issue: str, reason: str):
+        self.issues_unfixed.append(f"{issue}: {reason}")
+        logger.warning(f"Review could not fix: {issue} ({reason})")
+
+    @property
+    def has_unfixed_issues(self) -> bool:
+        return len(self.issues_unfixed) > 0
+
+    def summary(self) -> str:
+        total = len(self.issues_found)
+        fixed = len(self.issues_fixed)
+        unfixed = len(self.issues_unfixed)
+        if total == 0:
+            return "Self-review passed: no issues found"
+        elif unfixed == 0:
+            return f"Self-review: found {total} issue(s), all fixed"
+        else:
+            return f"Self-review: found {total} issue(s), fixed {fixed}, {unfixed} unfixed"
+
+
+def review_and_fix_article(markdown: str, data: Dict[str, Any], lang: str = "en") -> tuple:
+    """
+    Review generated article markdown and fix common issues.
+
+    This function examines the generated content for:
+    - Placeholder text (—, TBD, TODO, [placeholder], etc.)
+    - Empty sections (## heading followed by another ## or end)
+    - Tables with missing values
+    - Incomplete data that could be filled from source
+
+    Args:
+        markdown: The generated article markdown
+        data: The source data JSON (for filling missing values)
+        lang: Language code for formatting
+
+    Returns:
+        Tuple of (fixed_markdown, ReviewResult)
+    """
+    result = ReviewResult()
+    fixed_md = markdown
+
+    # Pattern definitions for common issues
+    placeholder_patterns = [
+        (r'\| [^|]*— [^|]*\|', 'em-dash placeholder in table'),
+        (r'\| [^|]*—\|', 'em-dash placeholder in table'),
+        (r'\bTBD\b', 'TBD placeholder'),
+        (r'\bTODO\b', 'TODO placeholder'),
+        (r'\[placeholder\]', 'placeholder marker'),
+        (r'\[TBD\]', 'TBD marker'),
+        (r'\$0\.0 billion', 'zero dollar value'),
+        (r'\+0\.0%\s*\|', 'zero percent in table (may be intentional)'),
+    ]
+
+    # Check for placeholder patterns
+    for pattern, description in placeholder_patterns:
+        matches = re.findall(pattern, fixed_md, re.IGNORECASE)
+        if matches:
+            result.add_found(f"{description} ({len(matches)} occurrence(s))")
+
+            # Attempt to fix based on pattern type
+            if 'em-dash' in description:
+                fixed_md, fixed_count = _fix_table_placeholders(fixed_md, data, lang, result)
+
+    # Check for empty sections
+    empty_section_pattern = r'## ([^\n]+)\n\n(?=## |\n*$|\n*<div)'
+    empty_matches = re.findall(empty_section_pattern, fixed_md)
+    for section_title in empty_matches:
+        result.add_found(f"Empty section: '{section_title}'")
+        # Can't auto-fix empty sections - need content generation
+        result.add_unfixed(f"Empty section '{section_title}'", "requires content generation")
+
+    # Check for very short content sections (less than 50 chars between headers)
+    short_section_pattern = r'## ([^\n]+)\n\n(.{1,50})\n\n(?=## |<div)'
+    short_matches = re.findall(short_section_pattern, fixed_md)
+    for section_title, content in short_matches:
+        if not content.strip().startswith('```'):  # Ignore if it's just a code block
+            result.add_found(f"Very short section: '{section_title}' ({len(content)} chars)")
+
+    # Check for tables with all placeholder values
+    table_pattern = r'\|[^\n]+\|\n\|[-|]+\|\n((?:\|[^\n]+\|\n)+)'
+    for match in re.finditer(table_pattern, fixed_md):
+        table_content = match.group(1)
+        placeholder_count = table_content.count('—')
+        row_count = table_content.count('\n')
+        if placeholder_count > 0 and placeholder_count >= row_count:
+            result.add_found(f"Table with many placeholders ({placeholder_count} in {row_count} rows)")
+
+    # Check for missing highlights
+    if '**Highlights**' in fixed_md or '**Faits saillants**' in fixed_md:
+        highlights_pattern = r'\*\*(Highlights|Faits saillants)\*\*\n\n((?:- [^\n]+\n)*)'
+        match = re.search(highlights_pattern, fixed_md)
+        if match:
+            highlights_content = match.group(2)
+            highlight_count = highlights_content.count('- ')
+            if highlight_count < 2:
+                result.add_found(f"Too few highlights ({highlight_count})")
+
+    # Check for duplicate content
+    paragraphs = re.findall(r'\n\n([^#<\n][^\n]{50,})', fixed_md)
+    seen_paragraphs = {}
+    for para in paragraphs:
+        para_normalized = para.strip().lower()[:100]
+        if para_normalized in seen_paragraphs:
+            result.add_found(f"Duplicate paragraph starting with: '{para[:50]}...'")
+        seen_paragraphs[para_normalized] = True
+
+    return fixed_md, result
+
+
+def _fix_table_placeholders(markdown: str, data: Dict[str, Any], lang: str, result: ReviewResult) -> tuple:
+    """
+    Attempt to fix table placeholder values using source data.
+
+    Returns:
+        Tuple of (fixed_markdown, count_of_fixes)
+    """
+    fixed_md = markdown
+    fix_count = 0
+
+    # Try to identify what kind of table has placeholders and fill from data
+
+    # Pattern 1: Sector breakdown tables (GDP-style)
+    # Look for rows like "| Services-producing industries | — | — |"
+    sector_patterns = {
+        'Services-producing industries': ('subseries', 'Services-producing industries'),
+        'Goods-producing industries': ('subseries', 'Goods-producing industries'),
+        'Industries productrices de services': ('subseries', 'Services-producing industries'),
+        'Industries productrices de biens': ('subseries', 'Goods-producing industries'),
+    }
+
+    for display_name, (data_key, lookup_name) in sector_patterns.items():
+        pattern = rf'\| {re.escape(display_name)} \| — \| — \|'
+        if re.search(pattern, fixed_md):
+            # Try to find the value in subseries data
+            subseries = data.get('subseries', {})
+            if subseries and 'category' in subseries:
+                categories = subseries.get('category', [])
+                values = subseries.get('value', [])
+                mom_changes = subseries.get('mom_pct_change', [])
+
+                for i, cat in enumerate(categories):
+                    if lookup_name.lower() in cat.lower():
+                        value = values[i] if i < len(values) else None
+                        mom = mom_changes[i] if i < len(mom_changes) else None
+
+                        if value is not None and mom is not None:
+                            if lang == 'fr':
+                                value_str = f"{value:,.1f}".replace(",", " ").replace(".", ",")
+                                mom_str = f"+{mom:.1f}".replace(".", ",") if mom >= 0 else f"{mom:.1f}".replace(".", ",")
+                                replacement = f"| {display_name} | {value_str} | {mom_str} % |"
+                            else:
+                                value_str = f"{value:,.1f}"
+                                mom_str = f"+{mom:.1f}" if mom >= 0 else f"{mom:.1f}"
+                                replacement = f"| {display_name} | {value_str} | {mom_str}% |"
+
+                            fixed_md = re.sub(pattern, replacement, fixed_md)
+                            result.add_fixed(
+                                f"Placeholder in '{display_name}' row",
+                                f"filled with value={value:.1f}, change={mom:.1f}%"
+                            )
+                            fix_count += 1
+                            break
+
+    # Pattern 2: Provincial comparison tables with "vs nationale" column
+    # Look for rows like "| Province | +2.2% | — |"
+    provincial_vs_pattern = r'\| ([^|]+) \| \+?(\d+[.,]\d+) %? \| — \|'
+    matches = list(re.finditer(provincial_vs_pattern, fixed_md))
+
+    if matches and data.get('latest', {}).get('yoy_pct_change') is not None:
+        national_rate = data['latest']['yoy_pct_change']
+
+        for match in matches:
+            province = match.group(1).strip()
+            prov_rate_str = match.group(2).replace(',', '.')
+            try:
+                prov_rate = float(prov_rate_str)
+                diff = prov_rate - national_rate
+
+                if lang == 'fr':
+                    if abs(diff) < 0.05:
+                        diff_str = "0,0 pp"
+                    else:
+                        diff_str = f"+{diff:.1f}".replace(".", ",") if diff >= 0 else f"{diff:.1f}".replace(".", ",")
+                        diff_str += " pp"
+                else:
+                    if abs(diff) < 0.05:
+                        diff_str = "0.0 pp"
+                    else:
+                        diff_str = f"+{diff:.1f} pp" if diff >= 0 else f"{diff:.1f} pp"
+
+                old_str = match.group(0)
+                new_str = old_str.replace('— |', f'{diff_str} |')
+                fixed_md = fixed_md.replace(old_str, new_str)
+
+                result.add_fixed(
+                    f"Placeholder in '{province}' vs national column",
+                    f"calculated diff={diff:.1f}pp"
+                )
+                fix_count += 1
+            except ValueError:
+                result.add_unfixed(
+                    f"Placeholder in '{province}' row",
+                    f"could not parse rate '{prov_rate_str}'"
+                )
+
+    # If we found placeholders but couldn't fix them, note that
+    remaining_placeholders = len(re.findall(r'\| [^|]*—[^|]* \|', fixed_md))
+    if remaining_placeholders > 0:
+        result.add_unfixed(
+            f"{remaining_placeholders} remaining placeholder(s)",
+            "no matching data in source JSON"
+        )
+
+    return fixed_md, fix_count
 
 
 def load_translations(lang: str = "en") -> Dict[str, Any]:
@@ -862,6 +1102,21 @@ title: {headline}
 </div>
 """
 
+    # Run self-review and attempt fixes
+    logger.info("Running self-review...")
+    md, review_result = review_and_fix_article(md, data, lang)
+    logger.info(review_result.summary())
+
+    if review_result.issues_fixed:
+        logger.info("Issues auto-fixed:")
+        for fix in review_result.issues_fixed:
+            logger.info(f"  ✓ {fix}")
+
+    if review_result.issues_unfixed:
+        logger.warning("Issues requiring attention:")
+        for issue in review_result.issues_unfixed:
+            logger.warning(f"  ⚠ {issue}")
+
     # Write output
     output_path = Path(output_dir) / lang / slug / "index.md"
     output_path.parent.mkdir(parents=True, exist_ok=True)
@@ -872,6 +1127,7 @@ title: {headline}
     print(f"Observable article generated: {output_path}")
     print(f"Headline: {headline}")
     print(f"Slug: {slug}")
+    print(f"Review: {review_result.summary()}")
 
     return str(output_path)
 
