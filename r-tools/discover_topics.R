@@ -267,14 +267,107 @@ print_regional_results <- function(results) {
   cat("\n")
 }
 
+# Load configured tables from table_configs.json
+load_configured_tables <- function() {
+  config_paths <- c(
+    "r-tools/table_configs.json",
+    "table_configs.json"
+  )
+  for (p in config_paths) {
+    if (file.exists(p)) {
+      configs <- jsonlite::fromJSON(p)
+      return(names(configs))
+    }
+  }
+  return(c())
+}
+
+# Filter discovery to only configured tables
+discover_configured_topics <- function(existing_sectors = c(), top_n = 10) {
+  configured <- load_configured_tables()
+  if (length(configured) == 0) {
+    cat("Warning: No table_configs.json found. Showing all tables.\n")
+    return(discover_topics(existing_sectors, top_n))
+  }
+
+  cat(sprintf("Filtering to %d configured tables...\n", length(configured)))
+
+  # Get standard discovery results
+  all_results <- discover_topics(existing_sectors, top_n = 100)
+
+  # Filter to configured tables
+  filtered <- all_results %>%
+    filter(cansim_table_number %in% configured)
+
+  cat(sprintf("Found %d configured tables with recent data\n", nrow(filtered)))
+
+  # Return top N
+  head(filtered, top_n)
+}
+
+# Save results to JSON for automation
+save_discovery_json <- function(results, output_dir = "output") {
+  library(jsonlite)
+
+  dir.create(output_dir, showWarnings = FALSE, recursive = TRUE)
+  output_file <- file.path(output_dir, "discovery_results.json")
+
+  json_results <- list(
+    discovery_date = as.character(Sys.Date()),
+    n_candidates = nrow(results),
+    candidates = lapply(1:nrow(results), function(i) {
+      row <- results[i, ]
+      list(
+        rank = i,
+        table_number = row$cansim_table_number,
+        title = row$cubeTitleEn,
+        sector = row$sector,
+        data_end_date = as.character(row$cubeEndDate),
+        score = row$score,
+        score_breakdown = list(
+          recency = row$recency,
+          diversity = row$diversity,
+          interest = row$interest
+        )
+      )
+    }),
+    recommendation = if (nrow(results) > 0) {
+      list(
+        table_number = results$cansim_table_number[1],
+        title = results$cubeTitleEn[1],
+        sector = results$sector[1],
+        score = results$score[1]
+      )
+    } else NULL
+  )
+
+  write_json(json_results, output_file, pretty = TRUE, auto_unbox = TRUE)
+  cat(sprintf("Results saved to: %s\n", output_file))
+}
+
 # Run if executed directly
 if (!interactive()) {
   args <- commandArgs(trailingOnly = TRUE)
 
-  # Check for --regional flag
-  if ("--regional" %in% args) {
+  # Parse flags
+  output_json <- "--json" %in% args
+  configured_only <- "--configured" %in% args
+  regional_mode <- "--regional" %in% args
+  output_dir <- "output"
+
+  # Check for output directory argument
+  for (arg in args) {
+    if (grepl("^--output=", arg)) {
+      output_dir <- sub("^--output=", "", arg)
+    }
+  }
+
+  # Filter out flags from args
+  sector_args <- args[!grepl("^--", args)]
+
+  if (regional_mode) {
     # Regional analysis mode
-    table_args <- args[!args %in% c("--regional")]
+    table_args <- sector_args
     if (length(table_args) > 0) {
       tables <- strsplit(table_args[1], ",")[[1]]
       cat(sprintf("Analyzing regional variance for: %s\n",
@@ -291,13 +384,24 @@ if (!interactive()) {
   } else {
     # Standard topic discovery mode
     existing_sectors <- c()
-    if (length(args) > 0) {
-      existing_sectors <- strsplit(args[1], ",")[[1]]
+    if (length(sector_args) > 0) {
+      existing_sectors <- strsplit(sector_args[1], ",")[[1]]
       cat(sprintf("Excluding recently covered sectors: %s\n",
                   paste(existing_sectors, collapse = ", ")))
     }
 
-    results <- discover_topics(existing_sectors = existing_sectors)
+    # Use configured-only discovery if flag set
+    if (configured_only) {
+      results <- discover_configured_topics(existing_sectors = existing_sectors)
+    } else {
+      results <- discover_topics(existing_sectors = existing_sectors)
+    }
+
     print_results(results)
+
+    # Save JSON if requested
+    if (output_json) {
+      save_discovery_json(results, output_dir)
+    }
   }
 }
