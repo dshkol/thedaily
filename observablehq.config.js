@@ -7,6 +7,9 @@ export default {
   // Base path for subdirectory deployment (dshkol.com/thedaily)
   base: "/thedaily",
 
+  // Add base tag for Safari compatibility with proxied deployment
+  head: `<base href="/thedaily/">`,
+
   root: "docs",
   output: "dist",
   style: "style.css",
