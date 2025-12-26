@@ -6,7 +6,7 @@ toc: false
 # The Daily — Latest Releases
 
 <p class="feed-links">
-<a href="./archive/">Browse all articles in the archive</a>
+<a href="./archive/">Browse all articles in the archive</a> · <a href="./about/">About The D-AI-LY</a>
 </p>
 
 ---
