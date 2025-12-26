@@ -20,8 +20,9 @@
     "filters": {
       "GEO": "Canada",
       "Labour force characteristics": "Unemployment rate",
-      "Sex": "Both sexes",
-      "Age group": "15 years and over"
+      "Age group": "15 years and over",
+      "Statistics": "Estimate",
+      "Data type": "Seasonally adjusted"
     },
     "breakdown_dimension": "Labour force characteristics",
     "provincial": true
