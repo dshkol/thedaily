@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+    <!-- Job identifier -->
+    <key>Label</key>
+    <string>com.the-daily.pipeline</string>
+
+    <!-- Script to run -->
+    <key>ProgramArguments</key>
+    <array>
+        <string>/Users/dmitryshkolnik/Projects/the-daily/automation/run_pipeline.sh</string>
+    </array>
+
+    <!-- Run daily at 8:00 AM local time -->
+    <key>StartCalendarInterval</key>
+    <dict>
+        <key>Hour</key>
+        <integer>8</integer>
+        <key>Minute</key>
+        <integer>0</integer>
+    </dict>
+
+    <!-- Working directory -->
+    <key>WorkingDirectory</key>
+    <string>/Users/dmitryshkolnik/Projects/the-daily</string>
+
+    <!-- Environment variables -->
+    <key>EnvironmentVariables</key>
+    <dict>
+        <key>PATH</key>
+        <string>/usr/local/bin:/opt/homebrew/bin:/usr/bin:/bin</string>
+        <key>HOME</key>
+        <string>/Users/dmitryshkolnik</string>
+    </dict>
+
+    <!-- Logging -->
+    <key>StandardOutPath</key>
+    <string>/Users/dmitryshkolnik/Projects/the-daily/automation/logs/launchd_stdout.log</string>
+    <key>StandardErrorPath</key>
+    <string>/Users/dmitryshkolnik/Projects/the-daily/automation/logs/launchd_stderr.log</string>
+
+    <!-- Run if missed (e.g., if Mac was asleep at scheduled time) -->
+    <key>StartInterval</key>
+    <integer>86400</integer>
+
+    <!-- Keep alive settings -->
+    <key>KeepAlive</key>
+    <false/>
+
+    <!-- Run at load (for testing) - set to false for production -->
+    <key>RunAtLoad</key>
+    <false/>
+</dict>
+</plist>

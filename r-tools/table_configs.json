@@ -20,8 +20,9 @@
     "filters": {
       "GEO": "Canada",
       "Labour force characteristics": "Unemployment rate",
-      "Sex": "Both sexes",
-      "Age group": "15 years and over"
+      "Age group": "15 years and over",
+      "Statistics": "Estimate",
+      "Data type": "Seasonally adjusted"
     },
     "breakdown_dimension": "Labour force characteristics",
     "provincial": true
@@ -147,5 +148,147 @@
       "North American Industry Classification System (NAICS)": "Wholesale trade [41]"
     },
     "breakdown_dimension": "North American Industry Classification System (NAICS)"
+  },
+  "34-10-0066": {
+    "name": "Building Permits",
+    "headline": "Building permits",
+    "unit": "dollars",
+    "scale": 1000000,
+    "scale_label": "billions",
+    "filters": {
+      "GEO": "Canada",
+      "Type of structure": "Total residential and non-residential"
+    },
+    "breakdown_dimension": "Type of structure",
+    "provincial": true
+  },
+  "18-10-0001": {
+    "name": "Average Retail Prices",
+    "headline": "Gasoline prices",
+    "unit": "cents per litre",
+    "scale": 1,
+    "filters": {
+      "GEO": "Canada",
+      "Products": "Gasoline, regular unleaded, self-service"
+    },
+    "breakdown_dimension": "GEO",
+    "provincial": true
+  },
+  "20-10-0001": {
+    "name": "New Motor Vehicle Sales",
+    "headline": "New motor vehicle sales",
+    "unit": "units",
+    "scale": 1000,
+    "scale_label": "thousands",
+    "filters": {
+      "GEO": "Canada",
+      "Vehicle type": "Total, new motor vehicles"
+    },
+    "breakdown_dimension": "Vehicle type"
+  },
+  "14-10-0355": {
+    "name": "Job Vacancies",
+    "headline": "Job vacancies",
+    "unit": "vacancies",
+    "scale": 1000,
+    "scale_label": "thousands",
+    "filters": {
+      "GEO": "Canada",
+      "Statistics": "Job vacancies"
+    },
+    "breakdown_dimension": "North American Industry Classification System (NAICS)",
+    "note": "Quarterly data"
+  },
+  "34-10-0175": {
+    "name": "Investment in Building Construction",
+    "headline": "Investment in building construction",
+    "unit": "dollars",
+    "scale": 1000000,
+    "scale_label": "billions",
+    "filters": {
+      "GEO": "Canada",
+      "Type of investment": "Total investment"
+    },
+    "breakdown_dimension": "Type of structure"
+  },
+  "24-10-0002": {
+    "name": "Travel Survey",
+    "headline": "International travel",
+    "unit": "trips",
+    "scale": 1000,
+    "scale_label": "thousands",
+    "filters": {
+      "Traveller characteristics": "Total resident travellers"
+    },
+    "breakdown_dimension": "Traveller characteristics"
+  },
+  "14-10-0320": {
+    "name": "Average Weekly Earnings",
+    "headline": "Average weekly earnings",
+    "unit": "dollars",
+    "scale": 1,
+    "filters": {
+      "GEO": "Canada",
+      "North American Industry Classification System (NAICS)": "Industrial aggregate excluding unclassified businesses"
+    },
+    "breakdown_dimension": "North American Industry Classification System (NAICS)"
+  },
+  "27-10-0022": {
+    "name": "Industrial Product Price Index",
+    "headline": "Industrial product prices",
+    "unit": "index",
+    "scale": 1,
+    "filters": {
+      "North American Product Classification System (NAPCS)": "Industrial product price index (IPPI)"
+    },
+    "breakdown_dimension": "North American Product Classification System (NAPCS)"
+  },
+  "27-10-0038": {
+    "name": "Raw Materials Price Index",
+    "headline": "Raw materials prices",
+    "unit": "index",
+    "scale": 1,
+    "filters": {
+      "North American Product Classification System (NAPCS)": "Raw materials price index (RMPI)"
+    },
+    "breakdown_dimension": "North American Product Classification System (NAPCS)"
+  },
+  "17-10-0009": {
+    "name": "Population Estimates",
+    "headline": "Population",
+    "unit": "persons",
+    "scale": 1000000,
+    "scale_label": "millions",
+    "filters": {
+      "GEO": "Canada"
+    },
+    "breakdown_dimension": "GEO",
+    "provincial": true,
+    "note": "Quarterly data"
+  },
+  "17-10-0014": {
+    "name": "Components of Population Change",
+    "headline": "Population growth",
+    "unit": "persons",
+    "scale": 1000,
+    "scale_label": "thousands",
+    "filters": {
+      "GEO": "Canada",
+      "Components of population growth": "Population growth"
+    },
+    "breakdown_dimension": "Components of population growth",
+    "note": "Quarterly data"
+  },
+  "35-10-0177": {
+    "name": "Incident-based Crime Statistics",
+    "headline": "Crime rate",
+    "unit": "rate per 100,000",
+    "scale": 1,
+    "filters": {
+      "GEO": "Canada",
+      "Violations": "Total, all violations"
+    },
+    "breakdown_dimension": "Violations",
+    "note": "Annual data"
   }
 }

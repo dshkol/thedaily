@@ -1,0 +1,63 @@
+[2025-12-25 15:50:11] ═══════════════════════════════════════════════════════════════════
+[2025-12-25 15:50:11]   THE D-AI-LY - Automated Pipeline
+[2025-12-25 15:50:11]   Started: 2025-12-25_15-50-11
+[2025-12-25 15:50:11] ═══════════════════════════════════════════════════════════════════
+[2025-12-25 15:50:11] 
+[2025-12-25 15:50:11] Step 1: Running topic discovery...
+
+Attaching package: ‘dplyr’
+
+The following objects are masked from ‘package:stats’:
+
+    filter, lag
+
+The following objects are masked from ‘package:base’:
+
+    intersect, setdiff, setequal, union
+
+Filtering to 24 configured tables...
+Fetching CANSIM cube metadata...
+Retrieving cube information from StatCan servers...
+Found 8058 total cubes
+Found 105 monthly cubes with recent data
+Found 7 configured tables with recent data
+
+═══════════════════════════════════════════════════════════════════
+TOPIC DISCOVERY RESULTS - 2025-12-25
+═══════════════════════════════════════════════════════════════════
+
+RANK  SCORE  TABLE         SECTOR        TITLE
+----  -----  ------------  ------------  ----------------------------------------
+1     75     14-10-0287    labour        Labour force characteristics, monthly, season
+2     75     14-10-0320    labour        Average usual hours and wages by selected cha
+3     75     14-10-0355    labour        Employment by industry, monthly, seasonally a
+4     72     18-10-0001    prices        Monthly average retail prices for gasoline an
+5     72     18-10-0004    prices        Consumer Price Index, monthly, not seasonally
+6     72     18-10-0205    prices        New housing price index, monthly
+7     70     34-10-0158    housing       Canada Mortgage and Housing Corporation, hous
+
+TOP RECOMMENDATION: 14-10-0287 (Labour force characteristics, monthly, seasonally adjusted and trend-cycle)
+  - Data through: 2025-11-01
+  - Sector: labour
+  - Score breakdown: recency=10, diversity=100, interest=95
+
+Results saved to: /Users/dmitryshkolnik/projects/the-daily/output/discovery_results.json
+[2025-12-25 15:50:17] Recommended table: 14-10-0287
+[2025-12-25 15:50:17] 
+[2025-12-25 15:50:17] Step 2: Fetching data for table 14-10-0287...
+
+Attaching package: ‘dplyr’
+
+The following objects are masked from ‘package:stats’:
+
+    filter, lag
+
+The following objects are masked from ‘package:base’:
+
+    intersect, setdiff, setequal, union
+
+Warning message:
+In normalizePath(commandArgs(FALSE)[grep("--file=", commandArgs(FALSE))]) :
+  path[1]="--file=r-tools/fetch_table.R": No such file or directory
+Fetching: Labour Force Survey 
+Accessing CANSIM NDM product 14-10-0287 from Statistics Canada

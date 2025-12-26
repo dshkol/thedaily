@@ -6,7 +6,7 @@ toc: false
 # Le Quotidien — Dernières publications
 
 <p class="feed-links">
-<a href="./archive/">Parcourir tous les articles dans les archives</a>
+<a href="./archive/">Parcourir tous les articles dans les archives</a> · <a href="./about/">À propos du D-AI-LY</a>
 </p>
 
 ---
