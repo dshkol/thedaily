@@ -1,9 +1,15 @@
 #!/usr/bin/env Rscript
 # Config-driven CANSIM data fetcher
+# Includes retry logic for StatCan timeouts
 
 library(cansim)
 library(dplyr)
 library(jsonlite)
+
+# Retry configuration
+MAX_RETRIES <- 5
+INITIAL_WAIT <- 10  # seconds
+MAX_WAIT <- 120     # seconds
 
 args <- commandArgs(trailingOnly = TRUE)
 table_number <- if (length(args) > 0) args[1] else stop("Usage: Rscript fetch_table.R <table-number> [output_dir]")
@@ -35,8 +41,45 @@ if (!table_number %in% names(configs)) {
 config <- configs[[table_number]]
 cat("Fetching:", config$name, "\n")
 
-# Fetch data
-data <- get_cansim(table_number)
+# Fetch data with retry logic
+fetch_with_retry <- function(table_num, max_retries = MAX_RETRIES) {
+  wait_time <- INITIAL_WAIT
+
+  for (attempt in 1:max_retries) {
+    result <- tryCatch({
+      data <- get_cansim(table_num)
+      return(data)
+    }, error = function(e) {
+      msg <- conditionMessage(e)
+
+      # Check if it's a timeout or connection error
+      is_timeout <- grepl("timeout|timed out|connection|curl|HTTP", msg, ignore.case = TRUE)
+
+      if (is_timeout && attempt < max_retries) {
+        cat(sprintf("Attempt %d/%d failed: %s\n", attempt, max_retries, msg))
+        cat(sprintf("Waiting %d seconds before retry...\n", wait_time))
+        Sys.sleep(wait_time)
+
+        # Exponential backoff with cap
+        wait_time <<- min(wait_time * 2, MAX_WAIT)
+        return(NULL)
+      } else {
+        stop(e)
+      }
+    })
+
+    if (!is.null(result)) {
+      if (attempt > 1) {
+        cat(sprintf("Success on attempt %d\n", attempt))
+      }
+      return(result)
+    }
+  }
+
+  stop(sprintf("Failed to fetch table %s after %d attempts", table_num, max_retries))
+}
+
+data <- fetch_with_retry(table_number)
 cat("Downloaded", nrow(data), "rows\n")
 
 # Apply filters
