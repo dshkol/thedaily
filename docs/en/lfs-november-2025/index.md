@@ -151,12 +151,12 @@ display(Plot.plot({
 
 Part-time employment increased by 63,000 (+1.6%) in November. On a year-over-year basis, part-time employment rose 173,000 (+4.6%) compared with November 2024.
 
-Full-time employment was little changed in November.
+Full-time employment decreased by 17,000 in November.
 
 ```js
 const typeData = [
   {type: "Part-time employment", change: 63.0, yoy: 4.6},
-  {type: "Full-time employment", change: -9.4, yoy: 0.6}
+  {type: "Full-time employment", change: -17.0, yoy: 0.6}
 ];
 
 display(Plot.plot({

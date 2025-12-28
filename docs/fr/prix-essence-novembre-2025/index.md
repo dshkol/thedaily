@@ -115,7 +115,8 @@ display(Plot.plot({
   marks: [
     Plot.barX(cityData, {
       y: "city",
-      x: "price",
+      x1: 110,
+      x2: "price",
       fill: d => d.city === "Moyenne canadienne" ? "#1f77b4" : "#AF3C43",
       sort: {y: "-x"}
     }),

@@ -11,11 +11,11 @@ toc: false
 
 <div class="featured-articles">
 
-<a href="/en/cpi-november-2025/" class="article-card">
+<a href="/en/freight-rail-prices-december-2025/" class="article-card">
 <span class="article-type-tag release">New Release</span>
-<span class="article-date">December 22, 2025</span>
-<span class="article-title">Consumer prices up 2.2% year over year in November 2025</span>
-<span class="article-indicator">Consumer Price Index</span>
+<span class="article-date">December 27, 2025</span>
+<span class="article-title">Freight rail services prices little changed in December 2025</span>
+<span class="article-indicator">Freight Rail Services Price Index</span>
 </a>
 
 <a href="/en/lfs-november-2025/" class="article-card">

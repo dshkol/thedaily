@@ -43,6 +43,88 @@ Before generating, verify coverage of ALL available dimensions:
 
 No exceptions. No approximations. No placeholders.
 
+## CRITICAL: Auxiliary Data Fabrication Prevention
+
+**Lesson learned (2025-12-28):** Backfill articles had fabricated employment rate, participation rate, and FT/PT split values. Some values were not just wrong but in the **OPPOSITE DIRECTION** from reality.
+
+### What Happened
+- Time series data (unemployment rate, employment levels) were correct (from verified sources)
+- Auxiliary indicators (employment rate, participation rate, FT/PT splits) were **invented** to fill summary tables
+- The fabrication pattern always made FT/PT split "mirror" overall employment direction, when reality is more nuanced
+
+### Mandatory Validation Rule
+
+For **every** numeric value in an article:
+1. **FETCH** from StatCan (R cansim package) - not derived, not estimated
+2. **VALIDATE** the fetched value against the article
+3. **CITE** specific table/vector source
+4. **NEVER** derive, assume, or fabricate values
+
+### Pre-Publish Checklist for Summary Tables
+
+For each number in summary table:
+- [ ] Is this value fetched from StatCan?
+- [ ] Can I cite the specific vector/table?
+- [ ] Have I validated it matches the R/JSON output exactly?
+- [ ] If this is a calculated change, did I calculate from real fetched values?
+
+### Safe vs. Unsafe Backfill Patterns
+
+**SAFE**: Extending line charts backward (each point independently validated)
+**UNSAFE**: Filling in auxiliary table values (not sourced, invented)
+
+When backfilling from existing article time series:
+- ❌ Wrong: If summary table has 6 indicators but only 2 are in time series, fill other 4 with "plausible" numbers
+- ✓ Right: Omit indicators you cannot source, or fetch each from StatCan
+
+### LFS Specific Vectors for Reference
+
+If fetching auxiliary LFS indicators:
+```r
+library(cansim)
+
+vectors <- c(
+  "v2062809",  # Population
+  "v2062811",  # Employment
+  "v2062813",  # Part-time employment
+  "v2062815",  # Unemployment rate
+  "v2062817",  # Employment rate
+  "v2062821"   # Full-time employment
+)
+
+df <- get_cansim_vector(vectors, start_time = "2024-01-01")
+```
+
+## Post-Fetch Validation
+
+After fetching, **always verify the data before generating**:
+
+```r
+# Check actual data range (don't trust JSON metadata)
+df <- get_cansim("18-10-0212")
+range(df$REF_DATE)  # Actual date coverage
+
+# Verify YoY is possible
+min_date <- min(df$REF_DATE)
+max_date <- max(df$REF_DATE)
+has_yoy <- as.numeric(difftime(
+  as.Date(paste0(max_date, "-01")),
+  as.Date(paste0(min_date, "-01")),
+  units = "days"
+)) > 365
+
+# Check dimension labels exist
+unique(df$Commodity)  # or whatever the category column is
+```
+
+**Red flags to watch for:**
+- JSON shows `data_start_date: "2018-01-01"` but actual data starts recently
+- `yoy_pct_change` present in JSON but table has < 13 months of data
+- `time_series[]` has values but no category labels
+- `subseries{}` or `provincial{}` empty when table should have breakdowns
+
+**If validation fails:** Query the raw table via R to get accurate dimensions, don't rely solely on JSON output.
+
 ## Data Flow
 
 ```

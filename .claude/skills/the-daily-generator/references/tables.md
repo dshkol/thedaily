@@ -21,12 +21,18 @@ Quick reference for frequently used CANSIM tables.
 | 18-10-0205 | New Housing Price Index | Current NHPI table |
 | 34-10-0175 | Investment in Building Construction | |
 
+## Prices & Inflation
+
+| Table | Topic | Notes |
+|-------|-------|-------|
+| 18-10-0265 | Industrial Product Price Index (IPPI) | Current active table (replaced 18-10-0029) |
+| 18-10-0001 | Gasoline Prices | By city |
+
 ## Energy & Resources
 
 | Table | Topic | Notes |
 |-------|-------|-------|
 | 25-10-0015 | Electric Power Generation | By source type |
-| 18-10-0001 | Gasoline Prices | By city |
 
 ## Trade & Manufacturing
 
@@ -47,6 +53,14 @@ Known replacements:
 - 20-10-0008 → 20-10-0056 (Retail Trade)
 - 34-10-0066 → 34-10-0292 (Building Permits)
 - 18-10-0052 → 18-10-0205 (NHPI)
+- 18-10-0029 → 18-10-0265 (IPPI)
+
+**CRITICAL:** When given a table number, always verify it's active:
+```r
+cubes <- search_cansim_cubes("topic keyword")
+cubes_sorted <- cubes[order(-as.numeric(cubes$cubeEndDate)), ]
+# Use the table with most recent cubeEndDate
+```
 
 ## URL Construction
 

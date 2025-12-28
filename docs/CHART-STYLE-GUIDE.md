@@ -119,6 +119,26 @@ display(Plot.plot({
 - Sort bars by value with `sort: {y: "-x"}`
 - Position labels with `dx: 20` (positive values) or handle negative separately
 
+### Custom Domains (IMPORTANT)
+
+**When using a custom x-axis domain that doesn't start at 0**, you must use `x1` and `x2` instead of just `x`:
+
+```js
+// WRONG: Bars extend from 0 to value, covering y-axis labels!
+x: {domain: [120, 145], grid: true},
+marks: [
+  Plot.barX(data, {y: "name", x: "value"})  // BAD
+]
+
+// CORRECT: Bars start at domain minimum
+x: {domain: [120, 145], grid: true},
+marks: [
+  Plot.barX(data, {y: "name", x1: 120, x2: "value"})  // GOOD
+]
+```
+
+**Why:** `Plot.barX` with just `x` draws bars from 0 to the value. When your domain is `[120, 145]`, the bars extend far to the left (off-screen) and render on top of y-axis labels, making them invisible.
+
 ### Handling Mixed Positive/Negative Labels
 
 **Recommended approach:** Place ALL labels at a fixed right-edge position to avoid overlap:

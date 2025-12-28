@@ -179,6 +179,12 @@
 /* Charts */
 #observablehq-main figure {
   margin: 2rem 0;
+  overflow: visible;
+}
+
+/* Ensure SVG elements aren't clipped */
+#observablehq-main figure svg {
+  overflow: visible;
 }
 
 /* Chart titles */
