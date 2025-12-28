@@ -1,8 +1,3 @@
----
-title: Chart Style Guide
-toc: true
----
-
 # Chart Style Guide
 
 Guidelines for creating consistent Observable Plot charts in The D-AI-LY articles.

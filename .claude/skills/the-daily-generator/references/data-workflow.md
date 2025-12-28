@@ -2,6 +2,41 @@
 
 How data flows from Statistics Canada to published articles.
 
+## Explore Before Generating
+
+**Always query the table's dimensions before writing.** Don't assume you know what's available.
+
+```r
+library(cansim)
+
+# Fetch and inspect
+df <- get_cansim("25-10-0015")
+
+# What dimensions exist?
+names(df)
+unique(df$GEO)                    # Geographic coverage
+unique(df$`Type of electricity`)  # Category breakdowns
+range(df$REF_DATE)                # Time coverage
+```
+
+This exploration reveals story angles you'd otherwise miss:
+- Provincial data enables regional comparisons
+- Component breakdowns show what drove the headline
+- Time depth enables trend analysis
+
+## Data Dimension Checklist
+
+Before generating, verify coverage of ALL available dimensions:
+
+| Dimension | Check | Use In Article |
+|-----------|-------|----------------|
+| **Time series** | `time_series[]` in JSON | Trend chart |
+| **Composition** | Category/type breakdowns | Stacked area, waffle chart |
+| **Provincial** | `provincial[]` in JSON | Regional comparison table |
+| **YoY by subcategory** | Calculate for each component | Diverging bar chart |
+
+**Don't stop at Canada-level totals.** If the table has provincial data, include it. If it has component breakdowns, show YoY by component.
+
 ## The Golden Rule
 
 **Every number in an article must trace back to a real StatCan value.**

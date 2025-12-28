@@ -1,88 +1,114 @@
 ---
 name: the-daily-generator
-description: Generate Statistics Canada Daily-style articles from CANSIM tables. Use when asked to create a Daily article, analyze StatCan data, run the D-AI-LY pipeline, or generate a statistical bulletin.
+description: Generate Statistics Canada Daily-style articles from CANSIM tables. Use when asked to create a Daily article, analyze StatCan data, run the D-AI-LY pipeline, generate a statistical bulletin, write about Canadian economic indicators, or cover a CANSIM table release.
 ---
 
 # The D-AI-LY Article Generator
 
 Generate StatCan "The Daily"-style statistical bulletins from CANSIM data tables.
 
-## ⚠️ CRITICAL: Data Integrity
+## Critical Rule
 
-**NEVER use synthetic, made-up, or placeholder data.**
+**NEVER use synthetic, made-up, or placeholder data.** Every number must come from real Statistics Canada data fetched via the `cansim` R package. If data fetch fails, do not generate the article.
 
-Every number in every article MUST come from real Statistics Canada data fetched via the `cansim` R package. A statistical bulletin with fake data is misinformation.
+## Workflow
 
-See [DATA-WORKFLOW.md](DATA-WORKFLOW.md) for the required data pipeline.
+```
+1. FETCH DATA
+   Rscript r-tools/fetch_cansim_enhanced.R <table-number> output
+   → output/data_<table>_enhanced.json
 
-## Quick Start
+2. CREATE ENGLISH ARTICLE
+   docs/en/<slug>/index.md
 
-To generate an article for a specific CANSIM table:
+3. CREATE FRENCH ARTICLE
+   docs/fr/<slug-fr>/index.md
 
-```bash
-# 1. Fetch data
-Rscript r-tools/fetch_cansim_enhanced.R <table-number> output
+4. UPDATE LANGUAGE MAP
+   Add slug pair to src/lang-map.js
 
-# 2. Generate article
-python3 generate_article_enhanced.py output/data_<table>_enhanced.json output/articles/<slug>.html
+5. UPDATE INDEX PAGES
+   Add entry to docs/en/index.md and docs/fr/index.md
 
-# 3. Rebuild site
-python3 build_site.py
+6. PREVIEW AND VERIFY
+   npm run dev → http://localhost:3000
 ```
 
-**Example for CPI (table 18-10-0004):**
-```bash
-Rscript r-tools/fetch_cansim_enhanced.R 18-10-0004 output
-python3 generate_article_enhanced.py output/data_18_10_0004_enhanced.json output/articles/cpi-november-2025.html
-python3 build_site.py
+## Article Structure
+
+```markdown
+---
+title: Consumer prices up 2.2% year over year in November 2025
+toc: false
+---
+
+# Consumer prices up 2.2% year over year in November 2025
+
+<p class="release-date">Released: December 22, 2025 <span class="article-type-tag release">New Release</span></p>
+
+<div class="highlights">
+
+**Highlights**
+- Key finding with number
+- Secondary finding
+- Regional highlight
+
+</div>
+
+[Body paragraphs with Observable Plot charts]
+
+<div class="note-to-readers">
+
+## Note to readers
+[Methodology]
+
+</div>
+
+<div class="source-info">
+
+**Source:** Statistics Canada, [Table XX-XX-XXXX](url)
+**DOI:** [https://doi.org/...](url)
+
+</div>
 ```
 
-## Workflow Steps
+## Reference Files
 
-See [WORKFLOW.md](WORKFLOW.md) for detailed step-by-step instructions.
+Load these as needed:
 
-## Voice and Style
+| Reference | When to Use |
+|-----------|-------------|
+| [voice.md](references/voice.md) | Tone, headline rules, language guidelines |
+| [chart-styles.md](references/chart-styles.md) | Observable Plot patterns, color palette |
+| [french.md](references/french.md) | French formatting, translations, province names |
+| [tables.md](references/tables.md) | Common CANSIM tables, URL construction |
+| [data-workflow.md](references/data-workflow.md) | JSON structure, data validation |
+| [content-strategy.md](references/content-strategy.md) | Release-driven vs story-driven approaches |
+| [troubleshooting.md](references/troubleshooting.md) | Common errors and solutions |
 
-See [VOICE-GUIDE.md](VOICE-GUIDE.md) for The Daily voice rules.
+## Quick Reference
 
-**Key principles:**
-- Neutral, clinical, non-partisan tone
-- Inverted pyramid structure (most important first)
-- Lead with the key number in headlines
-- Always include year-over-year AND month-over-month comparisons
-- No emotional language ("surged" → "increased")
+**StatCan red:** `#AF3C43`
 
-## Supported Table Types
+**Headline format:** "[Indicator] [up/down] X.X% [comparison] in [Month Year]"
 
-The pipeline auto-detects table structure:
+**Chart import:** (once per article, first code block only)
+```js
+import * as Plot from "npm:@observablehq/plot";
+```
 
-| Type | Example Tables | Key Dimensions |
-|------|----------------|----------------|
-| **CPI** | 18-10-0004 | Products and product groups, GEO |
-| **Retail** | 20-10-0067 | NAICS sectors, Sales type |
-| **Labour** | 14-10-0287 | Labour force characteristics |
-| **Generic** | Any | GEO filtering for Canada |
-
-## Output Files
-
-- `output/data_<table>_enhanced.json` - Processed data with metadata
-- `output/articles/<slug>.html` - Generated article HTML
-- `site/index.html` - Updated homepage
-- `site/archive.html` - Updated archive
+**PID from table:** Remove dashes, add "01" → 18-10-0004 becomes 1810000401
 
 ## Quality Checklist
 
-Before publishing, verify:
-- [ ] **DATA SOURCE**: JSON file exists with real fetched data
-- [ ] **DATA MATCH**: All article values match JSON exactly
-- [ ] Headline leads with key statistic from JSON
-- [ ] YoY and MoM changes match JSON calculations
-- [ ] Chart data points match JSON time_series
-- [ ] Data tables match JSON subseries/provincial
-- [ ] Charts render properly
-- [ ] Source links work (StatCan table viewer)
-- [ ] Voice is neutral and clinical
+Before publishing:
+- [ ] All values from fetched JSON (no made-up data)
+- [ ] Headline leads with key statistic
+- [ ] Charts render with #AF3C43 color
+- [ ] Language switcher works (slug in lang-map.js)
+- [ ] Voice is neutral (no "surged", "plummeted")
+- [ ] French uses comma decimals (2,2 %)
 
 ## Review Mode
 
-If the user requests "review mode", pause after generating the article and ask for approval before rebuilding the site or publishing.
+If user requests "review mode", pause after generating and ask for approval before publishing.

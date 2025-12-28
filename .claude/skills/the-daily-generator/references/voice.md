@@ -89,10 +89,26 @@ See `r-tools/fetch_context.R` for the context-fetching utility.
 - Example: "Consumer prices up 2.2% year over year in November 2025"
 
 ### 2. Highlights (3-5 bullets)
-- Lead with the main finding
-- Include largest contributor/component
-- Note month-over-month change
-- Regional/provincial highlight if relevant
+
+**Lead with the surprising, not the generic.** The highlights box is prime real estate.
+
+| Good (newsworthy) | Bad (generic) |
+|-------------------|---------------|
+| "Solar generation up 15% year over year" | "Wind accounted for 6.5% of generation" |
+| "Quebec and Ontario produced 57% of electricity" | "Generation totaled 53.2 TWh" |
+| "Nuclear output declined 11%" | "Hydroelectric remained the largest source" |
+
+**Selection criteria:**
+1. Largest YoY changes (especially >10%)
+2. Trend reversals ("first decline since...")
+3. Regional concentration or divergence
+4. Component that drove the headline change
+
+**Structure:**
+- First bullet: Main finding (headline stat)
+- Second bullet: Biggest mover or surprise
+- Third bullet: Regional/provincial highlight
+- Fourth bullet: Secondary trend or context
 
 ### 3. Lede Paragraph
 - Restate headline finding with more context
@@ -105,6 +121,17 @@ See `r-tools/fetch_context.R` for the context-fetching utility.
 - Use data tables for detailed numbers
 
 ### 5. Regional Analysis (if applicable)
+
+**Provincial data is often more newsworthy than national averages.** Regional concentration and divergence tell stronger stories.
+
+| Story Type | Example | Why It's Newsworthy |
+|------------|---------|---------------------|
+| Regional concentration | "Quebec and Ontario produced 57% of electricity" | Shows geographic reality |
+| Provincial divergence | "Prices rose in 5 provinces, fell in 3" | Reveals hidden variation |
+| Leader/laggard spread | "5.2 pp gap between highest and lowest" | Quantifies regional inequality |
+| Province bucking trend | "Saskatchewan grew while national average fell" | Highlights exceptions |
+
+**Always include provincial data if the table has it.** A national average can mask significant regional stories.
 
 Open with a summary of provincial movement patterns:
 - "On an annual basis in November, prices rose at a faster pace in five provinces, were unchanged in two, and rose at a slower pace in the remaining three compared with October."
