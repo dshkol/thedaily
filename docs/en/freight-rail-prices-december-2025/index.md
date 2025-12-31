@@ -159,3 +159,10 @@ mom_change <- (dec2025 - nov2025) / nov2025 * 100
 ```
 
 </details>
+
+```js
+// Related articles sidebar
+import {createSidebar} from "../../components/sidebar.js";
+const articles = await FileAttachment("../../articles.json").json();
+display(createSidebar(articles, "freight-rail-prices-december-2025", "en"));
+```

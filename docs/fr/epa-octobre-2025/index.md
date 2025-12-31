@@ -163,7 +163,7 @@ display(Plot.plot({
     Plot.barX(typeData, {
       y: "type",
       x: "change",
-      fill: d => d.change >= 0 ? "#AF3C43" : "#2e7d32"
+      fill: "#AF3C43"
     }),
     Plot.text(typeData, {
       y: "type",
@@ -197,3 +197,10 @@ Cet article de rattrapage couvre les données d'octobre 2025, publié dans le ca
 **DOI :** [https://doi.org/10.25318/1410028701-fra](https://doi.org/10.25318/1410028701-fra)
 
 </div>
+
+```js
+// Barre laterale des articles connexes
+import {createSidebar} from "../../components/sidebar.js";
+const articles = await FileAttachment("../../articles.json").json();
+display(createSidebar(articles, "epa-octobre-2025", "fr"));
+```

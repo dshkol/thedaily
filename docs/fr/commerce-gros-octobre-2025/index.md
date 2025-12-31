@@ -108,7 +108,7 @@ display(Plot.plot({
     Plot.barX(subsectorData, {
       y: "sector",
       x: "change",
-      fill: d => d.change >= 0 ? "#AF3C43" : "#2e7d32",
+      fill: "#AF3C43",
       sort: {y: "-x"}
     }),
     Plot.text(subsectorData, {
@@ -198,3 +198,10 @@ mom_change <- (oct2025 - sep2025) / sep2025 * 100
 ```
 
 </details>
+
+```js
+// Barre laterale des articles connexes
+import {createSidebar} from "../../components/sidebar.js";
+const articles = await FileAttachment("../../articles.json").json();
+display(createSidebar(articles, "commerce-gros-octobre-2025", "fr"));
+```

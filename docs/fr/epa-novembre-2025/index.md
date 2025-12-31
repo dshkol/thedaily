@@ -172,7 +172,7 @@ display(Plot.plot({
     Plot.barX(typeData, {
       y: "type",
       x: "change",
-      fill: d => d.change >= 0 ? "#AF3C43" : "#2e7d32"
+      fill: "#AF3C43"
     }),
     Plot.text(typeData, {
       y: "type",
@@ -204,3 +204,10 @@ L'enquête recueille des données sur l'activité sur le marché du travail de l
 **DOI :** [https://doi.org/10.25318/1410028701-fra](https://doi.org/10.25318/1410028701-fra)
 
 </div>
+
+```js
+// Barre laterale des articles connexes
+import {createSidebar} from "../../components/sidebar.js";
+const articles = await FileAttachment("../../articles.json").json();
+display(createSidebar(articles, "epa-novembre-2025", "fr"));
+```

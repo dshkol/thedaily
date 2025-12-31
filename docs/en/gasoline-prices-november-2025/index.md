@@ -191,3 +191,10 @@ yoy_change <- (nov2025 - nov2024) / nov2024 * 100
 ```
 
 </details>
+
+```js
+// Related articles sidebar
+import {createSidebar} from "../../components/sidebar.js";
+const articles = await FileAttachment("../../articles.json").json();
+display(createSidebar(articles, "gasoline-prices-november-2025", "en"));
+```

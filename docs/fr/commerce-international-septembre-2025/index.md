@@ -123,7 +123,7 @@ display(Plot.plot({
     Plot.barY(balanceData, {
       x: "month",
       y: "balance",
-      fill: d => d.balance >= 0 ? "#AF3C43" : "#2e7d32"
+      fill: "#AF3C43"
     }),
     Plot.text(balanceData, {
       x: "month",
@@ -161,3 +161,10 @@ Cet article de rattrapage couvre les données de septembre 2025, publié dans le
 **DOI :** [https://doi.org/10.25318/1210001101-fra](https://doi.org/10.25318/1210001101-fra)
 
 </div>
+
+```js
+// Barre laterale des articles connexes
+import {createSidebar} from "../../components/sidebar.js";
+const articles = await FileAttachment("../../articles.json").json();
+display(createSidebar(articles, "commerce-international-septembre-2025", "fr"));
+```

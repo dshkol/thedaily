@@ -85,7 +85,7 @@ display(Plot.plot({
     Plot.barY(momData, {
       x: "month",
       y: "change",
-      fill: d => d.change >= 0 ? "#AF3C43" : "#2e7d32"
+      fill: "#AF3C43"
     }),
     Plot.text(momData, {
       x: "month",
@@ -121,3 +121,10 @@ Cet article de rattrapage couvre les données d'août 2025, publié dans le cadr
 **DOI :** [https://doi.org/10.25318/2510001501-fra](https://doi.org/10.25318/2510001501-fra)
 
 </div>
+
+```js
+// Barre laterale des articles connexes
+import {createSidebar} from "../../components/sidebar.js";
+const articles = await FileAttachment("../../articles.json").json();
+display(createSidebar(articles, "production-electricite-aout-2025", "fr"));
+```

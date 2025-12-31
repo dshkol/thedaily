@@ -87,7 +87,7 @@ display(Plot.plot({
     Plot.barY(momData, {
       x: "month",
       y: "change",
-      fill: d => d.change >= 0 ? "#AF3C43" : "#2e7d32"
+      fill: "#AF3C43"
     }),
     Plot.text(momData, {
       x: "month",
@@ -123,3 +123,10 @@ This backfill article covers August 2025 data as part of The D-AI-LY historical 
 **DOI:** [https://doi.org/10.25318/2510001501-eng](https://doi.org/10.25318/2510001501-eng)
 
 </div>
+
+```js
+// Related articles sidebar
+import {createSidebar} from "../../components/sidebar.js";
+const articles = await FileAttachment("../../articles.json").json();
+display(createSidebar(articles, "electricity-generation-august-2025", "en"));
+```

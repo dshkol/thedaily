@@ -145,7 +145,7 @@ display(Plot.plot({
     Plot.barX(typeData, {
       y: "type",
       x: "change",
-      fill: d => d.change >= 0 ? "#AF3C43" : "#2e7d32"
+      fill: "#AF3C43"
     }),
     Plot.text(typeData, {
       y: "type",
@@ -179,3 +179,10 @@ This is a backfill article covering January 2025 data, published as part of the 
 **DOI:** [https://doi.org/10.25318/1410028701-eng](https://doi.org/10.25318/1410028701-eng)
 
 </div>
+
+```js
+// Related articles sidebar
+import {createSidebar} from "../../components/sidebar.js";
+const articles = await FileAttachment("../../articles.json").json();
+display(createSidebar(articles, "lfs-january-2025", "en"));
+```

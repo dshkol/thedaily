@@ -109,3 +109,10 @@ International merchandise trade data measure the value of goods crossing Canada'
 **DOI:** [https://doi.org/10.25318/1210001101-eng](https://doi.org/10.25318/1210001101-eng)
 
 </div>
+
+```js
+// Related articles sidebar
+import {createSidebar} from "../../components/sidebar.js";
+const articles = await FileAttachment("../../articles.json").json();
+display(createSidebar(articles, "trade-october-2025", "en"));
+```

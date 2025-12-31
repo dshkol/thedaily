@@ -87,7 +87,7 @@ display(Plot.plot({
     Plot.barX(components, {
       y: "name",
       x: "change",
-      fill: d => d.change >= 0 ? "#AF3C43" : "#2e7d32",
+      fill: "#AF3C43",
       sort: {y: "-x"}
     }),
     Plot.text(components, {
@@ -130,3 +130,10 @@ Cet article de rattrapage couvre les données de février 2025, publié dans le 
 **DOI :** [https://doi.org/10.25318/1810000401-fra](https://doi.org/10.25318/1810000401-fra)
 
 </div>
+
+```js
+// Barre laterale des articles connexes
+import {createSidebar} from "../../components/sidebar.js";
+const articles = await FileAttachment("../../articles.json").json();
+display(createSidebar(articles, "ipc-fevrier-2025", "fr"));
+```

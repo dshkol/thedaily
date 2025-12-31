@@ -159,3 +159,10 @@ var_mensuelle <- (dec2025 - nov2025) / nov2025 * 100
 ```
 
 </details>
+
+```js
+// Barre laterale des articles connexes
+import {createSidebar} from "../../components/sidebar.js";
+const articles = await FileAttachment("../../articles.json").json();
+display(createSidebar(articles, "prix-transport-ferroviaire-decembre-2025", "fr"));
+```

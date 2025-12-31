@@ -114,3 +114,10 @@ Housing starts are reported as a seasonally adjusted annual rate (SAAR), which r
 **DOI:** [https://doi.org/10.25318/3410015801-eng](https://doi.org/10.25318/3410015801-eng)
 
 </div>
+
+```js
+// Related articles sidebar
+import {createSidebar} from "../../components/sidebar.js";
+const articles = await FileAttachment("../../articles.json").json();
+display(createSidebar(articles, "housing-starts-november-2025", "en"));
+```

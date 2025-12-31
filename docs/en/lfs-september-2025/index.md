@@ -160,3 +160,10 @@ This is a backfill article covering data from September 2025, published as part 
 **DOI:** [https://doi.org/10.25318/1410028701-eng](https://doi.org/10.25318/1410028701-eng)
 
 </div>
+
+```js
+// Related articles sidebar
+import {createSidebar} from "../../components/sidebar.js";
+const articles = await FileAttachment("../../articles.json").json();
+display(createSidebar(articles, "lfs-september-2025", "en"));
+```

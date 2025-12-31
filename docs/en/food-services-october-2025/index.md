@@ -114,3 +114,10 @@ Food services and drinking places sales represent the total operating revenue fr
 **DOI:** [https://doi.org/10.25318/2110001901-eng](https://doi.org/10.25318/2110001901-eng)
 
 </div>
+
+```js
+// Related articles sidebar
+import {createSidebar} from "../../components/sidebar.js";
+const articles = await FileAttachment("../../articles.json").json();
+display(createSidebar(articles, "food-services-october-2025", "en"));
+```

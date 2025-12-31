@@ -230,13 +230,13 @@ display(Plot.plot({
       y2: "source",
       x1: 0,
       x2: "change",
-      stroke: d => d.change >= 0 ? "#AF3C43" : "#2e7d32",
+      stroke: "#AF3C43",
       strokeWidth: 2
     }),
     Plot.dot(yoyData, {
       y: "source",
       x: "change",
-      fill: d => d.change >= 0 ? "#AF3C43" : "#2e7d32",
+      fill: "#AF3C43",
       r: 6
     }),
     Plot.text(yoyData, {
@@ -268,3 +268,10 @@ Electric power generation data includes electricity produced by electric utiliti
 **DOI:** [https://doi.org/10.25318/2510001501-eng](https://doi.org/10.25318/2510001501-eng)
 
 </div>
+
+```js
+// Related articles sidebar
+import {createSidebar} from "../../components/sidebar.js";
+const articles = await FileAttachment("../../articles.json").json();
+display(createSidebar(articles, "electricity-generation-september-2025", "en"));
+```

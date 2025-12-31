@@ -107,7 +107,7 @@ display(Plot.plot({
     Plot.barX(trafficData, {
       y: "segment",
       x: "yoyChange",
-      fill: d => d.yoyChange >= 0 ? "#AF3C43" : "#2e7d32",
+      fill: "#AF3C43",
       sort: {y: "-x"}
     }),
     Plot.text(trafficData, {
@@ -191,3 +191,10 @@ yoy_change <- (oct2025 - oct2024) / oct2024 * 100
 ```
 
 </details>
+
+```js
+// Barre laterale des articles connexes
+import {createSidebar} from "../../components/sidebar.js";
+const articles = await FileAttachment("../../articles.json").json();
+display(createSidebar(articles, "passagers-aeriens-octobre-2025", "fr"));
+```

@@ -119,3 +119,10 @@ Manufacturing sales represent the estimated value of goods manufactured and sold
 **DOI:** [https://doi.org/10.25318/1610004701-eng](https://doi.org/10.25318/1610004701-eng)
 
 </div>
+
+```js
+// Related articles sidebar
+import {createSidebar} from "../../components/sidebar.js";
+const articles = await FileAttachment("../../articles.json").json();
+display(createSidebar(articles, "manufacturing-sales-october-2025", "en"));
+```

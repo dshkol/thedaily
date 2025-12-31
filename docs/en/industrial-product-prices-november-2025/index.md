@@ -5,7 +5,7 @@ toc: false
 
 # Industrial product prices up 6.1% year over year in November 2025
 
-<p class="release-date">Released: December 28, 2025</p>
+<p class="release-date">Released: December 28, 2025 <span class="article-type-tag release">New release</span></p>
 
 <div class="highlights">
 
@@ -27,38 +27,36 @@ Partially offsetting these gains, chemicals and chemical products declined 0.6%,
 ```js
 import * as Plot from "npm:@observablehq/plot";
 
-// Data from Statistics Canada Table 18-10-0265
-// Total Industrial Product Price Index (2020=100)
+// Real data from Statistics Canada Table 18-10-0265 (verified via R cansim package)
 const ippiData = [
-  {date: new Date("2023-11"), value: 124.8},
-  {date: new Date("2023-12"), value: 123.0},
-  {date: new Date("2024-01"), value: 123.0},
-  {date: new Date("2024-02"), value: 125.0},
-  {date: new Date("2024-03"), value: 126.0},
-  {date: new Date("2024-04"), value: 128.0},
+  {date: new Date("2023-12"), value: 123.3},
+  {date: new Date("2024-01"), value: 123.3},
+  {date: new Date("2024-02"), value: 124.6},
+  {date: new Date("2024-03"), value: 125.7},
+  {date: new Date("2024-04"), value: 127.7},
   {date: new Date("2024-05"), value: 128.0},
-  {date: new Date("2024-06"), value: 128.0},
-  {date: new Date("2024-07"), value: 128.0},
-  {date: new Date("2024-08"), value: 127.0},
-  {date: new Date("2024-09"), value: 126.0},
-  {date: new Date("2024-10"), value: 127.0},
+  {date: new Date("2024-06"), value: 127.9},
+  {date: new Date("2024-07"), value: 127.9},
+  {date: new Date("2024-08"), value: 126.7},
+  {date: new Date("2024-09"), value: 125.6},
+  {date: new Date("2024-10"), value: 127.1},
   {date: new Date("2024-11"), value: 127.8},
-  {date: new Date("2024-12"), value: 128.0},
-  {date: new Date("2025-01"), value: 130.0},
-  {date: new Date("2025-02"), value: 131.0},
-  {date: new Date("2025-03"), value: 131.0},
-  {date: new Date("2025-04"), value: 130.0},
-  {date: new Date("2025-05"), value: 129.0},
-  {date: new Date("2025-06"), value: 130.0},
-  {date: new Date("2025-07"), value: 130.0},
-  {date: new Date("2025-08"), value: 131.0},
-  {date: new Date("2025-09"), value: 132.0},
+  {date: new Date("2024-12"), value: 128.3},
+  {date: new Date("2025-01"), value: 130.3},
+  {date: new Date("2025-02"), value: 131.1},
+  {date: new Date("2025-03"), value: 131.4},
+  {date: new Date("2025-04"), value: 130.4},
+  {date: new Date("2025-05"), value: 129.2},
+  {date: new Date("2025-06"), value: 129.6},
+  {date: new Date("2025-07"), value: 130.4},
+  {date: new Date("2025-08"), value: 130.9},
+  {date: new Date("2025-09"), value: 132.2},
   {date: new Date("2025-10"), value: 134.4},
   {date: new Date("2025-11"), value: 135.6}
 ];
 
 display(Plot.plot({
-  title: "Industrial Product Price Index, November 2023 to November 2025",
+  title: "Industrial Product Price Index, December 2023 to November 2025",
   width: 680,
   height: 300,
   y: {domain: [118, 140], grid: true, label: "↑ Index (2020=100)"},
@@ -109,7 +107,7 @@ display(Plot.plot({
     Plot.barX(yoyData, {
       y: "product",
       x: "change",
-      fill: d => d.change >= 0 ? "#AF3C43" : "#2e7d32",
+      fill: "#AF3C43",
       sort: {y: "-x"}
     }),
     Plot.text(yoyData, {
@@ -197,3 +195,10 @@ yoy_change <- (nov2025 - nov2024) / nov2024 * 100  # 6.1%
 ```
 
 </details>
+
+```js
+// Related articles sidebar
+import {createSidebar} from "../../components/sidebar.js";
+const articles = await FileAttachment("../../articles.json").json();
+display(createSidebar(articles, "industrial-product-prices-november-2025", "en"));
+```

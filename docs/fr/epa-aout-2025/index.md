@@ -178,3 +178,10 @@ Cet article de rattrapage couvre les données d'août 2025, publié dans le cadr
 **DOI :** [https://doi.org/10.25318/1410028701-fra](https://doi.org/10.25318/1410028701-fra)
 
 </div>
+
+```js
+// Barre laterale des articles connexes
+import {createSidebar} from "../../components/sidebar.js";
+const articles = await FileAttachment("../../articles.json").json();
+display(createSidebar(articles, "epa-aout-2025", "fr"));
+```

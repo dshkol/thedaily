@@ -87,7 +87,7 @@ display(Plot.plot({
     Plot.barX(components, {
       y: "name",
       x: "change",
-      fill: d => d.change >= 0 ? "#AF3C43" : "#2e7d32",
+      fill: "#AF3C43",
       sort: {y: "-x"}
     }),
     Plot.text(components, {
@@ -130,3 +130,10 @@ This is a backfill article covering June 2025 data, published as part of the D-A
 **DOI:** [https://doi.org/10.25318/1810000401-eng](https://doi.org/10.25318/1810000401-eng)
 
 </div>
+
+```js
+// Related articles sidebar
+import {createSidebar} from "../../components/sidebar.js";
+const articles = await FileAttachment("../../articles.json").json();
+display(createSidebar(articles, "cpi-june-2025", "en"));
+```

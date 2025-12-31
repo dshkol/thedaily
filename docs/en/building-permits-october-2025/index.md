@@ -158,3 +158,10 @@ Data are seasonally adjusted to account for regular seasonal patterns in constru
 **DOI:** [https://doi.org/10.25318/3410029201-eng](https://doi.org/10.25318/3410029201-eng)
 
 </div>
+
+```js
+// Related articles sidebar
+import {createSidebar} from "../../components/sidebar.js";
+const articles = await FileAttachment("../../articles.json").json();
+display(createSidebar(articles, "building-permits-october-2025", "en"));
+```

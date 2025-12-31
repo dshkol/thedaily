@@ -117,3 +117,10 @@ The New Housing Price Index measures changes over time in contractors' selling p
 **DOI:** [https://doi.org/10.25318/1810020501-eng](https://doi.org/10.25318/1810020501-eng)
 
 </div>
+
+```js
+// Related articles sidebar
+import {createSidebar} from "../../components/sidebar.js";
+const articles = await FileAttachment("../../articles.json").json();
+display(createSidebar(articles, "new-housing-price-index-november-2025", "en"));
+```
