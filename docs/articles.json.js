@@ -190,7 +190,7 @@ function parseArticle(filePath, lang) {
     indicator: getIndicator(slug, lang),
     summary,
     lang,
-    path: `/${lang}/${slug}/`
+    path: `/thedaily/${lang}/${slug}/`
   };
 }
 

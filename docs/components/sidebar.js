@@ -68,7 +68,7 @@ export function createSidebar(articles, currentSlug, lang = "en") {
       </div>
 
       <div class="sidebar-section">
-        <a href="/${lang}/explore/?sector=${encodeURIComponent(labels[sector])}" class="explore-link">
+        <a href="/thedaily/${lang}/explore/?sector=${encodeURIComponent(labels[sector])}" class="explore-link">
           ${text.exploreAll} ${labels[sector]} →
         </a>
       </div>

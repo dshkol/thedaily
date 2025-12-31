@@ -10,7 +10,7 @@
       "indicator": null,
       "summary": "The Freight Rail Services Price Index (FRSPI) stood at 131.2 in December 2025, little changed from 131.3 in November. The index measures changes in prices of shipments of commodities by the freight ra",
       "lang": "en",
-      "path": "/en/freight-rail-prices-december-2025/",
+      "path": "/thedaily/en/freight-rail-prices-december-2025/",
       "prevSlug": null,
       "nextSlug": "population-q4-2025"
     },
@@ -24,7 +24,7 @@
       "indicator": "Population",
       "summary": "Canada's population declined to 41,575,585 in the fourth quarter of 2025, down 76,068 (-0.18%) from the previous quarter. This marked the first quarterly population decline since the fourth quarter of",
       "lang": "en",
-      "path": "/en/population-q4-2025/",
+      "path": "/thedaily/en/population-q4-2025/",
       "prevSlug": "freight-rail-prices-december-2025",
       "nextSlug": "cpi-november-2025"
     },
@@ -38,7 +38,7 @@
       "indicator": "Consumer Price Index",
       "summary": "The Consumer Price Index (CPI) rose 2.2% in November 2025 compared with the same month a year earlier. The index stood at 165.4, up from 161.8 in November 2024. On a monthly basis, prices increased 0.",
       "lang": "en",
-      "path": "/en/cpi-november-2025/",
+      "path": "/thedaily/en/cpi-november-2025/",
       "prevSlug": "population-q4-2025",
       "nextSlug": "gasoline-prices-november-2025"
     },
@@ -52,7 +52,7 @@
       "indicator": "Gasoline Prices",
       "summary": "The national average price for regular unleaded gasoline at self-service stations rose 1.7% to 139.6 cents per litre in November 2025, following a decline of 4.9% in October. On a year-over-year basis",
       "lang": "en",
-      "path": "/en/gasoline-prices-november-2025/",
+      "path": "/thedaily/en/gasoline-prices-november-2025/",
       "prevSlug": "cpi-november-2025",
       "nextSlug": "grain-deliveries-november-2025"
     },
@@ -66,7 +66,7 @@
       "indicator": "Grain Deliveries",
       "summary": "Grain producers in Western Canada delivered 5.5 million tonnes of grain to licensed primary elevators, process elevators, and grain dealers in November 2025. This was 14.2% higher than November 2024 b",
       "lang": "en",
-      "path": "/en/grain-deliveries-november-2025/",
+      "path": "/thedaily/en/grain-deliveries-november-2025/",
       "prevSlug": "gasoline-prices-november-2025",
       "nextSlug": "housing-starts-november-2025"
     },
@@ -80,7 +80,7 @@
       "indicator": "Housing Starts",
       "summary": "Housing starts increased 9.4% to a seasonally adjusted annual rate of 254,058 units in November 2025, recovering from a decline in October. Compared with November 2024, starts were down 5.0%.",
       "lang": "en",
-      "path": "/en/housing-starts-november-2025/",
+      "path": "/thedaily/en/housing-starts-november-2025/",
       "prevSlug": "grain-deliveries-november-2025",
       "nextSlug": "industrial-product-prices-november-2025"
     },
@@ -94,7 +94,7 @@
       "indicator": "Industrial Product Prices",
       "summary": "The Industrial Product Price Index (IPPI) rose 0.9% in November 2025, bringing the index to 135.6 (2020=100). This follows a 1.6% increase in October. Year over year, industrial product prices were up",
       "lang": "en",
-      "path": "/en/industrial-product-prices-november-2025/",
+      "path": "/thedaily/en/industrial-product-prices-november-2025/",
       "prevSlug": "housing-starts-november-2025",
       "nextSlug": "lfs-november-2025"
     },
@@ -108,7 +108,7 @@
       "indicator": "Labour Force Survey",
       "summary": "Employment rose by 54,000 (+0.3%) in November 2025, following a gain of 67,000 in October. The unemployment rate fell 0.4 percentage points to 6.5%, down from 6.9% in the previous month.",
       "lang": "en",
-      "path": "/en/lfs-november-2025/",
+      "path": "/thedaily/en/lfs-november-2025/",
       "prevSlug": "industrial-product-prices-november-2025",
       "nextSlug": "new-housing-price-index-november-2025"
     },
@@ -122,7 +122,7 @@
       "indicator": "New Housing Price Index",
       "summary": "The New Housing Price Index (NHPI) was unchanged in November 2025 compared with October. Year over year, the index fell 1.9%, continuing a trend of declining new home prices.",
       "lang": "en",
-      "path": "/en/new-housing-price-index-november-2025/",
+      "path": "/thedaily/en/new-housing-price-index-november-2025/",
       "prevSlug": "lfs-november-2025",
       "nextSlug": "raw-materials-prices-november-2025"
     },
@@ -136,7 +136,7 @@
       "indicator": "Raw Materials Prices",
       "summary": "The Raw Materials Price Index (RMPI) rose 0.3% in November 2025, bringing the index to 148.8 (2020=100). This follows a 1.6% increase in October. Year over year, raw materials prices were up 6.4% comp",
       "lang": "en",
-      "path": "/en/raw-materials-prices-november-2025/",
+      "path": "/thedaily/en/raw-materials-prices-november-2025/",
       "prevSlug": "new-housing-price-index-november-2025",
       "nextSlug": "airline-passengers-october-2025"
     },
@@ -150,7 +150,7 @@
       "indicator": "Airline Passengers",
       "summary": "Major Canadian airlines carried 7.1 million passengers in October 2025, up 2.2% from October 2024. Compared with September, passenger volumes declined 1.0%, reflecting typical seasonal patterns as the",
       "lang": "en",
-      "path": "/en/airline-passengers-october-2025/",
+      "path": "/thedaily/en/airline-passengers-october-2025/",
       "prevSlug": "raw-materials-prices-november-2025",
       "nextSlug": "building-permits-october-2025"
     },
@@ -164,7 +164,7 @@
       "indicator": "Building Permits",
       "summary": "The total value of building permits increased 14.9% to $13.8 billion in October 2025, following a decline in September. On a year-over-year basis, the total value of permits was up 5.9% compared with ",
       "lang": "en",
-      "path": "/en/building-permits-october-2025/",
+      "path": "/thedaily/en/building-permits-october-2025/",
       "prevSlug": "airline-passengers-october-2025",
       "nextSlug": "cpi-october-2025"
     },
@@ -178,7 +178,7 @@
       "indicator": "Consumer Price Index",
       "summary": "The Consumer Price Index (CPI) rose 2.2% in October 2025 compared with the same month a year earlier. The index stood at 165.3, up from 161.8 in November 2024. On a monthly basis, prices increased 0.2",
       "lang": "en",
-      "path": "/en/cpi-october-2025/",
+      "path": "/thedaily/en/cpi-october-2025/",
       "prevSlug": "building-permits-october-2025",
       "nextSlug": "ei-claims-october-2025"
     },
@@ -192,7 +192,7 @@
       "indicator": "EI Claims",
       "summary": "Employment insurance (EI) claims received totalled 267,280 in October 2025, down 1.1% from 270,140 in September. On a year-over-year basis, EI claims were up 2.1% compared with October 2024, when 261,",
       "lang": "en",
-      "path": "/en/ei-claims-october-2025/",
+      "path": "/thedaily/en/ei-claims-october-2025/",
       "prevSlug": "cpi-october-2025",
       "nextSlug": "farm-prices-october-2025"
     },
@@ -206,7 +206,7 @@
       "indicator": "Farm Prices",
       "summary": "Farm product prices showed divergent trends in October 2025, with livestock prices rising substantially while key grain prices continued to decline. Cattle prices led the gains, up more than 25% year ",
       "lang": "en",
-      "path": "/en/farm-prices-october-2025/",
+      "path": "/thedaily/en/farm-prices-october-2025/",
       "prevSlug": "ei-claims-october-2025",
       "nextSlug": "food-services-october-2025"
     },
@@ -220,7 +220,7 @@
       "indicator": "Food Services",
       "summary": "Sales at food services and drinking places increased 0.6% to $8.5 billion in October 2025, following a 0.4% decline in September. Compared with October 2024, sales were up 5.2%.",
       "lang": "en",
-      "path": "/en/food-services-october-2025/",
+      "path": "/thedaily/en/food-services-october-2025/",
       "prevSlug": "farm-prices-october-2025",
       "nextSlug": "gasoline-prices-october-2025"
     },
@@ -234,7 +234,7 @@
       "indicator": "Gasoline Prices",
       "summary": "The national average price for regular unleaded gasoline at self-service stations fell 4.9% to 137.2 cents per litre in October 2025, following a 1.8% increase in September. On a year-over-year basis,",
       "lang": "en",
-      "path": "/en/gasoline-prices-october-2025/",
+      "path": "/thedaily/en/gasoline-prices-october-2025/",
       "prevSlug": "food-services-october-2025",
       "nextSlug": "gdp-october-2025"
     },
@@ -248,7 +248,7 @@
       "indicator": "GDP",
       "summary": "Real gross domestic product (GDP) fell 0.3% in October 2025, following a gain of 0.2% in September. Year over year, real GDP was up 0.4% compared with October 2024.",
       "lang": "en",
-      "path": "/en/gdp-october-2025/",
+      "path": "/thedaily/en/gdp-october-2025/",
       "prevSlug": "gasoline-prices-october-2025",
       "nextSlug": "household-credit-october-2025"
     },
@@ -262,7 +262,7 @@
       "indicator": "Household Credit",
       "summary": "Total household credit liabilities stood at $3,196.2 billion in October 2025, up 4.5% compared with the same month a year earlier. On a monthly basis, household credit increased 0.4% from September 20",
       "lang": "en",
-      "path": "/en/household-credit-october-2025/",
+      "path": "/thedaily/en/household-credit-october-2025/",
       "prevSlug": "gdp-october-2025",
       "nextSlug": "housing-starts-october-2025"
     },
@@ -276,7 +276,7 @@
       "indicator": "Housing Starts",
       "summary": "Housing starts fell 17.4% to a seasonally adjusted annual rate of 232,000 units in October 2025, down from 281,000 units in September. This marked a sharp reversal following relatively strong construc",
       "lang": "en",
-      "path": "/en/housing-starts-october-2025/",
+      "path": "/thedaily/en/housing-starts-october-2025/",
       "prevSlug": "household-credit-october-2025",
       "nextSlug": "industrial-product-prices-october-2025"
     },
@@ -290,7 +290,7 @@
       "indicator": "Industrial Product Prices",
       "summary": "The Industrial Product Price Index (IPPI) rose 1.6% in October 2025, bringing the index to 134.4 (2020=100). This follows a 1.0% increase in September. Year over year, industrial product prices were u",
       "lang": "en",
-      "path": "/en/industrial-product-prices-october-2025/",
+      "path": "/thedaily/en/industrial-product-prices-october-2025/",
       "prevSlug": "housing-starts-october-2025",
       "nextSlug": "international-visitors-october-2025"
     },
@@ -304,7 +304,7 @@
       "indicator": "International Visitors",
       "summary": "Canada welcomed 2,363,398 non-resident visitors in October 2025, up 4.9% from 2,252,283 in October 2024. This marked a continued recovery in international tourism, with visitors from countries other t",
       "lang": "en",
-      "path": "/en/international-visitors-october-2025/",
+      "path": "/thedaily/en/international-visitors-october-2025/",
       "prevSlug": "industrial-product-prices-october-2025",
       "nextSlug": "lfs-october-2025"
     },
@@ -318,7 +318,7 @@
       "indicator": "Labour Force Survey",
       "summary": "Employment rose by 67,000 (+0.3%) in October 2025, following a gain of 60,000 in September. The unemployment rate fell 0.2 percentage points to 6.9%, down from 7.1% in the previous month.",
       "lang": "en",
-      "path": "/en/lfs-october-2025/",
+      "path": "/thedaily/en/lfs-october-2025/",
       "prevSlug": "international-visitors-october-2025",
       "nextSlug": "manufacturing-capacity-october-2025"
     },
@@ -332,7 +332,7 @@
       "indicator": "Manufacturing Capacity",
       "summary": "Canadian manufacturers operated at 80.8% of capacity in October 2025, virtually unchanged from 80.7% a year earlier. On a monthly basis, utilization increased 0.5 percentage points from September 2025",
       "lang": "en",
-      "path": "/en/manufacturing-capacity-october-2025/",
+      "path": "/thedaily/en/manufacturing-capacity-october-2025/",
       "prevSlug": "lfs-october-2025",
       "nextSlug": "manufacturing-sales-october-2025"
     },
@@ -346,7 +346,7 @@
       "indicator": "Manufacturing Sales",
       "summary": "Manufacturing sales decreased 1.0% to $71.5 billion in October 2025, following a 3.5% gain in September. Year over year, sales were up 0.7% compared with October 2024.",
       "lang": "en",
-      "path": "/en/manufacturing-sales-october-2025/",
+      "path": "/thedaily/en/manufacturing-sales-october-2025/",
       "prevSlug": "manufacturing-capacity-october-2025",
       "nextSlug": "motor-vehicle-sales-october-2025"
     },
@@ -360,7 +360,7 @@
       "indicator": "Motor Vehicle Sales",
       "summary": "New motor vehicle sales totalled 163,490 units in October 2025, down 3.1% from September and down 0.7% compared with October 2024. The decline was driven by a sharp drop in passenger car sales, while ",
       "lang": "en",
-      "path": "/en/motor-vehicle-sales-october-2025/",
+      "path": "/thedaily/en/motor-vehicle-sales-october-2025/",
       "prevSlug": "manufacturing-sales-october-2025",
       "nextSlug": "new-housing-price-index-october-2025"
     },
@@ -374,7 +374,7 @@
       "indicator": "New Housing Price Index",
       "summary": "The New Housing Price Index (NHPI) fell 0.4% to 122.2 in October 2025, continuing a trend of softening new home prices that began in April.",
       "lang": "en",
-      "path": "/en/new-housing-price-index-october-2025/",
+      "path": "/thedaily/en/new-housing-price-index-october-2025/",
       "prevSlug": "motor-vehicle-sales-october-2025",
       "nextSlug": "railway-carloadings-october-2025"
     },
@@ -388,7 +388,7 @@
       "indicator": "Railway Carloadings",
       "summary": "Canadian railways transported 33.2 million tonnes of freight in October 2025, down 0.9% compared with the same month a year earlier. On a monthly basis, traffic increased 5.8% from 31.4 million tonnes",
       "lang": "en",
-      "path": "/en/railway-carloadings-october-2025/",
+      "path": "/thedaily/en/railway-carloadings-october-2025/",
       "prevSlug": "new-housing-price-index-october-2025",
       "nextSlug": "raw-materials-prices-october-2025"
     },
@@ -402,7 +402,7 @@
       "indicator": "Raw Materials Prices",
       "summary": "The Raw Materials Price Index (RMPI) rose 1.6% in October 2025, bringing the index to 148.4 (2020=100). This follows a 1.7% increase in September. Year over year, raw materials prices were up 5.8% com",
       "lang": "en",
-      "path": "/en/raw-materials-prices-october-2025/",
+      "path": "/thedaily/en/raw-materials-prices-october-2025/",
       "prevSlug": "railway-carloadings-october-2025",
       "nextSlug": "retail-trade-october-2025"
     },
@@ -416,7 +416,7 @@
       "indicator": "Retail Trade",
       "summary": "Retail sales decreased 0.2% to $69.4 billion in October 2025, following a decline of 0.9% in September. Excluding motor vehicle and parts dealers, retail sales were down 0.3%.",
       "lang": "en",
-      "path": "/en/retail-trade-october-2025/",
+      "path": "/thedaily/en/retail-trade-october-2025/",
       "prevSlug": "raw-materials-prices-october-2025",
       "nextSlug": "trade-october-2025"
     },
@@ -430,7 +430,7 @@
       "indicator": "International Trade",
       "summary": "Merchandise exports rose 6.3% to $64.2 billion in October 2025, following a decline in September. Imports fell 4.1% to $66.8 billion, narrowing Canada's trade deficit.",
       "lang": "en",
-      "path": "/en/trade-october-2025/",
+      "path": "/thedaily/en/trade-october-2025/",
       "prevSlug": "retail-trade-october-2025",
       "nextSlug": "urban-transit-october-2025"
     },
@@ -444,7 +444,7 @@
       "indicator": "Urban Transit",
       "summary": "Urban transit systems in Canada recorded 142.6 million passenger trips in October 2025, a decrease of 3.6% compared with October 2024. On a monthly basis, ridership increased 3.2% from 138.2 million t",
       "lang": "en",
-      "path": "/en/urban-transit-october-2025/",
+      "path": "/thedaily/en/urban-transit-october-2025/",
       "prevSlug": "trade-october-2025",
       "nextSlug": "weekly-earnings-october-2025"
     },
@@ -458,7 +458,7 @@
       "indicator": "Weekly Earnings",
       "summary": "Average weekly earnings for employees paid by the hour declined 0.2% in October 2025 to $1,312.16, ending a four-month streak of consecutive increases that began in June. Despite the monthly decline, ",
       "lang": "en",
-      "path": "/en/weekly-earnings-october-2025/",
+      "path": "/thedaily/en/weekly-earnings-october-2025/",
       "prevSlug": "urban-transit-october-2025",
       "nextSlug": "wholesale-trade-october-2025"
     },
@@ -472,7 +472,7 @@
       "indicator": "Wholesale Trade",
       "summary": "Sales by Canadian wholesalers rose 0.1% to $86.0 billion in October 2025, the fifth increase in six months. In volume terms, wholesale sales fell 0.7%, indicating that higher prices offset volume decl",
       "lang": "en",
-      "path": "/en/wholesale-trade-october-2025/",
+      "path": "/thedaily/en/wholesale-trade-october-2025/",
       "prevSlug": "weekly-earnings-october-2025",
       "nextSlug": "airline-passengers-september-2025"
     },
@@ -486,7 +486,7 @@
       "indicator": "Airline Passengers",
       "summary": "Major Canadian airlines carried 7.2 million passengers in September 2025, down 11.3% from August's 8.1 million. The monthly decline is typical as summer vacation travel winds down and schools resume a",
       "lang": "en",
-      "path": "/en/airline-passengers-september-2025/",
+      "path": "/thedaily/en/airline-passengers-september-2025/",
       "prevSlug": "wholesale-trade-october-2025",
       "nextSlug": "building-permits-september-2025"
     },
@@ -500,7 +500,7 @@
       "indicator": "Building Permits",
       "summary": "The total value of building permits increased 4.3% to $12.0 billion in September 2025, recovering from a decline in August. On a year-over-year basis, the total value of permits was up 2.6% compared w",
       "lang": "en",
-      "path": "/en/building-permits-september-2025/",
+      "path": "/thedaily/en/building-permits-september-2025/",
       "prevSlug": "airline-passengers-september-2025",
       "nextSlug": "cpi-september-2025"
     },
@@ -514,7 +514,7 @@
       "indicator": "Consumer Price Index",
       "summary": "The Consumer Price Index (CPI) rose 2.4% in September 2025 compared with the same month a year earlier. The index stood at 164.9, up from 161.8 in November 2024. On a monthly basis, prices increased 0",
       "lang": "en",
-      "path": "/en/cpi-september-2025/",
+      "path": "/thedaily/en/cpi-september-2025/",
       "prevSlug": "building-permits-september-2025",
       "nextSlug": "crude-oil-production-september-2025"
     },
@@ -528,7 +528,7 @@
       "indicator": "Crude Oil Production",
       "summary": "Canada's crude oil production declined 4.0% in September 2025 to 145.1 million barrels, down from 151.1 million barrels in August. Despite the monthly decline, production was 9.0% higher than in Septe",
       "lang": "en",
-      "path": "/en/crude-oil-production-september-2025/",
+      "path": "/thedaily/en/crude-oil-production-september-2025/",
       "prevSlug": "cpi-september-2025",
       "nextSlug": "electricity-generation-september-2025"
     },
@@ -542,7 +542,7 @@
       "indicator": "Electricity Generation",
       "summary": "Electric power generation in Canada totalled 44.4 terawatt hours (TWh) in September 2025, down 6.7% from August. Compared with September 2024, generation was down 2.4%.",
       "lang": "en",
-      "path": "/en/electricity-generation-september-2025/",
+      "path": "/thedaily/en/electricity-generation-september-2025/",
       "prevSlug": "crude-oil-production-september-2025",
       "nextSlug": "food-services-september-2025"
     },
@@ -556,7 +556,7 @@
       "indicator": "Food Services",
       "summary": "Sales at food services and drinking places decreased 0.4% to $8.5 billion in September 2025, following a 0.6% increase in August. Compared with September 2024, sales were up 5.0%.",
       "lang": "en",
-      "path": "/en/food-services-september-2025/",
+      "path": "/thedaily/en/food-services-september-2025/",
       "prevSlug": "electricity-generation-september-2025",
       "nextSlug": "gdp-september-2025"
     },
@@ -570,7 +570,7 @@
       "indicator": "GDP",
       "summary": "Real gross domestic product (GDP) rose 0.2% in September 2025, following a decline of 0.1% in August. Year over year, real GDP was up 1.1% compared with September 2024.",
       "lang": "en",
-      "path": "/en/gdp-september-2025/",
+      "path": "/thedaily/en/gdp-september-2025/",
       "prevSlug": "food-services-september-2025",
       "nextSlug": "lfs-september-2025"
     },
@@ -584,7 +584,7 @@
       "indicator": "Labour Force Survey",
       "summary": "Employment increased by 60,000 in September 2025, following a decline of 65,000 in August. The unemployment rate was unchanged at 7.1%, remaining near the elevated levels observed since mid-2025.",
       "lang": "en",
-      "path": "/en/lfs-september-2025/",
+      "path": "/thedaily/en/lfs-september-2025/",
       "prevSlug": "gdp-september-2025",
       "nextSlug": "lumber-production-september-2025"
     },
@@ -598,7 +598,7 @@
       "indicator": "Lumber Production",
       "summary": "Canadian sawmills produced 3,845 thousand cubic metres of lumber in September 2025, up 2.3% from August but down 2.7% compared with the same month a year earlier. For the first nine months of 2025, pr",
       "lang": "en",
-      "path": "/en/lumber-production-september-2025/",
+      "path": "/thedaily/en/lumber-production-september-2025/",
       "prevSlug": "lfs-september-2025",
       "nextSlug": "manufacturing-sales-september-2025"
     },
@@ -612,7 +612,7 @@
       "indicator": "Manufacturing Sales",
       "summary": "Manufacturing sales increased 3.6% to $72.2 billion in September 2025, rebounding after a 1.1% decline in August. This represented the largest monthly gain since January, when sales rose 1.4%.",
       "lang": "en",
-      "path": "/en/manufacturing-sales-september-2025/",
+      "path": "/thedaily/en/manufacturing-sales-september-2025/",
       "prevSlug": "lumber-production-september-2025",
       "nextSlug": "retail-trade-september-2025"
     },
@@ -626,7 +626,7 @@
       "indicator": "Retail Trade",
       "summary": "Retail sales fell 0.9% to $69.6 billion in September 2025, following a 0.6% decline in August. On a year-over-year basis, retail trade increased 3.1% compared with September 2024, when sales totalled ",
       "lang": "en",
-      "path": "/en/retail-trade-september-2025/",
+      "path": "/thedaily/en/retail-trade-september-2025/",
       "prevSlug": "manufacturing-sales-september-2025",
       "nextSlug": "trade-september-2025"
     },
@@ -640,7 +640,7 @@
       "indicator": "International Trade",
       "summary": "Merchandise exports rose 6.3% to $64.2 billion in September 2025, rebounding after a 3.2% decline in August. Meanwhile, imports fell 4.1% to $64.1 billion, resulting in a trade surplus of $153 million",
       "lang": "en",
-      "path": "/en/trade-september-2025/",
+      "path": "/thedaily/en/trade-september-2025/",
       "prevSlug": "retail-trade-september-2025",
       "nextSlug": "wholesale-trade-september-2025"
     },
@@ -654,7 +654,7 @@
       "indicator": "Wholesale Trade",
       "summary": "Wholesale sales rose 0.6% to $86.0 billion in September 2025, marking the fourth increase in five months. On a year-over-year basis, wholesale sales were up 4.1% compared with September 2024.",
       "lang": "en",
-      "path": "/en/wholesale-trade-september-2025/",
+      "path": "/thedaily/en/wholesale-trade-september-2025/",
       "prevSlug": "trade-september-2025",
       "nextSlug": "airline-passengers-august-2025"
     },
@@ -668,7 +668,7 @@
       "indicator": "Airline Passengers",
       "summary": "Major Canadian airlines carried 8.1 million passengers in August 2025, down 1.9% from July's peak of 8.3 million. Despite the monthly decline, passenger volumes remained elevated during the peak summe",
       "lang": "en",
-      "path": "/en/airline-passengers-august-2025/",
+      "path": "/thedaily/en/airline-passengers-august-2025/",
       "prevSlug": "wholesale-trade-september-2025",
       "nextSlug": "building-permits-august-2025"
     },
@@ -682,7 +682,7 @@
       "indicator": "Building Permits",
       "summary": "The total value of building permits decreased 3.4% to $11.5 billion in August 2025, following a 1.7% decline in July. On a year-over-year basis, the total value of permits was up 1.8% compared with Au",
       "lang": "en",
-      "path": "/en/building-permits-august-2025/",
+      "path": "/thedaily/en/building-permits-august-2025/",
       "prevSlug": "airline-passengers-august-2025",
       "nextSlug": "cpi-august-2025"
     },
@@ -696,7 +696,7 @@
       "indicator": "Consumer Price Index",
       "summary": "The Consumer Price Index (CPI) rose 1.9% in August 2025 compared with the same month a year earlier. The index stood at 164.8, up from 161.8 in November 2024. On a monthly basis, prices decreased 0.1%",
       "lang": "en",
-      "path": "/en/cpi-august-2025/",
+      "path": "/thedaily/en/cpi-august-2025/",
       "prevSlug": "building-permits-august-2025",
       "nextSlug": "electricity-generation-august-2025"
     },
@@ -710,7 +710,7 @@
       "indicator": "Electricity Generation",
       "summary": "Electric power generation in Canada totalled 47.6 terawatt hours (TWh) in August 2025, down 4.8% from July's 50.0 TWh. The decline reflects the typical late-summer pattern as temperatures moderate and",
       "lang": "en",
-      "path": "/en/electricity-generation-august-2025/",
+      "path": "/thedaily/en/electricity-generation-august-2025/",
       "prevSlug": "cpi-august-2025",
       "nextSlug": "food-services-august-2025"
     },
@@ -724,7 +724,7 @@
       "indicator": "Food Services",
       "summary": "Sales at food services and drinking places increased 0.6% to $8.5 billion in August 2025, recovering from a 0.4% decline in July. Compared with August 2024, sales were up 5.8%.",
       "lang": "en",
-      "path": "/en/food-services-august-2025/",
+      "path": "/thedaily/en/food-services-august-2025/",
       "prevSlug": "electricity-generation-august-2025",
       "nextSlug": "gdp-august-2025"
     },
@@ -738,7 +738,7 @@
       "indicator": "GDP",
       "summary": "Real gross domestic product (GDP) fell 0.1% in August 2025, partially reversing a 0.5% gain in July. Year over year, real GDP was up 1.2% compared with August 2024.",
       "lang": "en",
-      "path": "/en/gdp-august-2025/",
+      "path": "/thedaily/en/gdp-august-2025/",
       "prevSlug": "food-services-august-2025",
       "nextSlug": "lfs-august-2025"
     },
@@ -752,7 +752,7 @@
       "indicator": "Labour Force Survey",
       "summary": "Employment decreased by 65,000 in August 2025, following a decline of 41,000 in July. The unemployment rate rose 0.2 percentage points to 7.1%, the highest level since early 2022.",
       "lang": "en",
-      "path": "/en/lfs-august-2025/",
+      "path": "/thedaily/en/lfs-august-2025/",
       "prevSlug": "gdp-august-2025",
       "nextSlug": "manufacturing-sales-august-2025"
     },
@@ -766,7 +766,7 @@
       "indicator": "Manufacturing Sales",
       "summary": "Manufacturing sales decreased 1.1% to $69.8 billion in August 2025, partially reversing a 2.3% gain in July. On a year-over-year basis, manufacturing sales were down 0.8% compared with August 2024, wh",
       "lang": "en",
-      "path": "/en/manufacturing-sales-august-2025/",
+      "path": "/thedaily/en/manufacturing-sales-august-2025/",
       "prevSlug": "lfs-august-2025",
       "nextSlug": "retail-trade-august-2025"
     },
@@ -780,7 +780,7 @@
       "indicator": "Retail Trade",
       "summary": "Retail sales rose 1.0% to $70.2 billion in August 2025, rebounding from a 0.9% decline in July. On a year-over-year basis, retail trade increased 4.7% compared with August 2024, when sales totalled $6",
       "lang": "en",
-      "path": "/en/retail-trade-august-2025/",
+      "path": "/thedaily/en/retail-trade-august-2025/",
       "prevSlug": "manufacturing-sales-august-2025",
       "nextSlug": "trade-august-2025"
     },
@@ -794,7 +794,7 @@
       "indicator": "International Trade",
       "summary": "Merchandise exports fell 3.2% to $60.4 billion in August 2025, following a 1.4% decline in July. Meanwhile, imports rose 1.0% to $66.8 billion, resulting in a trade deficit of $6.4 billion.",
       "lang": "en",
-      "path": "/en/trade-august-2025/",
+      "path": "/thedaily/en/trade-august-2025/",
       "prevSlug": "retail-trade-august-2025",
       "nextSlug": "wholesale-trade-august-2025"
     },
@@ -808,7 +808,7 @@
       "indicator": "Wholesale Trade",
       "summary": "Wholesale sales decreased 0.9% to $85.5 billion in August 2025, partially reversing the 1.6% gain recorded in July. On a year-over-year basis, wholesale sales were up 4.4% compared with August 2024.",
       "lang": "en",
-      "path": "/en/wholesale-trade-august-2025/",
+      "path": "/thedaily/en/wholesale-trade-august-2025/",
       "prevSlug": "trade-august-2025",
       "nextSlug": "cpi-july-2025"
     },
@@ -822,7 +822,7 @@
       "indicator": "Consumer Price Index",
       "summary": "The Consumer Price Index (CPI) rose 1.7% in July 2025 compared with the same month a year earlier. The index stood at 164.9, up from 161.8 in November 2024. On a monthly basis, prices increased 0.3% f",
       "lang": "en",
-      "path": "/en/cpi-july-2025/",
+      "path": "/thedaily/en/cpi-july-2025/",
       "prevSlug": "wholesale-trade-august-2025",
       "nextSlug": "lfs-july-2025"
     },
@@ -836,7 +836,7 @@
       "indicator": "Labour Force Survey",
       "summary": "Employment fell by 41,000 (-0.2%) in July 2025, following a gain of 83,000 in June. The unemployment rate was unchanged at 6.9%, as a decline in labour force participation offset the employment losses",
       "lang": "en",
-      "path": "/en/lfs-july-2025/",
+      "path": "/thedaily/en/lfs-july-2025/",
       "prevSlug": "cpi-july-2025",
       "nextSlug": "retail-trade-july-2025"
     },
@@ -850,7 +850,7 @@
       "indicator": "Retail Trade",
       "summary": "Retail sales in Canada edged down 0.9% in July 2025 to $69.5 billion, partially offsetting the 1.4% gain recorded in June. Despite the monthly decline, sales remained 4.0% higher than in July 2024.",
       "lang": "en",
-      "path": "/en/retail-trade-july-2025/",
+      "path": "/thedaily/en/retail-trade-july-2025/",
       "prevSlug": "lfs-july-2025",
       "nextSlug": "cpi-june-2025"
     },
@@ -864,7 +864,7 @@
       "indicator": "Consumer Price Index",
       "summary": "The Consumer Price Index (CPI) rose 1.9% in June 2025 compared with the same month a year earlier, up from 1.7% in both April and May. The slight acceleration in inflation reflected higher prices for ",
       "lang": "en",
-      "path": "/en/cpi-june-2025/",
+      "path": "/thedaily/en/cpi-june-2025/",
       "prevSlug": "retail-trade-july-2025",
       "nextSlug": "lfs-june-2025"
     },
@@ -878,7 +878,7 @@
       "indicator": "Labour Force Survey",
       "summary": "Employment rose by 83,000 (+0.4%) in June 2025, rebounding from a gain of 9,000 in May. The unemployment rate fell 0.1 percentage points to 6.9%, down from 7.0% in the previous month.",
       "lang": "en",
-      "path": "/en/lfs-june-2025/",
+      "path": "/thedaily/en/lfs-june-2025/",
       "prevSlug": "cpi-june-2025",
       "nextSlug": "retail-trade-june-2025"
     },
@@ -892,7 +892,7 @@
       "indicator": "Retail Trade",
       "summary": "Retail sales in Canada increased 1.4% in June 2025 to $70.1 billion, recovering from the 1.4% decline recorded in May. This marked the strongest monthly gain since April. Year over year, sales were up",
       "lang": "en",
-      "path": "/en/retail-trade-june-2025/",
+      "path": "/thedaily/en/retail-trade-june-2025/",
       "prevSlug": "lfs-june-2025",
       "nextSlug": "cpi-may-2025"
     },
@@ -906,7 +906,7 @@
       "indicator": "Consumer Price Index",
       "summary": "The Consumer Price Index (CPI) rose 1.7% in May 2025 compared with the same month a year earlier, matching April's rate. This marked the lowest inflation since March 2021, as energy prices continued t",
       "lang": "en",
-      "path": "/en/cpi-may-2025/",
+      "path": "/thedaily/en/cpi-may-2025/",
       "prevSlug": "retail-trade-june-2025",
       "nextSlug": "lfs-may-2025"
     },
@@ -920,7 +920,7 @@
       "indicator": "Labour Force Survey",
       "summary": "Employment edged up by 9,000 (+0.0%) in May 2025, a modest gain following a loss of 7,000 in April. The unemployment rate rose 0.1 percentage points to 7.0%, as more people entered the labour force.",
       "lang": "en",
-      "path": "/en/lfs-may-2025/",
+      "path": "/thedaily/en/lfs-may-2025/",
       "prevSlug": "cpi-may-2025",
       "nextSlug": "retail-trade-may-2025"
     },
@@ -934,7 +934,7 @@
       "indicator": "Retail Trade",
       "summary": "Retail sales in Canada declined 1.2% in May 2025 to $69.2 billion, partially reversing the 0.3% gain recorded in April. Despite the monthly decline, sales remained 4.8% higher than in May 2024.",
       "lang": "en",
-      "path": "/en/retail-trade-may-2025/",
+      "path": "/thedaily/en/retail-trade-may-2025/",
       "prevSlug": "lfs-may-2025",
       "nextSlug": "cpi-april-2025"
     },
@@ -948,7 +948,7 @@
       "indicator": "Consumer Price Index",
       "summary": "The Consumer Price Index (CPI) rose 1.7% in April 2025 compared with the same month a year earlier, down from 2.3% in March. This marked the lowest inflation since March 2021, as energy prices continu",
       "lang": "en",
-      "path": "/en/cpi-april-2025/",
+      "path": "/thedaily/en/cpi-april-2025/",
       "prevSlug": "retail-trade-may-2025",
       "nextSlug": "lfs-april-2025"
     },
@@ -962,7 +962,7 @@
       "indicator": "Labour Force Survey",
       "summary": "Employment edged up by 7,000 (+0.0%) in April 2025, a modest gain following a decline of 33,000 in March. The unemployment rate rose 0.2 percentage points to 6.9%, as labour force growth outpaced empl",
       "lang": "en",
-      "path": "/en/lfs-april-2025/",
+      "path": "/thedaily/en/lfs-april-2025/",
       "prevSlug": "cpi-april-2025",
       "nextSlug": "retail-trade-april-2025"
     },
@@ -976,7 +976,7 @@
       "indicator": "Retail Trade",
       "summary": "Retail sales in Canada increased 0.3% in April 2025 to $70.0 billion, building on the 0.9% gain recorded in March. Year over year, sales were up 4.8% compared with April 2024.",
       "lang": "en",
-      "path": "/en/retail-trade-april-2025/",
+      "path": "/thedaily/en/retail-trade-april-2025/",
       "prevSlug": "lfs-april-2025",
       "nextSlug": "cpi-march-2025"
     },
@@ -990,7 +990,7 @@
       "indicator": "Consumer Price Index",
       "summary": "The Consumer Price Index (CPI) rose 2.3% in March 2025 compared with the same month a year earlier, down from 2.6% in February. Energy prices continued to moderate, partially offsetting persistent she",
       "lang": "en",
-      "path": "/en/cpi-march-2025/",
+      "path": "/thedaily/en/cpi-march-2025/",
       "prevSlug": "retail-trade-april-2025",
       "nextSlug": "lfs-march-2025"
     },
@@ -1004,7 +1004,7 @@
       "indicator": "Labour Force Survey",
       "summary": "Employment fell by 33,000 (-0.2%) in March 2025, reversing gains seen in January and February. The unemployment rate rose 0.1 percentage points to 6.7%, reflecting the employment decline.",
       "lang": "en",
-      "path": "/en/lfs-march-2025/",
+      "path": "/thedaily/en/lfs-march-2025/",
       "prevSlug": "cpi-march-2025",
       "nextSlug": "retail-trade-march-2025"
     },
@@ -1018,7 +1018,7 @@
       "indicator": "Retail Trade",
       "summary": "Retail sales in Canada increased 0.9% in March 2025 to $69.8 billion, reversing the 0.9% decline recorded in February. Year over year, sales were up 5.5% compared with March 2024.",
       "lang": "en",
-      "path": "/en/retail-trade-march-2025/",
+      "path": "/thedaily/en/retail-trade-march-2025/",
       "prevSlug": "lfs-march-2025",
       "nextSlug": "cpi-february-2025"
     },
@@ -1032,7 +1032,7 @@
       "indicator": "Consumer Price Index",
       "summary": "The Consumer Price Index (CPI) rose 2.6% in February 2025 compared with the same month a year earlier, up from 1.9% in January. The acceleration was driven by higher food and energy costs following th",
       "lang": "en",
-      "path": "/en/cpi-february-2025/",
+      "path": "/thedaily/en/cpi-february-2025/",
       "prevSlug": "retail-trade-march-2025",
       "nextSlug": "lfs-february-2025"
     },
@@ -1046,7 +1046,7 @@
       "indicator": "Labour Force Survey",
       "summary": "Employment was essentially unchanged in February 2025, edging up by 2,000 (+0.0%) following a gain of 76,000 in January. The unemployment rate held steady at 6.6%, as labour force growth matched emplo",
       "lang": "en",
-      "path": "/en/lfs-february-2025/",
+      "path": "/thedaily/en/lfs-february-2025/",
       "prevSlug": "cpi-february-2025",
       "nextSlug": "retail-trade-february-2025"
     },
@@ -1060,7 +1060,7 @@
       "indicator": "Retail Trade",
       "summary": "Retail sales in Canada declined 0.7% in February 2025 to $69.2 billion, extending the decline from January. Year over year, sales were up 4.4% compared with February 2024.",
       "lang": "en",
-      "path": "/en/retail-trade-february-2025/",
+      "path": "/thedaily/en/retail-trade-february-2025/",
       "prevSlug": "lfs-february-2025",
       "nextSlug": "cpi-january-2025"
     },
@@ -1074,7 +1074,7 @@
       "indicator": "Consumer Price Index",
       "summary": "The Consumer Price Index (CPI) rose 1.9% in January 2025 compared with the same month a year earlier, up slightly from 1.8% in December. Inflation remained below the Bank of Canada's 2% target for the",
       "lang": "en",
-      "path": "/en/cpi-january-2025/",
+      "path": "/thedaily/en/cpi-january-2025/",
       "prevSlug": "retail-trade-february-2025",
       "nextSlug": "lfs-january-2025"
     },
@@ -1088,7 +1088,7 @@
       "indicator": "Labour Force Survey",
       "summary": "Employment rose by 76,000 (+0.4%) in January 2025, a solid gain following an increase of 91,000 in December. The unemployment rate fell 0.1 percentage points to 6.6%, down from 6.7% in the previous mo",
       "lang": "en",
-      "path": "/en/lfs-january-2025/",
+      "path": "/thedaily/en/lfs-january-2025/",
       "prevSlug": "cpi-january-2025",
       "nextSlug": "retail-trade-january-2025"
     },
@@ -1102,7 +1102,7 @@
       "indicator": "Retail Trade",
       "summary": "Retail sales in Canada declined 0.5% in January 2025 to $69.7 billion, retreating from the December holiday peak of $70.0 billion. Year over year, sales were up 5.4% compared with January 2024.",
       "lang": "en",
-      "path": "/en/retail-trade-january-2025/",
+      "path": "/thedaily/en/retail-trade-january-2025/",
       "prevSlug": "lfs-january-2025",
       "nextSlug": "cpi-december-2024"
     },
@@ -1116,7 +1116,7 @@
       "indicator": "Consumer Price Index",
       "summary": "The Consumer Price Index (CPI) rose 1.8% in December 2024 compared with the same month a year earlier, down from 1.9% in November. This marked the second consecutive month with inflation below the Ban",
       "lang": "en",
-      "path": "/en/cpi-december-2024/",
+      "path": "/thedaily/en/cpi-december-2024/",
       "prevSlug": "retail-trade-january-2025",
       "nextSlug": "retail-trade-december-2024"
     },
@@ -1130,7 +1130,7 @@
       "indicator": "Retail Trade",
       "summary": "Retail sales in Canada rose 2.5% in December 2024 to $70.0 billion, the highest monthly total of the year as holiday shopping drove consumer spending higher. Year over year, sales were up 5.6% compare",
       "lang": "en",
-      "path": "/en/retail-trade-december-2024/",
+      "path": "/thedaily/en/retail-trade-december-2024/",
       "prevSlug": "cpi-december-2024",
       "nextSlug": "retail-trade-november-2024"
     },
@@ -1144,7 +1144,7 @@
       "indicator": "Retail Trade",
       "summary": "Retail sales in Canada rose 0.4% in November 2024 to $68.3 billion, as early holiday shopping began to boost consumer spending. Year over year, sales were 2.6% higher than in November 2023.",
       "lang": "en",
-      "path": "/en/retail-trade-november-2024/",
+      "path": "/thedaily/en/retail-trade-november-2024/",
       "prevSlug": "retail-trade-december-2024",
       "nextSlug": "retail-trade-october-2024"
     },
@@ -1158,7 +1158,7 @@
       "indicator": "Retail Trade",
       "summary": "Retail sales in Canada rose 0.8% in October 2024 to $68.0 billion, marking the third consecutive monthly gain. Year over year, sales were 2.3% higher than in October 2023.",
       "lang": "en",
-      "path": "/en/retail-trade-october-2024/",
+      "path": "/thedaily/en/retail-trade-october-2024/",
       "prevSlug": "retail-trade-november-2024",
       "nextSlug": "retail-trade-september-2024"
     },
@@ -1172,7 +1172,7 @@
       "indicator": "Retail Trade",
       "summary": "Retail sales in Canada rose 0.6% in September 2024 to $67.5 billion, marking the third consecutive monthly gain. Year over year, sales were 1.4% higher than in September 2023.",
       "lang": "en",
-      "path": "/en/retail-trade-september-2024/",
+      "path": "/thedaily/en/retail-trade-september-2024/",
       "prevSlug": "retail-trade-october-2024",
       "nextSlug": "retail-trade-august-2024"
     },
@@ -1186,7 +1186,7 @@
       "indicator": "Retail Trade",
       "summary": "Retail sales in Canada increased 0.3% in August 2024 to $67.1 billion, building on the 1.5% gain recorded in July. Year over year, sales were 1.8% higher than in August 2023.",
       "lang": "en",
-      "path": "/en/retail-trade-august-2024/",
+      "path": "/thedaily/en/retail-trade-august-2024/",
       "prevSlug": "retail-trade-september-2024",
       "nextSlug": "retail-trade-july-2024"
     },
@@ -1200,7 +1200,7 @@
       "indicator": "Retail Trade",
       "summary": "Retail sales in Canada rose 1.5% in July 2024 to $66.9 billion, rebounding from declines of 0.1% in June and 1.2% in May. Year-over-year, sales were 1.5% higher than July 2023.",
       "lang": "en",
-      "path": "/en/retail-trade-july-2024/",
+      "path": "/thedaily/en/retail-trade-july-2024/",
       "prevSlug": "retail-trade-august-2024",
       "nextSlug": "retail-trade-june-2024"
     },
@@ -1214,7 +1214,7 @@
       "indicator": "Retail Trade",
       "summary": "Retail sales in Canada edged down 0.1% in June 2024 to $65.9 billion, following a 1.2% decline in May. Year-over-year, sales were 0.2% lower than June 2023, marking the first annual decline in the ser",
       "lang": "en",
-      "path": "/en/retail-trade-june-2024/",
+      "path": "/thedaily/en/retail-trade-june-2024/",
       "prevSlug": "retail-trade-july-2024",
       "nextSlug": "retail-trade-may-2024"
     },
@@ -1228,7 +1228,7 @@
       "indicator": "Retail Trade",
       "summary": "Retail sales in Canada fell 1.2% in May 2024 to $66.0 billion, declining from the April peak of $66.8 billion. Year-over-year, sales were 0.5% higher than May 2023.",
       "lang": "en",
-      "path": "/en/retail-trade-may-2024/",
+      "path": "/thedaily/en/retail-trade-may-2024/",
       "prevSlug": "retail-trade-june-2024",
       "nextSlug": "retail-trade-april-2024"
     },
@@ -1242,7 +1242,7 @@
       "indicator": "Retail Trade",
       "summary": "Retail sales in Canada rose 0.9% in April 2024 to $66.8 billion, matching March's 0.9% gain. Year-over-year, sales were 1.7% higher than April 2023.",
       "lang": "en",
-      "path": "/en/retail-trade-april-2024/",
+      "path": "/thedaily/en/retail-trade-april-2024/",
       "prevSlug": "retail-trade-may-2024",
       "nextSlug": "retail-trade-march-2024"
     },
@@ -1256,7 +1256,7 @@
       "indicator": "Retail Trade",
       "summary": "Retail sales in Canada edged down 0.1% in March 2024 to $66.2 billion, following a marginal decline in February. Year-over-year, sales were 1.2% higher than March 2023.",
       "lang": "en",
-      "path": "/en/retail-trade-march-2024/",
+      "path": "/thedaily/en/retail-trade-march-2024/",
       "prevSlug": "retail-trade-april-2024",
       "nextSlug": "retail-trade-february-2024"
     },
@@ -1270,7 +1270,7 @@
       "indicator": "Retail Trade",
       "summary": "Retail sales in Canada edged up 0.2% in February 2024 to $66.2 billion, a modest rebound from January's decline. Year over year, sales were 0.9% higher than February 2023.",
       "lang": "en",
-      "path": "/en/retail-trade-february-2024/",
+      "path": "/thedaily/en/retail-trade-february-2024/",
       "prevSlug": "retail-trade-march-2024",
       "nextSlug": "retail-trade-january-2024"
     },
@@ -1284,7 +1284,7 @@
       "indicator": "Retail Trade",
       "summary": "Retail sales in Canada fell 0.4% in January 2024 to $66.1 billion, declining from December's holiday shopping peak. Year over year, sales were 0.3% lower than January 2023—marking the first year-over-",
       "lang": "en",
-      "path": "/en/retail-trade-january-2024/",
+      "path": "/thedaily/en/retail-trade-january-2024/",
       "prevSlug": "retail-trade-february-2024",
       "nextSlug": "retail-trade-december-2023"
     },
@@ -1298,7 +1298,7 @@
       "indicator": "Retail Trade",
       "summary": "Retail sales in Canada fell 0.3% in December 2023 to $66.3 billion, declining from November's holiday shopping peak. Year over year, sales were 2.5% higher than December 2022.",
       "lang": "en",
-      "path": "/en/retail-trade-december-2023/",
+      "path": "/thedaily/en/retail-trade-december-2023/",
       "prevSlug": "retail-trade-january-2024",
       "nextSlug": "retail-trade-november-2023"
     },
@@ -1312,7 +1312,7 @@
       "indicator": "Retail Trade",
       "summary": "Retail sales in Canada edged up 0.1% in November 2023 to $66.6 billion, continuing a modest upward trend from October. Year over year, sales were 1.8% higher than November 2022.",
       "lang": "en",
-      "path": "/en/retail-trade-november-2023/",
+      "path": "/thedaily/en/retail-trade-november-2023/",
       "prevSlug": "retail-trade-december-2023",
       "nextSlug": "retail-trade-october-2023"
     },
@@ -1326,7 +1326,7 @@
       "indicator": "Retail Trade",
       "summary": "Retail sales in Canada edged down 0.1% in October 2023 to $66.5 billion, a slight pullback from September's level. Year over year, sales were 1.7% higher than October 2022.",
       "lang": "en",
-      "path": "/en/retail-trade-october-2023/",
+      "path": "/thedaily/en/retail-trade-october-2023/",
       "prevSlug": "retail-trade-november-2023",
       "nextSlug": "retail-trade-september-2023"
     },
@@ -1340,7 +1340,7 @@
       "indicator": "Retail Trade",
       "summary": "Retail sales in Canada rose 1.0% in September 2023 to $66.6 billion, rebounding from the modest declines seen in July and August. Year over year, sales were 2.7% higher than September 2022.",
       "lang": "en",
-      "path": "/en/retail-trade-september-2023/",
+      "path": "/thedaily/en/retail-trade-september-2023/",
       "prevSlug": "retail-trade-october-2023",
       "nextSlug": "retail-trade-august-2023"
     },
@@ -1354,7 +1354,7 @@
       "indicator": "Retail Trade",
       "summary": "Retail sales in Canada edged up 0.1% in August 2023 to $65.9 billion, essentially flat from July's level. Year over year, sales were 1.2% higher than August 2022.",
       "lang": "en",
-      "path": "/en/retail-trade-august-2023/",
+      "path": "/thedaily/en/retail-trade-august-2023/",
       "prevSlug": "retail-trade-september-2023",
       "nextSlug": "retail-trade-july-2023"
     },
@@ -1368,7 +1368,7 @@
       "indicator": "Retail Trade",
       "summary": "Retail sales in Canada edged down 0.2% in July 2023 to $65.9 billion, a slight pullback from June's level. Year over year, sales were 1.5% higher than July 2022.",
       "lang": "en",
-      "path": "/en/retail-trade-july-2023/",
+      "path": "/thedaily/en/retail-trade-july-2023/",
       "prevSlug": "retail-trade-august-2023",
       "nextSlug": "retail-trade-june-2023"
     },
@@ -1382,7 +1382,7 @@
       "indicator": "Retail Trade",
       "summary": "Retail sales in Canada rose 0.5% in June 2023 to $66.0 billion, rebounding from the previous month's slower pace. However, year over year, sales were down 1.2% compared with June 2022—the first annual",
       "lang": "en",
-      "path": "/en/retail-trade-june-2023/",
+      "path": "/thedaily/en/retail-trade-june-2023/",
       "prevSlug": "retail-trade-july-2023",
       "nextSlug": "retail-trade-may-2023"
     },
@@ -1396,7 +1396,7 @@
       "indicator": "Retail Trade",
       "summary": "Retail sales in Canada were essentially unchanged in May 2023, holding steady at $65.7 billion from April's level. Year over year, sales were down 0.3% compared with May 2022.",
       "lang": "en",
-      "path": "/en/retail-trade-may-2023/",
+      "path": "/thedaily/en/retail-trade-may-2023/",
       "prevSlug": "retail-trade-june-2023",
       "nextSlug": "retail-trade-april-2023"
     },
@@ -1410,7 +1410,7 @@
       "indicator": "Retail Trade",
       "summary": "Retail sales in Canada rose 0.4% in April 2023 to $65.6 billion, building on the previous month's gains. Year over year, sales were up 2.4% compared with April 2022, a solid pace of annual growth.",
       "lang": "en",
-      "path": "/en/retail-trade-april-2023/",
+      "path": "/thedaily/en/retail-trade-april-2023/",
       "prevSlug": "retail-trade-may-2023",
       "nextSlug": "retail-trade-march-2023"
     },
@@ -1424,7 +1424,7 @@
       "indicator": "Retail Trade",
       "summary": "Retail sales in Canada declined 0.5% in March 2023 to $65.3 billion, pulling back from February's level. Despite the monthly decline, year over year sales were up 1.9% compared with March 2022.",
       "lang": "en",
-      "path": "/en/retail-trade-march-2023/",
+      "path": "/thedaily/en/retail-trade-march-2023/",
       "prevSlug": "retail-trade-april-2023",
       "nextSlug": "retail-trade-february-2023"
     },
@@ -1438,7 +1438,7 @@
       "indicator": "Retail Trade",
       "summary": "Retail sales in Canada declined 0.9% in February 2023 to $65.7 billion, pulling back from January's strong level. Despite the monthly decline, year over year sales were up 3.6% compared with February ",
       "lang": "en",
-      "path": "/en/retail-trade-february-2023/",
+      "path": "/thedaily/en/retail-trade-february-2023/",
       "prevSlug": "retail-trade-march-2023",
       "nextSlug": "retail-trade-january-2023"
     },
@@ -1452,7 +1452,7 @@
       "indicator": "Retail Trade",
       "summary": "Retail sales in Canada rose 2.5% in January 2023 to $66.3 billion, marking a strong start to the year. Year over year, sales were up 5.4% compared with January 2022—a robust pace of annual growth.",
       "lang": "en",
-      "path": "/en/retail-trade-january-2023/",
+      "path": "/thedaily/en/retail-trade-january-2023/",
       "prevSlug": "retail-trade-february-2023",
       "nextSlug": "retail-trade-december-2022"
     },
@@ -1466,7 +1466,7 @@
       "indicator": "Retail Trade",
       "summary": "Retail sales in Canada fell 1.1% in December 2022 to $64.7 billion, a typical seasonal adjustment following elevated holiday spending. Despite the monthly decline, year-over-year growth remained robus",
       "lang": "en",
-      "path": "/en/retail-trade-december-2022/",
+      "path": "/thedaily/en/retail-trade-december-2022/",
       "prevSlug": "retail-trade-january-2023",
       "nextSlug": "retail-trade-november-2022"
     },
@@ -1480,7 +1480,7 @@
       "indicator": "Retail Trade",
       "summary": "Retail sales in Canada were essentially unchanged in November 2022, holding steady at $65.4 billion. Year-over-year growth remained solid at 4.8%, reflecting continued consumer spending despite broade",
       "lang": "en",
-      "path": "/en/retail-trade-november-2022/",
+      "path": "/thedaily/en/retail-trade-november-2022/",
       "prevSlug": "retail-trade-december-2022",
       "nextSlug": "retail-trade-october-2022"
     },
@@ -1494,7 +1494,7 @@
       "indicator": "Retail Trade",
       "summary": "Retail sales in Canada rose 0.8% in October 2022 to $65.4 billion, rebounding after a slight decline in September. Year-over-year growth was robust at 6.1%, reflecting continued consumer spending.",
       "lang": "en",
-      "path": "/en/retail-trade-october-2022/",
+      "path": "/thedaily/en/retail-trade-october-2022/",
       "prevSlug": "retail-trade-november-2022",
       "nextSlug": "retail-trade-september-2022"
     },
@@ -1508,7 +1508,7 @@
       "indicator": "Retail Trade",
       "summary": "Retail sales in Canada fell 0.5% in September 2022 to $64.9 billion, a modest pullback after elevated summer spending. Despite the monthly decline, year-over-year growth remained robust at 6.6%.",
       "lang": "en",
-      "path": "/en/retail-trade-september-2022/",
+      "path": "/thedaily/en/retail-trade-september-2022/",
       "prevSlug": "retail-trade-october-2022",
       "nextSlug": "retail-trade-august-2022"
     },
@@ -1522,7 +1522,7 @@
       "indicator": "Retail Trade",
       "summary": "Retail sales in Canada rose 0.4% in August 2022 to $65.2 billion, a modest gain following a pullback in July. Year-over-year growth remained robust at 6.6%.",
       "lang": "en",
-      "path": "/en/retail-trade-august-2022/",
+      "path": "/thedaily/en/retail-trade-august-2022/",
       "prevSlug": "retail-trade-september-2022",
       "nextSlug": "retail-trade-july-2022"
     },
@@ -1536,7 +1536,7 @@
       "indicator": "Retail Trade",
       "summary": "Retail sales in Canada fell 2.9% in July 2022 to $64.9 billion, a notable pullback from June's record high of $66.8 billion. Despite the monthly decline, year-over-year growth remained exceptionally s",
       "lang": "en",
-      "path": "/en/retail-trade-july-2022/",
+      "path": "/thedaily/en/retail-trade-july-2022/",
       "prevSlug": "retail-trade-august-2022",
       "nextSlug": "retail-trade-june-2022"
     },
@@ -1550,7 +1550,7 @@
       "indicator": "Retail Trade",
       "summary": "Retail sales in Canada rose 1.5% in June 2022 to a record $66.8 billion, the highest level on record. Year-over-year growth was exceptionally strong at 12.0%, reflecting robust consumer spending.",
       "lang": "en",
-      "path": "/en/retail-trade-june-2022/",
+      "path": "/thedaily/en/retail-trade-june-2022/",
       "prevSlug": "retail-trade-july-2022",
       "nextSlug": "retail-trade-may-2022"
     },
@@ -1564,7 +1564,7 @@
       "indicator": "Retail Trade",
       "summary": "Retail sales in Canada rose 2.7% in May 2022 to $65.8 billion. Year-over-year growth was exceptionally strong at 15.6%, reflecting continued post-pandemic reopening momentum and pent-up consumer deman",
       "lang": "en",
-      "path": "/en/retail-trade-may-2022/",
+      "path": "/thedaily/en/retail-trade-may-2022/",
       "prevSlug": "retail-trade-june-2022",
       "nextSlug": "retail-trade-april-2022"
     },
@@ -1578,7 +1578,7 @@
       "indicator": "Retail Trade",
       "summary": "Retail sales in Canada were essentially unchanged in April 2022 at $64.1 billion. Year-over-year growth remained strong at 9.7%, reflecting continued consumer spending momentum compared to pandemic-af",
       "lang": "en",
-      "path": "/en/retail-trade-april-2022/",
+      "path": "/thedaily/en/retail-trade-april-2022/",
       "prevSlug": "retail-trade-may-2022",
       "nextSlug": "retail-trade-march-2022"
     },
@@ -1592,7 +1592,7 @@
       "indicator": "Retail Trade",
       "summary": "Retail sales in Canada rose 1.1% in March 2022 to $64.1 billion. Year-over-year growth moderated to 3.8%, reflecting a more normalized comparison as the March 2021 base was less affected by pandemic r",
       "lang": "en",
-      "path": "/en/retail-trade-march-2022/",
+      "path": "/thedaily/en/retail-trade-march-2022/",
       "prevSlug": "retail-trade-april-2022",
       "nextSlug": "retail-trade-february-2022"
     },
@@ -1606,7 +1606,7 @@
       "indicator": "Retail Trade",
       "summary": "Retail sales in Canada rose 0.8% in February 2022 to $63.4 billion. Year-over-year growth remained solid at 7.9%, reflecting continued consumer spending momentum compared to February 2021, when pandem",
       "lang": "en",
-      "path": "/en/retail-trade-february-2022/",
+      "path": "/thedaily/en/retail-trade-february-2022/",
       "prevSlug": "retail-trade-march-2022",
       "nextSlug": "retail-trade-january-2022"
     },
@@ -1620,7 +1620,7 @@
       "indicator": "Retail Trade",
       "summary": "Retail sales in Canada rose 2.5% in January 2022 to $62.9 billion, starting the year with strong momentum. Year-over-year growth was particularly robust at 14.0%, as January 2021 was marked by widespr",
       "lang": "en",
-      "path": "/en/retail-trade-january-2022/",
+      "path": "/thedaily/en/retail-trade-january-2022/",
       "prevSlug": "retail-trade-february-2022",
       "nextSlug": "retail-trade-december-2021"
     },
@@ -1634,7 +1634,7 @@
       "indicator": "Retail Trade",
       "summary": "Retail sales in Canada declined 1.8% in December 2021 to $61.3 billion, following strong gains in November. Despite the monthly decline, year-over-year growth remained robust at 8.8%, capping a strong",
       "lang": "en",
-      "path": "/en/retail-trade-december-2021/",
+      "path": "/thedaily/en/retail-trade-december-2021/",
       "prevSlug": "retail-trade-january-2022",
       "nextSlug": "retail-trade-november-2021"
     },
@@ -1648,7 +1648,7 @@
       "indicator": "Retail Trade",
       "summary": "Retail sales in Canada rose 1.3% in November 2021 to $62.4 billion, maintaining upward momentum. Year-over-year growth was solid at 6.3%, reflecting continued consumer spending strength compared to No",
       "lang": "en",
-      "path": "/en/retail-trade-november-2021/",
+      "path": "/thedaily/en/retail-trade-november-2021/",
       "prevSlug": "retail-trade-december-2021",
       "nextSlug": null
     }
@@ -1664,7 +1664,7 @@
       "indicator": "Capacite manufacturiere",
       "summary": "Les fabricants canadiens ont fonctionne a 80,8 % de leur capacite en octobre 2025, pratiquement inchange par rapport a 80,7 % un an plus tot. Sur une base mensuelle, le taux d'utilisation a augmente d",
       "lang": "fr",
-      "path": "/fr/capacite-manufacturiere-octobre-2025/",
+      "path": "/thedaily/fr/capacite-manufacturiere-octobre-2025/",
       "prevSlug": null,
       "nextSlug": "livraisons-cereales-novembre-2025"
     },
@@ -1678,7 +1678,7 @@
       "indicator": "Livraisons de cereales",
       "summary": "Les producteurs de cereales de l'Ouest canadien ont livre 5,5 millions de tonnes de cereales aux silos primaires et de transformation titulaires de licence ainsi qu'aux negociants en grains en novembr",
       "lang": "fr",
-      "path": "/fr/livraisons-cereales-novembre-2025/",
+      "path": "/thedaily/fr/livraisons-cereales-novembre-2025/",
       "prevSlug": "capacite-manufacturiere-octobre-2025",
       "nextSlug": "transport-urbain-octobre-2025"
     },
@@ -1692,7 +1692,7 @@
       "indicator": "Transport urbain",
       "summary": "Les reseaux de transport en commun au Canada ont enregistre 142,6 millions de deplacements de passagers en octobre 2025, une baisse de 3,6 % par rapport a octobre 2024. Sur une base mensuelle, l'achal",
       "lang": "fr",
-      "path": "/fr/transport-urbain-octobre-2025/",
+      "path": "/thedaily/fr/transport-urbain-octobre-2025/",
       "prevSlug": "livraisons-cereales-novembre-2025",
       "nextSlug": "chargements-ferroviaires-octobre-2025"
     },
@@ -1706,7 +1706,7 @@
       "indicator": "Chargements ferroviaires",
       "summary": "Les chemins de fer canadiens ont transporte 33,2 millions de tonnes de marchandises en octobre 2025, en baisse de 0,9 % par rapport au meme mois un an plus tot. Sur une base mensuelle, le trafic a aug",
       "lang": "fr",
-      "path": "/fr/chargements-ferroviaires-octobre-2025/",
+      "path": "/thedaily/fr/chargements-ferroviaires-octobre-2025/",
       "prevSlug": "transport-urbain-octobre-2025",
       "nextSlug": "commerce-detail-aout-2022"
     },
@@ -1720,7 +1720,7 @@
       "indicator": "Commerce de detail",
       "summary": "Les ventes au détail au Canada ont augmenté de 0,4 % en août 2022 pour s'établir à 65,2 milliards de dollars, un gain modeste après un repli en juillet. La croissance d'une année à l'autre est demeuré",
       "lang": "fr",
-      "path": "/fr/commerce-detail-aout-2022/",
+      "path": "/thedaily/fr/commerce-detail-aout-2022/",
       "prevSlug": "chargements-ferroviaires-octobre-2025",
       "nextSlug": "commerce-detail-aout-2023"
     },
@@ -1734,7 +1734,7 @@
       "indicator": "Commerce de detail",
       "summary": "Les ventes au détail au Canada ont légèrement progressé de 0,1 % en août 2023 pour s'établir à 65,9 milliards de dollars, essentiellement inchangées par rapport au niveau de juillet. D'une année à l'a",
       "lang": "fr",
-      "path": "/fr/commerce-detail-aout-2023/",
+      "path": "/thedaily/fr/commerce-detail-aout-2023/",
       "prevSlug": "commerce-detail-aout-2022",
       "nextSlug": "commerce-detail-aout-2024"
     },
@@ -1748,7 +1748,7 @@
       "indicator": "Commerce de detail",
       "summary": "Les ventes au détail au Canada ont augmenté de 0,3 % en août 2024 pour s'établir à 67,1 milliards de dollars, s'appuyant sur le gain de 1,5 % enregistré en juillet. D'une année à l'autre, les ventes é",
       "lang": "fr",
-      "path": "/fr/commerce-detail-aout-2024/",
+      "path": "/thedaily/fr/commerce-detail-aout-2024/",
       "prevSlug": "commerce-detail-aout-2023",
       "nextSlug": "commerce-detail-avril-2022"
     },
@@ -1762,7 +1762,7 @@
       "indicator": "Commerce de detail",
       "summary": "Les ventes au détail au Canada sont demeurées essentiellement inchangées en avril 2022 à 64,1 milliards de dollars. La croissance d'une année à l'autre est demeurée forte à 9,7 %, reflétant l'élan con",
       "lang": "fr",
-      "path": "/fr/commerce-detail-avril-2022/",
+      "path": "/thedaily/fr/commerce-detail-avril-2022/",
       "prevSlug": "commerce-detail-aout-2024",
       "nextSlug": "commerce-detail-avril-2023"
     },
@@ -1776,7 +1776,7 @@
       "indicator": "Commerce de detail",
       "summary": "Les ventes au détail au Canada ont augmenté de 0,4 % en avril 2023 pour s'établir à 65,6 milliards de dollars, poursuivant les gains du mois précédent. D'une année à l'autre, les ventes étaient en hau",
       "lang": "fr",
-      "path": "/fr/commerce-detail-avril-2023/",
+      "path": "/thedaily/fr/commerce-detail-avril-2023/",
       "prevSlug": "commerce-detail-avril-2022",
       "nextSlug": "commerce-detail-avril-2024"
     },
@@ -1790,7 +1790,7 @@
       "indicator": "Commerce de detail",
       "summary": "Les ventes au détail au Canada ont augmenté de 0,9 % en avril 2024 pour s'établir à 66,8 milliards de dollars, égalant le gain de 0,9 % de mars. D'une année à l'autre, les ventes étaient supérieures d",
       "lang": "fr",
-      "path": "/fr/commerce-detail-avril-2024/",
+      "path": "/thedaily/fr/commerce-detail-avril-2024/",
       "prevSlug": "commerce-detail-avril-2023",
       "nextSlug": "commerce-detail-avril-2025"
     },
@@ -1804,7 +1804,7 @@
       "indicator": "Commerce de detail",
       "summary": "Les ventes au détail au Canada ont augmenté de 0,3 % en avril 2025 pour s'établir à 70,0 milliards de dollars, s'appuyant sur le gain de 0,9 % enregistré en mars. D'une année à l'autre, les ventes éta",
       "lang": "fr",
-      "path": "/fr/commerce-detail-avril-2025/",
+      "path": "/thedaily/fr/commerce-detail-avril-2025/",
       "prevSlug": "commerce-detail-avril-2024",
       "nextSlug": "commerce-detail-decembre-2021"
     },
@@ -1818,7 +1818,7 @@
       "indicator": "Commerce de detail",
       "summary": "Les ventes au détail au Canada ont reculé de 1,8 % en décembre 2021 pour s'établir à 61,3 milliards de dollars, après de solides gains en novembre. Malgré la baisse mensuelle, la croissance d'une anné",
       "lang": "fr",
-      "path": "/fr/commerce-detail-decembre-2021/",
+      "path": "/thedaily/fr/commerce-detail-decembre-2021/",
       "prevSlug": "commerce-detail-avril-2025",
       "nextSlug": "commerce-detail-decembre-2022"
     },
@@ -1832,7 +1832,7 @@
       "indicator": "Commerce de detail",
       "summary": "Les ventes au détail au Canada ont diminué de 1,1 % en décembre 2022 pour s'établir à 64,7 milliards de dollars, un ajustement saisonnier typique après les dépenses élevées des Fêtes. Malgré le recul ",
       "lang": "fr",
-      "path": "/fr/commerce-detail-decembre-2022/",
+      "path": "/thedaily/fr/commerce-detail-decembre-2022/",
       "prevSlug": "commerce-detail-decembre-2021",
       "nextSlug": "commerce-detail-decembre-2024"
     },
@@ -1846,7 +1846,7 @@
       "indicator": "Commerce de detail",
       "summary": "Les ventes au détail au Canada ont augmenté de 2,5 % en décembre 2024 pour s'établir à 70,0 milliards de dollars, le total mensuel le plus élevé de l'année alors que les achats des Fêtes ont stimulé l",
       "lang": "fr",
-      "path": "/fr/commerce-detail-decembre-2024/",
+      "path": "/thedaily/fr/commerce-detail-decembre-2024/",
       "prevSlug": "commerce-detail-decembre-2022",
       "nextSlug": "commerce-detail-fevrier-2022"
     },
@@ -1860,7 +1860,7 @@
       "indicator": "Commerce de detail",
       "summary": "Les ventes au détail au Canada ont augmenté de 0,8 % en février 2022 pour atteindre 63,4 milliards de dollars. La croissance d'une année à l'autre est demeurée solide à 7,9 %, reflétant l'élan continu",
       "lang": "fr",
-      "path": "/fr/commerce-detail-fevrier-2022/",
+      "path": "/thedaily/fr/commerce-detail-fevrier-2022/",
       "prevSlug": "commerce-detail-decembre-2024",
       "nextSlug": "commerce-detail-fevrier-2023"
     },
@@ -1874,7 +1874,7 @@
       "indicator": "Commerce de detail",
       "summary": "Les ventes au détail au Canada ont diminué de 0,9 % en février 2023 pour s'établir à 65,7 milliards de dollars, reculant par rapport au niveau solide de janvier. Malgré la baisse mensuelle, les ventes",
       "lang": "fr",
-      "path": "/fr/commerce-detail-fevrier-2023/",
+      "path": "/thedaily/fr/commerce-detail-fevrier-2023/",
       "prevSlug": "commerce-detail-fevrier-2022",
       "nextSlug": "commerce-detail-fevrier-2025"
     },
@@ -1888,7 +1888,7 @@
       "indicator": "Commerce de detail",
       "summary": "Les ventes au détail au Canada ont diminué de 0,7 % en février 2025 pour s'établir à 69,2 milliards de dollars, prolongeant le recul de janvier. D'une année à l'autre, les ventes étaient supérieures d",
       "lang": "fr",
-      "path": "/fr/commerce-detail-fevrier-2025/",
+      "path": "/thedaily/fr/commerce-detail-fevrier-2025/",
       "prevSlug": "commerce-detail-fevrier-2023",
       "nextSlug": "commerce-detail-janvier-2022"
     },
@@ -1902,7 +1902,7 @@
       "indicator": "Commerce de detail",
       "summary": "Les ventes au détail au Canada ont augmenté de 2,5 % en janvier 2022 pour atteindre 62,9 milliards de dollars, commençant l'année avec un fort élan. La croissance d'une année à l'autre était particuli",
       "lang": "fr",
-      "path": "/fr/commerce-detail-janvier-2022/",
+      "path": "/thedaily/fr/commerce-detail-janvier-2022/",
       "prevSlug": "commerce-detail-fevrier-2025",
       "nextSlug": "commerce-detail-janvier-2023"
     },
@@ -1916,7 +1916,7 @@
       "indicator": "Commerce de detail",
       "summary": "Les ventes au détail au Canada ont augmenté de 2,5 % en janvier 2023 pour s'établir à 66,3 milliards de dollars, marquant un début d'année solide. D'une année à l'autre, les ventes étaient en hausse d",
       "lang": "fr",
-      "path": "/fr/commerce-detail-janvier-2023/",
+      "path": "/thedaily/fr/commerce-detail-janvier-2023/",
       "prevSlug": "commerce-detail-janvier-2022",
       "nextSlug": "commerce-detail-janvier-2025"
     },
@@ -1930,7 +1930,7 @@
       "indicator": "Commerce de detail",
       "summary": "Les ventes au détail au Canada ont diminué de 0,5 % en janvier 2025 pour s'établir à 69,7 milliards de dollars, après le sommet des Fêtes de 70,0 milliards de dollars en décembre. D'une année à l'autr",
       "lang": "fr",
-      "path": "/fr/commerce-detail-janvier-2025/",
+      "path": "/thedaily/fr/commerce-detail-janvier-2025/",
       "prevSlug": "commerce-detail-janvier-2023",
       "nextSlug": "commerce-detail-juillet-2022"
     },
@@ -1944,7 +1944,7 @@
       "indicator": "Commerce de detail",
       "summary": "Les ventes au détail au Canada ont diminué de 2,9 % en juillet 2022 pour s'établir à 64,9 milliards de dollars, un repli notable par rapport au sommet record de 66,8 milliards de dollars en juin. Malg",
       "lang": "fr",
-      "path": "/fr/commerce-detail-juillet-2022/",
+      "path": "/thedaily/fr/commerce-detail-juillet-2022/",
       "prevSlug": "commerce-detail-janvier-2025",
       "nextSlug": "commerce-detail-juillet-2023"
     },
@@ -1958,7 +1958,7 @@
       "indicator": "Commerce de detail",
       "summary": "Les ventes au détail au Canada ont légèrement reculé de 0,2 % en juillet 2023 pour s'établir à 65,9 milliards de dollars, un léger repli par rapport au niveau de juin. D'une année à l'autre, les vente",
       "lang": "fr",
-      "path": "/fr/commerce-detail-juillet-2023/",
+      "path": "/thedaily/fr/commerce-detail-juillet-2023/",
       "prevSlug": "commerce-detail-juillet-2022",
       "nextSlug": "commerce-detail-juillet-2024"
     },
@@ -1972,7 +1972,7 @@
       "indicator": "Commerce de detail",
       "summary": "Les ventes au détail au Canada ont augmenté de 1,5 % en juillet 2024 pour s'établir à 66,9 milliards de dollars, rebondissant après des baisses de 0,1 % en juin et de 1,2 % en mai. D'une année à l'aut",
       "lang": "fr",
-      "path": "/fr/commerce-detail-juillet-2024/",
+      "path": "/thedaily/fr/commerce-detail-juillet-2024/",
       "prevSlug": "commerce-detail-juillet-2023",
       "nextSlug": "commerce-detail-juin-2022"
     },
@@ -1986,7 +1986,7 @@
       "indicator": "Commerce de detail",
       "summary": "Les ventes au détail au Canada ont augmenté de 1,5 % en juin 2022 pour atteindre un record de 66,8 milliards de dollars, le niveau le plus élevé jamais enregistré. La croissance d'une année à l'autre ",
       "lang": "fr",
-      "path": "/fr/commerce-detail-juin-2022/",
+      "path": "/thedaily/fr/commerce-detail-juin-2022/",
       "prevSlug": "commerce-detail-juillet-2024",
       "nextSlug": "commerce-detail-juin-2023"
     },
@@ -2000,7 +2000,7 @@
       "indicator": "Commerce de detail",
       "summary": "Les ventes au détail au Canada ont augmenté de 0,5 % en juin 2023 pour s'établir à 66,0 milliards de dollars, un rebond par rapport au rythme plus lent du mois précédent. Cependant, d'une année à l'au",
       "lang": "fr",
-      "path": "/fr/commerce-detail-juin-2023/",
+      "path": "/thedaily/fr/commerce-detail-juin-2023/",
       "prevSlug": "commerce-detail-juin-2022",
       "nextSlug": "commerce-detail-juin-2024"
     },
@@ -2014,7 +2014,7 @@
       "indicator": "Commerce de detail",
       "summary": "Les ventes au détail au Canada ont légèrement reculé de 0,1 % en juin 2024 pour s'établir à 65,9 milliards de dollars, après une baisse de 1,2 % en mai. D'une année à l'autre, les ventes étaient infér",
       "lang": "fr",
-      "path": "/fr/commerce-detail-juin-2024/",
+      "path": "/thedaily/fr/commerce-detail-juin-2024/",
       "prevSlug": "commerce-detail-juin-2023",
       "nextSlug": "commerce-detail-juin-2025"
     },
@@ -2028,7 +2028,7 @@
       "indicator": "Commerce de detail",
       "summary": "Les ventes au détail au Canada ont augmenté de 1,4 % en juin 2025 pour s'établir à 70,1 milliards de dollars, se remettant du recul de 1,4 % enregistré en mai. Il s'agissait de la plus forte hausse me",
       "lang": "fr",
-      "path": "/fr/commerce-detail-juin-2025/",
+      "path": "/thedaily/fr/commerce-detail-juin-2025/",
       "prevSlug": "commerce-detail-juin-2024",
       "nextSlug": "commerce-detail-mai-2022"
     },
@@ -2042,7 +2042,7 @@
       "indicator": "Commerce de detail",
       "summary": "Les ventes au détail au Canada ont augmenté de 2,7 % en mai 2022 pour atteindre 65,8 milliards de dollars. La croissance d'une année à l'autre était exceptionnellement forte à 15,6 %, reflétant l'élan",
       "lang": "fr",
-      "path": "/fr/commerce-detail-mai-2022/",
+      "path": "/thedaily/fr/commerce-detail-mai-2022/",
       "prevSlug": "commerce-detail-juin-2025",
       "nextSlug": "commerce-detail-mai-2023"
     },
@@ -2056,7 +2056,7 @@
       "indicator": "Commerce de detail",
       "summary": "Les ventes au détail au Canada sont demeurées essentiellement stables en mai 2023, se maintenant à 65,7 milliards de dollars par rapport au niveau d'avril. D'une année à l'autre, les ventes étaient en",
       "lang": "fr",
-      "path": "/fr/commerce-detail-mai-2023/",
+      "path": "/thedaily/fr/commerce-detail-mai-2023/",
       "prevSlug": "commerce-detail-mai-2022",
       "nextSlug": "commerce-detail-mai-2024"
     },
@@ -2070,7 +2070,7 @@
       "indicator": "Commerce de detail",
       "summary": "Les ventes au détail au Canada ont diminué de 1,2 % en mai 2024 pour s'établir à 66,0 milliards de dollars, en baisse par rapport au sommet d'avril de 66,8 milliards de dollars. D'une année à l'autre,",
       "lang": "fr",
-      "path": "/fr/commerce-detail-mai-2024/",
+      "path": "/thedaily/fr/commerce-detail-mai-2024/",
       "prevSlug": "commerce-detail-mai-2023",
       "nextSlug": "commerce-detail-mai-2025"
     },
@@ -2084,7 +2084,7 @@
       "indicator": "Commerce de detail",
       "summary": "Les ventes au détail au Canada ont diminué de 1,2 % en mai 2025 pour s'établir à 69,2 milliards de dollars, contrebalançant en partie le gain de 0,3 % enregistré en avril. Malgré le recul mensuel, les",
       "lang": "fr",
-      "path": "/fr/commerce-detail-mai-2025/",
+      "path": "/thedaily/fr/commerce-detail-mai-2025/",
       "prevSlug": "commerce-detail-mai-2024",
       "nextSlug": "commerce-detail-mars-2022"
     },
@@ -2098,7 +2098,7 @@
       "indicator": "Commerce de detail",
       "summary": "Les ventes au détail au Canada ont augmenté de 1,1 % en mars 2022 pour atteindre 64,1 milliards de dollars. La croissance d'une année à l'autre s'est modérée à 3,8 %, reflétant une comparaison plus no",
       "lang": "fr",
-      "path": "/fr/commerce-detail-mars-2022/",
+      "path": "/thedaily/fr/commerce-detail-mars-2022/",
       "prevSlug": "commerce-detail-mai-2025",
       "nextSlug": "commerce-detail-mars-2023"
     },
@@ -2112,7 +2112,7 @@
       "indicator": "Commerce de detail",
       "summary": "Les ventes au détail au Canada ont diminué de 0,5 % en mars 2023 pour s'établir à 65,3 milliards de dollars, reculant par rapport au niveau de février. Malgré la baisse mensuelle, les ventes d'une ann",
       "lang": "fr",
-      "path": "/fr/commerce-detail-mars-2023/",
+      "path": "/thedaily/fr/commerce-detail-mars-2023/",
       "prevSlug": "commerce-detail-mars-2022",
       "nextSlug": "commerce-detail-mars-2024"
     },
@@ -2126,7 +2126,7 @@
       "indicator": "Commerce de detail",
       "summary": "Les ventes au détail au Canada ont reculé de 0,1 % en mars 2024 pour s'établir à 66,2 milliards de dollars, après un léger recul en février. D'une année à l'autre, les ventes étaient supérieures de 1,",
       "lang": "fr",
-      "path": "/fr/commerce-detail-mars-2024/",
+      "path": "/thedaily/fr/commerce-detail-mars-2024/",
       "prevSlug": "commerce-detail-mars-2023",
       "nextSlug": "commerce-detail-mars-2025"
     },
@@ -2140,7 +2140,7 @@
       "indicator": "Commerce de detail",
       "summary": "Les ventes au détail au Canada ont augmenté de 0,9 % en mars 2025 pour s'établir à 69,8 milliards de dollars, renversant le recul de 0,9 % enregistré en février. D'une année à l'autre, les ventes étai",
       "lang": "fr",
-      "path": "/fr/commerce-detail-mars-2025/",
+      "path": "/thedaily/fr/commerce-detail-mars-2025/",
       "prevSlug": "commerce-detail-mars-2024",
       "nextSlug": "commerce-detail-novembre-2021"
     },
@@ -2154,7 +2154,7 @@
       "indicator": "Commerce de detail",
       "summary": "Les ventes au détail au Canada ont augmenté de 1,3 % en novembre 2021 pour atteindre 62,4 milliards de dollars, maintenant l'élan à la hausse. La croissance d'une année à l'autre était solide à 6,3 %,",
       "lang": "fr",
-      "path": "/fr/commerce-detail-novembre-2021/",
+      "path": "/thedaily/fr/commerce-detail-novembre-2021/",
       "prevSlug": "commerce-detail-mars-2025",
       "nextSlug": "commerce-detail-novembre-2022"
     },
@@ -2168,7 +2168,7 @@
       "indicator": "Commerce de detail",
       "summary": "Les ventes au détail au Canada sont demeurées essentiellement inchangées en novembre 2022, se maintenant à 65,4 milliards de dollars. La croissance d'une année à l'autre est demeurée solide à 4,8 %, r",
       "lang": "fr",
-      "path": "/fr/commerce-detail-novembre-2022/",
+      "path": "/thedaily/fr/commerce-detail-novembre-2022/",
       "prevSlug": "commerce-detail-novembre-2021",
       "nextSlug": "commerce-detail-novembre-2024"
     },
@@ -2182,7 +2182,7 @@
       "indicator": "Commerce de detail",
       "summary": "Les ventes au détail au Canada ont augmenté de 0,4 % en novembre 2024 pour s'établir à 68,3 milliards de dollars, les achats des Fêtes ayant commencé à stimuler les dépenses des consommateurs. D'une a",
       "lang": "fr",
-      "path": "/fr/commerce-detail-novembre-2024/",
+      "path": "/thedaily/fr/commerce-detail-novembre-2024/",
       "prevSlug": "commerce-detail-novembre-2022",
       "nextSlug": "commerce-detail-octobre-2022"
     },
@@ -2196,7 +2196,7 @@
       "indicator": "Commerce de detail",
       "summary": "Les ventes au détail au Canada ont augmenté de 0,8 % en octobre 2022 pour s'établir à 65,4 milliards de dollars, rebondissant après un léger recul en septembre. La croissance d'une année à l'autre éta",
       "lang": "fr",
-      "path": "/fr/commerce-detail-octobre-2022/",
+      "path": "/thedaily/fr/commerce-detail-octobre-2022/",
       "prevSlug": "commerce-detail-novembre-2024",
       "nextSlug": "commerce-detail-octobre-2023"
     },
@@ -2210,7 +2210,7 @@
       "indicator": "Commerce de detail",
       "summary": "Les ventes au détail au Canada ont légèrement reculé de 0,1 % en octobre 2023 pour s'établir à 66,5 milliards de dollars, un léger repli par rapport au niveau de septembre. D'une année à l'autre, les ",
       "lang": "fr",
-      "path": "/fr/commerce-detail-octobre-2023/",
+      "path": "/thedaily/fr/commerce-detail-octobre-2023/",
       "prevSlug": "commerce-detail-octobre-2022",
       "nextSlug": "commerce-detail-octobre-2024"
     },
@@ -2224,7 +2224,7 @@
       "indicator": "Commerce de detail",
       "summary": "Les ventes au détail au Canada ont augmenté de 0,8 % en octobre 2024 pour s'établir à 68,0 milliards de dollars, marquant le troisième mois consécutif de croissance. D'une année à l'autre, les ventes ",
       "lang": "fr",
-      "path": "/fr/commerce-detail-octobre-2024/",
+      "path": "/thedaily/fr/commerce-detail-octobre-2024/",
       "prevSlug": "commerce-detail-octobre-2023",
       "nextSlug": "commerce-detail-septembre-2022"
     },
@@ -2238,7 +2238,7 @@
       "indicator": "Commerce de detail",
       "summary": "Les ventes au détail au Canada ont diminué de 0,5 % en septembre 2022 pour s'établir à 64,9 milliards de dollars, un léger repli après les dépenses estivales élevées. Malgré le recul mensuel, la crois",
       "lang": "fr",
-      "path": "/fr/commerce-detail-septembre-2022/",
+      "path": "/thedaily/fr/commerce-detail-septembre-2022/",
       "prevSlug": "commerce-detail-octobre-2024",
       "nextSlug": "commerce-detail-septembre-2023"
     },
@@ -2252,7 +2252,7 @@
       "indicator": "Commerce de detail",
       "summary": "Les ventes au détail au Canada ont augmenté de 1,0 % en septembre 2023 pour s'établir à 66,6 milliards de dollars, rebondissant après les légères baisses observées en juillet et août. D'une année à l'",
       "lang": "fr",
-      "path": "/fr/commerce-detail-septembre-2023/",
+      "path": "/thedaily/fr/commerce-detail-septembre-2023/",
       "prevSlug": "commerce-detail-septembre-2022",
       "nextSlug": "commerce-detail-septembre-2024"
     },
@@ -2266,7 +2266,7 @@
       "indicator": "Commerce de detail",
       "summary": "Les ventes au détail au Canada ont augmenté de 0,6 % en septembre 2024 pour s'établir à 67,5 milliards de dollars, marquant le troisième mois consécutif de croissance. D'une année à l'autre, les vente",
       "lang": "fr",
-      "path": "/fr/commerce-detail-septembre-2024/",
+      "path": "/thedaily/fr/commerce-detail-septembre-2024/",
       "prevSlug": "commerce-detail-septembre-2023",
       "nextSlug": "credit-menages-octobre-2025"
     },
@@ -2280,7 +2280,7 @@
       "indicator": "Credit des menages",
       "summary": "Le passif de credit total des menages s'etablissait a 3 196,2 milliards de dollars en octobre 2025, en hausse de 4,5 % par rapport au meme mois de l'annee precedente. Sur une base mensuelle, le credit",
       "lang": "fr",
-      "path": "/fr/credit-menages-octobre-2025/",
+      "path": "/thedaily/fr/credit-menages-octobre-2025/",
       "prevSlug": "commerce-detail-septembre-2024",
       "nextSlug": "prix-agricoles-octobre-2025"
     },
@@ -2294,7 +2294,7 @@
       "indicator": "Prix agricoles",
       "summary": "Les prix des produits agricoles ont affiche des tendances divergentes en octobre 2025, les prix du betail ayant augmente de facon substantielle tandis que les prix des principaux grains ont continue d",
       "lang": "fr",
-      "path": "/fr/prix-agricoles-octobre-2025/",
+      "path": "/thedaily/fr/prix-agricoles-octobre-2025/",
       "prevSlug": "credit-menages-octobre-2025",
       "nextSlug": "production-bois-septembre-2025"
     },
@@ -2308,7 +2308,7 @@
       "indicator": "Production de bois",
       "summary": "Les scieries canadiennes ont produit 3 845 milliers de metres cubes de bois d'oeuvre en septembre 2025, en hausse de 2,3 % par rapport a aout, mais en baisse de 2,7 % par rapport au meme mois l'annee ",
       "lang": "fr",
-      "path": "/fr/production-bois-septembre-2025/",
+      "path": "/thedaily/fr/production-bois-septembre-2025/",
       "prevSlug": "prix-agricoles-octobre-2025",
       "nextSlug": "visiteurs-internationaux-octobre-2025"
     },
@@ -2322,7 +2322,7 @@
       "indicator": "Visiteurs internationaux",
       "summary": "Le Canada a accueilli 2 363 398 visiteurs non residents en octobre 2025, en hausse de 4,9 % par rapport aux 2 252 283 visiteurs d'octobre 2024. Cette hausse temoigne d'une reprise continue du tourisme",
       "lang": "fr",
-      "path": "/fr/visiteurs-internationaux-octobre-2025/",
+      "path": "/thedaily/fr/visiteurs-internationaux-octobre-2025/",
       "prevSlug": "production-bois-septembre-2025",
       "nextSlug": "commerce-detail-juillet-2025"
     },
@@ -2336,7 +2336,7 @@
       "indicator": "Commerce de detail",
       "summary": "Les ventes au détail au Canada ont reculé de 0,9 % en juillet 2025 pour s'établir à 69,5 milliards de dollars, contrebalançant en partie la hausse de 1,4 % enregistrée en juin. Malgré le recul mensuel",
       "lang": "fr",
-      "path": "/fr/commerce-detail-juillet-2025/",
+      "path": "/thedaily/fr/commerce-detail-juillet-2025/",
       "prevSlug": "visiteurs-internationaux-octobre-2025",
       "nextSlug": "demandes-ae-octobre-2025"
     },
@@ -2350,7 +2350,7 @@
       "indicator": "Demandes d'AE",
       "summary": "Les demandes d'assurance-emploi (AE) reçues ont totalisé 267 280 en octobre 2025, en baisse de 1,1 % par rapport aux 270 140 en septembre. D'une année à l'autre, les demandes d'AE ont augmenté de 2,1 ",
       "lang": "fr",
-      "path": "/fr/demandes-ae-octobre-2025/",
+      "path": "/thedaily/fr/demandes-ae-octobre-2025/",
       "prevSlug": "commerce-detail-juillet-2025",
       "nextSlug": "indice-prix-logements-neufs-octobre-2025"
     },
@@ -2364,7 +2364,7 @@
       "indicator": "Indice prix logements neufs",
       "summary": "L'Indice des prix des logements neufs (IPLN) a diminué de 0,4 % pour s'établir à 122,2 en octobre 2025, poursuivant une tendance à la baisse des prix des logements neufs qui a débuté en avril.",
       "lang": "fr",
-      "path": "/fr/indice-prix-logements-neufs-octobre-2025/",
+      "path": "/thedaily/fr/indice-prix-logements-neufs-octobre-2025/",
       "prevSlug": "demandes-ae-octobre-2025",
       "nextSlug": "mises-en-chantier-octobre-2025"
     },
@@ -2378,7 +2378,7 @@
       "indicator": "Mises en chantier",
       "summary": "Les mises en chantier ont diminué de 17,4 % pour s'établir à un taux annuel désaisonnalisé de 232 000 unités en octobre 2025, en baisse par rapport aux 281 000 unités de septembre. Il s'agit d'un net ",
       "lang": "fr",
-      "path": "/fr/mises-en-chantier-octobre-2025/",
+      "path": "/thedaily/fr/mises-en-chantier-octobre-2025/",
       "prevSlug": "indice-prix-logements-neufs-octobre-2025",
       "nextSlug": "population-t4-2025"
     },
@@ -2392,7 +2392,7 @@
       "indicator": "Population",
       "summary": "La population du Canada a diminué pour s'établir à 41 575 585 au quatrième trimestre de 2025, en baisse de 76 068 (-0,18 %) par rapport au trimestre précédent. Il s'agit du premier recul trimestriel d",
       "lang": "fr",
-      "path": "/fr/population-t4-2025/",
+      "path": "/thedaily/fr/population-t4-2025/",
       "prevSlug": "mises-en-chantier-octobre-2025",
       "nextSlug": "prix-essence-octobre-2025"
     },
@@ -2406,7 +2406,7 @@
       "indicator": "Prix de l'essence",
       "summary": "Le prix national moyen de l'essence ordinaire sans plomb aux stations libre-service a diminué de 4,9 % pour s'établir à 137,2 cents le litre en octobre 2025, après une hausse de 1,8 % en septembre. D'",
       "lang": "fr",
-      "path": "/fr/prix-essence-octobre-2025/",
+      "path": "/thedaily/fr/prix-essence-octobre-2025/",
       "prevSlug": "population-t4-2025",
       "nextSlug": "prix-matieres-premieres-novembre-2025"
     },
@@ -2420,7 +2420,7 @@
       "indicator": "Prix matieres premieres",
       "summary": "L'Indice des prix des matières premières (IPMP) a augmenté de 0,3 % en novembre 2025, portant l'indice à 148,8 (2020=100). Cette hausse fait suite à une augmentation de 1,6 % en octobre. D'une année à",
       "lang": "fr",
-      "path": "/fr/prix-matieres-premieres-novembre-2025/",
+      "path": "/thedaily/fr/prix-matieres-premieres-novembre-2025/",
       "prevSlug": "prix-essence-octobre-2025",
       "nextSlug": "prix-matieres-premieres-octobre-2025"
     },
@@ -2434,7 +2434,7 @@
       "indicator": "Prix matieres premieres",
       "summary": "L'Indice des prix des matières premières (IPMP) a augmenté de 1,6 % en octobre 2025, portant l'indice à 148,4 (2020=100). Ce résultat fait suite à une hausse de 1,7 % en septembre. D'une année à l'aut",
       "lang": "fr",
-      "path": "/fr/prix-matieres-premieres-octobre-2025/",
+      "path": "/thedaily/fr/prix-matieres-premieres-octobre-2025/",
       "prevSlug": "prix-matieres-premieres-novembre-2025",
       "nextSlug": "prix-produits-industriels-novembre-2025"
     },
@@ -2448,7 +2448,7 @@
       "indicator": "Prix produits industriels",
       "summary": "L'Indice des prix des produits industriels (IPPI) a augmenté de 0,9 % en novembre 2025, portant l'indice à 135,6 (2020=100). Cette hausse fait suite à une augmentation de 1,6 % en octobre. D'une année",
       "lang": "fr",
-      "path": "/fr/prix-produits-industriels-novembre-2025/",
+      "path": "/thedaily/fr/prix-produits-industriels-novembre-2025/",
       "prevSlug": "prix-matieres-premieres-octobre-2025",
       "nextSlug": "prix-produits-industriels-octobre-2025"
     },
@@ -2462,7 +2462,7 @@
       "indicator": "Prix produits industriels",
       "summary": "L'Indice des prix des produits industriels (IPPI) a augmenté de 1,6 % en octobre 2025, portant l'indice à 134,4 (2020=100). Ce résultat fait suite à une hausse de 1,0 % en septembre. D'une année à l'a",
       "lang": "fr",
-      "path": "/fr/prix-produits-industriels-octobre-2025/",
+      "path": "/thedaily/fr/prix-produits-industriels-octobre-2025/",
       "prevSlug": "prix-produits-industriels-novembre-2025",
       "nextSlug": "production-petrole-brut-septembre-2025"
     },
@@ -2476,7 +2476,7 @@
       "indicator": "Production petrole brut",
       "summary": "La production de pétrole brut du Canada a diminué de 4,0 % en septembre 2025 pour s'établir à 145,1 millions de barils, en baisse par rapport à 151,1 millions de barils en août. Malgré le recul mensue",
       "lang": "fr",
-      "path": "/fr/production-petrole-brut-septembre-2025/",
+      "path": "/thedaily/fr/production-petrole-brut-septembre-2025/",
       "prevSlug": "prix-produits-industriels-octobre-2025",
       "nextSlug": "remuneration-hebdomadaire-octobre-2025"
     },
@@ -2490,7 +2490,7 @@
       "indicator": "Remuneration hebdomadaire",
       "summary": "La rémunération hebdomadaire moyenne des employés payés à l'heure a diminué de 0,2 % en octobre 2025 pour s'établir à 1 312,16 $, mettant fin à une série de quatre mois consécutifs de hausses qui avai",
       "lang": "fr",
-      "path": "/fr/remuneration-hebdomadaire-octobre-2025/",
+      "path": "/thedaily/fr/remuneration-hebdomadaire-octobre-2025/",
       "prevSlug": "production-petrole-brut-septembre-2025",
       "nextSlug": "ventes-vehicules-automobiles-octobre-2025"
     },
@@ -2504,7 +2504,7 @@
       "indicator": "Ventes vehicules",
       "summary": "Les ventes de véhicules automobiles neufs ont totalisé 163 490 unités en octobre 2025, en baisse de 3,1 % par rapport à septembre et de 0,7 % par rapport à octobre 2024. Le recul est attribuable à une",
       "lang": "fr",
-      "path": "/fr/ventes-vehicules-automobiles-octobre-2025/",
+      "path": "/thedaily/fr/ventes-vehicules-automobiles-octobre-2025/",
       "prevSlug": "remuneration-hebdomadaire-octobre-2025",
       "nextSlug": "prix-transport-ferroviaire-decembre-2025"
     },
@@ -2518,7 +2518,7 @@
       "indicator": null,
       "summary": "L'Indice des prix des services de transport ferroviaire de marchandises (IPSTFM) s'est établi à 131,2 en décembre 2025, peu changé par rapport à 131,3 en novembre. L'indice mesure les variations des p",
       "lang": "fr",
-      "path": "/fr/prix-transport-ferroviaire-decembre-2025/",
+      "path": "/thedaily/fr/prix-transport-ferroviaire-decembre-2025/",
       "prevSlug": "ventes-vehicules-automobiles-octobre-2025",
       "nextSlug": "production-electricite-septembre-2025"
     },
@@ -2532,7 +2532,7 @@
       "indicator": "Production d'electricite",
       "summary": "La production d'électricité au Canada a totalisé 44,4 térawattheures (TWh) en septembre 2025, en baisse de 6,7 % par rapport à août. Comparativement à septembre 2024, la production a diminué de 2,4 %.",
       "lang": "fr",
-      "path": "/fr/production-electricite-septembre-2025/",
+      "path": "/thedaily/fr/production-electricite-septembre-2025/",
       "prevSlug": "prix-transport-ferroviaire-decembre-2025",
       "nextSlug": "services-alimentaires-octobre-2025"
     },
@@ -2546,7 +2546,7 @@
       "indicator": "Services alimentaires",
       "summary": "Les ventes des services de restauration et des débits de boissons ont augmenté de 0,6 % pour s'établir à 8,5 milliards de dollars en octobre 2025, après un recul de 0,4 % en septembre. Comparativement",
       "lang": "fr",
-      "path": "/fr/services-alimentaires-octobre-2025/",
+      "path": "/thedaily/fr/services-alimentaires-octobre-2025/",
       "prevSlug": "production-electricite-septembre-2025",
       "nextSlug": "ventes-manufacturieres-octobre-2025"
     },
@@ -2560,7 +2560,7 @@
       "indicator": "Ventes manufacturieres",
       "summary": "Les ventes du secteur manufacturier ont diminué de 1,0 % pour s'établir à 71,5 milliards de dollars en octobre 2025, après un gain de 3,5 % en septembre. D'une année à l'autre, les ventes ont progress",
       "lang": "fr",
-      "path": "/fr/ventes-manufacturieres-octobre-2025/",
+      "path": "/thedaily/fr/ventes-manufacturieres-octobre-2025/",
       "prevSlug": "services-alimentaires-octobre-2025",
       "nextSlug": "passagers-aeriens-octobre-2025"
     },
@@ -2574,7 +2574,7 @@
       "indicator": "Passagers aeriens",
       "summary": "Les grands transporteurs aériens canadiens ont transporté 7,1 millions de passagers sur des vols réguliers et nolisés en octobre 2025, en hausse de 2,2 % par rapport à octobre 2024. Le coefficient d'o",
       "lang": "fr",
-      "path": "/fr/passagers-aeriens-octobre-2025/",
+      "path": "/thedaily/fr/passagers-aeriens-octobre-2025/",
       "prevSlug": "ventes-manufacturieres-octobre-2025",
       "nextSlug": "pib-octobre-2025"
     },
@@ -2588,7 +2588,7 @@
       "indicator": "PIB",
       "summary": "Le produit intérieur brut (PIB) réel a diminué de 0,3 % en octobre 2025, après une hausse de 0,2 % en septembre. D'une année à l'autre, le PIB réel a progressé de 0,4 % par rapport à octobre 2024.",
       "lang": "fr",
-      "path": "/fr/pib-octobre-2025/",
+      "path": "/thedaily/fr/pib-octobre-2025/",
       "prevSlug": "passagers-aeriens-octobre-2025",
       "nextSlug": "ipc-novembre-2025"
     },
@@ -2602,7 +2602,7 @@
       "indicator": "Indice des prix",
       "summary": "L'Indice des prix à la consommation (IPC) a augmenté de 2,2 % d'une année à l'autre en novembre 2025, égalant la hausse d'octobre. L'indice s'établissait à 165,4, en hausse par rapport à 161,8 un an p",
       "lang": "fr",
-      "path": "/fr/ipc-novembre-2025/",
+      "path": "/thedaily/fr/ipc-novembre-2025/",
       "prevSlug": "pib-octobre-2025",
       "nextSlug": "commerce-detail-octobre-2025"
     },
@@ -2616,7 +2616,7 @@
       "indicator": "Commerce de detail",
       "summary": "Les ventes au détail ont diminué de 0,2 % pour s'établir à 69,4 milliards de dollars en octobre 2025, après une baisse de 0,9 % en septembre. En excluant les concessionnaires de véhicules automobiles ",
       "lang": "fr",
-      "path": "/fr/commerce-detail-octobre-2025/",
+      "path": "/thedaily/fr/commerce-detail-octobre-2025/",
       "prevSlug": "ipc-novembre-2025",
       "nextSlug": "indice-prix-logements-neufs-novembre-2025"
     },
@@ -2630,7 +2630,7 @@
       "indicator": "Indice prix logements neufs",
       "summary": "L'Indice des prix des logements neufs (IPLN) est demeuré inchangé (0,0 %) en novembre 2025, après une baisse de 0,4 % en octobre. D'une année à l'autre, les prix des logements neufs ont diminué de 1,9",
       "lang": "fr",
-      "path": "/fr/indice-prix-logements-neufs-novembre-2025/",
+      "path": "/thedaily/fr/indice-prix-logements-neufs-novembre-2025/",
       "prevSlug": "commerce-detail-octobre-2025",
       "nextSlug": "mises-en-chantier-novembre-2025"
     },
@@ -2644,7 +2644,7 @@
       "indicator": "Mises en chantier",
       "summary": "Les mises en chantier ont augmenté de 9,4 % pour atteindre un taux annuel désaisonnalisé de 254 058 unités en novembre 2025, rebondissant après une baisse de 17 % en octobre. La hausse a été stimulée ",
       "lang": "fr",
-      "path": "/fr/mises-en-chantier-novembre-2025/",
+      "path": "/thedaily/fr/mises-en-chantier-novembre-2025/",
       "prevSlug": "indice-prix-logements-neufs-novembre-2025",
       "nextSlug": "prix-essence-novembre-2025"
     },
@@ -2658,7 +2658,7 @@
       "indicator": "Prix de l'essence",
       "summary": "Le prix moyen national de l'essence ordinaire sans plomb aux stations libre-service a augmenté de 1,7 % pour atteindre 139,6 cents le litre en novembre 2025, après une baisse de 4,9 % en octobre. D'un",
       "lang": "fr",
-      "path": "/fr/prix-essence-novembre-2025/",
+      "path": "/thedaily/fr/prix-essence-novembre-2025/",
       "prevSlug": "mises-en-chantier-novembre-2025",
       "nextSlug": "commerce-gros-octobre-2025"
     },
@@ -2672,7 +2672,7 @@
       "indicator": "Commerce de gros",
       "summary": "Les ventes des grossistes canadiens ont augmenté de 0,1 % pour atteindre 86,0 milliards de dollars en octobre 2025, soit la cinquième hausse en six mois. En volume, les ventes en gros ont reculé de 0,",
       "lang": "fr",
-      "path": "/fr/commerce-gros-octobre-2025/",
+      "path": "/thedaily/fr/commerce-gros-octobre-2025/",
       "prevSlug": "prix-essence-novembre-2025",
       "nextSlug": "permis-batir-octobre-2025"
     },
@@ -2686,7 +2686,7 @@
       "indicator": "Permis de batir",
       "summary": "La valeur totale des permis de bâtir a augmenté de 14,9 % pour s'établir à 13,8 milliards de dollars en octobre 2025, après une baisse en septembre. D'une année à l'autre, la valeur totale des permis ",
       "lang": "fr",
-      "path": "/fr/permis-batir-octobre-2025/",
+      "path": "/thedaily/fr/permis-batir-octobre-2025/",
       "prevSlug": "commerce-gros-octobre-2025",
       "nextSlug": "epa-novembre-2025"
     },
@@ -2700,7 +2700,7 @@
       "indicator": "Enquete population active",
       "summary": "L'emploi a augmenté de 54 000 (+0,3 %) en novembre 2025, après une hausse de 67 000 en octobre. Le taux de chômage a diminué de 0,4 point de pourcentage pour s'établir à 6,5 %, en baisse par rapport à",
       "lang": "fr",
-      "path": "/fr/epa-novembre-2025/",
+      "path": "/thedaily/fr/epa-novembre-2025/",
       "prevSlug": "permis-batir-octobre-2025",
       "nextSlug": "pib-septembre-2025"
     },
@@ -2714,7 +2714,7 @@
       "indicator": "PIB",
       "summary": "Le produit intérieur brut (PIB) réel a augmenté de 0,2 % en septembre 2025, après une baisse de 0,1 % en août. D'une année à l'autre, le PIB réel a progressé de 1,1 % par rapport à septembre 2024.",
       "lang": "fr",
-      "path": "/fr/pib-septembre-2025/",
+      "path": "/thedaily/fr/pib-septembre-2025/",
       "prevSlug": "epa-novembre-2025",
       "nextSlug": "production-electricite-aout-2025"
     },
@@ -2728,7 +2728,7 @@
       "indicator": "Production d'electricite",
       "summary": "La production d'électricité au Canada a totalisé 47,6 térawattheures (TWh) en août 2025, en baisse de 4,8 % par rapport aux 50,0 TWh de juillet. Cette baisse reflète la tendance typique de la fin de l",
       "lang": "fr",
-      "path": "/fr/production-electricite-aout-2025/",
+      "path": "/thedaily/fr/production-electricite-aout-2025/",
       "prevSlug": "pib-septembre-2025",
       "nextSlug": "services-alimentaires-septembre-2025"
     },
@@ -2742,7 +2742,7 @@
       "indicator": "Services alimentaires",
       "summary": "Les ventes des services de restauration et des débits de boissons ont diminué de 0,4 % pour s'établir à 8,5 milliards de dollars en septembre 2025, après une hausse de 0,6 % en août. D'une année à l'a",
       "lang": "fr",
-      "path": "/fr/services-alimentaires-septembre-2025/",
+      "path": "/thedaily/fr/services-alimentaires-septembre-2025/",
       "prevSlug": "production-electricite-aout-2025",
       "nextSlug": "passagers-aeriens-septembre-2025"
     },
@@ -2756,7 +2756,7 @@
       "indicator": "Passagers aeriens",
       "summary": "Les grands transporteurs aériens canadiens ont transporté 7,2 millions de passagers en septembre 2025, en baisse de 11,3 % par rapport aux 8,1 millions d'août. Cette baisse mensuelle est typique à mes",
       "lang": "fr",
-      "path": "/fr/passagers-aeriens-septembre-2025/",
+      "path": "/thedaily/fr/passagers-aeriens-septembre-2025/",
       "prevSlug": "services-alimentaires-septembre-2025",
       "nextSlug": "commerce-detail-septembre-2025"
     },
@@ -2770,7 +2770,7 @@
       "indicator": "Commerce de detail",
       "summary": "Les ventes au détail ont reculé de 0,9 % pour atteindre 69,6 milliards de dollars en septembre 2025, après une baisse de 0,6 % en août. D'une année à l'autre, le commerce de détail a progressé de 3,1 ",
       "lang": "fr",
-      "path": "/fr/commerce-detail-septembre-2025/",
+      "path": "/thedaily/fr/commerce-detail-septembre-2025/",
       "prevSlug": "passagers-aeriens-septembre-2025",
       "nextSlug": "ventes-manufacturieres-septembre-2025"
     },
@@ -2784,7 +2784,7 @@
       "indicator": "Ventes manufacturieres",
       "summary": "Les ventes du secteur manufacturier ont augmenté de 3,6 % pour s'établir à 72,2 milliards de dollars en septembre 2025, après avoir reculé de 1,1 % en août. Il s'agit de la plus forte hausse mensuelle",
       "lang": "fr",
-      "path": "/fr/ventes-manufacturieres-septembre-2025/",
+      "path": "/thedaily/fr/ventes-manufacturieres-septembre-2025/",
       "prevSlug": "commerce-detail-septembre-2025",
       "nextSlug": "commerce-gros-septembre-2025"
     },
@@ -2798,7 +2798,7 @@
       "indicator": "Commerce de gros",
       "summary": "Les ventes en gros ont augmenté de 0,6 % pour atteindre 86,0 milliards de dollars en septembre 2025, marquant la quatrième hausse en cinq mois. D'une année à l'autre, les ventes en gros ont progressé ",
       "lang": "fr",
-      "path": "/fr/commerce-gros-septembre-2025/",
+      "path": "/thedaily/fr/commerce-gros-septembre-2025/",
       "prevSlug": "ventes-manufacturieres-septembre-2025",
       "nextSlug": "commerce-international-octobre-2025"
     },
@@ -2812,7 +2812,7 @@
       "indicator": "Commerce international",
       "summary": "Les exportations de marchandises ont augmenté de 6,3 % pour atteindre 64,2 milliards de dollars en septembre 2025, après une baisse de 3,1 % en août. D'une année à l'autre, les exportations ont progre",
       "lang": "fr",
-      "path": "/fr/commerce-international-octobre-2025/",
+      "path": "/thedaily/fr/commerce-international-octobre-2025/",
       "prevSlug": "commerce-gros-septembre-2025",
       "nextSlug": "commerce-international-septembre-2025"
     },
@@ -2826,7 +2826,7 @@
       "indicator": "Commerce international",
       "summary": "Les exportations de marchandises ont progressé de 6,3 % pour atteindre 64,2 milliards de dollars en septembre 2025, rebondissant après un recul de 3,2 % en août. Parallèlement, les importations ont di",
       "lang": "fr",
-      "path": "/fr/commerce-international-septembre-2025/",
+      "path": "/thedaily/fr/commerce-international-septembre-2025/",
       "prevSlug": "commerce-international-octobre-2025",
       "nextSlug": "permis-batir-septembre-2025"
     },
@@ -2840,7 +2840,7 @@
       "indicator": "Permis de batir",
       "summary": "La valeur totale des permis de bâtir a augmenté de 4,3 % pour atteindre 12,0 milliards de dollars en septembre 2025, se remettant d'une baisse en août. D'une année à l'autre, la valeur totale des perm",
       "lang": "fr",
-      "path": "/fr/permis-batir-septembre-2025/",
+      "path": "/thedaily/fr/permis-batir-septembre-2025/",
       "prevSlug": "commerce-international-septembre-2025",
       "nextSlug": "epa-octobre-2025"
     },
@@ -2854,7 +2854,7 @@
       "indicator": "Enquete population active",
       "summary": "L'emploi a augmenté de 67 000 (+0,3 %) en octobre 2025, après un gain de 60 000 en septembre. Le taux de chômage a diminué de 0,2 point de pourcentage pour s'établir à 6,9 %, en baisse par rapport à 7",
       "lang": "fr",
-      "path": "/fr/epa-octobre-2025/",
+      "path": "/thedaily/fr/epa-octobre-2025/",
       "prevSlug": "permis-batir-septembre-2025",
       "nextSlug": "pib-aout-2025"
     },
@@ -2868,7 +2868,7 @@
       "indicator": "PIB",
       "summary": "Le produit intérieur brut (PIB) réel a diminué de 0,1 % en août 2025, effaçant en partie la hausse de 0,5 % enregistrée en juillet. D'une année à l'autre, le PIB réel a progressé de 1,2 % par rapport ",
       "lang": "fr",
-      "path": "/fr/pib-aout-2025/",
+      "path": "/thedaily/fr/pib-aout-2025/",
       "prevSlug": "epa-octobre-2025",
       "nextSlug": "services-alimentaires-aout-2025"
     },
@@ -2882,7 +2882,7 @@
       "indicator": "Services alimentaires",
       "summary": "Les ventes des services de restauration et des débits de boissons ont augmenté de 0,6 % pour atteindre 8,5 milliards de dollars en août 2025, se remettant d'une baisse de 0,4 % en juillet. Par rapport",
       "lang": "fr",
-      "path": "/fr/services-alimentaires-aout-2025/",
+      "path": "/thedaily/fr/services-alimentaires-aout-2025/",
       "prevSlug": "pib-aout-2025",
       "nextSlug": "passagers-aeriens-aout-2025"
     },
@@ -2896,7 +2896,7 @@
       "indicator": "Passagers aeriens",
       "summary": "Les grands transporteurs aériens canadiens ont transporté 8,1 millions de passagers en août 2025, en baisse de 1,9 % par rapport au sommet de juillet de 8,3 millions. Malgré le recul mensuel, le nombr",
       "lang": "fr",
-      "path": "/fr/passagers-aeriens-aout-2025/",
+      "path": "/thedaily/fr/passagers-aeriens-aout-2025/",
       "prevSlug": "services-alimentaires-aout-2025",
       "nextSlug": "commerce-detail-aout-2025"
     },
@@ -2910,7 +2910,7 @@
       "indicator": "Commerce de detail",
       "summary": "Les ventes au détail ont augmenté de 1,0 % pour s'établir à 70,2 milliards de dollars en août 2025, après une baisse de 0,9 % en juillet. D'une année à l'autre, le commerce de détail a progressé de 4,",
       "lang": "fr",
-      "path": "/fr/commerce-detail-aout-2025/",
+      "path": "/thedaily/fr/commerce-detail-aout-2025/",
       "prevSlug": "passagers-aeriens-aout-2025",
       "nextSlug": "ventes-manufacturieres-aout-2025"
     },
@@ -2924,7 +2924,7 @@
       "indicator": "Ventes manufacturieres",
       "summary": "Les ventes du secteur manufacturier ont diminué de 1,1 % pour s'établir à 69,8 milliards de dollars en août 2025, effaçant en partie la hausse de 2,3 % enregistrée en juillet. D'une année à l'autre, l",
       "lang": "fr",
-      "path": "/fr/ventes-manufacturieres-aout-2025/",
+      "path": "/thedaily/fr/ventes-manufacturieres-aout-2025/",
       "prevSlug": "commerce-detail-aout-2025",
       "nextSlug": "commerce-gros-aout-2025"
     },
@@ -2938,7 +2938,7 @@
       "indicator": "Commerce de gros",
       "summary": "Les ventes en gros ont diminué de 0,9 % pour s'établir à 85,5 milliards de dollars en août 2025, annulant partiellement la hausse de 1,6 % enregistrée en juillet. D'une année à l'autre, les ventes en ",
       "lang": "fr",
-      "path": "/fr/commerce-gros-aout-2025/",
+      "path": "/thedaily/fr/commerce-gros-aout-2025/",
       "prevSlug": "ventes-manufacturieres-aout-2025",
       "nextSlug": "epa-septembre-2025"
     },
@@ -2952,7 +2952,7 @@
       "indicator": "Enquete population active",
       "summary": "L'emploi a augmenté de 60 000 en septembre 2025, après avoir diminué de 65 000 en août. Le taux de chômage est demeuré inchangé à 7,1 %, se maintenant près des niveaux élevés observés depuis le milieu",
       "lang": "fr",
-      "path": "/fr/epa-septembre-2025/",
+      "path": "/thedaily/fr/epa-septembre-2025/",
       "prevSlug": "commerce-gros-aout-2025",
       "nextSlug": "permis-batir-aout-2025"
     },
@@ -2966,7 +2966,7 @@
       "indicator": "Permis de batir",
       "summary": "La valeur totale des permis de bâtir a diminué de 3,4 % pour s'établir à 11,5 milliards de dollars en août 2025, faisant suite à une baisse de 1,7 % en juillet. D'une année à l'autre, la valeur totale",
       "lang": "fr",
-      "path": "/fr/permis-batir-aout-2025/",
+      "path": "/thedaily/fr/permis-batir-aout-2025/",
       "prevSlug": "epa-septembre-2025",
       "nextSlug": "commerce-international-aout-2025"
     },
@@ -2980,7 +2980,7 @@
       "indicator": "Commerce international",
       "summary": "Les exportations de marchandises ont diminué de 3,2 % pour s'établir à 60,4 milliards de dollars en août 2025, après une baisse de 1,4 % en juillet. Parallèlement, les importations ont augmenté de 1,0",
       "lang": "fr",
-      "path": "/fr/commerce-international-aout-2025/",
+      "path": "/thedaily/fr/commerce-international-aout-2025/",
       "prevSlug": "permis-batir-aout-2025",
       "nextSlug": "ipc-october-2025"
     },
@@ -2994,7 +2994,7 @@
       "indicator": "Indice des prix",
       "summary": "L'Indice des prix à la consommation (IPC) a augmenté de 2.2 % en octobre 2025 par rapport au même mois un an plus tôt. L'indice s'établissait à 165.3, en hausse par rapport à 161.8 en novembre 2024. S",
       "lang": "fr",
-      "path": "/fr/ipc-october-2025/",
+      "path": "/thedaily/fr/ipc-october-2025/",
       "prevSlug": "commerce-international-aout-2025",
       "nextSlug": "epa-aout-2025"
     },
@@ -3008,7 +3008,7 @@
       "indicator": "Enquete population active",
       "summary": "L'emploi a diminué de 65 000 en août 2025, après un recul de 41 000 en juillet. Le taux de chômage a augmenté de 0,2 point de pourcentage pour s'établir à 7,1 %, le niveau le plus élevé depuis le débu",
       "lang": "fr",
-      "path": "/fr/epa-aout-2025/",
+      "path": "/thedaily/fr/epa-aout-2025/",
       "prevSlug": "ipc-october-2025",
       "nextSlug": "ipc-september-2025"
     },
@@ -3022,7 +3022,7 @@
       "indicator": "Indice des prix",
       "summary": "L'Indice des prix à la consommation (IPC) a augmenté de 2.4 % en septembre 2025 par rapport au même mois un an plus tôt. L'indice s'établissait à 164.9, en hausse par rapport à 161.8 en novembre 2024.",
       "lang": "fr",
-      "path": "/fr/ipc-september-2025/",
+      "path": "/thedaily/fr/ipc-september-2025/",
       "prevSlug": "epa-aout-2025",
       "nextSlug": "epa-juillet-2025"
     },
@@ -3036,7 +3036,7 @@
       "indicator": "Enquete population active",
       "summary": "L'emploi a diminué de 41 000 (-0,2 %) en juillet 2025, après un gain de 83 000 en juin. Le taux de chômage est demeuré inchangé à 6,9 %, une baisse du taux d'activité ayant compensé les pertes d'emplo",
       "lang": "fr",
-      "path": "/fr/epa-juillet-2025/",
+      "path": "/thedaily/fr/epa-juillet-2025/",
       "prevSlug": "ipc-september-2025",
       "nextSlug": "ipc-august-2025"
     },
@@ -3050,7 +3050,7 @@
       "indicator": "Indice des prix",
       "summary": "L'Indice des prix à la consommation (IPC) a augmenté de 1.9 % en août 2025 par rapport au même mois un an plus tôt. L'indice s'établissait à 164.8, en hausse par rapport à 161.8 en novembre 2024. Sur ",
       "lang": "fr",
-      "path": "/fr/ipc-august-2025/",
+      "path": "/thedaily/fr/ipc-august-2025/",
       "prevSlug": "epa-juillet-2025",
       "nextSlug": "ipc-juin-2025"
     },
@@ -3064,7 +3064,7 @@
       "indicator": "Indice des prix",
       "summary": "L'Indice des prix à la consommation (IPC) a augmenté de 1,9 % en juin 2025 par rapport au même mois un an plus tôt, en hausse par rapport à 1,7 % en avril et mai. La légère accélération de l'inflation",
       "lang": "fr",
-      "path": "/fr/ipc-juin-2025/",
+      "path": "/thedaily/fr/ipc-juin-2025/",
       "prevSlug": "ipc-august-2025",
       "nextSlug": "epa-juin-2025"
     },
@@ -3078,7 +3078,7 @@
       "indicator": "Enquete population active",
       "summary": "L'emploi a augmenté de 83 000 (+0,4 %) en juin 2025, rebondissant après un gain de 9 000 en mai. Le taux de chômage a diminué de 0,1 point de pourcentage pour s'établir à 6,9 %, en baisse par rapport ",
       "lang": "fr",
-      "path": "/fr/epa-juin-2025/",
+      "path": "/thedaily/fr/epa-juin-2025/",
       "prevSlug": "ipc-juin-2025",
       "nextSlug": "ipc-july-2025"
     },
@@ -3092,7 +3092,7 @@
       "indicator": "Indice des prix",
       "summary": "L'Indice des prix à la consommation (IPC) a augmenté de 1.7 % en juillet 2025 par rapport au même mois un an plus tôt. L'indice s'établissait à 164.9, en hausse par rapport à 161.8 en novembre 2024. S",
       "lang": "fr",
-      "path": "/fr/ipc-july-2025/",
+      "path": "/thedaily/fr/ipc-july-2025/",
       "prevSlug": "epa-juin-2025",
       "nextSlug": "ipc-mai-2025"
     },
@@ -3106,7 +3106,7 @@
       "indicator": "Indice des prix",
       "summary": "L'Indice des prix à la consommation (IPC) a augmenté de 1,7 % en mai 2025 par rapport au même mois un an plus tôt, égalant le taux d'avril. Il s'agit du taux d'inflation le plus bas depuis mars 2021, ",
       "lang": "fr",
-      "path": "/fr/ipc-mai-2025/",
+      "path": "/thedaily/fr/ipc-mai-2025/",
       "prevSlug": "ipc-july-2025",
       "nextSlug": "epa-mai-2025"
     },
@@ -3120,7 +3120,7 @@
       "indicator": "Enquete population active",
       "summary": "L'emploi a légèrement progressé de 9 000 (+0,0 %) en mai 2025, un gain modeste après une perte de 7 000 en avril. Le taux de chômage a augmenté de 0,1 point de pourcentage pour s'établir à 7,0 %, un p",
       "lang": "fr",
-      "path": "/fr/epa-mai-2025/",
+      "path": "/thedaily/fr/epa-mai-2025/",
       "prevSlug": "ipc-mai-2025",
       "nextSlug": "ipc-avril-2025"
     },
@@ -3134,7 +3134,7 @@
       "indicator": "Indice des prix",
       "summary": "L'Indice des prix à la consommation (IPC) a augmenté de 1,7 % en avril 2025 par rapport au même mois un an plus tôt, en baisse par rapport au taux de 2,3 % de mars. Il s'agit du taux d'inflation le pl",
       "lang": "fr",
-      "path": "/fr/ipc-avril-2025/",
+      "path": "/thedaily/fr/ipc-avril-2025/",
       "prevSlug": "epa-mai-2025",
       "nextSlug": "epa-avril-2025"
     },
@@ -3148,7 +3148,7 @@
       "indicator": "Enquete population active",
       "summary": "L'emploi a légèrement progressé de 7 000 (+0,0 %) en avril 2025, un gain modeste après une baisse de 33 000 en mars. Le taux de chômage a augmenté de 0,2 point de pourcentage pour s'établir à 6,9 %, l",
       "lang": "fr",
-      "path": "/fr/epa-avril-2025/",
+      "path": "/thedaily/fr/epa-avril-2025/",
       "prevSlug": "ipc-avril-2025",
       "nextSlug": "ipc-mars-2025"
     },
@@ -3162,7 +3162,7 @@
       "indicator": "Indice des prix",
       "summary": "L'Indice des prix à la consommation (IPC) a augmenté de 2,3 % en mars 2025 par rapport au même mois un an plus tôt, en baisse par rapport au taux de 2,6 % de février. Les prix de l'énergie ont continu",
       "lang": "fr",
-      "path": "/fr/ipc-mars-2025/",
+      "path": "/thedaily/fr/ipc-mars-2025/",
       "prevSlug": "epa-avril-2025",
       "nextSlug": "epa-mars-2025"
     },
@@ -3176,7 +3176,7 @@
       "indicator": "Enquete population active",
       "summary": "L'emploi a diminué de 33 000 (-0,2 %) en mars 2025, effaçant les gains observés en janvier et février. Le taux de chômage a augmenté de 0,1 point de pourcentage pour s'établir à 6,7 %, reflétant la ba",
       "lang": "fr",
-      "path": "/fr/epa-mars-2025/",
+      "path": "/thedaily/fr/epa-mars-2025/",
       "prevSlug": "ipc-mars-2025",
       "nextSlug": "ipc-fevrier-2025"
     },
@@ -3190,7 +3190,7 @@
       "indicator": "Indice des prix",
       "summary": "L'Indice des prix à la consommation (IPC) a augmenté de 2,6 % en février 2025 par rapport au même mois un an plus tôt, en hausse par rapport au taux de 1,9 % de janvier. L'accélération a été attribuab",
       "lang": "fr",
-      "path": "/fr/ipc-fevrier-2025/",
+      "path": "/thedaily/fr/ipc-fevrier-2025/",
       "prevSlug": "epa-mars-2025",
       "nextSlug": "epa-fevrier-2025"
     },
@@ -3204,7 +3204,7 @@
       "indicator": "Enquete population active",
       "summary": "L'emploi a été essentiellement inchangé en février 2025, en légère hausse de 2 000 (+0,0 %) après un gain de 76 000 en janvier. Le taux de chômage est demeuré stable à 6,6 %, la croissance de la popul",
       "lang": "fr",
-      "path": "/fr/epa-fevrier-2025/",
+      "path": "/thedaily/fr/epa-fevrier-2025/",
       "prevSlug": "ipc-fevrier-2025",
       "nextSlug": "ipc-janvier-2025"
     },
@@ -3218,7 +3218,7 @@
       "indicator": "Indice des prix",
       "summary": "L'Indice des prix à la consommation (IPC) a augmenté de 1,9 % en janvier 2025 par rapport au même mois un an plus tôt, en légère hausse par rapport au taux de 1,8 % de décembre. L'inflation est demeur",
       "lang": "fr",
-      "path": "/fr/ipc-janvier-2025/",
+      "path": "/thedaily/fr/ipc-janvier-2025/",
       "prevSlug": "epa-fevrier-2025",
       "nextSlug": "epa-janvier-2025"
     },
@@ -3232,7 +3232,7 @@
       "indicator": "Enquete population active",
       "summary": "L'emploi a augmenté de 76 000 (+0,4 %) en janvier 2025, un gain solide après une hausse de 91 000 en décembre. Le taux de chômage a reculé de 0,1 point de pourcentage pour s'établir à 6,6 %, en baisse",
       "lang": "fr",
-      "path": "/fr/epa-janvier-2025/",
+      "path": "/thedaily/fr/epa-janvier-2025/",
       "prevSlug": "ipc-janvier-2025",
       "nextSlug": "ipc-decembre-2024"
     },
@@ -3246,7 +3246,7 @@
       "indicator": "Indice des prix",
       "summary": "L'Indice des prix à la consommation (IPC) a augmenté de 1,8 % en décembre 2024 par rapport au même mois un an plus tôt, en baisse par rapport au taux de 1,9 % de novembre. Il s'agit du deuxième mois c",
       "lang": "fr",
-      "path": "/fr/ipc-decembre-2024/",
+      "path": "/thedaily/fr/ipc-decembre-2024/",
       "prevSlug": "epa-janvier-2025",
       "nextSlug": "retail-trade-february-2024"
     },
@@ -3260,7 +3260,7 @@
       "indicator": "Retail Trade",
       "summary": "Les ventes au détail au Canada ont progressé de 0,2 % en février 2024 pour s'établir à 66,2 milliards de dollars, un modeste rebond après le recul de janvier. D'une année à l'autre, les ventes étaient",
       "lang": "fr",
-      "path": "/fr/retail-trade-february-2024/",
+      "path": "/thedaily/fr/retail-trade-february-2024/",
       "prevSlug": "ipc-decembre-2024",
       "nextSlug": "retail-trade-january-2024"
     },
@@ -3274,7 +3274,7 @@
       "indicator": "Retail Trade",
       "summary": "Les ventes au détail au Canada ont reculé de 0,4 % en janvier 2024 pour s'établir à 66,1 milliards de dollars, en baisse par rapport au sommet des achats des Fêtes de décembre. D'une année à l'autre, ",
       "lang": "fr",
-      "path": "/fr/retail-trade-january-2024/",
+      "path": "/thedaily/fr/retail-trade-january-2024/",
       "prevSlug": "retail-trade-february-2024",
       "nextSlug": "retail-trade-december-2023"
     },
@@ -3288,7 +3288,7 @@
       "indicator": "Retail Trade",
       "summary": "Les ventes au détail au Canada ont reculé de 0,3 % en décembre 2023 pour s'établir à 66,3 milliards de dollars, en baisse par rapport au sommet des achats des Fêtes de novembre. D'une année à l'autre,",
       "lang": "fr",
-      "path": "/fr/retail-trade-december-2023/",
+      "path": "/thedaily/fr/retail-trade-december-2023/",
       "prevSlug": "retail-trade-january-2024",
       "nextSlug": "retail-trade-november-2023"
     },
@@ -3302,10 +3302,10 @@
       "indicator": "Retail Trade",
       "summary": "Les ventes au détail au Canada ont progressé de 0,1 % en novembre 2023 pour s'établir à 66,6 milliards de dollars, poursuivant une tendance modestement à la hausse par rapport à octobre. D'une année à",
       "lang": "fr",
-      "path": "/fr/retail-trade-november-2023/",
+      "path": "/thedaily/fr/retail-trade-november-2023/",
       "prevSlug": "retail-trade-december-2023",
       "nextSlug": null
     }
   ],
-  "generated": "2025-12-31T06:43:19.615Z"
+  "generated": "2025-12-31T07:46:53.690Z"
 }
