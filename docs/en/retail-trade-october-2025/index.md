@@ -112,7 +112,7 @@ display(Plot.plot({
     Plot.barX(sectorData, {
       y: "sector",
       x: "change",
-      fill: d => d.change >= 0 ? "#AF3C43" : "#2e7d32",
+      fill: "#AF3C43",
       sort: {y: "-x"}
     }),
     Plot.text(sectorData, {
@@ -162,3 +162,10 @@ All data in this release are seasonally adjusted, unless otherwise indicated. Fo
 **DOI:** [https://doi.org/10.25318/2010005601-eng](https://doi.org/10.25318/2010005601-eng)
 
 </div>
+
+```js
+// Related articles sidebar
+import {createSidebar} from "../../components/sidebar.js";
+const articles = await FileAttachment("../../articles.json").json();
+display(createSidebar(articles, "retail-trade-october-2025", "en"));
+```

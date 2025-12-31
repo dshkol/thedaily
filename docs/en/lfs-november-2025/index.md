@@ -151,12 +151,12 @@ display(Plot.plot({
 
 Part-time employment increased by 63,000 (+1.6%) in November. On a year-over-year basis, part-time employment rose 173,000 (+4.6%) compared with November 2024.
 
-Full-time employment was little changed in November.
+Full-time employment decreased by 17,000 in November.
 
 ```js
 const typeData = [
   {type: "Part-time employment", change: 63.0, yoy: 4.6},
-  {type: "Full-time employment", change: -9.4, yoy: 0.6}
+  {type: "Full-time employment", change: -17.0, yoy: 0.6}
 ];
 
 display(Plot.plot({
@@ -172,7 +172,7 @@ display(Plot.plot({
     Plot.barX(typeData, {
       y: "type",
       x: "change",
-      fill: d => d.change >= 0 ? "#AF3C43" : "#2e7d32"
+      fill: "#AF3C43"
     }),
     Plot.text(typeData, {
       y: "type",
@@ -204,3 +204,10 @@ The survey collects data on the labour market activity of the population aged 15
 **DOI:** [https://doi.org/10.25318/1410028701-eng](https://doi.org/10.25318/1410028701-eng)
 
 </div>
+
+```js
+// Related articles sidebar
+import {createSidebar} from "../../components/sidebar.js";
+const articles = await FileAttachment("../../articles.json").json();
+display(createSidebar(articles, "lfs-november-2025", "en"));
+```

@@ -82,3 +82,10 @@ Real GDP by industry is measured at basic prices in chained 2017 dollars. The es
 **DOI:** [https://doi.org/10.25318/3610043401-eng](https://doi.org/10.25318/3610043401-eng)
 
 </div>
+
+```js
+// Related articles sidebar
+import {createSidebar} from "../../components/sidebar.js";
+const articles = await FileAttachment("../../articles.json").json();
+display(createSidebar(articles, "gdp-october-2025", "en"));
+```

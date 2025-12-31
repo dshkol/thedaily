@@ -158,3 +158,10 @@ Les données sont désaisonnalisées pour tenir compte des tendances saisonnièr
 **DOI :** [https://doi.org/10.25318/3410029201-fra](https://doi.org/10.25318/3410029201-fra)
 
 </div>
+
+```js
+// Barre laterale des articles connexes
+import {createSidebar} from "../../components/sidebar.js";
+const articles = await FileAttachment("../../articles.json").json();
+display(createSidebar(articles, "permis-batir-octobre-2025", "fr"));
+```

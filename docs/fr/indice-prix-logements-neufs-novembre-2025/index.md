@@ -100,7 +100,8 @@ display(Plot.plot({
   marks: [
     Plot.barX(componentData, {
       y: "component",
-      x: "index",
+      x1: 110,
+      x2: "index",
       fill: "#AF3C43"
     }),
     Plot.text(componentData, {
@@ -198,3 +199,10 @@ yoy_change <- (nov2025 - nov2024) / nov2024 * 100
 ```
 
 </details>
+
+```js
+// Barre laterale des articles connexes
+import {createSidebar} from "../../components/sidebar.js";
+const articles = await FileAttachment("../../articles.json").json();
+display(createSidebar(articles, "indice-prix-logements-neufs-novembre-2025", "fr"));
+```

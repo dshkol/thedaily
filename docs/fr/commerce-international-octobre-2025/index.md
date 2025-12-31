@@ -151,3 +151,10 @@ La désaisonnalisation élimine l'effet des tendances saisonnières des données
 **DOI :** [https://doi.org/10.25318/1210001101-fra](https://doi.org/10.25318/1210001101-fra)
 
 </div>
+
+```js
+// Barre laterale des articles connexes
+import {createSidebar} from "../../components/sidebar.js";
+const articles = await FileAttachment("../../articles.json").json();
+display(createSidebar(articles, "commerce-international-octobre-2025", "fr"));
+```

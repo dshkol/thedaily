@@ -83,7 +83,7 @@ display(Plot.plot({
     Plot.barX(components, {
       y: "name",
       x: "change",
-      fill: d => d.change >= 0 ? "#AF3C43" : "#2e7d32",
+      fill: "#AF3C43",
       sort: {y: "-x"}
     }),
     Plot.text(components, {
@@ -131,3 +131,10 @@ The CPI is not seasonally adjusted. Month-to-month movements can reflect seasona
 **Reference period:** August 2025
 
 </div>
+
+```js
+// Related articles sidebar
+import {createSidebar} from "../../components/sidebar.js";
+const articles = await FileAttachment("../../articles.json").json();
+display(createSidebar(articles, "cpi-august-2025", "en"));
+```

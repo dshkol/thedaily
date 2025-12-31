@@ -17,7 +17,7 @@ export default {
   // Disable sidebar and TOC for article-focused layout
   sidebar: false,
   toc: false,
-  search: false,
+  search: true,
   pager: false,
 
   // Clean header matching the original static site
@@ -27,7 +27,8 @@ export default {
     <span style="color: #999;">|</span>
     <span style="color: #666; text-transform: uppercase; font-size: 0.6875rem;">An AI-Generated Statistical Bulletin</span>
     <span style="flex: 1;"></span>
-    <a id="lang-en" href="/en/" style="text-decoration: none; color: #666; font-size: 0.75rem;">English</a>
+    <a id="explore-link" href="/en/explore/" style="text-decoration: none; color: #666; font-size: 0.75rem;">Explore</a>
+    <a id="lang-en" href="/en/" style="text-decoration: none; color: #666; font-size: 0.75rem; margin-left: 0.75rem;">English</a>
     <a id="lang-fr" href="/fr/" style="text-decoration: none; color: #666; font-size: 0.75rem; margin-left: 0.75rem;">Français</a>
   </div>
   <script>
@@ -37,16 +38,23 @@ export default {
       const path = window.location.pathname;
       const enMatch = path.match(/\\/thedaily\\/en\\/([^\\/]+)/);
       const frMatch = path.match(/\\/thedaily\\/fr\\/([^\\/]+)/);
+      const exploreLink = document.getElementById('explore-link');
       if (enMatch) {
         const enSlug = enMatch[1];
         const frSlug = slugMap[enSlug] || enSlug;
         document.getElementById('lang-fr').href = base + '/fr/' + frSlug + '/';
         document.getElementById('lang-en').href = path;
+        exploreLink.href = base + '/en/explore/';
       } else if (frMatch) {
         const frSlug = frMatch[1];
         const enSlug = Object.keys(slugMap).find(k => slugMap[k] === frSlug) || frSlug;
         document.getElementById('lang-en').href = base + '/en/' + enSlug + '/';
         document.getElementById('lang-fr').href = path;
+        exploreLink.href = base + '/fr/explore/';
+        exploreLink.textContent = 'Explorer';
+      } else if (path.includes('/fr/')) {
+        exploreLink.href = base + '/fr/explore/';
+        exploreLink.textContent = 'Explorer';
       }
     })();
   </script>`,

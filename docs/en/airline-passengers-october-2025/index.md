@@ -84,3 +84,10 @@ Data cover the operating and financial statistics for major Canadian air carrier
 **DOI:** [https://doi.org/10.25318/2310007901-eng](https://doi.org/10.25318/2310007901-eng)
 
 </div>
+
+```js
+// Related articles sidebar
+import {createSidebar} from "../../components/sidebar.js";
+const articles = await FileAttachment("../../articles.json").json();
+display(createSidebar(articles, "airline-passengers-october-2025", "en"));
+```

@@ -9,28 +9,44 @@ toc: false
 
 ## Latest Releases
 
+```js
+const articles = await FileAttachment("articles.json").json();
+const featured = articles.en.slice(0, 3);
+
+function formatDate(dateStr) {
+  const d = new Date(dateStr);
+  return d.toLocaleDateString("en-US", { month: "long", day: "numeric", year: "numeric" });
+}
+
+function sectorLabel(sector) {
+  const labels = {
+    prices: "Consumer Prices",
+    labour: "Labour Market",
+    trade: "Trade",
+    housing: "Housing",
+    economy: "Economy",
+    manufacturing: "Manufacturing",
+    demographics: "Demographics",
+    transport: "Transportation",
+    tourism: "Tourism",
+    agriculture: "Agriculture",
+    energy: "Energy",
+    general: "Statistics"
+  };
+  return labels[sector] || "Statistics";
+}
+```
+
 <div class="featured-articles">
 
-<a href="/en/cpi-november-2025/" class="article-card">
-<span class="article-type-tag release">New Release</span>
-<span class="article-date">December 22, 2025</span>
-<span class="article-title">Consumer prices up 2.2% year over year in November 2025</span>
-<span class="article-indicator">Consumer Price Index</span>
-</a>
-
-<a href="/en/lfs-november-2025/" class="article-card">
-<span class="article-type-tag release">New Release</span>
-<span class="article-date">December 23, 2025</span>
-<span class="article-title">Employment up 54,000 in November 2025, unemployment rate falls to 6.5%</span>
-<span class="article-indicator">Labour Force Survey</span>
-</a>
-
-<a href="/en/gdp-october-2025/" class="article-card">
-<span class="article-type-tag release">New Release</span>
-<span class="article-date">December 23, 2025</span>
-<span class="article-title">Real gross domestic product down 0.3% in October 2025</span>
-<span class="article-indicator">Gross Domestic Product</span>
-</a>
+```js
+for (const article of featured) {
+  display(html`<a href="${article.path}" class="article-card">
+    <span class="article-date">${formatDate(article.date)}</span>
+    <span class="article-title">${article.title}</span>
+  </a>`);
+}
+```
 
 </div>
 

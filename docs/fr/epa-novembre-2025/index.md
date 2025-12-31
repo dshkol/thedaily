@@ -151,12 +151,12 @@ display(Plot.plot({
 
 L'emploi à temps partiel a augmenté de 63 000 (+1,6 %) en novembre. Sur une base annuelle, l'emploi à temps partiel a progressé de 173 000 (+4,6 %) comparativement à novembre 2024.
 
-L'emploi à temps plein a peu varié en novembre.
+L'emploi à temps plein a diminué de 17 000 en novembre.
 
 ```js
 const typeData = [
   {type: "Emploi à temps partiel", change: 63.0, yoy: 4.6},
-  {type: "Emploi à temps plein", change: -9.4, yoy: 0.6}
+  {type: "Emploi à temps plein", change: -17.0, yoy: 0.6}
 ];
 
 display(Plot.plot({
@@ -172,7 +172,7 @@ display(Plot.plot({
     Plot.barX(typeData, {
       y: "type",
       x: "change",
-      fill: d => d.change >= 0 ? "#AF3C43" : "#2e7d32"
+      fill: "#AF3C43"
     }),
     Plot.text(typeData, {
       y: "type",
@@ -204,3 +204,10 @@ L'enquête recueille des données sur l'activité sur le marché du travail de l
 **DOI :** [https://doi.org/10.25318/1410028701-fra](https://doi.org/10.25318/1410028701-fra)
 
 </div>
+
+```js
+// Barre laterale des articles connexes
+import {createSidebar} from "../../components/sidebar.js";
+const articles = await FileAttachment("../../articles.json").json();
+display(createSidebar(articles, "epa-novembre-2025", "fr"));
+```

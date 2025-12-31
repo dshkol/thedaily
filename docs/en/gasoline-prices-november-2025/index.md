@@ -115,7 +115,8 @@ display(Plot.plot({
   marks: [
     Plot.barX(cityData, {
       y: "city",
-      x: "price",
+      x1: 110,
+      x2: "price",
       fill: d => d.city === "Canada average" ? "#1f77b4" : "#AF3C43",
       sort: {y: "-x"}
     }),
@@ -190,3 +191,10 @@ yoy_change <- (nov2025 - nov2024) / nov2024 * 100
 ```
 
 </details>
+
+```js
+// Related articles sidebar
+import {createSidebar} from "../../components/sidebar.js";
+const articles = await FileAttachment("../../articles.json").json();
+display(createSidebar(articles, "gasoline-prices-november-2025", "en"));
+```

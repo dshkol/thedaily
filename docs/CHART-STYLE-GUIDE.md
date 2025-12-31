@@ -5,18 +5,80 @@ toc: true
 
 # Chart Style Guide
 
-Guidelines for creating consistent Observable Plot charts in The D-AI-LY articles.
+Guidelines for creating consistent, accessible, and neutral Observable Plot charts in The D-AI-LY articles.
+
+## Core Principles
+
+### 1. Accessibility First
+
+**Never use red-green color encoding.** Approximately 8% of men have red-green color blindness. Charts using red/green to distinguish values are unreadable for these users.
+
+### 2. Color Neutrality
+
+**Avoid implying normative judgments through color.** Price changes are not inherently "good" or "bad":
+- Higher cattle prices: Good for farmers selling, bad for buyers
+- Lower wheat prices: Bad for farmers, good for food processors
+
+Using green=good and red=bad imposes a subjective interpretation that may not apply to all readers. Government statistical publications should present data neutrally.
+
+## Choosing the Right Chart
+
+| Data Pattern | Chart Type | Example |
+|-------------|------------|---------|
+| Trend over time | Line chart | CPI index over 24 months |
+| Composition over time | Stacked area | Energy sources monthly |
+| Part of whole (snapshot) | Waffle chart | "52% hydroelectric" |
+| Ranking/comparison | Horizontal bar or lollipop | Industry employment change |
+| Two-point comparison | Slope chart | Provincial rates YoY |
+| Multiple series comparison | Small multiples | Regional unemployment trends |
+| Values with uncertainty | Dot plot with range | Survey estimates with CI |
+| Change direction emphasis | Diverging bar | Positive/negative monthly changes |
+
+**Default to variety:** Don't use the same chart type twice in one article unless necessary. Mix time series with composition charts for richer storytelling.
 
 ## Color Palette
 
+### Single Series (Default)
+
 | Color | Hex Code | Usage |
 |-------|----------|-------|
-| StatCan Red | `#AF3C43` | Primary color for lines, positive values, highlights |
-| Green | `#2e7d32` | Negative values only (declines, decreases) |
+| StatCan Red | `#AF3C43` | Primary color for all data |
 | Grid lines | `#ddd` | Light gray for reference lines |
 | Text | `currentColor` | Inherits from page styling |
 
-**Rule:** Use red for most data. Only use green when showing negative values in bar charts.
+**Rule:** Use StatCan red for all data. Direction (positive/negative) is communicated by position relative to zero line, not by color.
+
+### Multi-Series (Provincial, etc.)
+
+```js
+// Red gradient for related series
+color: {
+  domain: ["Alberta", "Saskatchewan", "Manitoba"],
+  range: ["#AF3C43", "#E57373", "#FFAB91"]
+}
+```
+
+### Diverging Data (DO NOT use red-green)
+
+For charts showing positive and negative values, use ONE of these approaches:
+
+**Option 1: Single color (recommended)**
+```js
+// Position relative to zero line shows direction
+fill: "#AF3C43"
+```
+
+**Option 2: Colorblind-safe divergence (blue-orange)**
+```js
+// Only when color distinction is essential
+fill: d => d.value >= 0 ? "#1976D2" : "#E65100"
+```
+
+**NEVER do this:**
+```js
+// BAD: Red-green is inaccessible and implies good/bad
+fill: "#AF3C43"
+```
 
 ## Standard Dimensions
 
@@ -70,12 +132,17 @@ display(Plot.plot({
 
 Use for comparing categories or showing component breakdowns.
 
+### Label Placement (IMPORTANT)
+
+**Always use fixed-position labels** to prevent overlap. Position ALL labels at the domain maximum (right edge), not at bar ends:
+
 ```js
 display(Plot.plot({
   title: "Year-over-year change by component (%)",
   width: 700,
   height: 320,
   marginLeft: 340,  // Adjust based on longest label
+  marginRight: 70,  // Space for value labels
   x: {domain: [-1, 5], grid: true, label: "Percent change"},
   y: {label: null},
   marks: [
@@ -83,47 +150,307 @@ display(Plot.plot({
     Plot.barX(data, {
       y: "name",
       x: "change",
-      fill: d => d.change >= 0 ? "#AF3C43" : "#2e7d32",
-      sort: {y: "-x"}  // Sort by value descending
+      fill: "#AF3C43",  // Single color - direction shown by position
+      sort: {y: "-x"}
     }),
     Plot.text(data, {
       y: "name",
-      x: "change",
-      text: d => d.change.toFixed(1) + "%",
-      dx: 20,  // Offset from bar end
-      fill: "currentColor"
+      x: 5,  // FIXED position at domain max (not "change")
+      text: d => (d.change >= 0 ? "+" : "") + d.change.toFixed(1) + "%",
+      textAnchor: "end",  // Right-aligned
+      fill: "currentColor",
+      fontSize: 11
     })
   ]
 }));
 ```
 
+**Why fixed-position labels:**
+- Labels form a right-aligned column—never overlap
+- Works for any value distribution (even when bars cluster)
+- Clean, scannable appearance
+
+**⚠️ DO NOT use dynamic positioning:**
+```js
+// BAD: Labels overlap when values cluster (e.g., +7.8%, +7.3%, +6.9%)
+x: "change",  // At bar end - will overlap!
+textAnchor: "end"
+```
+
 **Key elements:**
-- Set `marginLeft` to accommodate long category labels (200-340px typical)
+- Set `marginLeft` to accommodate long category labels (180-340px typical)
+- Set `marginRight: 70` to ensure space for value labels
 - Always include `Plot.ruleX([0])` as a baseline
-- Use conditional fill for positive/negative values
+- Use single fill color (direction shown by position relative to zero)
 - Sort bars by value with `sort: {y: "-x"}`
-- Position labels with `dx: 20` (positive values) or handle negative separately
+- **Labels at fixed x-position (domain max), not bar ends**
+
+### Custom Domains (IMPORTANT)
+
+**When using a custom x-axis domain that doesn't start at 0**, you must use `x1` and `x2` instead of just `x`:
+
+```js
+// WRONG: Bars extend from 0 to value, covering y-axis labels!
+x: {domain: [120, 145], grid: true},
+marks: [
+  Plot.barX(data, {y: "name", x: "value"})  // BAD
+]
+
+// CORRECT: Bars start at domain minimum
+x: {domain: [120, 145], grid: true},
+marks: [
+  Plot.barX(data, {y: "name", x1: 120, x2: "value"})  // GOOD
+]
+```
+
+**Why:** `Plot.barX` with just `x` draws bars from 0 to the value. When your domain is `[120, 145]`, the bars extend far to the left (off-screen) and render on top of y-axis labels, making them invisible.
 
 ### Handling Mixed Positive/Negative Labels
 
-**Recommended approach:** Place ALL labels at a fixed right-edge position to avoid overlap:
+See **Label Placement (IMPORTANT)** above. The fixed right-edge position works for all cases, including mixed positive/negative values.
 
+**Additional tip:** Expand the x-domain slightly beyond your data range to ensure labels fit:
 ```js
-Plot.text(data, {
-  y: "name",
-  x: domainMax,  // Fixed position at right edge (e.g., 12 if domain is [-5, 12])
-  text: d => (d.change >= 0 ? "+" : "") + d.change.toFixed(1) + "%",
-  textAnchor: "end",
-  fill: "currentColor",
-  fontSize: 11
-})
+// If data ranges from -3% to +8%, use domain [-5, 10]
+x: {domain: [-5, 10], grid: true}
 ```
 
-**Why this approach:**
-- Labels aligned at the bar end can overlap when bars have similar lengths
-- A fixed right-edge position keeps all labels readable and consistently positioned
-- Set `marginRight: 60` to ensure labels have space
-- Expand the x-domain slightly beyond the max value to accommodate labels
+## Area Charts (Composition Over Time)
+
+Use stacked area charts to show how parts contribute to a whole over time.
+
+```js
+display(Plot.plot({
+  title: "Electric power generation by source, 2024–2025",
+  width: 680,
+  height: 320,
+  y: {grid: true, label: "Terawatt hours"},
+  x: {type: "utc", label: null},
+  color: {
+    domain: ["Hydroelectric", "Combustible fuels", "Nuclear", "Wind", "Solar"],
+    range: ["#AF3C43", "#E57373", "#FFAB91", "#81C784", "#FFD54F"]
+  },
+  marks: [
+    Plot.areaY(data, Plot.stackY({
+      x: "date",
+      y: "value",
+      fill: "source",
+      order: "sum"
+    })),
+    Plot.ruleY([0])
+  ]
+}));
+```
+
+**When to use:** Energy mix, employment by industry, trade by commodity group.
+
+## Slope Charts (Two-Point Comparison)
+
+Use slope charts to compare values across two time periods (e.g., year-over-year).
+
+```js
+const provinces = [
+  {province: "Ontario", prev: 6.2, current: 5.8},
+  {province: "Quebec", prev: 5.1, current: 4.9},
+  {province: "British Columbia", prev: 5.5, current: 5.7},
+  // ...
+];
+
+display(Plot.plot({
+  title: "Unemployment rate by province, November 2024 vs 2025",
+  width: 500,
+  height: 300,
+  x: {domain: ["Nov 2024", "Nov 2025"], padding: 0.3},
+  y: {domain: [4, 8], grid: true, label: "Percent"},
+  marks: [
+    Plot.line(provinces, {
+      x: ["prev", "current"],
+      y: ["prev", "current"],
+      stroke: "#AF3C43",  // Single color - slope direction shows change
+      strokeWidth: 2
+    }),
+    Plot.dot(provinces.flatMap(d => [{x: "Nov 2024", y: d.prev}, {x: "Nov 2025", y: d.current}]), {
+      x: "x", y: "y", fill: "#AF3C43", r: 4
+    }),
+    Plot.text(provinces, {
+      x: "Nov 2025", y: "current", text: "province", dx: 8, textAnchor: "start"
+    })
+  ]
+}));
+```
+
+**When to use:** Provincial comparisons, before/after policy changes, seasonal comparisons.
+
+## Lollipop Charts (Cleaner Rankings)
+
+Use lollipop charts instead of bars when you have many categories—less visual clutter.
+
+```js
+display(Plot.plot({
+  title: "Employment change by industry, November 2025",
+  width: 640,
+  height: 400,
+  marginLeft: 180,
+  x: {grid: true, label: "Change (thousands)"},
+  y: {label: null},
+  marks: [
+    Plot.ruleX([0]),
+    Plot.link(data, {
+      y1: "industry",
+      y2: "industry",
+      x1: 0,
+      x2: "change",
+      stroke: "#AF3C43",
+      strokeWidth: 2,
+      sort: {y1: "-x2"}
+    }),
+    Plot.dot(data, {
+      y: "industry",
+      x: "change",
+      fill: "#AF3C43",  // Single color - position shows direction
+      r: 6,
+      sort: {y: "-x"}
+    }),
+    Plot.text(data, {
+      y: "industry",
+      x: 50,  // Fixed position at domain max
+      text: d => (d.change >= 0 ? "+" : "") + d.change.toFixed(1),
+      textAnchor: "end",
+      fontSize: 11
+    })
+  ]
+}));
+```
+
+**When to use:** Industry rankings, regional comparisons, component contributions.
+
+## Dot Plots with Ranges
+
+Use dot plots with confidence intervals or ranges when uncertainty matters.
+
+```js
+display(Plot.plot({
+  title: "Unemployment rate by province with sampling range",
+  width: 640,
+  height: 320,
+  marginLeft: 160,
+  x: {domain: [3, 10], grid: true, label: "Percent"},
+  y: {label: null},
+  marks: [
+    Plot.ruleX(data, {y: "province", x1: "low", x2: "high", stroke: "#ccc", strokeWidth: 3}),
+    Plot.dot(data, {y: "province", x: "rate", fill: "#AF3C43", r: 6, sort: {y: "-x"}}),
+    Plot.text(data, {y: "province", x: "rate", text: d => d.rate.toFixed(1) + "%", dx: 12})
+  ]
+}));
+```
+
+**When to use:** Survey estimates with confidence intervals, ranges, or uncertainty.
+
+## Waffle Charts (Part of Whole)
+
+Use waffle charts to show percentages in a visually intuitive way. Use a **20×5 rectangular grid** (100 cells) to match standard chart widths.
+
+```js
+// 20×5 grid (100 cells) matching standard 640px width
+const cols = 20;
+const shares = [
+  {source: "Hydroelectric", pct: 52, color: "#AF3C43"},
+  {source: "Other sources", pct: 48, color: "#ddd"}
+];
+
+let waffle = [];
+let idx = 0;
+for (const s of shares) {
+  for (let i = 0; i < s.pct; i++) {
+    waffle.push({x: idx % cols, y: Math.floor(idx / cols), source: s.source});
+    idx++;
+  }
+}
+
+display(Plot.plot({
+  title: "Hydroelectric accounts for 52% of generation",
+  width: 640,
+  height: 180,
+  axis: null,
+  color: {
+    domain: shares.map(d => d.source),
+    range: shares.map(d => d.color),
+    legend: true
+  },
+  marks: [
+    Plot.cell(waffle, {x: "x", y: "y", fill: "source", inset: 1, rx: 3})
+  ]
+}));
+```
+
+**When to use:** Headline percentages, market share, composition at a point in time.
+
+## Small Multiples (Faceted Charts)
+
+Use faceting to compare trends across provinces or categories.
+
+```js
+display(Plot.plot({
+  title: "Unemployment rate by region",
+  width: 700,
+  height: 400,
+  fx: {label: null},
+  y: {grid: true, label: "Percent"},
+  x: {type: "utc", label: null, tickFormat: "%b"},
+  marks: [
+    Plot.lineY(data, {x: "date", y: "rate", fx: "region", stroke: "#AF3C43", strokeWidth: 2}),
+    Plot.frame({stroke: "#ddd"})
+  ]
+}));
+```
+
+**When to use:** Provincial trends, industry comparisons, multiple indicators.
+
+## Grouped Bar Charts (AVOID)
+
+**Do NOT use `dx`/`dy` offsets to create grouped bar charts.** The bars will overlap because `dx`/`dy` are pixel offsets, not category offsets.
+
+```js
+// WRONG: Bars overlap completely
+Plot.barX(data, {y: "type", x: "oct2025", fill: "#AF3C43", dx: -8}),
+Plot.barX(data, {y: "type", x: "oct2024", fill: "#888", dx: 8})
+```
+
+**Better alternatives:**
+
+1. **Show percentage change instead of absolute comparison:**
+```js
+const yoyData = [
+  {type: "Category A", yoy: 1.1},
+  {type: "Category B", yoy: -13.4}
+];
+
+display(Plot.plot({
+  title: "Year-over-year change by type",
+  marks: [
+    Plot.ruleX([0]),
+    Plot.barX(yoyData, {
+      y: "type",
+      x: "yoy",
+      fill: "#AF3C43"  // Single color - position shows direction
+    })
+  ]
+}));
+```
+
+2. **Reshape data to long format with faceting (if side-by-side needed):**
+```js
+const longData = [
+  {type: "Category A", year: "2024", value: 100},
+  {type: "Category A", year: "2025", value: 105},
+  {type: "Category B", year: "2024", value: 80},
+  {type: "Category B", year: "2025", value: 75}
+];
+
+// Use Plot.group or faceting instead
+```
+
+**Recommendation:** For year-over-year comparisons, percentage change bars communicate the story more clearly than side-by-side absolute values.
 
 ## Reference Lines
 
@@ -220,9 +547,22 @@ display(Plot.plot({
 
 ## Checklist Before Publishing
 
+### Accessibility & Neutrality
+- [ ] No red-green color encoding
+- [ ] Colors don't imply good/bad judgments
+- [ ] Chart readable in grayscale / by colorblind users
+
+### Layout & Labels
+- [ ] All Y-axis labels visible (not clipped by bars)
+- [ ] **Bar chart labels at fixed x-position (domain max), NOT bar ends**
+- [ ] No dynamic `dx` or `textAnchor` based on value sign
+- [ ] `marginLeft` accommodates longest category label
+- [ ] `marginRight` provides space for value labels
+
+### Technical
 - [ ] Import statement at top of first code block only
 - [ ] Explicit width and height set
-- [ ] Title follows conventions
+- [ ] Title follows conventions with units
 - [ ] StatCan red (#AF3C43) used for primary data
 - [ ] Latest value highlighted with dot and label
 - [ ] Y-axis has appropriate label with units
