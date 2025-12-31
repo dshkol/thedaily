@@ -100,7 +100,8 @@ display(Plot.plot({
   marks: [
     Plot.barX(componentData, {
       y: "component",
-      x: "index",
+      x1: 110,
+      x2: "index",
       fill: "#AF3C43"
     }),
     Plot.text(componentData, {
