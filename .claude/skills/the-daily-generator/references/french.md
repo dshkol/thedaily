@@ -86,3 +86,7 @@ d.toFixed(1).replace(".", ",") + " %"  // 2,2 %
 // French currency
 d.toFixed(1).replace(".", ",") + " G$"  // 165,4 G$
 ```
+
+## Chart Layout
+
+French labels are typically longer than English. Increase left margins by ~20-40px for horizontal bar charts to prevent truncation (e.g., `marginLeft: 200` vs `marginLeft: 160` in English).

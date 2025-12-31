@@ -19,7 +19,18 @@ Rscript r-tools/discover_stories.R
 
 ## Discovery Workflow
 
-### 1. Scan Available Data
+### 1. Check Existing Coverage (REQUIRED FIRST STEP)
+
+Before scanning CANSIM, identify tables already covered:
+
+```bash
+# List existing articles to extract table numbers
+ls docs/en/*/index.md | xargs grep -h "statcan.gc.ca/t1/tbl1" | grep -oE "[0-9]{2}-[0-9]{2}-[0-9]{4}" | sort -u
+```
+
+**Exclude these table numbers from recommendations.** The goal is diversity—never suggest a table that's already been covered unless explicitly asked for an update.
+
+### 2. Scan Available Data
 
 ```r
 library(cansim)
@@ -34,34 +45,24 @@ candidates <- cubes %>%
   arrange(desc(cubeEndDate))
 ```
 
-### 2. Score Candidates
+### 3. Score Candidates
 
 | Dimension | Weight | Criteria |
 |-----------|--------|----------|
 | Recency | 25% | Days since release (fresher = higher) |
-| Diversity | 25% | Sector gap from existing articles |
+| Diversity | 25% | Sector gap from existing articles—deprioritize sectors covered in last 7 days |
 | Narrative | 25% | Regional variation, trend reversals |
 | Public Interest | 15% | Topic relevance to general audiences |
 | Data Quality | 10% | Complete coverage, national totals |
 
-### 3. Validate Top Candidates
+### 4. Validate Top Candidates
 
 Before committing:
-1. Fetch sample data to verify structure
-2. Check for StatCan Daily release
-3. Verify national totals exist
-4. Confirm table is current (not deprecated)
-
-## Check Existing Coverage
-
-```bash
-ls docs/en/*/index.md | head -20
-```
-
-Avoid redundancy:
-- If CPI just published, deprioritize other price indices
-- Retail Trade + Wholesale Trade complement each other
-- Housing Starts + Building Permits complement each other
+1. **Verify table numbers**: Run `search_cansim_cubes("keyword")` to confirm table numbers are current—they go stale as StatCan discontinues/replaces tables
+2. Fetch sample data to verify structure
+3. Check for StatCan Daily release
+4. Verify national totals exist
+5. Confirm table is current (not deprecated)
 
 ## Output Format
 

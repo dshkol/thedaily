@@ -218,3 +218,100 @@ On landing page cards:
 
 ### Bad Component Analysis
 "Food prices continued their alarming rise, squeezing household budgets and forcing families to make difficult choices." (emotional, speculative)
+
+## Advanced Narrative Patterns
+
+These patterns are observed in real Statistics Canada Daily articles and add depth to statistical storytelling.
+
+### Streak Mentions
+
+When a metric moves in the same direction for multiple consecutive periods, highlight the streak:
+
+- "increased for the **fourth consecutive month** in October"
+- "fell for a **second consecutive month** in October"
+- "marked the **first decline since July**"
+
+### Cumulative Context
+
+Provide multi-period cumulative context for sustained trends:
+
+- "bringing the **cumulative gain to 16,700 (+2.0%) since July**"
+- "The three-month gain in the sector **partially offset the cumulative decline of 10,300 (-0.8%)** recorded from April to July 2025"
+
+### Offset Framing
+
+When a current-period change reverses or partially offsets a prior period:
+
+- "**largely offsetting** a decline of 24,300 (-0.1%) in September"
+- "**more than offsetting** the uptick in September (+11,000; +2.3%)"
+- "**partially offset by** declines in administration and support"
+
+### Lone Exception Pattern
+
+Highlight the outlier when most categories move in one direction:
+
+- "**The only sector** to record a year-over-year increase was manufacturing"
+- "truck transportation (-4,500; -2.1%) was the **lone subsector** to record a year-over-year decline"
+
+### Historical Milestone
+
+When a value reaches a notable historical level:
+
+- "The number of vacancies in October was the **lowest since October 2017**"
+- "to a level **comparable with January 2016**"
+- "the **highest level since April 2024**"
+
+### Cross-Survey References
+
+When relevant, link to related releases for complementary data:
+
+- "unemployment rate rose from 6.6% to 6.9% (according to the **Labour Force Survey**)"
+- "For more information, see the **Consumer Price Index** release"
+
+### Provincial Extremes with Context
+
+When presenting provincial data, highlight both extremes:
+
+- "**7.2 unemployed persons for every job vacancy** in Newfoundland and Labrador, the **highest ratio** among the provinces. In comparison, the... ratio was **lowest in Quebec (2.3)**, followed by Saskatchewan (2.5)"
+
+### Causal Attribution (when data supports)
+
+Provide brief explanations for derived metrics:
+
+- "This increase in the job vacancy rate in manufacturing was **primarily due to the decline in payroll employment** over the period"
+- "Growth in average weekly earnings can reflect a range of factors, including changes in wages, **composition of employment**, hours worked and **base-year effects**"
+
+## Article Types
+
+### Single-Indicator Releases
+Most common type. Covers one metric (CPI, Retail Trade, GDP).
+
+**Structure:**
+1. Headline with key number
+2. Highlights (3-5 bullets)
+3. Lede paragraph
+4. Component analysis
+5. Regional analysis
+6. Note to readers
+
+### Multi-Indicator Releases
+Combines related metrics from the same survey (e.g., SEPH covers payroll employment + weekly earnings + job vacancies).
+
+**Structure:**
+1. Headline (usually the primary metric)
+2. Highlights covering multiple metrics
+3. Lede paragraph for primary metric
+4. Section for each indicator with its own heading
+5. Cross-metric analysis
+6. Note to readers (may cover multiple surveys)
+
+**Section heading pattern:** "[Sector/Topic] [verb] [direction] in [period]"
+- "Health care and social assistance records payroll employment increase in October"
+- "Job vacancies decrease in four sectors and increase in one"
+- "Average weekly earnings continue to increase on a year-over-year basis"
+
+### Data Release Announcements
+Short articles announcing new tables are available. Not suitable for D-AI-LY (no narrative).
+
+### Product Announcements
+Short articles pointing to dashboards or tools. Not suitable for D-AI-LY.

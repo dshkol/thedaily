@@ -5,7 +5,21 @@ toc: true
 
 # Chart Style Guide
 
-Guidelines for creating consistent Observable Plot charts in The D-AI-LY articles.
+Guidelines for creating consistent, accessible, and neutral Observable Plot charts in The D-AI-LY articles.
+
+## Core Principles
+
+### 1. Accessibility First
+
+**Never use red-green color encoding.** Approximately 8% of men have red-green color blindness. Charts using red/green to distinguish values are unreadable for these users.
+
+### 2. Color Neutrality
+
+**Avoid implying normative judgments through color.** Price changes are not inherently "good" or "bad":
+- Higher cattle prices: Good for farmers selling, bad for buyers
+- Lower wheat prices: Bad for farmers, good for food processors
+
+Using green=good and red=bad imposes a subjective interpretation that may not apply to all readers. Government statistical publications should present data neutrally.
 
 ## Choosing the Right Chart
 
@@ -24,14 +38,47 @@ Guidelines for creating consistent Observable Plot charts in The D-AI-LY article
 
 ## Color Palette
 
+### Single Series (Default)
+
 | Color | Hex Code | Usage |
 |-------|----------|-------|
-| StatCan Red | `#AF3C43` | Primary color for lines, positive values, highlights |
-| Green | `#2e7d32` | Negative values only (declines, decreases) |
+| StatCan Red | `#AF3C43` | Primary color for all data |
 | Grid lines | `#ddd` | Light gray for reference lines |
 | Text | `currentColor` | Inherits from page styling |
 
-**Rule:** Use red for most data. Only use green when showing negative values in bar charts.
+**Rule:** Use StatCan red for all data. Direction (positive/negative) is communicated by position relative to zero line, not by color.
+
+### Multi-Series (Provincial, etc.)
+
+```js
+// Red gradient for related series
+color: {
+  domain: ["Alberta", "Saskatchewan", "Manitoba"],
+  range: ["#AF3C43", "#E57373", "#FFAB91"]
+}
+```
+
+### Diverging Data (DO NOT use red-green)
+
+For charts showing positive and negative values, use ONE of these approaches:
+
+**Option 1: Single color (recommended)**
+```js
+// Position relative to zero line shows direction
+fill: "#AF3C43"
+```
+
+**Option 2: Colorblind-safe divergence (blue-orange)**
+```js
+// Only when color distinction is essential
+fill: d => d.value >= 0 ? "#1976D2" : "#E65100"
+```
+
+**NEVER do this:**
+```js
+// BAD: Red-green is inaccessible and implies good/bad
+fill: "#AF3C43"
+```
 
 ## Standard Dimensions
 
@@ -85,12 +132,17 @@ display(Plot.plot({
 
 Use for comparing categories or showing component breakdowns.
 
+### Label Placement (IMPORTANT)
+
+**Always use fixed-position labels** to prevent overlap. Position ALL labels at the domain maximum (right edge), not at bar ends:
+
 ```js
 display(Plot.plot({
   title: "Year-over-year change by component (%)",
   width: 700,
   height: 320,
   marginLeft: 340,  // Adjust based on longest label
+  marginRight: 70,  // Space for value labels
   x: {domain: [-1, 5], grid: true, label: "Percent change"},
   y: {label: null},
   marks: [
@@ -98,26 +150,40 @@ display(Plot.plot({
     Plot.barX(data, {
       y: "name",
       x: "change",
-      fill: d => d.change >= 0 ? "#AF3C43" : "#2e7d32",
-      sort: {y: "-x"}  // Sort by value descending
+      fill: "#AF3C43",  // Single color - direction shown by position
+      sort: {y: "-x"}
     }),
     Plot.text(data, {
       y: "name",
-      x: "change",
-      text: d => d.change.toFixed(1) + "%",
-      dx: 20,  // Offset from bar end
-      fill: "currentColor"
+      x: 5,  // FIXED position at domain max (not "change")
+      text: d => (d.change >= 0 ? "+" : "") + d.change.toFixed(1) + "%",
+      textAnchor: "end",  // Right-aligned
+      fill: "currentColor",
+      fontSize: 11
     })
   ]
 }));
 ```
 
+**Why fixed-position labels:**
+- Labels form a right-aligned column—never overlap
+- Works for any value distribution (even when bars cluster)
+- Clean, scannable appearance
+
+**⚠️ DO NOT use dynamic positioning:**
+```js
+// BAD: Labels overlap when values cluster (e.g., +7.8%, +7.3%, +6.9%)
+x: "change",  // At bar end - will overlap!
+textAnchor: "end"
+```
+
 **Key elements:**
-- Set `marginLeft` to accommodate long category labels (200-340px typical)
+- Set `marginLeft` to accommodate long category labels (180-340px typical)
+- Set `marginRight: 70` to ensure space for value labels
 - Always include `Plot.ruleX([0])` as a baseline
-- Use conditional fill for positive/negative values
+- Use single fill color (direction shown by position relative to zero)
 - Sort bars by value with `sort: {y: "-x"}`
-- Position labels with `dx: 20` (positive values) or handle negative separately
+- **Labels at fixed x-position (domain max), not bar ends**
 
 ### Custom Domains (IMPORTANT)
 
@@ -141,24 +207,13 @@ marks: [
 
 ### Handling Mixed Positive/Negative Labels
 
-**Recommended approach:** Place ALL labels at a fixed right-edge position to avoid overlap:
+See **Label Placement (IMPORTANT)** above. The fixed right-edge position works for all cases, including mixed positive/negative values.
 
+**Additional tip:** Expand the x-domain slightly beyond your data range to ensure labels fit:
 ```js
-Plot.text(data, {
-  y: "name",
-  x: domainMax,  // Fixed position at right edge (e.g., 12 if domain is [-5, 12])
-  text: d => (d.change >= 0 ? "+" : "") + d.change.toFixed(1) + "%",
-  textAnchor: "end",
-  fill: "currentColor",
-  fontSize: 11
-})
+// If data ranges from -3% to +8%, use domain [-5, 10]
+x: {domain: [-5, 10], grid: true}
 ```
-
-**Why this approach:**
-- Labels aligned at the bar end can overlap when bars have similar lengths
-- A fixed right-edge position keeps all labels readable and consistently positioned
-- Set `marginRight: 60` to ensure labels have space
-- Expand the x-domain slightly beyond the max value to accommodate labels
 
 ## Area Charts (Composition Over Time)
 
@@ -211,7 +266,7 @@ display(Plot.plot({
     Plot.line(provinces, {
       x: ["prev", "current"],
       y: ["prev", "current"],
-      stroke: d => d.current < d.prev ? "#2e7d32" : "#AF3C43",
+      stroke: "#AF3C43",  // Single color - slope direction shows change
       strokeWidth: 2
     }),
     Plot.dot(provinces.flatMap(d => [{x: "Nov 2024", y: d.prev}, {x: "Nov 2025", y: d.current}]), {
@@ -252,16 +307,16 @@ display(Plot.plot({
     Plot.dot(data, {
       y: "industry",
       x: "change",
-      fill: d => d.change >= 0 ? "#AF3C43" : "#2e7d32",
+      fill: "#AF3C43",  // Single color - position shows direction
       r: 6,
       sort: {y: "-x"}
     }),
     Plot.text(data, {
       y: "industry",
-      x: "change",
+      x: 50,  // Fixed position at domain max
       text: d => (d.change >= 0 ? "+" : "") + d.change.toFixed(1),
-      dx: d => d.change >= 0 ? 12 : -12,
-      textAnchor: d => d.change >= 0 ? "start" : "end"
+      textAnchor: "end",
+      fontSize: 11
     })
   ]
 }));
@@ -350,6 +405,52 @@ display(Plot.plot({
 ```
 
 **When to use:** Provincial trends, industry comparisons, multiple indicators.
+
+## Grouped Bar Charts (AVOID)
+
+**Do NOT use `dx`/`dy` offsets to create grouped bar charts.** The bars will overlap because `dx`/`dy` are pixel offsets, not category offsets.
+
+```js
+// WRONG: Bars overlap completely
+Plot.barX(data, {y: "type", x: "oct2025", fill: "#AF3C43", dx: -8}),
+Plot.barX(data, {y: "type", x: "oct2024", fill: "#888", dx: 8})
+```
+
+**Better alternatives:**
+
+1. **Show percentage change instead of absolute comparison:**
+```js
+const yoyData = [
+  {type: "Category A", yoy: 1.1},
+  {type: "Category B", yoy: -13.4}
+];
+
+display(Plot.plot({
+  title: "Year-over-year change by type",
+  marks: [
+    Plot.ruleX([0]),
+    Plot.barX(yoyData, {
+      y: "type",
+      x: "yoy",
+      fill: "#AF3C43"  // Single color - position shows direction
+    })
+  ]
+}));
+```
+
+2. **Reshape data to long format with faceting (if side-by-side needed):**
+```js
+const longData = [
+  {type: "Category A", year: "2024", value: 100},
+  {type: "Category A", year: "2025", value: 105},
+  {type: "Category B", year: "2024", value: 80},
+  {type: "Category B", year: "2025", value: 75}
+];
+
+// Use Plot.group or faceting instead
+```
+
+**Recommendation:** For year-over-year comparisons, percentage change bars communicate the story more clearly than side-by-side absolute values.
 
 ## Reference Lines
 
@@ -446,9 +547,22 @@ display(Plot.plot({
 
 ## Checklist Before Publishing
 
+### Accessibility & Neutrality
+- [ ] No red-green color encoding
+- [ ] Colors don't imply good/bad judgments
+- [ ] Chart readable in grayscale / by colorblind users
+
+### Layout & Labels
+- [ ] All Y-axis labels visible (not clipped by bars)
+- [ ] **Bar chart labels at fixed x-position (domain max), NOT bar ends**
+- [ ] No dynamic `dx` or `textAnchor` based on value sign
+- [ ] `marginLeft` accommodates longest category label
+- [ ] `marginRight` provides space for value labels
+
+### Technical
 - [ ] Import statement at top of first code block only
 - [ ] Explicit width and height set
-- [ ] Title follows conventions
+- [ ] Title follows conventions with units
 - [ ] StatCan red (#AF3C43) used for primary data
 - [ ] Latest value highlighted with dot and label
 - [ ] Y-axis has appropriate label with units
