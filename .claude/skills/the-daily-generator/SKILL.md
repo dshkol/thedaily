@@ -44,7 +44,7 @@ toc: false
 
 # Consumer prices up 2.2% year over year in November 2025
 
-<p class="release-date">Released: December 22, 2025 <span class="article-type-tag release">New Release</span></p>
+<p class="release-date">Data released: December 5, 2025 | Published: December 22, 2025 <span class="article-type-tag release">New Release</span></p>
 
 <div class="highlights">
 
@@ -71,6 +71,21 @@ toc: false
 
 </div>
 ```
+
+## Date Handling
+
+**For new releases** (covering the most recent data period):
+- Extract `release_time` from the fetched JSON metadata (e.g., `"2025-12-05 08:30:00"`)
+- Format both dates in the release-date line:
+  ```html
+  <p class="release-date">Data released: December 5, 2025 | Published: December 22, 2025 <span class="article-type-tag release">New Release</span></p>
+  ```
+- "Data released" = when StatCan published the data (`metadata.release_time`)
+- "Published" = when the article is being generated (today's date)
+
+**For backfill articles** (covering historical periods):
+- **Omit the release-date paragraph entirely**
+- The `<span class="article-type-tag backfill">Backfill</span>` tag (placed elsewhere) indicates this is historical coverage
 
 ## Reference Files
 
