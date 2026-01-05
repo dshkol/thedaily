@@ -287,7 +287,7 @@ display(Plot.plot({
     }),
     Plot.text(provincialCattle, {
       y: "province",
-      x: 32,
+      x: "value",
       dx: 5,
       text: d => "$" + d.value.toFixed(2),
       textAnchor: "start",

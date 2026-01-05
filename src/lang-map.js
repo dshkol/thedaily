@@ -5,6 +5,7 @@ export const slugMap = {
   'archive': 'archive',
   'explore': 'explore',
   // Articles
+  'construction-wages-november-2025': 'salaires-construction-novembre-2025',
   'airline-passengers-october-2025': 'passagers-aeriens-octobre-2025',
   'cpi-november-2025': 'ipc-novembre-2025',
   'cpi-october-2025': 'ipc-october-2025',

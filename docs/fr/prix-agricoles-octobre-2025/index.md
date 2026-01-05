@@ -279,15 +279,17 @@ display(Plot.plot({
   marks: [
     Plot.barX(provincialCattle, {
       y: "province",
-      x: "value",
+      x1: 180,
+      x2: "value",
       fill: "#AF3C43",
-      sort: {y: "-x"}
+      sort: {y: "-x2"}
     }),
     Plot.text(provincialCattle, {
       y: "province",
-      x: 315,
+      x: "value",
+      dx: 5,
       text: d => d.value.toFixed(2).replace(".", ",") + " $",
-      textAnchor: "end",
+      textAnchor: "start",
       fontSize: 11
     })
   ]
