@@ -64,6 +64,22 @@ toc: false
 
 </div>
 
+<details>
+<summary>Reproducibility: R code for data extraction</summary>
+
+```r
+library(cansim)
+library(dplyr)
+
+# Fetch data
+df <- get_cansim("XX-XX-XXXX")
+
+# Filter and calculate changes
+# [Table-specific code here]
+```
+
+</details>
+
 <div class="source-info">
 
 **Source:** Statistics Canada, [Table XX-XX-XXXX](url)
@@ -86,6 +102,48 @@ toc: false
 **For backfill articles** (covering historical periods):
 - **Omit the release-date paragraph entirely**
 - The `<span class="article-type-tag backfill">Backfill</span>` tag (placed elsewhere) indicates this is historical coverage
+
+## R Code Reproducibility Section
+
+**Always include** a collapsible R code section showing how to extract the data used in the article.
+
+**Structure:**
+```markdown
+<details>
+<summary>Reproducibility: R code for data extraction</summary>
+
+```r
+library(cansim)
+library(dplyr)
+
+# Fetch [indicator] data
+df <- get_cansim("XX-XX-XXXX")
+
+# National time series
+national <- df %>%
+  filter(GEO == "Canada", ...) %>%
+  select(REF_DATE, VALUE) %>%
+  arrange(desc(REF_DATE))
+
+# Calculate changes (month-over-month, year-over-year)
+current <- national %>% filter(REF_DATE == "YYYY-MM") %>% pull(VALUE)
+previous <- national %>% filter(REF_DATE == "YYYY-MM") %>% pull(VALUE)
+change <- (current - previous) / previous * 100
+
+# Subsector/component breakdown
+# Provincial variation
+```
+
+</details>
+```
+
+**Code should demonstrate:**
+1. Fetching data with `get_cansim()`
+2. Filtering to relevant dimensions (GEO, product groups, adjustments)
+3. Calculating the key metrics shown in the article (MoM, YoY changes)
+4. Extracting subsector and provincial breakdowns if present
+
+**French articles:** Use the same R code (package names and functions stay in English).
 
 ## Reference Files
 
@@ -123,6 +181,7 @@ Before publishing:
 - [ ] Language switcher works (slug in lang-map.js)
 - [ ] Voice is neutral (no "surged", "plummeted")
 - [ ] French uses comma decimals (2,2 %)
+- [ ] R code reproducibility section included with correct table number
 
 ## Review Mode
 

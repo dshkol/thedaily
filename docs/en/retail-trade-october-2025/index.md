@@ -154,6 +154,55 @@ All data in this release are seasonally adjusted, unless otherwise indicated. Fo
 
 </div>
 
+<details>
+<summary>Reproducibility: R code for data extraction</summary>
+
+```r
+library(cansim)
+library(dplyr)
+library(tidyr)
+
+# Fetch retail trade data (seasonally adjusted)
+retail <- get_cansim("20-10-0056")
+
+# Total retail trade time series
+total_retail <- retail %>%
+  filter(GEO == "Canada",
+         `North American Industry Classification System (NAICS)` == "Retail trade [44-45]",
+         `Adjustments` == "Seasonally adjusted") %>%
+  select(REF_DATE, VALUE) %>%
+  arrange(desc(REF_DATE))
+
+# Month-over-month change
+oct2025 <- total_retail %>% filter(REF_DATE == "2025-10") %>% pull(VALUE)
+sep2025 <- total_retail %>% filter(REF_DATE == "2025-09") %>% pull(VALUE)
+mom_change <- (oct2025 - sep2025) / sep2025 * 100
+
+# Year-over-year change
+oct2024 <- total_retail %>% filter(REF_DATE == "2024-10") %>% pull(VALUE)
+yoy_change <- (oct2025 - oct2024) / oct2024 * 100
+
+# Sector breakdown for October 2025
+sectors <- retail %>%
+  filter(GEO == "Canada",
+         REF_DATE == "2025-10",
+         `Adjustments` == "Seasonally adjusted") %>%
+  select(`North American Industry Classification System (NAICS)`, VALUE) %>%
+  arrange(desc(VALUE))
+
+# Provincial breakdown
+provincial <- retail %>%
+  filter(`North American Industry Classification System (NAICS)` == "Retail trade [44-45]",
+         REF_DATE %in% c("2025-10", "2024-10"),
+         `Adjustments` == "Seasonally adjusted",
+         GEO != "Canada") %>%
+  select(GEO, REF_DATE, VALUE) %>%
+  pivot_wider(names_from = REF_DATE, values_from = VALUE) %>%
+  mutate(yoy_change = (`2025-10` - `2024-10`) / `2024-10` * 100)
+```
+
+</details>
+
 <div class="source-info">
 
 **Source:** Statistics Canada, [Table 20-10-0056](https://www150.statcan.gc.ca/t1/tbl1/en/tv.action?pid=2010005601)
