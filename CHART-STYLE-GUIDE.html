@@ -1,0 +1,802 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="generator" content="Observable Framework v1.13.3">
+<title>Chart Style Guide | The D-AI-LY</title>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,opsz,wght@0,8..60,200..900;1,8..60,200..900&amp;display=swap" crossorigin>
+<link rel="preload" as="style" href="/thedaily/_import/style.e12c1808.css">
+<link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,opsz,wght@0,8..60,200..900;1,8..60,200..900&amp;display=swap" crossorigin>
+<link rel="stylesheet" type="text/css" href="/thedaily/_import/style.e12c1808.css">
+<link rel="modulepreload" href="/thedaily/_observablehq/client.6d4b40e3.js">
+<link rel="modulepreload" href="/thedaily/_observablehq/runtime.e080113b.js">
+<link rel="modulepreload" href="/thedaily/_observablehq/stdlib.73a8ec5a.js">
+<link rel="modulepreload" href="/thedaily/_npm/@observablehq/plot@0.6.17/d761ef9b.js">
+<link rel="modulepreload" href="/thedaily/_npm/d3@7.9.0/e780feca.js">
+<link rel="modulepreload" href="/thedaily/_npm/isoformat@0.2.1/18cbf477.js">
+<link rel="modulepreload" href="/thedaily/_npm/interval-tree-1d@1.0.4/53fe8176.js">
+<link rel="modulepreload" href="/thedaily/_npm/d3-array@3.2.4/e93ca09f.js">
+<link rel="modulepreload" href="/thedaily/_npm/d3-axis@3.0.0/0f2de24d.js">
+<link rel="modulepreload" href="/thedaily/_npm/d3-brush@3.0.0/65eb105b.js">
+<link rel="modulepreload" href="/thedaily/_npm/d3-chord@3.0.1/7ef8fb2e.js">
+<link rel="modulepreload" href="/thedaily/_npm/d3-color@3.1.0/aeb57b94.js">
+<link rel="modulepreload" href="/thedaily/_npm/d3-contour@4.0.2/1d2aed74.js">
+<link rel="modulepreload" href="/thedaily/_npm/d3-delaunay@6.0.4/5ced1d52.js">
+<link rel="modulepreload" href="/thedaily/_npm/d3-dispatch@3.0.1/9ba9c7f3.js">
+<link rel="modulepreload" href="/thedaily/_npm/d3-drag@3.0.0/4202580c.js">
+<link rel="modulepreload" href="/thedaily/_npm/d3-dsv@3.0.1/9cffc2bd.js">
+<link rel="modulepreload" href="/thedaily/_npm/d3-ease@3.0.1/cdd7e898.js">
+<link rel="modulepreload" href="/thedaily/_npm/d3-fetch@3.0.1/b4e2ad9a.js">
+<link rel="modulepreload" href="/thedaily/_npm/d3-force@3.0.0/5e804d15.js">
+<link rel="modulepreload" href="/thedaily/_npm/d3-format@3.1.0/86074ef6.js">
+<link rel="modulepreload" href="/thedaily/_npm/d3-geo@3.1.1/40599fb3.js">
+<link rel="modulepreload" href="/thedaily/_npm/d3-hierarchy@3.1.2/e49e792c.js">
+<link rel="modulepreload" href="/thedaily/_npm/d3-interpolate@3.0.1/8d1e5425.js">
+<link rel="modulepreload" href="/thedaily/_npm/d3-path@3.1.0/20d3f133.js">
+<link rel="modulepreload" href="/thedaily/_npm/d3-polygon@3.0.1/7553081f.js">
+<link rel="modulepreload" href="/thedaily/_npm/d3-quadtree@3.0.1/0dfd751c.js">
+<link rel="modulepreload" href="/thedaily/_npm/d3-random@3.0.1/3c90ee06.js">
+<link rel="modulepreload" href="/thedaily/_npm/d3-scale@4.0.2/843b6a76.js">
+<link rel="modulepreload" href="/thedaily/_npm/d3-scale-chromatic@3.1.0/ba24c2e7.js">
+<link rel="modulepreload" href="/thedaily/_npm/d3-selection@3.0.0/4d94e5b7.js">
+<link rel="modulepreload" href="/thedaily/_npm/d3-shape@3.2.0/6d3a6726.js">
+<link rel="modulepreload" href="/thedaily/_npm/d3-time@3.1.0/9f03c579.js">
+<link rel="modulepreload" href="/thedaily/_npm/d3-time-format@4.1.0/07c9626f.js">
+<link rel="modulepreload" href="/thedaily/_npm/d3-timer@3.0.1/b58a267d.js">
+<link rel="modulepreload" href="/thedaily/_npm/d3-transition@3.0.1/004da2ac.js">
+<link rel="modulepreload" href="/thedaily/_npm/d3-zoom@3.0.0/b5786b3f.js">
+<link rel="modulepreload" href="/thedaily/_npm/binary-search-bounds@2.0.5/cbf6ba23.js">
+<link rel="modulepreload" href="/thedaily/_npm/internmap@2.0.3/e08981d9.js">
+<link rel="modulepreload" href="/thedaily/_npm/delaunator@5.0.1/02d43215.js">
+<link rel="modulepreload" href="/thedaily/_npm/robust-predicates@3.0.2/aa00730b.js">
+<script type="module">
+
+import {define} from "/thedaily/_observablehq/client.6d4b40e3.js";
+
+define({id: "a6005190", body: () => {
+// Position relative to zero line shows direction
+fill: "#AF3C43"
+}});
+
+define({id: "d73c1bc8", body: () => {
+// Only when color distinction is essential
+fill: d => d.value >= 0 ? "#1976D2" : "#E65100"
+}});
+
+define({id: "37572247", body: () => {
+// BAD: Red-green is inaccessible and implies good/bad
+fill: "#AF3C43"
+}});
+
+define({id: "970f4173", outputs: ["Plot"], body: async () => {
+const Plot = await import("/thedaily/_npm/@observablehq/plot@0.6.17/d761ef9b.js");
+
+return {Plot};
+}});
+
+define({id: "d19bbe2b", inputs: ["display","Plot","data"], body: (display,Plot,data) => {
+display(Plot.plot({
+  title: "Consumer Price Index, December 2023 to November 2025",
+  width: 680,
+  height: 300,
+  y: {grid: true, label: "↑ Index (2002=100)"},
+  x: {type: "utc", label: null},
+  marks: [
+    Plot.lineY(data, {x: "date", y: "value", stroke: "#AF3C43", strokeWidth: 2}),
+    Plot.dot(data.slice(-1), {x: "date", y: "value", fill: "#AF3C43", r: 5}),
+    Plot.text(data.slice(-1), {x: "date", y: "value", text: d => d.value.toFixed(1), dy: -12, fill: "#AF3C43", fontWeight: 600})
+  ]
+}));
+}});
+
+define({id: "a5fc1944", inputs: ["display","Plot","data"], body: (display,Plot,data) => {
+display(Plot.plot({
+  title: "Year-over-year change by component (%)",
+  width: 700,
+  height: 320,
+  marginLeft: 340,  // Adjust based on longest label
+  marginRight: 70,  // Space for value labels
+  x: {domain: [-1, 5], grid: true, label: "Percent change"},
+  y: {label: null},
+  marks: [
+    Plot.ruleX([0]),  // Zero line
+    Plot.barX(data, {
+      y: "name",
+      x: "change",
+      fill: "#AF3C43",  // Single color - direction shown by position
+      sort: {y: "-x"}
+    }),
+    Plot.text(data, {
+      y: "name",
+      x: 5,  // FIXED position at domain max (not "change")
+      text: d => (d.change >= 0 ? "+" : "") + d.change.toFixed(1) + "%",
+      textAnchor: "end",  // Right-aligned
+      fill: "currentColor",
+      fontSize: 11
+    })
+  ]
+}));
+}});
+
+define({id: "afefb24a", inputs: ["display","Plot","data"], body: (display,Plot,data) => {
+display(Plot.plot({
+  title: "Electric power generation by source, 2024–2025",
+  width: 680,
+  height: 320,
+  y: {grid: true, label: "Terawatt hours"},
+  x: {type: "utc", label: null},
+  color: {
+    domain: ["Hydroelectric", "Combustible fuels", "Nuclear", "Wind", "Solar"],
+    range: ["#AF3C43", "#E57373", "#FFAB91", "#81C784", "#FFD54F"]
+  },
+  marks: [
+    Plot.areaY(data, Plot.stackY({
+      x: "date",
+      y: "value",
+      fill: "source",
+      order: "sum"
+    })),
+    Plot.ruleY([0])
+  ]
+}));
+}});
+
+define({id: "8bc5dfef", inputs: ["display","Plot"], outputs: ["provinces"], body: (display,Plot) => {
+const provinces = [
+  {province: "Ontario", prev: 6.2, current: 5.8},
+  {province: "Quebec", prev: 5.1, current: 4.9},
+  {province: "British Columbia", prev: 5.5, current: 5.7},
+  // ...
+];
+
+display(Plot.plot({
+  title: "Unemployment rate by province, November 2024 vs 2025",
+  width: 500,
+  height: 300,
+  x: {domain: ["Nov 2024", "Nov 2025"], padding: 0.3},
+  y: {domain: [4, 8], grid: true, label: "Percent"},
+  marks: [
+    Plot.line(provinces, {
+      x: ["prev", "current"],
+      y: ["prev", "current"],
+      stroke: "#AF3C43",  // Single color - slope direction shows change
+      strokeWidth: 2
+    }),
+    Plot.dot(provinces.flatMap(d => [{x: "Nov 2024", y: d.prev}, {x: "Nov 2025", y: d.current}]), {
+      x: "x", y: "y", fill: "#AF3C43", r: 4
+    }),
+    Plot.text(provinces, {
+      x: "Nov 2025", y: "current", text: "province", dx: 8, textAnchor: "start"
+    })
+  ]
+}));
+return {provinces};
+}});
+
+define({id: "6d36eddd", inputs: ["display","Plot","data"], body: (display,Plot,data) => {
+display(Plot.plot({
+  title: "Employment change by industry, November 2025",
+  width: 640,
+  height: 400,
+  marginLeft: 180,
+  x: {grid: true, label: "Change (thousands)"},
+  y: {label: null},
+  marks: [
+    Plot.ruleX([0]),
+    Plot.link(data, {
+      y1: "industry",
+      y2: "industry",
+      x1: 0,
+      x2: "change",
+      stroke: "#AF3C43",
+      strokeWidth: 2,
+      sort: {y1: "-x2"}
+    }),
+    Plot.dot(data, {
+      y: "industry",
+      x: "change",
+      fill: "#AF3C43",  // Single color - position shows direction
+      r: 6,
+      sort: {y: "-x"}
+    }),
+    Plot.text(data, {
+      y: "industry",
+      x: 50,  // Fixed position at domain max
+      text: d => (d.change >= 0 ? "+" : "") + d.change.toFixed(1),
+      textAnchor: "end",
+      fontSize: 11
+    })
+  ]
+}));
+}});
+
+define({id: "a4f6d7d2", inputs: ["display","Plot","data"], body: (display,Plot,data) => {
+display(Plot.plot({
+  title: "Unemployment rate by province with sampling range",
+  width: 640,
+  height: 320,
+  marginLeft: 160,
+  x: {domain: [3, 10], grid: true, label: "Percent"},
+  y: {label: null},
+  marks: [
+    Plot.ruleX(data, {y: "province", x1: "low", x2: "high", stroke: "#ccc", strokeWidth: 3}),
+    Plot.dot(data, {y: "province", x: "rate", fill: "#AF3C43", r: 6, sort: {y: "-x"}}),
+    Plot.text(data, {y: "province", x: "rate", text: d => d.rate.toFixed(1) + "%", dx: 12})
+  ]
+}));
+}});
+
+define({id: "423c6899", inputs: ["display","Plot"], outputs: ["cols","shares","waffle","idx"], body: (display,Plot) => {
+// 20×5 grid (100 cells) matching standard 640px width
+const cols = 20;
+const shares = [
+  {source: "Hydroelectric", pct: 52, color: "#AF3C43"},
+  {source: "Other sources", pct: 48, color: "#ddd"}
+];
+
+let waffle = [];
+let idx = 0;
+for (const s of shares) {
+  for (let i = 0; i < s.pct; i++) {
+    waffle.push({x: idx % cols, y: Math.floor(idx / cols), source: s.source});
+    idx++;
+  }
+}
+
+display(Plot.plot({
+  title: "Hydroelectric accounts for 52% of generation",
+  width: 640,
+  height: 180,
+  axis: null,
+  color: {
+    domain: shares.map(d => d.source),
+    range: shares.map(d => d.color),
+    legend: true
+  },
+  marks: [
+    Plot.cell(waffle, {x: "x", y: "y", fill: "source", inset: 1, rx: 3})
+  ]
+}));
+return {cols,shares,waffle,idx};
+}});
+
+define({id: "60b0c225", inputs: ["display","Plot","data"], body: (display,Plot,data) => {
+display(Plot.plot({
+  title: "Unemployment rate by region",
+  width: 700,
+  height: 400,
+  fx: {label: null},
+  y: {grid: true, label: "Percent"},
+  x: {type: "utc", label: null, tickFormat: "%b"},
+  marks: [
+    Plot.lineY(data, {x: "date", y: "rate", fx: "region", stroke: "#AF3C43", strokeWidth: 2}),
+    Plot.frame({stroke: "#ddd"})
+  ]
+}));
+}});
+
+define({id: "ac2361e4", inputs: ["Plot","data","display"], body: async (Plot,data,display) => {
+display(await(
+// WRONG: Bars overlap completely
+Plot.barX(data, {y: "type", x: "oct2025", fill: "#AF3C43", dx: -8}),
+Plot.barX(data, {y: "type", x: "oct2024", fill: "#888", dx: 8})
+))
+}});
+
+define({id: "673898ee", inputs: ["display","Plot"], outputs: ["yoyData"], body: (display,Plot) => {
+const yoyData = [
+  {type: "Category A", yoy: 1.1},
+  {type: "Category B", yoy: -13.4}
+];
+
+display(Plot.plot({
+  title: "Year-over-year change by type",
+  marks: [
+    Plot.ruleX([0]),
+    Plot.barX(yoyData, {
+      y: "type",
+      x: "yoy",
+      fill: "#AF3C43"  // Single color - position shows direction
+    })
+  ]
+}));
+return {yoyData};
+}});
+
+define({id: "ad8150be", outputs: ["longData"], body: () => {
+const longData = [
+  {type: "Category A", year: "2024", value: 100},
+  {type: "Category A", year: "2025", value: 105},
+  {type: "Category B", year: "2024", value: 80},
+  {type: "Category B", year: "2025", value: 75}
+];
+
+// Use Plot.group or faceting instead
+return {longData};
+}});
+
+define({id: "d559b982", inputs: ["Plot"], body: (Plot) => {
+marks: [
+  Plot.ruleY([0]),  // Zero baseline
+  Plot.ruleY([1, 3], {stroke: "#ddd", strokeDasharray: "4,4"}),  // Reference levels
+  // ... other marks
+]
+}});
+
+define({id: "2d796cdb", outputs: ["data"], body: () => {
+const data = [
+  {date: new Date("2025-01"), value: 161.3},
+  {date: new Date("2025-02"), value: 163.0},
+  // ...
+];
+return {data};
+}});
+
+define({id: "5e6e2fe7", inputs: ["display"], outputs: ["Plot","gdpData"], body: async (display) => {
+const Plot = await import("/thedaily/_npm/@observablehq/plot@0.6.17/d761ef9b.js");
+
+// Real data from Statistics Canada Table 36-10-0434
+const gdpData = [
+  {date: new Date("2024-11"), value: 2312.3},
+  {date: new Date("2024-12"), value: 2317.0},
+  {date: new Date("2025-01"), value: 2327.2},
+  // ... more data points
+  {date: new Date("2025-10"), value: 2325.9}
+];
+
+display(Plot.plot({
+  title: "Real GDP at basic prices ($ billions, 2017 constant prices)",
+  width: 680,
+  height: 300,
+  y: {domain: [2200, 2380], grid: true, label: "Billions $"},
+  x: {type: "utc", label: null},
+  marks: [
+    Plot.lineY(gdpData, {x: "date", y: "value", stroke: "#AF3C43", strokeWidth: 2}),
+    Plot.dot(gdpData.slice(-1), {x: "date", y: "value", fill: "#AF3C43", r: 5}),
+    Plot.text(gdpData.slice(-1), {x: "date", y: "value", text: d => "$" + d.value.toFixed(1) + "B", dy: -12, fill: "#AF3C43", fontWeight: 600})
+  ]
+}));
+return {Plot,gdpData};
+}});
+
+</script>
+</head>
+<body>
+<div id="observablehq-center">
+<header id="observablehq-header">
+<div style="display: flex; align-items: baseline; gap: 0.5rem; font-size: 0.8125rem; letter-spacing: 0.02em; padding: 0.5rem 0; border-bottom: 3px solid #AF3C43; margin-bottom: 1.5rem;">
+    <a id="home-link" href="./" style="font-weight: 600; text-decoration: none; color: #AF3C43; text-transform: uppercase;">The D-AI-LY</a>
+    <span style="color: #999;">|</span>
+    <span style="color: #666; text-transform: uppercase; font-size: 0.6875rem;">An AI-Generated Statistical Bulletin</span>
+    <span style="flex: 1;"></span>
+    <a id="explore-link" href="./en/explore/" style="text-decoration: none; color: #666; font-size: 0.75rem;">Explore</a>
+    <a id="lang-en" href="./en/" style="text-decoration: none; color: #666; font-size: 0.75rem; margin-left: 0.75rem;">English</a>
+    <a id="lang-fr" href="./fr/" style="text-decoration: none; color: #666; font-size: 0.75rem; margin-left: 0.75rem;">Français</a>
+  </div>
+  <script>
+    (function() {
+      const base = '/thedaily';
+      const slugMap = {"archive":"archive","explore":"explore","construction-wages-november-2025":"salaires-construction-novembre-2025","airline-passengers-october-2025":"passagers-aeriens-octobre-2025","cpi-november-2025":"ipc-novembre-2025","cpi-october-2025":"ipc-october-2025","cpi-september-2025":"ipc-september-2025","cpi-august-2025":"ipc-august-2025","cpi-july-2025":"ipc-july-2025","lfs-november-2025":"epa-novembre-2025","lfs-september-2025":"epa-septembre-2025","manufacturing-sales-september-2025":"ventes-manufacturieres-septembre-2025","retail-trade-october-2025":"commerce-detail-octobre-2025","new-housing-price-index-november-2025":"indice-prix-logements-neufs-novembre-2025","housing-starts-november-2025":"mises-en-chantier-novembre-2025","gdp-october-2025":"pib-octobre-2025","trade-october-2025":"commerce-international-octobre-2025","building-permits-october-2025":"permis-batir-octobre-2025","gasoline-prices-november-2025":"prix-essence-novembre-2025","wholesale-trade-october-2025":"commerce-gros-octobre-2025","freight-rail-prices-december-2025":"prix-transport-ferroviaire-decembre-2025","industrial-product-prices-november-2025":"prix-produits-industriels-novembre-2025","retail-trade-september-2025":"commerce-detail-septembre-2025","trade-september-2025":"commerce-international-septembre-2025","wholesale-trade-september-2025":"commerce-gros-septembre-2025","gdp-september-2025":"pib-septembre-2025","building-permits-september-2025":"permis-batir-septembre-2025","food-services-september-2025":"services-alimentaires-septembre-2025","airline-passengers-september-2025":"passagers-aeriens-septembre-2025","electricity-generation-august-2025":"production-electricite-aout-2025","lfs-august-2025":"epa-aout-2025","retail-trade-august-2025":"commerce-detail-aout-2025","manufacturing-sales-august-2025":"ventes-manufacturieres-aout-2025","gdp-august-2025":"pib-aout-2025","trade-august-2025":"commerce-international-aout-2025","wholesale-trade-august-2025":"commerce-gros-aout-2025","building-permits-august-2025":"permis-batir-aout-2025","food-services-august-2025":"services-alimentaires-aout-2025","airline-passengers-august-2025":"passagers-aeriens-aout-2025","cpi-june-2025":"ipc-juin-2025","cpi-may-2025":"ipc-mai-2025","cpi-april-2025":"ipc-avril-2025","cpi-march-2025":"ipc-mars-2025","cpi-february-2025":"ipc-fevrier-2025","cpi-january-2025":"ipc-janvier-2025","cpi-december-2024":"ipc-decembre-2024","lfs-october-2025":"epa-octobre-2025","lfs-july-2025":"epa-juillet-2025","lfs-june-2025":"epa-juin-2025","lfs-may-2025":"epa-mai-2025","lfs-april-2025":"epa-avril-2025","lfs-march-2025":"epa-mars-2025","lfs-february-2025":"epa-fevrier-2025","lfs-january-2025":"epa-janvier-2025","motor-vehicle-sales-october-2025":"ventes-vehicules-automobiles-octobre-2025","weekly-earnings-october-2025":"remuneration-hebdomadaire-octobre-2025","raw-materials-prices-november-2025":"prix-matieres-premieres-novembre-2025","ei-claims-october-2025":"demandes-ae-octobre-2025","electricity-generation-september-2025":"production-electricite-septembre-2025","food-services-october-2025":"services-alimentaires-octobre-2025","manufacturing-sales-october-2025":"ventes-manufacturieres-octobre-2025","gasoline-prices-october-2025":"prix-essence-octobre-2025","housing-starts-october-2025":"mises-en-chantier-octobre-2025","new-housing-price-index-october-2025":"indice-prix-logements-neufs-octobre-2025","industrial-product-prices-october-2025":"prix-produits-industriels-octobre-2025","raw-materials-prices-october-2025":"prix-matieres-premieres-octobre-2025","population-q4-2025":"population-t4-2025","crude-oil-production-september-2025":"production-petrole-brut-septembre-2025","retail-trade-july-2025":"commerce-detail-juillet-2025","retail-trade-june-2025":"commerce-detail-juin-2025","retail-trade-may-2025":"commerce-detail-mai-2025","retail-trade-april-2025":"commerce-detail-avril-2025","retail-trade-march-2025":"commerce-detail-mars-2025","retail-trade-february-2025":"commerce-detail-fevrier-2025","retail-trade-january-2025":"commerce-detail-janvier-2025","retail-trade-december-2024":"commerce-detail-decembre-2024","retail-trade-november-2024":"commerce-detail-novembre-2024","retail-trade-october-2024":"commerce-detail-octobre-2024","retail-trade-september-2024":"commerce-detail-septembre-2024","retail-trade-august-2024":"commerce-detail-aout-2024","retail-trade-july-2024":"commerce-detail-juillet-2024","retail-trade-june-2024":"commerce-detail-juin-2024","retail-trade-may-2024":"commerce-detail-mai-2024","retail-trade-april-2024":"commerce-detail-avril-2024","retail-trade-march-2024":"commerce-detail-mars-2024","retail-trade-february-2024":"commerce-detail-fevrier-2024","retail-trade-january-2024":"commerce-detail-janvier-2024","retail-trade-december-2023":"commerce-detail-decembre-2023","retail-trade-november-2023":"commerce-detail-novembre-2023","retail-trade-october-2023":"commerce-detail-octobre-2023","retail-trade-september-2023":"commerce-detail-septembre-2023","retail-trade-august-2023":"commerce-detail-aout-2023","retail-trade-july-2023":"commerce-detail-juillet-2023","retail-trade-june-2023":"commerce-detail-juin-2023","retail-trade-may-2023":"commerce-detail-mai-2023","retail-trade-april-2023":"commerce-detail-avril-2023","retail-trade-march-2023":"commerce-detail-mars-2023","retail-trade-february-2023":"commerce-detail-fevrier-2023","retail-trade-january-2023":"commerce-detail-janvier-2023","retail-trade-december-2022":"commerce-detail-decembre-2022","retail-trade-november-2022":"commerce-detail-novembre-2022","retail-trade-october-2022":"commerce-detail-octobre-2022","retail-trade-september-2022":"commerce-detail-septembre-2022","retail-trade-august-2022":"commerce-detail-aout-2022","retail-trade-july-2022":"commerce-detail-juillet-2022","retail-trade-june-2022":"commerce-detail-juin-2022","retail-trade-may-2022":"commerce-detail-mai-2022","retail-trade-april-2022":"commerce-detail-avril-2022","retail-trade-march-2022":"commerce-detail-mars-2022","retail-trade-february-2022":"commerce-detail-fevrier-2022","retail-trade-january-2022":"commerce-detail-janvier-2022","retail-trade-december-2021":"commerce-detail-decembre-2021","retail-trade-november-2021":"commerce-detail-novembre-2021","lumber-production-september-2025":"production-bois-septembre-2025","household-credit-october-2025":"credit-menages-octobre-2025","farm-prices-october-2025":"prix-agricoles-octobre-2025","international-visitors-october-2025":"visiteurs-internationaux-octobre-2025","railway-carloadings-october-2025":"chargements-ferroviaires-octobre-2025","manufacturing-capacity-october-2025":"capacite-manufacturiere-octobre-2025","urban-transit-october-2025":"transport-urbain-octobre-2025","grain-deliveries-november-2025":"livraisons-cereales-novembre-2025"};
+      const path = window.location.pathname;
+      const enMatch = path.match(/\/thedaily\/en\/([^\/]+)/);
+      const frMatch = path.match(/\/thedaily\/fr\/([^\/]+)/);
+      const exploreLink = document.getElementById('explore-link');
+      if (enMatch) {
+        const enSlug = enMatch[1];
+        const frSlug = slugMap[enSlug] || enSlug;
+        document.getElementById('lang-fr').href = base + '/fr/' + frSlug + '/';
+        document.getElementById('lang-en').href = path;
+        exploreLink.href = base + '/en/explore/';
+      } else if (frMatch) {
+        const frSlug = frMatch[1];
+        const enSlug = Object.keys(slugMap).find(k => slugMap[k] === frSlug) || frSlug;
+        document.getElementById('lang-en').href = base + '/en/' + enSlug + '/';
+        document.getElementById('lang-fr').href = path;
+        exploreLink.href = base + '/fr/explore/';
+        exploreLink.textContent = 'Explorer';
+      } else if (path.includes('/fr/')) {
+        exploreLink.href = base + '/fr/explore/';
+        exploreLink.textContent = 'Explorer';
+      }
+    })();
+  </script>
+</header>
+<aside id="observablehq-toc" data-selector="h1:not(:first-of-type)[id], h2:first-child[id], :not(h1) + h2[id]">
+<nav>
+<div>Contents</div>
+<ol>
+<li class="observablehq-secondary-link"><a href="#core-principles">Core Principles</a></li>
+<li class="observablehq-secondary-link"><a href="#choosing-the-right-chart">Choosing the Right Chart</a></li>
+<li class="observablehq-secondary-link"><a href="#color-palette">Color Palette</a></li>
+<li class="observablehq-secondary-link"><a href="#standard-dimensions">Standard Dimensions</a></li>
+<li class="observablehq-secondary-link"><a href="#import-statement">Import Statement</a></li>
+<li class="observablehq-secondary-link"><a href="#line-charts-time-series">Line Charts (Time Series)</a></li>
+<li class="observablehq-secondary-link"><a href="#horizontal-bar-charts">Horizontal Bar Charts</a></li>
+<li class="observablehq-secondary-link"><a href="#area-charts-composition-over-time">Area Charts (Composition Over Time)</a></li>
+<li class="observablehq-secondary-link"><a href="#slope-charts-two-point-comparison">Slope Charts (Two-Point Comparison)</a></li>
+<li class="observablehq-secondary-link"><a href="#lollipop-charts-cleaner-rankings">Lollipop Charts (Cleaner Rankings)</a></li>
+<li class="observablehq-secondary-link"><a href="#dot-plots-with-ranges">Dot Plots with Ranges</a></li>
+<li class="observablehq-secondary-link"><a href="#waffle-charts-part-of-whole">Waffle Charts (Part of Whole)</a></li>
+<li class="observablehq-secondary-link"><a href="#small-multiples-faceted-charts">Small Multiples (Faceted Charts)</a></li>
+<li class="observablehq-secondary-link"><a href="#grouped-bar-charts-avoid">Grouped Bar Charts (AVOID)</a></li>
+<li class="observablehq-secondary-link"><a href="#reference-lines">Reference Lines</a></li>
+<li class="observablehq-secondary-link"><a href="#title-conventions">Title Conventions</a></li>
+<li class="observablehq-secondary-link"><a href="#y-axis-labels">Y-Axis Labels</a></li>
+<li class="observablehq-secondary-link"><a href="#number-formatting">Number Formatting</a></li>
+<li class="observablehq-secondary-link"><a href="#data-structure">Data Structure</a></li>
+<li class="observablehq-secondary-link"><a href="#complete-example">Complete Example</a></li>
+<li class="observablehq-secondary-link"><a href="#checklist-before-publishing">Checklist Before Publishing</a></li>
+</ol>
+</nav>
+</aside>
+<main id="observablehq-main" class="observablehq">
+<h1 id="chart-style-guide" tabindex="-1"><a class="observablehq-header-anchor" href="#chart-style-guide">Chart Style Guide</a></h1>
+<p>Guidelines for creating consistent, accessible, and neutral Observable Plot charts in The D-AI-LY articles.</p>
+<h2 id="core-principles" tabindex="-1"><a class="observablehq-header-anchor" href="#core-principles">Core Principles</a></h2>
+<h3 id="1-accessibility-first" tabindex="-1"><a class="observablehq-header-anchor" href="#1-accessibility-first">1. Accessibility First</a></h3>
+<p><strong>Never use red-green color encoding.</strong> Approximately 8% of men have red-green color blindness. Charts using red/green to distinguish values are unreadable for these users.</p>
+<h3 id="2-color-neutrality" tabindex="-1"><a class="observablehq-header-anchor" href="#2-color-neutrality">2. Color Neutrality</a></h3>
+<p><strong>Avoid implying normative judgments through color.</strong> Price changes are not inherently "good" or "bad":</p>
+<ul>
+<li>Higher cattle prices: Good for farmers selling, bad for buyers</li>
+<li>Lower wheat prices: Bad for farmers, good for food processors</li>
+</ul>
+<p>Using green=good and red=bad imposes a subjective interpretation that may not apply to all readers. Government statistical publications should present data neutrally.</p>
+<h2 id="choosing-the-right-chart" tabindex="-1"><a class="observablehq-header-anchor" href="#choosing-the-right-chart">Choosing the Right Chart</a></h2>
+<table>
+<thead>
+<tr>
+<th>Data Pattern</th>
+<th>Chart Type</th>
+<th>Example</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Trend over time</td>
+<td>Line chart</td>
+<td>CPI index over 24 months</td>
+</tr>
+<tr>
+<td>Composition over time</td>
+<td>Stacked area</td>
+<td>Energy sources monthly</td>
+</tr>
+<tr>
+<td>Part of whole (snapshot)</td>
+<td>Waffle chart</td>
+<td>"52% hydroelectric"</td>
+</tr>
+<tr>
+<td>Ranking/comparison</td>
+<td>Horizontal bar or lollipop</td>
+<td>Industry employment change</td>
+</tr>
+<tr>
+<td>Two-point comparison</td>
+<td>Slope chart</td>
+<td>Provincial rates YoY</td>
+</tr>
+<tr>
+<td>Multiple series comparison</td>
+<td>Small multiples</td>
+<td>Regional unemployment trends</td>
+</tr>
+<tr>
+<td>Values with uncertainty</td>
+<td>Dot plot with range</td>
+<td>Survey estimates with CI</td>
+</tr>
+<tr>
+<td>Change direction emphasis</td>
+<td>Diverging bar</td>
+<td>Positive/negative monthly changes</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Default to variety:</strong> Don't use the same chart type twice in one article unless necessary. Mix time series with composition charts for richer storytelling.</p>
+<h2 id="color-palette" tabindex="-1"><a class="observablehq-header-anchor" href="#color-palette">Color Palette</a></h2>
+<h3 id="single-series-default" tabindex="-1"><a class="observablehq-header-anchor" href="#single-series-default">Single Series (Default)</a></h3>
+<table>
+<thead>
+<tr>
+<th>Color</th>
+<th>Hex Code</th>
+<th>Usage</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>StatCan Red</td>
+<td><code>#AF3C43</code></td>
+<td>Primary color for all data</td>
+</tr>
+<tr>
+<td>Grid lines</td>
+<td><code>#ddd</code></td>
+<td>Light gray for reference lines</td>
+</tr>
+<tr>
+<td>Text</td>
+<td><code>currentColor</code></td>
+<td>Inherits from page styling</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Rule:</strong> Use StatCan red for all data. Direction (positive/negative) is communicated by position relative to zero line, not by color.</p>
+<h3 id="multi-series-provincial-etc" tabindex="-1"><a class="observablehq-header-anchor" href="#multi-series-provincial-etc">Multi-Series (Provincial, etc.)</a></h3>
+<div class="observablehq observablehq--block">
+  <div class="observablehq--inspect observablehq--error">SyntaxError: Unexpected token (4:7)</div>
+</div>
+<h3 id="diverging-data-do-not-use-red-green" tabindex="-1"><a class="observablehq-header-anchor" href="#diverging-data-do-not-use-red-green">Diverging Data (DO NOT use red-green)</a></h3>
+<p>For charts showing positive and negative values, use ONE of these approaches:</p>
+<p><strong>Option 1: Single color (recommended)</strong></p>
+<div class="observablehq observablehq--block"><!--:a6005190:--></div>
+<p><strong>Option 2: Colorblind-safe divergence (blue-orange)</strong></p>
+<div class="observablehq observablehq--block"><!--:d73c1bc8:--></div>
+<p><strong>NEVER do this:</strong></p>
+<div class="observablehq observablehq--block"><!--:37572247:--></div>
+<h2 id="standard-dimensions" tabindex="-1"><a class="observablehq-header-anchor" href="#standard-dimensions">Standard Dimensions</a></h2>
+<table>
+<thead>
+<tr>
+<th>Chart Type</th>
+<th>Width</th>
+<th>Height</th>
+<th>Notes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Time series</td>
+<td>680</td>
+<td>300</td>
+<td>Primary format</td>
+</tr>
+<tr>
+<td>Narrow trend</td>
+<td>640</td>
+<td>280</td>
+<td>For secondary charts</td>
+</tr>
+<tr>
+<td>Horizontal bar</td>
+<td>640-700</td>
+<td>320-380</td>
+<td>Adjust based on items</td>
+</tr>
+<tr>
+<td>Compact</td>
+<td>600</td>
+<td>260</td>
+<td>When space is limited</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Important:</strong> Always set explicit width/height. Never rely on defaults.</p>
+<h2 id="import-statement" tabindex="-1"><a class="observablehq-header-anchor" href="#import-statement">Import Statement</a></h2>
+<p>Place a single import at the top of the first code block only:</p>
+<div class="observablehq observablehq--block"><!--:970f4173:--></div>
+<p>Do not repeat this import in subsequent code blocks.</p>
+<h2 id="line-charts-time-series" tabindex="-1"><a class="observablehq-header-anchor" href="#line-charts-time-series">Line Charts (Time Series)</a></h2>
+<p>Use for showing trends over time. Most common chart type.</p>
+<div class="observablehq observablehq--block"><!--:d19bbe2b:--></div>
+<p><strong>Key elements:</strong></p>
+<ul>
+<li><code>strokeWidth: 2</code> for visible lines</li>
+<li>Highlight the latest point with a dot (<code>r: 5</code>)</li>
+<li>Add text label for latest value (<code>dy: -12</code> positions above)</li>
+<li>Set <code>x: {type: "utc"}</code> for date axes</li>
+<li>Set <code>label: null</code> on x-axis to remove redundant "date" label</li>
+<li>Use arrow indicator on y-axis label (e.g., <code>"↑ Index"</code>)</li>
+</ul>
+<h2 id="horizontal-bar-charts" tabindex="-1"><a class="observablehq-header-anchor" href="#horizontal-bar-charts">Horizontal Bar Charts</a></h2>
+<p>Use for comparing categories or showing component breakdowns.</p>
+<h3 id="label-placement-important" tabindex="-1"><a class="observablehq-header-anchor" href="#label-placement-important">Label Placement (IMPORTANT)</a></h3>
+<p><strong>Always use fixed-position labels</strong> to prevent overlap. Position ALL labels at the domain maximum (right edge), not at bar ends:</p>
+<div class="observablehq observablehq--block"><!--:a5fc1944:--></div>
+<p><strong>Why fixed-position labels:</strong></p>
+<ul>
+<li>Labels form a right-aligned column—never overlap</li>
+<li>Works for any value distribution (even when bars cluster)</li>
+<li>Clean, scannable appearance</li>
+</ul>
+<p><strong>⚠️ DO NOT use dynamic positioning:</strong></p>
+<div class="observablehq observablehq--block">
+  <div class="observablehq--inspect observablehq--error">SyntaxError: Unexpected token (3:10)</div>
+</div>
+<p><strong>Key elements:</strong></p>
+<ul>
+<li>Set <code>marginLeft</code> to accommodate long category labels (180-340px typical)</li>
+<li>Set <code>marginRight: 70</code> to ensure space for value labels</li>
+<li>Always include <code>Plot.ruleX([0])</code> as a baseline</li>
+<li>Use single fill color (direction shown by position relative to zero)</li>
+<li>Sort bars by value with <code>sort: {y: "-x"}</code></li>
+<li><strong>Labels at fixed x-position (domain max), not bar ends</strong></li>
+</ul>
+<h3 id="custom-domains-important" tabindex="-1"><a class="observablehq-header-anchor" href="#custom-domains-important">Custom Domains (IMPORTANT)</a></h3>
+<p><strong>When using a custom x-axis domain that doesn't start at 0</strong>, you must use <code>x1</code> and <code>x2</code> instead of just <code>x</code>:</p>
+<div class="observablehq observablehq--block">
+  <div class="observablehq--inspect observablehq--error">SyntaxError: Unexpected token (2:28)</div>
+</div>
+<p><strong>Why:</strong> <code>Plot.barX</code> with just <code>x</code> draws bars from 0 to the value. When your domain is <code>[120, 145]</code>, the bars extend far to the left (off-screen) and render on top of y-axis labels, making them invisible.</p>
+<h3 id="handling-mixed-positive-negative-labels" tabindex="-1"><a class="observablehq-header-anchor" href="#handling-mixed-positive-negative-labels">Handling Mixed Positive/Negative Labels</a></h3>
+<p>See <strong>Label Placement (IMPORTANT)</strong> above. The fixed right-edge position works for all cases, including mixed positive/negative values.</p>
+<p><strong>Additional tip:</strong> Expand the x-domain slightly beyond your data range to ensure labels fit:</p>
+<div class="observablehq observablehq--block">
+  <div class="observablehq--inspect observablehq--error">SyntaxError: Unexpected token (2:26)</div>
+</div>
+<h2 id="area-charts-composition-over-time" tabindex="-1"><a class="observablehq-header-anchor" href="#area-charts-composition-over-time">Area Charts (Composition Over Time)</a></h2>
+<p>Use stacked area charts to show how parts contribute to a whole over time.</p>
+<div class="observablehq observablehq--block"><!--:afefb24a:--></div>
+<p><strong>When to use:</strong> Energy mix, employment by industry, trade by commodity group.</p>
+<h2 id="slope-charts-two-point-comparison" tabindex="-1"><a class="observablehq-header-anchor" href="#slope-charts-two-point-comparison">Slope Charts (Two-Point Comparison)</a></h2>
+<p>Use slope charts to compare values across two time periods (e.g., year-over-year).</p>
+<div class="observablehq observablehq--block"><!--:8bc5dfef:--></div>
+<p><strong>When to use:</strong> Provincial comparisons, before/after policy changes, seasonal comparisons.</p>
+<h2 id="lollipop-charts-cleaner-rankings" tabindex="-1"><a class="observablehq-header-anchor" href="#lollipop-charts-cleaner-rankings">Lollipop Charts (Cleaner Rankings)</a></h2>
+<p>Use lollipop charts instead of bars when you have many categories—less visual clutter.</p>
+<div class="observablehq observablehq--block"><!--:6d36eddd:--></div>
+<p><strong>When to use:</strong> Industry rankings, regional comparisons, component contributions.</p>
+<h2 id="dot-plots-with-ranges" tabindex="-1"><a class="observablehq-header-anchor" href="#dot-plots-with-ranges">Dot Plots with Ranges</a></h2>
+<p>Use dot plots with confidence intervals or ranges when uncertainty matters.</p>
+<div class="observablehq observablehq--block"><!--:a4f6d7d2:--></div>
+<p><strong>When to use:</strong> Survey estimates with confidence intervals, ranges, or uncertainty.</p>
+<h2 id="waffle-charts-part-of-whole" tabindex="-1"><a class="observablehq-header-anchor" href="#waffle-charts-part-of-whole">Waffle Charts (Part of Whole)</a></h2>
+<p>Use waffle charts to show percentages in a visually intuitive way. Use a <strong>20×5 rectangular grid</strong> (100 cells) to match standard chart widths.</p>
+<div class="observablehq observablehq--block"><!--:423c6899:--></div>
+<p><strong>When to use:</strong> Headline percentages, market share, composition at a point in time.</p>
+<h2 id="small-multiples-faceted-charts" tabindex="-1"><a class="observablehq-header-anchor" href="#small-multiples-faceted-charts">Small Multiples (Faceted Charts)</a></h2>
+<p>Use faceting to compare trends across provinces or categories.</p>
+<div class="observablehq observablehq--block"><!--:60b0c225:--></div>
+<p><strong>When to use:</strong> Provincial trends, industry comparisons, multiple indicators.</p>
+<h2 id="grouped-bar-charts-avoid" tabindex="-1"><a class="observablehq-header-anchor" href="#grouped-bar-charts-avoid">Grouped Bar Charts (AVOID)</a></h2>
+<p><strong>Do NOT use <code>dx</code>/<code>dy</code> offsets to create grouped bar charts.</strong> The bars will overlap because <code>dx</code>/<code>dy</code> are pixel offsets, not category offsets.</p>
+<div class="observablehq observablehq--block"><observablehq-loading></observablehq-loading><!--:ac2361e4:--></div>
+<p><strong>Better alternatives:</strong></p>
+<ol>
+<li><strong>Show percentage change instead of absolute comparison:</strong></li>
+</ol>
+<div class="observablehq observablehq--block"><!--:673898ee:--></div>
+<ol start="2">
+<li><strong>Reshape data to long format with faceting (if side-by-side needed):</strong></li>
+</ol>
+<div class="observablehq observablehq--block"><!--:ad8150be:--></div>
+<p><strong>Recommendation:</strong> For year-over-year comparisons, percentage change bars communicate the story more clearly than side-by-side absolute values.</p>
+<h2 id="reference-lines" tabindex="-1"><a class="observablehq-header-anchor" href="#reference-lines">Reference Lines</a></h2>
+<p>Add context with horizontal reference lines:</p>
+<div class="observablehq observablehq--block"><!--:d559b982:--></div>
+<h2 id="title-conventions" tabindex="-1"><a class="observablehq-header-anchor" href="#title-conventions">Title Conventions</a></h2>
+<table>
+<thead>
+<tr>
+<th>Type</th>
+<th>Format</th>
+<th>Example</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Index trend</td>
+<td><code>"{Indicator}, {Start Month Year} to {End Month Year}"</code></td>
+<td>"Consumer Price Index, December 2023 to November 2025"</td>
+</tr>
+<tr>
+<td>Rate/percent</td>
+<td><code>"{Description} (%)"</code></td>
+<td>"Year-over-year inflation rate (%)"</td>
+</tr>
+<tr>
+<td>Component comparison</td>
+<td><code>"{Description} (%)"</code></td>
+<td>"Year-over-year change by component (%)"</td>
+</tr>
+<tr>
+<td>Sector breakdown</td>
+<td><code>"Monthly change by sector (%)"</code></td>
+<td>"Monthly change by sector (%)"</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Rules:</strong></p>
+<ul>
+<li>Use sentence case (capitalize first word only)</li>
+<li>Include units in parentheses</li>
+<li>Include date range for time series</li>
+</ul>
+<h2 id="y-axis-labels" tabindex="-1"><a class="observablehq-header-anchor" href="#y-axis-labels">Y-Axis Labels</a></h2>
+<table>
+<thead>
+<tr>
+<th>Data Type</th>
+<th>Label Format</th>
+<th>Example</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Index values</td>
+<td><code>"↑ Index ({base}=100)"</code></td>
+<td><code>"↑ Index (2002=100)"</code></td>
+</tr>
+<tr>
+<td>Percentage</td>
+<td><code>"Percent"</code></td>
+<td><code>"Percent"</code></td>
+</tr>
+<tr>
+<td>Currency (billions)</td>
+<td><code>"Billions $"</code> or <code>"Milliards $"</code> (FR)</td>
+<td><code>"Billions $"</code></td>
+</tr>
+<tr>
+<td>Count</td>
+<td>Descriptive noun</td>
+<td><code>"Thousands"</code></td>
+</tr>
+</tbody>
+</table>
+<h2 id="number-formatting" tabindex="-1"><a class="observablehq-header-anchor" href="#number-formatting">Number Formatting</a></h2>
+<h3 id="english" tabindex="-1"><a class="observablehq-header-anchor" href="#english">English</a></h3>
+<ul>
+<li>One decimal place: <code>d.value.toFixed(1)</code> → "165.4"</li>
+<li>Percentages: <code>d.value.toFixed(1) + "%"</code> → "2.2%"</li>
+<li>Sign prefix for changes: <code>(d &gt;= 0 ? "+" : "") + d.toFixed(1) + "%"</code> → "+2.2%"</li>
+</ul>
+<h3 id="french" tabindex="-1"><a class="observablehq-header-anchor" href="#french">French</a></h3>
+<ul>
+<li>Use comma as decimal separator: <code>d.value.toFixed(1).replace(".", ",")</code> → "165,4"</li>
+<li>Space before %: <code>d.toFixed(1).replace(".", ",") + " %"</code> → "2,2 %"</li>
+<li>Currency: <code>d.toFixed(1).replace(".", ",") + " G$"</code> → "165,4 G$"</li>
+</ul>
+<h2 id="data-structure" tabindex="-1"><a class="observablehq-header-anchor" href="#data-structure">Data Structure</a></h2>
+<p>Always use arrays of objects with clear property names:</p>
+<div class="observablehq observablehq--block"><!--:2d796cdb:--></div>
+<p><strong>Rules:</strong></p>
+<ul>
+<li>Use <code>new Date()</code> for date values</li>
+<li>Use lowercase property names</li>
+<li>Keep data inline in the code block (not loaded from external files)</li>
+<li>Comment the data source: <code>// Real data from Statistics Canada Table 18-10-0004</code></li>
+</ul>
+<h2 id="complete-example" tabindex="-1"><a class="observablehq-header-anchor" href="#complete-example">Complete Example</a></h2>
+<div class="observablehq observablehq--block"><!--:5e6e2fe7:--></div>
+<h2 id="checklist-before-publishing" tabindex="-1"><a class="observablehq-header-anchor" href="#checklist-before-publishing">Checklist Before Publishing</a></h2>
+<h3 id="accessibility-and-neutrality" tabindex="-1"><a class="observablehq-header-anchor" href="#accessibility-and-neutrality">Accessibility &amp; Neutrality</a></h3>
+<ul>
+<li>[ ] No red-green color encoding</li>
+<li>[ ] Colors don't imply good/bad judgments</li>
+<li>[ ] Chart readable in grayscale / by colorblind users</li>
+</ul>
+<h3 id="layout-and-labels" tabindex="-1"><a class="observablehq-header-anchor" href="#layout-and-labels">Layout &amp; Labels</a></h3>
+<ul>
+<li>[ ] All Y-axis labels visible (not clipped by bars)</li>
+<li>[ ] <strong>Bar chart labels at fixed x-position (domain max), NOT bar ends</strong></li>
+<li>[ ] No dynamic <code>dx</code> or <code>textAnchor</code> based on value sign</li>
+<li>[ ] <code>marginLeft</code> accommodates longest category label</li>
+<li>[ ] <code>marginRight</code> provides space for value labels</li>
+</ul>
+<h3 id="technical" tabindex="-1"><a class="observablehq-header-anchor" href="#technical">Technical</a></h3>
+<ul>
+<li>[ ] Import statement at top of first code block only</li>
+<li>[ ] Explicit width and height set</li>
+<li>[ ] Title follows conventions with units</li>
+<li>[ ] StatCan red (#AF3C43) used for primary data</li>
+<li>[ ] Latest value highlighted with dot and label</li>
+<li>[ ] Y-axis has appropriate label with units</li>
+<li>[ ] Numbers formatted to one decimal place</li>
+<li>[ ] Data comment references StatCan table number</li>
+<li>[ ] French version uses comma decimal separator</li>
+</ul>
+</main>
+<footer id="observablehq-footer">
+<div><p style="font-size: 0.75rem; color: #999; margin-top: 2.5rem; padding-top: 1rem; border-top: 1px solid #ddd;">
+    Data: <a href="https://www.statcan.gc.ca" style="color: #666;" target="_blank" rel="noopener noreferrer">Statistics Canada</a>.
+    Generated by an experimental AI system. Not an official publication.
+  </p></div>
+</footer>
+</div>
+</body>
+</html>

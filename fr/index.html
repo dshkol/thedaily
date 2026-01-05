@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="generator" content="Observable Framework v1.13.3">
+<title>Dernières publications | The D-AI-LY</title>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,opsz,wght@0,8..60,200..900;1,8..60,200..900&amp;display=swap" crossorigin>
+<link rel="preload" as="style" href="/thedaily/_import/style.e12c1808.css">
+<link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,opsz,wght@0,8..60,200..900;1,8..60,200..900&amp;display=swap" crossorigin>
+<link rel="stylesheet" type="text/css" href="/thedaily/_import/style.e12c1808.css">
+<link rel="modulepreload" href="/thedaily/_observablehq/client.6d4b40e3.js">
+<link rel="modulepreload" href="/thedaily/_observablehq/runtime.e080113b.js">
+<link rel="modulepreload" href="/thedaily/_observablehq/stdlib.73a8ec5a.js">
+<link rel="modulepreload" href="/thedaily/_npm/htl@0.3.1/72f4716c.js">
+<script type="module">
+
+import {define} from "/thedaily/_observablehq/client.6d4b40e3.js";
+import {registerFile} from "/thedaily/_observablehq/stdlib.73a8ec5a.js";
+
+registerFile("../articles.json", {"name":"../articles.json","mimeType":"application/json","path":"../_file/articles.bd9e46db.json","lastModified":1767167213691,"size":165813});
+
+define({id: "a3dcd2a9", inputs: ["FileAttachment"], outputs: ["articles","frArticles","formatDate","groupByMonth","monthGroups"], body: async (FileAttachment) => {
+const articles = await FileAttachment("../articles.json").json();
+const frArticles = articles.fr;
+
+function formatDate(dateStr) {
+  const d = new Date(dateStr);
+  return d.toLocaleDateString("fr-CA", { day: "numeric", month: "long", year: "numeric" });
+}
+
+// Group by month
+function groupByMonth(articles) {
+  const groups = {};
+  for (const a of articles) {
+    const monthKey = a.date.substring(0, 7); // YYYY-MM
+    if (!groups[monthKey]) groups[monthKey] = [];
+    groups[monthKey].push(a);
+  }
+  return Object.entries(groups).sort((a, b) => b[0].localeCompare(a[0]));
+}
+
+const monthGroups = groupByMonth(frArticles);
+return {articles,frArticles,formatDate,groupByMonth,monthGroups};
+}});
+
+define({id: "ed26122a", inputs: ["monthGroups","display","html","formatDate"], body: (monthGroups,display,html,formatDate) => {
+for (const [monthKey, monthArticles] of monthGroups) {
+  // Parse year and month from YYYY-MM format
+  const [year, month] = monthKey.split("-");
+  const monthNames = ["Janvier", "Février", "Mars", "Avril", "Mai", "Juin",
+                      "Juillet", "Août", "Septembre", "Octobre", "Novembre", "Décembre"];
+  const monthLabelCap = `${monthNames[parseInt(month) - 1]} ${year}`;
+
+  display(html`<hr><h2>${monthLabelCap}</h2>`);
+
+  for (const article of monthArticles) {
+    display(html`
+      <div class="article-entry">
+        <strong><a href="${article.path}">${article.title}</a></strong>
+        <br><span class="article-meta">Diffusé : ${formatDate(article.date)} · Tableau ${article.tableNumber || "—"}</span>
+        ${article.summary ? html`<p class="article-summary">${article.summary}</p>` : ""}
+      </div>
+    `);
+  }
+}
+}});
+
+</script>
+</head>
+<body>
+<div id="observablehq-center">
+<header id="observablehq-header">
+<div style="display: flex; align-items: baseline; gap: 0.5rem; font-size: 0.8125rem; letter-spacing: 0.02em; padding: 0.5rem 0; border-bottom: 3px solid #AF3C43; margin-bottom: 1.5rem;">
+    <a id="home-link" href="../" style="font-weight: 600; text-decoration: none; color: #AF3C43; text-transform: uppercase;">The D-AI-LY</a>
+    <span style="color: #999;">|</span>
+    <span style="color: #666; text-transform: uppercase; font-size: 0.6875rem;">An AI-Generated Statistical Bulletin</span>
+    <span style="flex: 1;"></span>
+    <a id="explore-link" href="../en/explore/" style="text-decoration: none; color: #666; font-size: 0.75rem;">Explore</a>
+    <a id="lang-en" href="../en/" style="text-decoration: none; color: #666; font-size: 0.75rem; margin-left: 0.75rem;">English</a>
+    <a id="lang-fr" href="./" style="text-decoration: none; color: #666; font-size: 0.75rem; margin-left: 0.75rem;">Français</a>
+  </div>
+  <script>
+    (function() {
+      const base = '/thedaily';
+      const slugMap = {"archive":"archive","explore":"explore","construction-wages-november-2025":"salaires-construction-novembre-2025","airline-passengers-october-2025":"passagers-aeriens-octobre-2025","cpi-november-2025":"ipc-novembre-2025","cpi-october-2025":"ipc-october-2025","cpi-september-2025":"ipc-september-2025","cpi-august-2025":"ipc-august-2025","cpi-july-2025":"ipc-july-2025","lfs-november-2025":"epa-novembre-2025","lfs-september-2025":"epa-septembre-2025","manufacturing-sales-september-2025":"ventes-manufacturieres-septembre-2025","retail-trade-october-2025":"commerce-detail-octobre-2025","new-housing-price-index-november-2025":"indice-prix-logements-neufs-novembre-2025","housing-starts-november-2025":"mises-en-chantier-novembre-2025","gdp-october-2025":"pib-octobre-2025","trade-october-2025":"commerce-international-octobre-2025","building-permits-october-2025":"permis-batir-octobre-2025","gasoline-prices-november-2025":"prix-essence-novembre-2025","wholesale-trade-october-2025":"commerce-gros-octobre-2025","freight-rail-prices-december-2025":"prix-transport-ferroviaire-decembre-2025","industrial-product-prices-november-2025":"prix-produits-industriels-novembre-2025","retail-trade-september-2025":"commerce-detail-septembre-2025","trade-september-2025":"commerce-international-septembre-2025","wholesale-trade-september-2025":"commerce-gros-septembre-2025","gdp-september-2025":"pib-septembre-2025","building-permits-september-2025":"permis-batir-septembre-2025","food-services-september-2025":"services-alimentaires-septembre-2025","airline-passengers-september-2025":"passagers-aeriens-septembre-2025","electricity-generation-august-2025":"production-electricite-aout-2025","lfs-august-2025":"epa-aout-2025","retail-trade-august-2025":"commerce-detail-aout-2025","manufacturing-sales-august-2025":"ventes-manufacturieres-aout-2025","gdp-august-2025":"pib-aout-2025","trade-august-2025":"commerce-international-aout-2025","wholesale-trade-august-2025":"commerce-gros-aout-2025","building-permits-august-2025":"permis-batir-aout-2025","food-services-august-2025":"services-alimentaires-aout-2025","airline-passengers-august-2025":"passagers-aeriens-aout-2025","cpi-june-2025":"ipc-juin-2025","cpi-may-2025":"ipc-mai-2025","cpi-april-2025":"ipc-avril-2025","cpi-march-2025":"ipc-mars-2025","cpi-february-2025":"ipc-fevrier-2025","cpi-january-2025":"ipc-janvier-2025","cpi-december-2024":"ipc-decembre-2024","lfs-october-2025":"epa-octobre-2025","lfs-july-2025":"epa-juillet-2025","lfs-june-2025":"epa-juin-2025","lfs-may-2025":"epa-mai-2025","lfs-april-2025":"epa-avril-2025","lfs-march-2025":"epa-mars-2025","lfs-february-2025":"epa-fevrier-2025","lfs-january-2025":"epa-janvier-2025","motor-vehicle-sales-october-2025":"ventes-vehicules-automobiles-octobre-2025","weekly-earnings-october-2025":"remuneration-hebdomadaire-octobre-2025","raw-materials-prices-november-2025":"prix-matieres-premieres-novembre-2025","ei-claims-october-2025":"demandes-ae-octobre-2025","electricity-generation-september-2025":"production-electricite-septembre-2025","food-services-october-2025":"services-alimentaires-octobre-2025","manufacturing-sales-october-2025":"ventes-manufacturieres-octobre-2025","gasoline-prices-october-2025":"prix-essence-octobre-2025","housing-starts-october-2025":"mises-en-chantier-octobre-2025","new-housing-price-index-october-2025":"indice-prix-logements-neufs-octobre-2025","industrial-product-prices-october-2025":"prix-produits-industriels-octobre-2025","raw-materials-prices-october-2025":"prix-matieres-premieres-octobre-2025","population-q4-2025":"population-t4-2025","crude-oil-production-september-2025":"production-petrole-brut-septembre-2025","retail-trade-july-2025":"commerce-detail-juillet-2025","retail-trade-june-2025":"commerce-detail-juin-2025","retail-trade-may-2025":"commerce-detail-mai-2025","retail-trade-april-2025":"commerce-detail-avril-2025","retail-trade-march-2025":"commerce-detail-mars-2025","retail-trade-february-2025":"commerce-detail-fevrier-2025","retail-trade-january-2025":"commerce-detail-janvier-2025","retail-trade-december-2024":"commerce-detail-decembre-2024","retail-trade-november-2024":"commerce-detail-novembre-2024","retail-trade-october-2024":"commerce-detail-octobre-2024","retail-trade-september-2024":"commerce-detail-septembre-2024","retail-trade-august-2024":"commerce-detail-aout-2024","retail-trade-july-2024":"commerce-detail-juillet-2024","retail-trade-june-2024":"commerce-detail-juin-2024","retail-trade-may-2024":"commerce-detail-mai-2024","retail-trade-april-2024":"commerce-detail-avril-2024","retail-trade-march-2024":"commerce-detail-mars-2024","retail-trade-february-2024":"commerce-detail-fevrier-2024","retail-trade-january-2024":"commerce-detail-janvier-2024","retail-trade-december-2023":"commerce-detail-decembre-2023","retail-trade-november-2023":"commerce-detail-novembre-2023","retail-trade-october-2023":"commerce-detail-octobre-2023","retail-trade-september-2023":"commerce-detail-septembre-2023","retail-trade-august-2023":"commerce-detail-aout-2023","retail-trade-july-2023":"commerce-detail-juillet-2023","retail-trade-june-2023":"commerce-detail-juin-2023","retail-trade-may-2023":"commerce-detail-mai-2023","retail-trade-april-2023":"commerce-detail-avril-2023","retail-trade-march-2023":"commerce-detail-mars-2023","retail-trade-february-2023":"commerce-detail-fevrier-2023","retail-trade-january-2023":"commerce-detail-janvier-2023","retail-trade-december-2022":"commerce-detail-decembre-2022","retail-trade-november-2022":"commerce-detail-novembre-2022","retail-trade-october-2022":"commerce-detail-octobre-2022","retail-trade-september-2022":"commerce-detail-septembre-2022","retail-trade-august-2022":"commerce-detail-aout-2022","retail-trade-july-2022":"commerce-detail-juillet-2022","retail-trade-june-2022":"commerce-detail-juin-2022","retail-trade-may-2022":"commerce-detail-mai-2022","retail-trade-april-2022":"commerce-detail-avril-2022","retail-trade-march-2022":"commerce-detail-mars-2022","retail-trade-february-2022":"commerce-detail-fevrier-2022","retail-trade-january-2022":"commerce-detail-janvier-2022","retail-trade-december-2021":"commerce-detail-decembre-2021","retail-trade-november-2021":"commerce-detail-novembre-2021","lumber-production-september-2025":"production-bois-septembre-2025","household-credit-october-2025":"credit-menages-octobre-2025","farm-prices-october-2025":"prix-agricoles-octobre-2025","international-visitors-october-2025":"visiteurs-internationaux-octobre-2025","railway-carloadings-october-2025":"chargements-ferroviaires-octobre-2025","manufacturing-capacity-october-2025":"capacite-manufacturiere-octobre-2025","urban-transit-october-2025":"transport-urbain-octobre-2025","grain-deliveries-november-2025":"livraisons-cereales-novembre-2025"};
+      const path = window.location.pathname;
+      const enMatch = path.match(/\/thedaily\/en\/([^\/]+)/);
+      const frMatch = path.match(/\/thedaily\/fr\/([^\/]+)/);
+      const exploreLink = document.getElementById('explore-link');
+      if (enMatch) {
+        const enSlug = enMatch[1];
+        const frSlug = slugMap[enSlug] || enSlug;
+        document.getElementById('lang-fr').href = base + '/fr/' + frSlug + '/';
+        document.getElementById('lang-en').href = path;
+        exploreLink.href = base + '/en/explore/';
+      } else if (frMatch) {
+        const frSlug = frMatch[1];
+        const enSlug = Object.keys(slugMap).find(k => slugMap[k] === frSlug) || frSlug;
+        document.getElementById('lang-en').href = base + '/en/' + enSlug + '/';
+        document.getElementById('lang-fr').href = path;
+        exploreLink.href = base + '/fr/explore/';
+        exploreLink.textContent = 'Explorer';
+      } else if (path.includes('/fr/')) {
+        exploreLink.href = base + '/fr/explore/';
+        exploreLink.textContent = 'Explorer';
+      }
+    })();
+  </script>
+</header>
+<main id="observablehq-main" class="observablehq">
+<h1 id="le-quotidien-dernieres-publications" tabindex="-1"><a class="observablehq-header-anchor" href="#le-quotidien-dernieres-publications">Le Quotidien — Dernières publications</a></h1>
+<p class="feed-links">
+<a href="./explore/">Explorer par sujet</a> · <a href="./archive/">Archives</a> · <a href="./about/">A propos</a>
+</p>
+<div class="observablehq observablehq--block"><!--:a3dcd2a9:--></div>
+<div class="observablehq observablehq--block"><!--:ed26122a:--></div>
+</main>
+<footer id="observablehq-footer">
+<div><p style="font-size: 0.75rem; color: #999; margin-top: 2.5rem; padding-top: 1rem; border-top: 1px solid #ddd;">
+    Data: <a href="https://www.statcan.gc.ca" style="color: #666;" target="_blank" rel="noopener noreferrer">Statistics Canada</a>.
+    Generated by an experimental AI system. Not an official publication.
+  </p></div>
+</footer>
+</div>
+</body>
+</html>
