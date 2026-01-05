@@ -106,6 +106,44 @@ Housing starts are reported as a seasonally adjusted annual rate (SAAR), which r
 
 </div>
 
+<details>
+<summary>Reproducibility: R code for data extraction</summary>
+
+```r
+library(cansim)
+library(dplyr)
+
+# Fetch housing starts data
+starts <- get_cansim("34-10-0158")
+
+# Total housing starts (SAAR)
+total_starts <- starts %>%
+  filter(GEO == "Canada",
+         `Type of dwelling unit` == "Total units",
+         `Housing estimates` == "Housing starts") %>%
+  select(REF_DATE, VALUE) %>%
+  arrange(desc(REF_DATE))
+
+# By dwelling type
+by_type <- starts %>%
+  filter(GEO == "Canada",
+         REF_DATE == "2025-11",
+         `Housing estimates` == "Housing starts") %>%
+  select(`Type of dwelling unit`, VALUE) %>%
+  arrange(desc(VALUE))
+
+# Provincial breakdown
+provincial <- starts %>%
+  filter(`Type of dwelling unit` == "Total units",
+         `Housing estimates` == "Housing starts",
+         REF_DATE == "2025-11",
+         GEO != "Canada") %>%
+  select(GEO, VALUE) %>%
+  arrange(desc(VALUE))
+```
+
+</details>
+
 <div class="source-info">
 
 **Source:** Statistics Canada, [Table 34-10-0158](https://www150.statcan.gc.ca/t1/tbl1/en/tv.action?pid=3410015801)

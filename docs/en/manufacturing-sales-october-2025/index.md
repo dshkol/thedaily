@@ -111,6 +111,44 @@ Manufacturing sales represent the estimated value of goods manufactured and sold
 
 </div>
 
+<details>
+<summary>Reproducibility: R code for data extraction</summary>
+
+```r
+library(cansim)
+library(dplyr)
+
+# Fetch manufacturing sales data
+manufacturing <- get_cansim("16-10-0048")
+
+# Total manufacturing sales
+total_sales <- manufacturing %>%
+  filter(GEO == "Canada",
+         `North American Industry Classification System (NAICS)` == "Manufacturing [31-33]",
+         `Seasonal adjustment` == "Seasonally adjusted") %>%
+  select(REF_DATE, VALUE) %>%
+  arrange(desc(REF_DATE))
+
+# By industry subsector
+by_industry <- manufacturing %>%
+  filter(GEO == "Canada",
+         REF_DATE == "2025-10",
+         `Seasonal adjustment` == "Seasonally adjusted") %>%
+  select(`North American Industry Classification System (NAICS)`, VALUE) %>%
+  arrange(desc(VALUE))
+
+# Provincial breakdown
+provincial <- manufacturing %>%
+  filter(`North American Industry Classification System (NAICS)` == "Manufacturing [31-33]",
+         REF_DATE == "2025-10",
+         `Seasonal adjustment` == "Seasonally adjusted",
+         GEO != "Canada") %>%
+  select(GEO, VALUE) %>%
+  arrange(desc(VALUE))
+```
+
+</details>
+
 <div class="source-info">
 
 **Source:** Statistics Canada, [Table 16-10-0047](https://www150.statcan.gc.ca/t1/tbl1/en/tv.action?pid=1610004701)

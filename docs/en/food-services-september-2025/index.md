@@ -129,6 +129,27 @@ This backfill article covers September 2025 data as part of The D-AI-LY historic
 
 </div>
 
+<details>
+<summary>Reproducibility: R code for data extraction</summary>
+
+```r
+library(cansim)
+library(dplyr)
+
+# Fetch food services data
+food <- get_cansim("21-10-0019")
+
+# Total food services sales
+total_food <- food %>%
+  filter(GEO == "Canada",
+         `North American Industry Classification System (NAICS)` == "Food services and drinking places [722]",
+         `Adjustments` == "Seasonally adjusted") %>%
+  select(REF_DATE, VALUE) %>%
+  arrange(desc(REF_DATE))
+```
+
+</details>
+
 <div class="source-info">
 
 **Source:** Statistics Canada, [Table 21-10-0019](https://www150.statcan.gc.ca/t1/tbl1/en/tv.action?pid=2110001901)

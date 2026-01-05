@@ -128,6 +128,35 @@ This is a backfill article covering September 2025 data, published as part of th
 
 </div>
 
+<details>
+<summary>Reproducibility: R code for data extraction</summary>
+
+```r
+library(cansim)
+library(dplyr)
+
+# Fetch wholesale trade data
+wholesale <- get_cansim("20-10-0074")
+
+# Total wholesale sales
+total_wholesale <- wholesale %>%
+  filter(GEO == "Canada",
+         `North American Industry Classification System (NAICS)` == "Wholesale trade [41]",
+         `Adjustments` == "Seasonally adjusted") %>%
+  select(REF_DATE, VALUE) %>%
+  arrange(desc(REF_DATE))
+
+# By industry
+by_industry <- wholesale %>%
+  filter(GEO == "Canada",
+         REF_DATE == "2025-09",
+         `Adjustments` == "Seasonally adjusted") %>%
+  select(`North American Industry Classification System (NAICS)`, VALUE) %>%
+  arrange(desc(VALUE))
+```
+
+</details>
+
 <div class="source-info">
 
 **Source:** Statistics Canada, [Table 20-10-0003](https://www150.statcan.gc.ca/t1/tbl1/en/tv.action?pid=2010000301)

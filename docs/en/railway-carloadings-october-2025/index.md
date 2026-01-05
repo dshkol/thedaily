@@ -186,6 +186,26 @@ Railway carloadings statistics measure the tonnage of freight transported by rai
 
 </div>
 
+<details>
+<summary>Reproducibility: R code for data extraction</summary>
+
+```r
+library(cansim)
+library(dplyr)
+
+# Fetch railway carloadings data
+rail <- get_cansim("23-10-0216")
+
+# Total carloadings
+total_carloads <- rail %>%
+  filter(`Commodity` == "Total freight excluding intermodal",
+         `Geography` == "Canada") %>%
+  select(REF_DATE, VALUE) %>%
+  arrange(desc(REF_DATE))
+```
+
+</details>
+
 <div class="source-info">
 
 **Source:** Statistics Canada, [Table 23-10-0216](https://www150.statcan.gc.ca/t1/tbl1/en/tv.action?pid=2310021601)

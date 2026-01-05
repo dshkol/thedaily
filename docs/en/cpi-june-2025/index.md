@@ -122,6 +122,47 @@ This is a backfill article covering June 2025 data, published as part of the D-A
 
 </div>
 
+<details>
+<summary>Reproducibility: R code for data extraction</summary>
+
+```r
+library(cansim)
+library(dplyr)
+
+# Fetch CPI data
+cpi <- get_cansim("18-10-0004")
+
+# National all-items CPI time series
+national_cpi <- cpi %>%
+  filter(GEO == "Canada",
+         `Products and product groups` == "All-items") %>%
+  select(REF_DATE, VALUE) %>%
+  arrange(desc(REF_DATE))
+
+# Year-over-year change calculation
+current <- national_cpi %>% filter(REF_DATE == "2025-06") %>% pull(VALUE)
+previous <- national_cpi %>% filter(REF_DATE == "2024-06") %>% pull(VALUE)
+yoy_change <- (current - previous) / previous * 100
+
+# Component breakdown
+components <- cpi %>%
+  filter(GEO == "Canada",
+         REF_DATE == "2025-06") %>%
+  select(`Products and product groups`, VALUE) %>%
+  arrange(desc(VALUE))
+
+# Provincial variation
+provincial <- cpi %>%
+  filter(`Products and product groups` == "All-items",
+         REF_DATE %in% c("2025-06", "2024-06"),
+         GEO != "Canada") %>%
+  select(GEO, REF_DATE, VALUE) %>%
+  pivot_wider(names_from = REF_DATE, values_from = VALUE) %>%
+  mutate(yoy_change = (`2025-06` - `2024-06`) / `2024-06` * 100)
+```
+
+</details>
+
 <div class="source-info">
 
 **Source:** Statistics Canada, [Table 18-10-0004](https://www150.statcan.gc.ca/t1/tbl1/en/tv.action?pid=1810000401)

@@ -155,6 +155,26 @@ The Survey of Employment, Payrolls and Hours provides monthly estimates of emplo
 
 </div>
 
+<details>
+<summary>Reproducibility: R code for data extraction</summary>
+
+```r
+library(cansim)
+library(dplyr)
+
+# Fetch average weekly earnings data
+earnings <- get_cansim("14-10-0223")
+
+# National average weekly earnings
+national <- earnings %>%
+  filter(GEO == "Canada",
+         `North American Industry Classification System (NAICS)` == "Industrial aggregate including unclassified businesses [11-91N]") %>%
+  select(REF_DATE, VALUE) %>%
+  arrange(desc(REF_DATE))
+```
+
+</details>
+
 <div class="source-info">
 
 **Source:** Statistics Canada, [Table 14-10-0223](https://www150.statcan.gc.ca/t1/tbl1/en/tv.action?pid=1410022301)

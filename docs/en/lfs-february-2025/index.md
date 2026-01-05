@@ -173,6 +173,47 @@ This is a backfill article covering February 2025 data, published as part of the
 
 </div>
 
+<details>
+<summary>Reproducibility: R code for data extraction</summary>
+
+```r
+library(cansim)
+library(dplyr)
+
+# Fetch Labour Force Survey data
+lfs <- get_cansim("14-10-0287")
+
+# National employment and unemployment
+national <- lfs %>%
+  filter(GEO == "Canada",
+         `Labour force characteristics` %in% c("Employment", "Unemployment rate"),
+         Sex == "Both sexes",
+         `Age group` == "15 years and over") %>%
+  select(REF_DATE, `Labour force characteristics`, VALUE) %>%
+  arrange(desc(REF_DATE))
+
+# Month-over-month employment change
+employment <- lfs %>%
+  filter(GEO == "Canada",
+         `Labour force characteristics` == "Employment",
+         Sex == "Both sexes",
+         `Age group` == "15 years and over") %>%
+  select(REF_DATE, VALUE) %>%
+  arrange(desc(REF_DATE))
+
+# Provincial unemployment rates
+provincial <- lfs %>%
+  filter(`Labour force characteristics` == "Unemployment rate",
+         REF_DATE == "2025-02",
+         Sex == "Both sexes",
+         `Age group` == "15 years and over",
+         GEO != "Canada") %>%
+  select(GEO, VALUE) %>%
+  arrange(desc(VALUE))
+```
+
+</details>
+
 <div class="source-info">
 
 **Source:** Statistics Canada, [Table 14-10-0287](https://www150.statcan.gc.ca/t1/tbl1/en/tv.action?pid=1410028701)

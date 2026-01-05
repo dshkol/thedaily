@@ -128,6 +128,35 @@ This is a backfill article covering August 2025 data, published as part of the D
 
 </div>
 
+<details>
+<summary>Reproducibility: R code for data extraction</summary>
+
+```r
+library(cansim)
+library(dplyr)
+
+# Fetch GDP by industry data
+gdp <- get_cansim("36-10-0434")
+
+# Total GDP
+total_gdp <- gdp %>%
+  filter(GEO == "Canada",
+         `North American Industry Classification System (NAICS)` == "All industries [T001]",
+         `Seasonal adjustment` == "Seasonally adjusted at annual rates") %>%
+  select(REF_DATE, VALUE) %>%
+  arrange(desc(REF_DATE))
+
+# By industry sector
+by_sector <- gdp %>%
+  filter(GEO == "Canada",
+         REF_DATE == "2025-08",
+         `Seasonal adjustment` == "Seasonally adjusted at annual rates") %>%
+  select(`North American Industry Classification System (NAICS)`, VALUE) %>%
+  arrange(desc(VALUE))
+```
+
+</details>
+
 <div class="source-info">
 
 **Source:** Statistics Canada, [Table 36-10-0434](https://www150.statcan.gc.ca/t1/tbl1/en/tv.action?pid=3610043401)

@@ -255,6 +255,25 @@ For more information on the concepts, methodologies, and classifications used, s
 
 </div>
 
+<details>
+<summary>Reproducibility: R code for data extraction</summary>
+
+```r
+library(cansim)
+library(dplyr)
+
+# Fetch household credit data
+credit <- get_cansim("36-10-0668")
+
+# Total household credit
+total_credit <- credit %>%
+  filter(`Type of credit` == "Total household credit") %>%
+  select(REF_DATE, VALUE) %>%
+  arrange(desc(REF_DATE))
+```
+
+</details>
+
 <div class="source-info">
 
 **Source:** Statistics Canada, [Table 36-10-0639](https://www150.statcan.gc.ca/t1/tbl1/en/tv.action?pid=3610063901)

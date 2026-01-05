@@ -117,6 +117,25 @@ The IPPI differs from the Consumer Price Index (CPI), which measures prices paid
 
 </div>
 
+<details>
+<summary>Reproducibility: R code for data extraction</summary>
+
+```r
+library(cansim)
+library(dplyr)
+
+# Fetch industrial product price index
+ippi <- get_cansim("18-10-0029")
+
+# Total IPPI
+total_ippi <- ippi %>%
+  filter(`North American Product Classification System (NAPCS)` == "Total, Industrial product price index (IPPI)") %>%
+  select(REF_DATE, VALUE) %>%
+  arrange(desc(REF_DATE))
+```
+
+</details>
+
 <div class="source-info">
 
 **Source:** Statistics Canada, [Table 18-10-0265](https://www150.statcan.gc.ca/t1/tbl1/en/tv.action?pid=1810026501)

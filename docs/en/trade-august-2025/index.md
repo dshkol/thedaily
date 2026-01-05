@@ -156,6 +156,40 @@ This is a backfill article covering data from August 2025, published as part of 
 
 </div>
 
+<details>
+<summary>Reproducibility: R code for data extraction</summary>
+
+```r
+library(cansim)
+library(dplyr)
+
+# Fetch international trade data
+trade <- get_cansim("12-10-0144")
+
+# Exports and imports
+trade_summary <- trade %>%
+  filter(GEO == "Canada",
+         `Principal trading partners` == "All countries",
+         `Trade` %in% c("Export", "Import")) %>%
+  select(REF_DATE, Trade, VALUE) %>%
+  arrange(desc(REF_DATE))
+
+# Trade balance calculation
+exports <- trade_summary %>% filter(Trade == "Export", REF_DATE == "2025-08") %>% pull(VALUE)
+imports <- trade_summary %>% filter(Trade == "Import", REF_DATE == "2025-08") %>% pull(VALUE)
+balance <- exports - imports
+
+# By trading partner
+by_partner <- trade %>%
+  filter(GEO == "Canada",
+         REF_DATE == "2025-08",
+         `Principal trading partners` != "All countries") %>%
+  select(`Principal trading partners`, Trade, VALUE) %>%
+  arrange(Trade, desc(VALUE))
+```
+
+</details>
+
 <div class="source-info">
 
 **Source:** Statistics Canada, [Table 12-10-0011](https://www150.statcan.gc.ca/t1/tbl1/en/tv.action?pid=1210001101)

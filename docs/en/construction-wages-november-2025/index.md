@@ -169,6 +169,34 @@ The construction union wage rate index measures changes in basic wage rates nego
 
 </div>
 
+<details>
+<summary>Reproducibility: R code for data extraction</summary>
+
+```r
+library(cansim)
+library(dplyr)
+
+# Fetch construction wage rate index
+wages <- get_cansim("18-10-0140")
+
+# National index by trade
+by_trade <- wages %>%
+  filter(GEO == "Canada",
+         REF_DATE == "2025-11") %>%
+  select(`Type of trade`, VALUE) %>%
+  arrange(desc(VALUE))
+
+# By city
+by_city <- wages %>%
+  filter(`Type of trade` == "Composite",
+         REF_DATE == "2025-11",
+         GEO != "Canada") %>%
+  select(GEO, VALUE) %>%
+  arrange(desc(VALUE))
+```
+
+</details>
+
 <div class="source-info">
 
 **Source:** Statistics Canada, [Table 18-10-0140](https://www150.statcan.gc.ca/t1/tbl1/en/tv.action?pid=1810014001)

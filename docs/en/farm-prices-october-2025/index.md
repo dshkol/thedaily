@@ -309,6 +309,25 @@ The data are not seasonally adjusted. Farm product prices typically show seasona
 
 </div>
 
+<details>
+<summary>Reproducibility: R code for data extraction</summary>
+
+```r
+library(cansim)
+library(dplyr)
+
+# Fetch farm product prices
+farm <- get_cansim("32-10-0077")
+
+# Prices by product
+prices <- farm %>%
+  filter(REF_DATE == "2025-10") %>%
+  select(`Farm products`, VALUE) %>%
+  arrange(desc(VALUE))
+```
+
+</details>
+
 <div class="source-info">
 
 **Source:** Statistics Canada, [Table 32-10-0077](https://www150.statcan.gc.ca/t1/tbl1/en/tv.action?pid=3210007701)

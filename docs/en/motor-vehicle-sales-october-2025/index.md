@@ -135,6 +135,28 @@ The data reflect sales of vehicles at new motor vehicle dealerships and exclude 
 
 </div>
 
+<details>
+<summary>Reproducibility: R code for data extraction</summary>
+
+```r
+library(cansim)
+library(dplyr)
+
+# Fetch motor vehicle sales data
+vehicles <- get_cansim("20-10-0001")
+
+# Total new motor vehicle sales
+total_sales <- vehicles %>%
+  filter(GEO == "Canada",
+         `Vehicle type` == "Total, new motor vehicles",
+         `Origin of manufacture` == "Total, country of manufacture",
+         `Seasonal adjustment` == "Seasonally adjusted") %>%
+  select(REF_DATE, VALUE) %>%
+  arrange(desc(REF_DATE))
+```
+
+</details>
+
 <div class="source-info">
 
 **Source:** Statistics Canada, [Table 20-10-0085](https://www150.statcan.gc.ca/t1/tbl1/en/tv.action?pid=2010008501)

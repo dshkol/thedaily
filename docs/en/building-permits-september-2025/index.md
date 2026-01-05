@@ -135,6 +135,44 @@ This backfill article covers September 2025 data as part of The D-AI-LY historic
 
 </div>
 
+<details>
+<summary>Reproducibility: R code for data extraction</summary>
+
+```r
+library(cansim)
+library(dplyr)
+
+# Fetch building permits data
+permits <- get_cansim("34-10-0066")
+
+# Total building permits value
+total_permits <- permits %>%
+  filter(GEO == "Canada",
+         `Type of structure` == "Total residential and non-residential",
+         `Type of permit and value` == "Total permits, value") %>%
+  select(REF_DATE, VALUE) %>%
+  arrange(desc(REF_DATE))
+
+# By type of structure
+by_type <- permits %>%
+  filter(GEO == "Canada",
+         REF_DATE == "2025-09",
+         `Type of permit and value` == "Total permits, value") %>%
+  select(`Type of structure`, VALUE) %>%
+  arrange(desc(VALUE))
+
+# Provincial breakdown
+provincial <- permits %>%
+  filter(`Type of structure` == "Total residential and non-residential",
+         `Type of permit and value` == "Total permits, value",
+         REF_DATE == "2025-09",
+         GEO != "Canada") %>%
+  select(GEO, VALUE) %>%
+  arrange(desc(VALUE))
+```
+
+</details>
+
 <div class="source-info">
 
 **Source:** Statistics Canada, [Table 34-10-0292](https://www150.statcan.gc.ca/t1/tbl1/en/tv.action?pid=3410029201)

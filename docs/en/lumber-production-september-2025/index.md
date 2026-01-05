@@ -209,6 +209,26 @@ British Columbia data are disaggregated into coastal and interior regions, with 
 
 </div>
 
+<details>
+<summary>Reproducibility: R code for data extraction</summary>
+
+```r
+library(cansim)
+library(dplyr)
+
+# Fetch lumber production data
+lumber <- get_cansim("16-10-0017")
+
+# Total softwood lumber production
+total_lumber <- lumber %>%
+  filter(GEO == "Canada",
+         `Type of wood` == "Total softwood") %>%
+  select(REF_DATE, VALUE) %>%
+  arrange(desc(REF_DATE))
+```
+
+</details>
+
 <div class="source-info">
 
 **Source:** Statistics Canada, [Table 16-10-0017](https://www150.statcan.gc.ca/t1/tbl1/en/tv.action?pid=1610001701)

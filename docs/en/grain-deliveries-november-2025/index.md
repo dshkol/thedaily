@@ -191,6 +191,25 @@ Deliveries can vary significantly month to month due to harvest timing, transpor
 
 </div>
 
+<details>
+<summary>Reproducibility: R code for data extraction</summary>
+
+```r
+library(cansim)
+library(dplyr)
+
+# Fetch grain deliveries data
+grain <- get_cansim("32-10-0354")
+
+# Total deliveries by grain type
+deliveries <- grain %>%
+  filter(REF_DATE == "2025-11") %>%
+  select(`Type of grain`, VALUE) %>%
+  arrange(desc(VALUE))
+```
+
+</details>
+
 <div class="source-info">
 
 **Source:** Statistics Canada, [Table 32-10-0351](https://www150.statcan.gc.ca/t1/tbl1/en/tv.action?pid=3210035101)

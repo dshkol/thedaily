@@ -144,6 +144,34 @@ Production volumes are reported in barrels. One barrel equals approximately 159 
 
 </div>
 
+<details>
+<summary>Reproducibility: R code for data extraction</summary>
+
+```r
+library(cansim)
+library(dplyr)
+
+# Fetch crude oil production data
+oil <- get_cansim("25-10-0063")
+
+# National production
+national <- oil %>%
+  filter(GEO == "Canada",
+         `Supply and disposition` == "Production") %>%
+  select(REF_DATE, VALUE) %>%
+  arrange(desc(REF_DATE))
+
+# Provincial breakdown
+provincial <- oil %>%
+  filter(`Supply and disposition` == "Production",
+         REF_DATE == "2025-09",
+         GEO != "Canada") %>%
+  select(GEO, VALUE) %>%
+  arrange(desc(VALUE))
+```
+
+</details>
+
 <div class="source-info">
 
 **Source:** Statistics Canada, [Table 25-10-0063](https://www150.statcan.gc.ca/t1/tbl1/en/tv.action?pid=2510006301)

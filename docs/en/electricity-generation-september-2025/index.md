@@ -260,6 +260,26 @@ Electric power generation data includes electricity produced by electric utiliti
 
 </div>
 
+<details>
+<summary>Reproducibility: R code for data extraction</summary>
+
+```r
+library(cansim)
+library(dplyr)
+
+# Fetch electricity generation data
+elec <- get_cansim("25-10-0015")
+
+# Total generation
+total_gen <- elec %>%
+  filter(GEO == "Canada",
+         `Type of electricity generation` == "Total all types of electricity generation") %>%
+  select(REF_DATE, VALUE) %>%
+  arrange(desc(REF_DATE))
+```
+
+</details>
+
 <div class="source-info">
 
 **Source:** Statistics Canada, [Table 25-10-0015](https://www150.statcan.gc.ca/t1/tbl1/en/tv.action?pid=2510001501)

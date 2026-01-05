@@ -143,6 +143,32 @@ Estimates for the most recent quarters are preliminary and subject to revision a
 
 </div>
 
+<details>
+<summary>Reproducibility: R code for data extraction</summary>
+
+```r
+library(cansim)
+library(dplyr)
+
+# Fetch population estimates
+pop <- get_cansim("17-10-0009")
+
+# National population
+national <- pop %>%
+  filter(GEO == "Canada") %>%
+  select(REF_DATE, VALUE) %>%
+  arrange(desc(REF_DATE))
+
+# Provincial breakdown
+provincial <- pop %>%
+  filter(REF_DATE == "2025-Q4",
+         GEO != "Canada") %>%
+  select(GEO, VALUE) %>%
+  arrange(desc(VALUE))
+```
+
+</details>
+
 <div class="source-info">
 
 **Source:** Statistics Canada, [Table 17-10-0009](https://www150.statcan.gc.ca/t1/tbl1/en/tv.action?pid=1710000901)

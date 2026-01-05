@@ -106,6 +106,34 @@ This article is a backfill based on verified time series data. Year-over-year co
 
 </div>
 
+<details>
+<summary>Reproducibility: R code for data extraction</summary>
+
+```r
+library(cansim)
+library(dplyr)
+
+# Fetch new housing price index data
+nhpi <- get_cansim("18-10-0205")
+
+# National index
+national <- nhpi %>%
+  filter(GEO == "Canada",
+         `New housing price indexes` == "Total (house and land)") %>%
+  select(REF_DATE, VALUE) %>%
+  arrange(desc(REF_DATE))
+
+# By CMA
+by_cma <- nhpi %>%
+  filter(REF_DATE == "2025-10",
+         `New housing price indexes` == "Total (house and land)",
+         GEO != "Canada") %>%
+  select(GEO, VALUE) %>%
+  arrange(desc(VALUE))
+```
+
+</details>
+
 <div class="source-info">
 
 **Source:** Statistics Canada, [Table 18-10-0205](https://www150.statcan.gc.ca/t1/tbl1/en/tv.action?pid=1810020501)

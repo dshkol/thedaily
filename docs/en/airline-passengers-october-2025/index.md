@@ -76,6 +76,26 @@ Data cover the operating and financial statistics for major Canadian air carrier
 
 </div>
 
+<details>
+<summary>Reproducibility: R code for data extraction</summary>
+
+```r
+library(cansim)
+library(dplyr)
+
+# Fetch airline operating statistics
+airline <- get_cansim("23-10-0253")
+
+# Total passengers
+passengers <- airline %>%
+  filter(`Operating carrier` == "Total, all carriers",
+         `Operating statistics` == "Passengers") %>%
+  select(REF_DATE, VALUE) %>%
+  arrange(desc(REF_DATE))
+```
+
+</details>
+
 <div class="source-info">
 
 **Source:** Statistics Canada, [Table 23-10-0079](https://www150.statcan.gc.ca/t1/tbl1/en/tv.action?pid=2310007901)

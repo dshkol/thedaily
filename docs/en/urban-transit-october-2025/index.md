@@ -179,6 +179,26 @@ The statistics represent activity by urban transit systems (NAICS 485110), which
 
 </div>
 
+<details>
+<summary>Reproducibility: R code for data extraction</summary>
+
+```r
+library(cansim)
+library(dplyr)
+
+# Fetch urban transit data
+transit <- get_cansim("23-10-0251")
+
+# Total ridership
+ridership <- transit %>%
+  filter(GEO == "Canada",
+         `Type of service` == "Total, type of service") %>%
+  select(REF_DATE, VALUE) %>%
+  arrange(desc(REF_DATE))
+```
+
+</details>
+
 <div class="source-info">
 
 **Source:** Statistics Canada, [Table 23-10-0251](https://www150.statcan.gc.ca/t1/tbl1/en/tv.action?pid=2310025101)

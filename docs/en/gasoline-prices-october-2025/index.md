@@ -129,6 +129,26 @@ Gasoline prices are influenced by global crude oil prices, refinery operations, 
 
 </div>
 
+<details>
+<summary>Reproducibility: R code for data extraction</summary>
+
+```r
+library(cansim)
+library(dplyr)
+
+# Fetch gasoline prices data
+gas <- get_cansim("18-10-0001")
+
+# National average gasoline price
+national <- gas %>%
+  filter(GEO == "Canada",
+         `Type of fuel` == "Regular unleaded gasoline at self service filling stations") %>%
+  select(REF_DATE, VALUE) %>%
+  arrange(desc(REF_DATE))
+```
+
+</details>
+
 <div class="source-info">
 
 **Source:** Statistics Canada, [Table 18-10-0001](https://www150.statcan.gc.ca/t1/tbl1/en/tv.action?pid=1810000101)

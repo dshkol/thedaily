@@ -248,6 +248,25 @@ Counts include all border crossings and are not seasonally adjusted. Month-to-mo
 
 </div>
 
+<details>
+<summary>Reproducibility: R code for data extraction</summary>
+
+```r
+library(cansim)
+library(dplyr)
+
+# Fetch international visitors data
+visitors <- get_cansim("24-10-0053")
+
+# Total visitors by country of origin
+total <- visitors %>%
+  filter(`Traveller type` == "Non-resident travellers entering Canada") %>%
+  select(REF_DATE, `Country of residence`, VALUE) %>%
+  arrange(desc(REF_DATE))
+```
+
+</details>
+
 <div class="source-info">
 
 **Source:** Statistics Canada, [Table 24-10-0050](https://www150.statcan.gc.ca/t1/tbl1/en/tv.action?pid=2410005001)

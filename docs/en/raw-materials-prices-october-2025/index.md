@@ -117,6 +117,25 @@ The RMPI differs from the Industrial Product Price Index (IPPI), which measures 
 
 </div>
 
+<details>
+<summary>Reproducibility: R code for data extraction</summary>
+
+```r
+library(cansim)
+library(dplyr)
+
+# Fetch raw materials price index
+rmpi <- get_cansim("18-10-0034")
+
+# Total RMPI
+total_rmpi <- rmpi %>%
+  filter(`Raw materials price index (RMPI)` == "Total, Raw materials price index (RMPI)") %>%
+  select(REF_DATE, VALUE) %>%
+  arrange(desc(REF_DATE))
+```
+
+</details>
+
 <div class="source-info">
 
 **Source:** Statistics Canada, [Table 18-10-0268](https://www150.statcan.gc.ca/t1/tbl1/en/tv.action?pid=1810026801)
