@@ -16,7 +16,8 @@ const sectorMap = {
   "25-10": "energy",
   "22-10": "employment",
   "12-10": "trade",
-  "10-10": "finance"
+  "10-10": "finance",
+  "33-10": "finance"
 };
 
 // Indicator mapping from slug patterns to display names
@@ -50,7 +51,10 @@ const indicatorMap = {
     "farm-prices": "Farm Prices",
     "grain-deliveries": "Grain Deliveries",
     "household-credit": "Household Credit",
-    "manufacturing-capacity": "Manufacturing Capacity"
+    "manufacturing-capacity": "Manufacturing Capacity",
+    "exchange-rates": "Exchange Rates",
+    "interest-rates": "Interest Rates",
+    "frozen-poultry-stocks": "Frozen Poultry Stocks"
   },
   fr: {
     "ipc": "Indice des prix",
@@ -81,7 +85,10 @@ const indicatorMap = {
     "prix-agricoles": "Prix agricoles",
     "livraisons-cereales": "Livraisons de cereales",
     "credit-menages": "Credit des menages",
-    "capacite-manufacturiere": "Capacite manufacturiere"
+    "capacite-manufacturiere": "Capacite manufacturiere",
+    "taux-change": "Taux de change",
+    "taux-interet": "Taux d'interet",
+    "stocks-volaille-congelee": "Stocks de volaille congelee"
   }
 };
 

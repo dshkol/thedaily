@@ -123,5 +123,8 @@ export const slugMap = {
   'railway-carloadings-october-2025': 'chargements-ferroviaires-octobre-2025',
   'manufacturing-capacity-october-2025': 'capacite-manufacturiere-octobre-2025',
   'urban-transit-october-2025': 'transport-urbain-octobre-2025',
-  'grain-deliveries-november-2025': 'livraisons-cereales-novembre-2025'
+  'grain-deliveries-november-2025': 'livraisons-cereales-novembre-2025',
+  'exchange-rates-december-2025': 'taux-change-decembre-2025',
+  'interest-rates-december-2025': 'taux-interet-decembre-2025',
+  'frozen-poultry-stocks-december-2025': 'stocks-volaille-congelee-decembre-2025'
 };
