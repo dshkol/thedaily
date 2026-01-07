@@ -53,3 +53,17 @@ for (const [monthKey, monthArticles] of monthGroups) {
   }
 }
 ```
+
+---
+
+<div class="about-section">
+
+## À propos
+
+Le D-AI-LY est un projet expérimental utilisant des grands modèles de langage pour générer des bulletins statistiques à partir des données de Statistique Canada. Les articles sont produits automatiquement à partir des tableaux officiels CANSIM.
+
+**Ceci n'est pas une publication officielle de Statistique Canada.** Les données proviennent de sources publiques ; le récit et l'analyse sont générés par IA. [Vérifiez les chiffres auprès de Statistique Canada](https://www.statcan.gc.ca).
+
+Pour en savoir plus sur son fonctionnement, consultez l'[article de blogue](https://www.dshkol.com/post/the-daily/) et le [dépôt GitHub](https://github.com/dshkol/thedaily).
+
+</div>
