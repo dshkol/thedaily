@@ -7,6 +7,9 @@ export default {
   // Base path for subdirectory deployment (dshkol.com/thedaily)
   base: "/thedaily",
 
+  // GoatCounter analytics
+  head: `<script data-goatcounter="https://dshkol.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>`,
+
   root: "docs",
   output: "dist",
   style: "style.css",
