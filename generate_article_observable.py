@@ -210,6 +210,9 @@ def rebase_data_to_period(data: Dict[str, Any], target_ref_date: str) -> Dict[st
     import copy
     data = copy.deepcopy(data)  # Don't mutate original
 
+    # Save original reference period before any modifications
+    original_ref_period = data.get("metadata", {}).get("reference_period", "")
+
     time_series = data.get("time_series", [])
 
     # Find the target period in time series
@@ -246,6 +249,16 @@ def rebase_data_to_period(data: Dict[str, Any], target_ref_date: str) -> Dict[st
     # Trim time_series to end at target period
     trimmed_series = [e for e in time_series if e.get("ref_date", "") <= target_ref_date]
     data["time_series"] = trimmed_series
+
+    # Strip subseries and provincial data when rebasing to historical period
+    # These sections contain only latest-period breakdowns and cannot be rebased
+    if target_ref_date != original_ref_period:
+        if "subseries" in data:
+            del data["subseries"]
+            logger.warning(f"Removed subseries (only had {original_ref_period} data, not {target_ref_date})")
+        if "provincial" in data:
+            del data["provincial"]
+            logger.warning(f"Removed provincial (only had {original_ref_period} data, not {target_ref_date})")
 
     logger.info(f"Rebased data to reference period: {target_ref_date}")
     logger.info(f"  Value: {new_latest['value']}, YoY: {new_latest['yoy_pct_change']}%")

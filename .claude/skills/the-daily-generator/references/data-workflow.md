@@ -245,3 +245,42 @@ Never substitute synthetic data.
 2. ALWAYS state headline value out loud: "The JSON shows X.X%"
 3. Copy-paste values from JSON, don't type from memory
 4. For financial data: verify exact terminology matches the JSON field name
+
+### Stale Breakdown Data in Historical Articles (Jan 2026)
+
+**What happened**: CPI articles for July-October 2025 were generated using `--ref-date` parameter. Headlines and time series correctly showed historical periods, BUT component breakdowns and provincial tables showed November 2025 data.
+
+**Result**: 5 articles had identical fabricated breakdown data - same component percentages (Food: 4.2%, Household: 3.3%, etc.) and same provincial values across all months.
+
+**Root cause**:
+1. `rebase_data_to_period()` in Python generator only rebased headlines, not breakdowns
+2. JSON file only contained latest period's `subseries[]` and `provincial[]` data
+3. Function copied stale data without validation
+
+**Detection red flags**:
+- Component percentages **identical** across multiple months → fabricated
+- Provincial YoY values **identical** across multiple months → fabricated
+- Real economic data has natural month-to-month variation
+
+**Prevention**:
+1. Generator now strips `subseries`/`provincial` when rebasing to historical period
+2. Always verify JSON `metadata.reference_period` matches article period
+3. For historical articles: only include headline + trend, not breakdowns
+4. If generating multiple months: verify values DIFFER between months
+
+### YoY Calculation Errors (Jan 2026)
+
+**What happened**: GDP October 2025 article claimed +0.4% YoY, but actual calculation from time_series was +0.04% (10x error).
+
+**The data**:
+- time_series: Oct 2024 = 2317.1B, Oct 2025 = 2318.0B
+- Correct YoY: (2318.0 - 2317.1) / 2317.1 × 100 = **0.04%**
+- Article incorrectly stated: **0.4%**
+
+**Root cause**: Decimal place error when transcribing small percentage changes.
+
+**Prevention**:
+1. Always cross-validate YoY by manual calculation from time_series
+2. If time_series shows Oct 2024 = X and Oct 2025 = Y, verify (Y-X)/X × 100 matches claimed YoY
+3. Be especially careful with small percentage changes (<1%)
+4. Double-check decimal places: 0.04% ≠ 0.4% ≠ 4%

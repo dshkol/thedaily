@@ -32,6 +32,29 @@ Every number in the article MUST come from the JSON file:
 
 **If a value isn't in the JSON, don't include it in the article.**
 
+## Red Flags: Fabrication Detection
+
+Before publishing ANY article, verify these checks pass:
+
+### 1. Subseries/Component Data
+- [ ] Does `subseries[]` array exist in JSON? If empty/missing → omit breakdown from article
+- [ ] Can you cite the exact JSON path for EACH component value?
+- [ ] If multiple months generated: are component values DIFFERENT across months? (Identical = fabricated)
+
+### 2. Provincial Data
+- [ ] Does `provincial[]` array exist in JSON? If empty/missing → omit provincial table
+- [ ] Can you cite the exact JSON path for EACH provincial value?
+- [ ] If multiple months generated: are provincial values DIFFERENT across months? (Identical = fabricated)
+
+### 3. YoY Calculations
+- [ ] Cross-validate: Calculate YoY manually from time_series values
+- [ ] Formula: (current_value - year_ago_value) / year_ago_value × 100
+- [ ] If calculated YoY differs from claimed YoY by >0.1pp → STOP and investigate
+
+### 4. Data-Article Period Match
+- [ ] Does JSON `metadata.reference_period` match the article's reference period?
+- [ ] If generating historical article: verify subseries/provincial data matches that period (not latest)
+
 ## Workflow
 
 ```
