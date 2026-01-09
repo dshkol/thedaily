@@ -1,9 +1,9 @@
 ---
-title: Manufacturing capacity utilization edges up 0.1 percentage points in October 2025
+title: Manufacturing capacity utilization unchanged year over year in October 2025
 toc: false
 ---
 
-# Manufacturing capacity utilization edges up 0.1 percentage points in October 2025
+# Manufacturing capacity utilization unchanged year over year in October 2025
 
 <p class="release-date">Released: December 30, 2025 <span class="article-type-tag release">New Release</span></p>
 
@@ -11,16 +11,16 @@ toc: false
 
 **Highlights**
 
-- Manufacturing capacity utilization was 80.8% in October 2025, up 0.1 percentage points from October 2024
-- Month over month, utilization increased 0.5 percentage points from 80.3% in September
+- Manufacturing capacity utilization was 80.7% in October 2025, unchanged from October 2024
+- Month over month, utilization increased 0.4 percentage points from 80.3% in September
 - Petroleum and coal products led all industries at 90.8%
 - Textile product mills recorded the largest year-over-year gain (+11.4 pp), while rubber products saw the sharpest decline (-12.9 pp)
 
 </div>
 
-Canadian manufacturers operated at 80.8% of capacity in October 2025, virtually unchanged from 80.7% a year earlier. On a monthly basis, utilization increased 0.5 percentage points from September 2025.
+Canadian manufacturers operated at 80.7% of capacity in October 2025, unchanged from a year earlier. On a monthly basis, utilization increased 0.4 percentage points from September 2025.
 
-The modest year-over-year increase reflects offsetting movements across industries, with gains in textile and apparel manufacturing balanced by declines in rubber products and fabricated metals.
+The unchanged year-over-year rate reflects offsetting movements across industries, with gains in textile and apparel manufacturing balanced by declines in rubber products and fabricated metals.
 
 ```js
 import * as Plot from "npm:@observablehq/plot";
@@ -39,7 +39,7 @@ const capacityData = [
   {date: new Date("2025-07"), value: 76.8},
   {date: new Date("2025-08"), value: 79.0},
   {date: new Date("2025-09"), value: 80.3},
-  {date: new Date("2025-10"), value: 80.8}
+  {date: new Date("2025-10"), value: 80.7}
 ];
 
 display(Plot.plot({
@@ -83,7 +83,7 @@ display(Plot.plot({
   x: {domain: [60, 95], grid: true, label: "Percent"},
   y: {label: null},
   marks: [
-    Plot.ruleX([80.8], {stroke: "#666", strokeDasharray: "4,4"}),
+    Plot.ruleX([80.7], {stroke: "#666", strokeDasharray: "4,4"}),
     Plot.barX(industries, {
       y: "name",
       x: "value",
@@ -99,7 +99,7 @@ display(Plot.plot({
       fill: "currentColor",
       fontSize: 11
     }),
-    Plot.text([{x: 80.8, label: "Total: 80.8%"}], {
+    Plot.text([{x: 80.7, label: "Total: 80.7%"}], {
       x: "x",
       y: "Petroleum & coal",
       text: "label",

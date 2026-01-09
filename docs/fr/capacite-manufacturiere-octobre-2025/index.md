@@ -1,9 +1,9 @@
 ---
-title: Le taux d'utilisation de la capacite industrielle progresse de 0,1 point de pourcentage en octobre 2025
+title: Le taux d'utilisation de la capacite industrielle inchange d'une annee a l'autre en octobre 2025
 toc: false
 ---
 
-# Le taux d'utilisation de la capacite industrielle progresse de 0,1 point de pourcentage en octobre 2025
+# Le taux d'utilisation de la capacite industrielle inchange d'une annee a l'autre en octobre 2025
 
 <p class="release-date">Diffusion : 30 decembre 2025 <span class="article-type-tag release">Nouvelle publication</span></p>
 
@@ -11,16 +11,16 @@ toc: false
 
 **Faits saillants**
 
-- Le taux d'utilisation de la capacite industrielle s'est etabli a 80,8 % en octobre 2025, en hausse de 0,1 point de pourcentage par rapport a octobre 2024
-- D'un mois a l'autre, le taux a augmente de 0,5 point de pourcentage par rapport a 80,3 % en septembre
+- Le taux d'utilisation de la capacite industrielle s'est etabli a 80,7 % en octobre 2025, inchange par rapport a octobre 2024
+- D'un mois a l'autre, le taux a augmente de 0,4 point de pourcentage par rapport a 80,3 % en septembre
 - La fabrication de produits du petrole et du charbon a affiche le taux le plus eleve a 90,8 %
 - Les usines de produits textiles ont enregistre la plus forte hausse d'une annee a l'autre (+11,4 pp), tandis que les produits en caoutchouc ont connu la plus forte baisse (-12,9 pp)
 
 </div>
 
-Les fabricants canadiens ont fonctionne a 80,8 % de leur capacite en octobre 2025, pratiquement inchange par rapport a 80,7 % un an plus tot. Sur une base mensuelle, le taux d'utilisation a augmente de 0,5 point de pourcentage par rapport a septembre 2025.
+Les fabricants canadiens ont fonctionne a 80,7 % de leur capacite en octobre 2025, inchange par rapport a un an plus tot. Sur une base mensuelle, le taux d'utilisation a augmente de 0,4 point de pourcentage par rapport a septembre 2025.
 
-La hausse modeste d'une annee a l'autre reflete des mouvements compensatoires entre les industries, les gains dans la fabrication de textiles et de vetements etant contrebalances par les baisses dans les produits en caoutchouc et les produits metalliques.
+Le taux inchange d'une annee a l'autre reflete des mouvements compensatoires entre les industries, les gains dans la fabrication de textiles et de vetements etant contrebalances par les baisses dans les produits en caoutchouc et les produits metalliques.
 
 ```js
 import * as Plot from "npm:@observablehq/plot";
@@ -39,7 +39,7 @@ const capacityData = [
   {date: new Date("2025-07"), value: 76.8},
   {date: new Date("2025-08"), value: 79.0},
   {date: new Date("2025-09"), value: 80.3},
-  {date: new Date("2025-10"), value: 80.8}
+  {date: new Date("2025-10"), value: 80.7}
 ];
 
 display(Plot.plot({
@@ -83,7 +83,7 @@ display(Plot.plot({
   x: {domain: [60, 95], grid: true, label: "Pourcentage"},
   y: {label: null},
   marks: [
-    Plot.ruleX([80.8], {stroke: "#666", strokeDasharray: "4,4"}),
+    Plot.ruleX([80.7], {stroke: "#666", strokeDasharray: "4,4"}),
     Plot.barX(industries, {
       y: "name",
       x: "value",
@@ -99,7 +99,7 @@ display(Plot.plot({
       fill: "currentColor",
       fontSize: 11
     }),
-    Plot.text([{x: 80.8, label: "Total : 80,8 %"}], {
+    Plot.text([{x: 80.7, label: "Total : 80,7 %"}], {
       x: "x",
       y: "Petrole et charbon",
       text: "label",

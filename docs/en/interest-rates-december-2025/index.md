@@ -1,24 +1,24 @@
 ---
-title: Bank of Canada rate at 2.5% in December 2025, down 275 basis points year over year
+title: Bank of Canada policy rate at 2.25% in December 2025, down 275 basis points from peak
 ---
 
-# Bank of Canada rate at 2.5% in December 2025, down 275 basis points year over year
+# Bank of Canada policy rate at 2.25% in December 2025, down 275 basis points from peak
 
 <p class="release-date">Released: 2026-01-07</p>
 
 <div class="metric-box">
-  <div class="value">2.50%</div>
-  <div class="label">Bank rate, December 2025</div>
+  <div class="value">2.25%</div>
+  <div class="label">Policy rate, December 2025</div>
 </div>
 
-The Bank of Canada's policy rate stood at 2.50% in December 2025, unchanged from November. This marks a significant decline of 275 basis points from the 5.25% rate observed in June 2024, reflecting the central bank's monetary policy easing cycle that began in mid-2024.
+The Bank of Canada's policy rate stood at 2.25% in December 2025, unchanged from October. This marks a significant decline of 275 basis points from the 5.00% peak observed in June 2024, reflecting the central bank's monetary policy easing cycle that began in mid-2024.
 
 <div class="highlights">
 
 **Highlights**
 
-- The Bank of Canada rate remained at 2.50% in December 2025
-- Year over year, the policy rate declined by 275 basis points from June 2024's peak of 5.25%
+- The Bank of Canada policy rate remained at 2.25% in December 2025
+- The policy rate has declined 275 basis points from the June 2024 peak of 5.00%
 - Government of Canada 2-year bond yields fell to 2.58%, down 45 basis points from December 2024
 - The 10-year benchmark yield stood at 3.41% in December 2025
 
@@ -26,36 +26,36 @@ The Bank of Canada's policy rate stood at 2.50% in December 2025, unchanged from
 
 ## Policy rate trend
 
-The Bank of Canada began lowering its policy rate in mid-2024, reducing it from the peak of 5.25% to 2.50% by the end of 2025. The rate cuts accelerated in late 2024 and early 2025.
+The Bank of Canada began lowering its policy rate in June 2024, reducing it from the peak of 5.00% to 2.25% by October 2025, where it has remained. The rate cuts accelerated in late 2024 and early 2025.
 
 ```js
 import * as Plot from "npm:@observablehq/plot";
 
 const bankRateData = [
-  {date: new Date("2024-01"), rate: 5.25},
-  {date: new Date("2024-02"), rate: 5.25},
-  {date: new Date("2024-03"), rate: 5.25},
-  {date: new Date("2024-04"), rate: 5.25},
-  {date: new Date("2024-05"), rate: 5.25},
-  {date: new Date("2024-06"), rate: 5.00},
-  {date: new Date("2024-07"), rate: 4.75},
-  {date: new Date("2024-08"), rate: 4.75},
-  {date: new Date("2024-09"), rate: 4.50},
-  {date: new Date("2024-10"), rate: 4.00},
-  {date: new Date("2024-11"), rate: 4.00},
-  {date: new Date("2024-12"), rate: 3.50},
-  {date: new Date("2025-01"), rate: 3.50},
-  {date: new Date("2025-02"), rate: 3.25},
-  {date: new Date("2025-03"), rate: 3.00},
-  {date: new Date("2025-04"), rate: 3.00},
-  {date: new Date("2025-05"), rate: 3.00},
-  {date: new Date("2025-06"), rate: 3.00},
-  {date: new Date("2025-07"), rate: 3.00},
-  {date: new Date("2025-08"), rate: 3.00},
-  {date: new Date("2025-09"), rate: 2.75},
-  {date: new Date("2025-10"), rate: 2.75},
-  {date: new Date("2025-11"), rate: 2.50},
-  {date: new Date("2025-12"), rate: 2.50}
+  {date: new Date("2024-01"), rate: 5.00},
+  {date: new Date("2024-02"), rate: 5.00},
+  {date: new Date("2024-03"), rate: 5.00},
+  {date: new Date("2024-04"), rate: 5.00},
+  {date: new Date("2024-05"), rate: 5.00},
+  {date: new Date("2024-06"), rate: 4.75},
+  {date: new Date("2024-07"), rate: 4.50},
+  {date: new Date("2024-08"), rate: 4.50},
+  {date: new Date("2024-09"), rate: 4.25},
+  {date: new Date("2024-10"), rate: 3.75},
+  {date: new Date("2024-11"), rate: 3.75},
+  {date: new Date("2024-12"), rate: 3.25},
+  {date: new Date("2025-01"), rate: 3.00},
+  {date: new Date("2025-02"), rate: 3.00},
+  {date: new Date("2025-03"), rate: 2.75},
+  {date: new Date("2025-04"), rate: 2.75},
+  {date: new Date("2025-05"), rate: 2.75},
+  {date: new Date("2025-06"), rate: 2.75},
+  {date: new Date("2025-07"), rate: 2.50},
+  {date: new Date("2025-08"), rate: 2.50},
+  {date: new Date("2025-09"), rate: 2.25},
+  {date: new Date("2025-10"), rate: 2.25},
+  {date: new Date("2025-11"), rate: 2.25},
+  {date: new Date("2025-12"), rate: 2.25}
 ];
 
 display(Plot.plot({
@@ -65,7 +65,7 @@ display(Plot.plot({
   y: {domain: [2, 6], grid: true, label: "Rate (%)"},
   x: {type: "utc", label: null},
   marks: [
-    Plot.ruleY([2.5, 3, 4, 5], {stroke: "#ddd", strokeDasharray: "4,4"}),
+    Plot.ruleY([2.25, 3, 4, 5], {stroke: "#ddd", strokeDasharray: "4,4"}),
     Plot.areaY(bankRateData, {x: "date", y: "rate", fill: "#AF3C43", fillOpacity: 0.1}),
     Plot.lineY(bankRateData, {x: "date", y: "rate", stroke: "#AF3C43", strokeWidth: 2}),
     Plot.dot(bankRateData, {x: "date", y: "rate", fill: "#AF3C43", r: 3})
@@ -130,7 +130,7 @@ display(Plot.plot({
 
 | Rate | December 2025 | December 2024 | Change |
 |------|--------------|---------------|--------|
-| Bank rate | 2.50% | 3.50% | -1.00 pp |
+| Policy rate | 2.25% | 3.25% | -1.00 pp |
 | 2-year bond yield | 2.58% | 3.03% | -0.45 pp |
 | 5-year bond yield | 2.95% | 3.05% | -0.10 pp |
 | 10-year bond yield | 3.41% | 3.31% | +0.10 pp |

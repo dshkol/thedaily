@@ -1,24 +1,24 @@
 ---
-title: Le taux directeur de la Banque du Canada à 2,5 % en décembre 2025, en baisse de 275 points de base sur un an
+title: Le taux directeur de la Banque du Canada à 2,25 % en décembre 2025, en baisse de 275 points de base par rapport au sommet
 ---
 
-# Le taux directeur de la Banque du Canada à 2,5 % en décembre 2025, en baisse de 275 points de base sur un an
+# Le taux directeur de la Banque du Canada à 2,25 % en décembre 2025, en baisse de 275 points de base par rapport au sommet
 
 <p class="release-date">Diffusion : 2026-01-07</p>
 
 <div class="metric-box">
-  <div class="value">2,50 %</div>
+  <div class="value">2,25 %</div>
   <div class="label">Taux directeur, décembre 2025</div>
 </div>
 
-Le taux directeur de la Banque du Canada s'établissait à 2,50 % en décembre 2025, inchangé par rapport à novembre. Cela représente une baisse significative de 275 points de base par rapport au taux de 5,25 % observé en juin 2024, reflétant le cycle d'assouplissement de la politique monétaire de la banque centrale qui a débuté à la mi-2024.
+Le taux directeur de la Banque du Canada s'établissait à 2,25 % en décembre 2025, inchangé depuis octobre. Cela représente une baisse significative de 275 points de base par rapport au taux de 5,00 % observé en juin 2024, reflétant le cycle d'assouplissement de la politique monétaire de la banque centrale qui a débuté à la mi-2024.
 
 <div class="highlights">
 
 **Faits saillants**
 
-- Le taux directeur de la Banque du Canada est demeuré à 2,50 % en décembre 2025
-- Sur un an, le taux directeur a diminué de 275 points de base par rapport au sommet de 5,25 % atteint en juin 2024
+- Le taux directeur de la Banque du Canada est demeuré à 2,25 % en décembre 2025
+- Le taux directeur a diminué de 275 points de base par rapport au sommet de 5,00 % atteint en juin 2024
 - Les rendements des obligations du gouvernement du Canada à 2 ans ont chuté à 2,58 %, en baisse de 45 points de base par rapport à décembre 2024
 - Le rendement de référence à 10 ans s'établissait à 3,41 % en décembre 2025
 
@@ -26,36 +26,36 @@ Le taux directeur de la Banque du Canada s'établissait à 2,50 % en décembre 2
 
 ## Tendance du taux directeur
 
-La Banque du Canada a commencé à abaisser son taux directeur à la mi-2024, le faisant passer du sommet de 5,25 % à 2,50 % à la fin de 2025. Les baisses de taux se sont accélérées à la fin de 2024 et au début de 2025.
+La Banque du Canada a commencé à abaisser son taux directeur en juin 2024, le faisant passer du sommet de 5,00 % à 2,25 % en octobre 2025, où il est demeuré. Les baisses de taux se sont accélérées à la fin de 2024 et au début de 2025.
 
 ```js
 import * as Plot from "npm:@observablehq/plot";
 
 const bankRateData = [
-  {date: new Date("2024-01"), rate: 5.25},
-  {date: new Date("2024-02"), rate: 5.25},
-  {date: new Date("2024-03"), rate: 5.25},
-  {date: new Date("2024-04"), rate: 5.25},
-  {date: new Date("2024-05"), rate: 5.25},
-  {date: new Date("2024-06"), rate: 5.00},
-  {date: new Date("2024-07"), rate: 4.75},
-  {date: new Date("2024-08"), rate: 4.75},
-  {date: new Date("2024-09"), rate: 4.50},
-  {date: new Date("2024-10"), rate: 4.00},
-  {date: new Date("2024-11"), rate: 4.00},
-  {date: new Date("2024-12"), rate: 3.50},
-  {date: new Date("2025-01"), rate: 3.50},
-  {date: new Date("2025-02"), rate: 3.25},
-  {date: new Date("2025-03"), rate: 3.00},
-  {date: new Date("2025-04"), rate: 3.00},
-  {date: new Date("2025-05"), rate: 3.00},
-  {date: new Date("2025-06"), rate: 3.00},
-  {date: new Date("2025-07"), rate: 3.00},
-  {date: new Date("2025-08"), rate: 3.00},
-  {date: new Date("2025-09"), rate: 2.75},
-  {date: new Date("2025-10"), rate: 2.75},
-  {date: new Date("2025-11"), rate: 2.50},
-  {date: new Date("2025-12"), rate: 2.50}
+  {date: new Date("2024-01"), rate: 5.00},
+  {date: new Date("2024-02"), rate: 5.00},
+  {date: new Date("2024-03"), rate: 5.00},
+  {date: new Date("2024-04"), rate: 5.00},
+  {date: new Date("2024-05"), rate: 5.00},
+  {date: new Date("2024-06"), rate: 4.75},
+  {date: new Date("2024-07"), rate: 4.50},
+  {date: new Date("2024-08"), rate: 4.50},
+  {date: new Date("2024-09"), rate: 4.25},
+  {date: new Date("2024-10"), rate: 3.75},
+  {date: new Date("2024-11"), rate: 3.75},
+  {date: new Date("2024-12"), rate: 3.25},
+  {date: new Date("2025-01"), rate: 3.00},
+  {date: new Date("2025-02"), rate: 3.00},
+  {date: new Date("2025-03"), rate: 2.75},
+  {date: new Date("2025-04"), rate: 2.75},
+  {date: new Date("2025-05"), rate: 2.75},
+  {date: new Date("2025-06"), rate: 2.75},
+  {date: new Date("2025-07"), rate: 2.50},
+  {date: new Date("2025-08"), rate: 2.50},
+  {date: new Date("2025-09"), rate: 2.25},
+  {date: new Date("2025-10"), rate: 2.25},
+  {date: new Date("2025-11"), rate: 2.25},
+  {date: new Date("2025-12"), rate: 2.25}
 ];
 
 display(Plot.plot({
@@ -65,7 +65,7 @@ display(Plot.plot({
   y: {domain: [2, 6], grid: true, label: "Taux (%)"},
   x: {type: "utc", label: null},
   marks: [
-    Plot.ruleY([2.5, 3, 4, 5], {stroke: "#ddd", strokeDasharray: "4,4"}),
+    Plot.ruleY([2.25, 3, 4, 5], {stroke: "#ddd", strokeDasharray: "4,4"}),
     Plot.areaY(bankRateData, {x: "date", y: "rate", fill: "#AF3C43", fillOpacity: 0.1}),
     Plot.lineY(bankRateData, {x: "date", y: "rate", stroke: "#AF3C43", strokeWidth: 2}),
     Plot.dot(bankRateData, {x: "date", y: "rate", fill: "#AF3C43", r: 3})
@@ -130,7 +130,7 @@ display(Plot.plot({
 
 | Taux | Décembre 2025 | Décembre 2024 | Variation |
 |------|--------------|---------------|-----------|
-| Taux directeur | 2,50 % | 3,50 % | -1,00 pp |
+| Taux directeur | 2,25 % | 3,25 % | -1,00 pp |
 | Rendement à 2 ans | 2,58 % | 3,03 % | -0,45 pp |
 | Rendement à 5 ans | 2,95 % | 3,05 % | -0,10 pp |
 | Rendement à 10 ans | 3,41 % | 3,31 % | +0,10 pp |
