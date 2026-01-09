@@ -1,6 +1,7 @@
 import fs from "fs";
 import path from "path";
 
+// Articles data loader - generates article index from markdown files
 // Sector mapping based on CANSIM table prefixes
 const sectorMap = {
   "18-10": "prices",
