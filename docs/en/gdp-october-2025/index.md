@@ -12,13 +12,13 @@ toc: false
 **Highlights**
 
 - Real gross domestic product decreased 0.3% in October 2025
-- Year over year, real GDP was up 0.4% compared with October 2024
+- Year over year, real GDP edged up 0.04% compared with October 2024
 - The services-producing sector accounted for the largest share of output
 - Manufacturing and construction contributed to the monthly decline
 
 </div>
 
-Real gross domestic product (GDP) fell 0.3% in October 2025, following a gain of 0.2% in September. Year over year, real GDP was up 0.4% compared with October 2024.
+Real gross domestic product (GDP) fell 0.3% in October 2025, following a gain of 0.2% in September. Year over year, real GDP edged up 0.04% compared with October 2024.
 
 The monthly decline was broad-based, with declines in both goods-producing and services-producing industries.
 
