@@ -179,12 +179,15 @@
 /* Charts */
 #observablehq-main figure {
   margin: 2rem 0;
-  overflow: visible;
+  max-width: 100%;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
 }
 
-/* Ensure SVG elements aren't clipped */
+/* Ensure SVG elements display properly */
 #observablehq-main figure svg {
-  overflow: visible;
+  display: block;
+  max-width: none; /* Allow horizontal scroll on mobile rather than squishing */
 }
 
 /* Chart titles */
@@ -448,6 +451,28 @@
     display: block;
     overflow-x: auto;
     -webkit-overflow-scrolling: touch;
+  }
+
+  /* Contain charts on mobile - prevent overflow bleeding */
+  #observablehq-main figure {
+    position: relative;
+    margin-left: -1rem;
+    margin-right: -1rem;
+    padding: 0 1rem;
+    overflow-x: auto;
+    overflow-y: hidden;
+    contain: content;
+  }
+
+  /* Ensure plot containers don't break layout */
+  #observablehq-main figure > * {
+    min-width: 0;
+  }
+
+  /* Constrain SVG charts within figure */
+  #observablehq-main figure svg {
+    max-height: 400px;
+    overflow: hidden;
   }
 
   /* Featured articles stack */
