@@ -11,6 +11,27 @@ Generate StatCan "The Daily"-style statistical bulletins from CANSIM data tables
 
 **NEVER use synthetic, made-up, or placeholder data.** Every number must come from real Statistics Canada data fetched via the `cansim` R package. If data fetch fails, do not generate the article.
 
+## How to Use Fetched Data
+
+Every number in the article MUST come from the JSON file:
+
+| Article Element | JSON Source |
+|-----------------|-------------|
+| Headline percentage | `latest.yoy_pct_change` or `latest.mom_pct_change` |
+| Headline value | `latest.value` |
+| Chart data array | `time_series[]` - copy date and value exactly |
+| Component breakdown | `subseries[]` |
+| Provincial table | `provincial[]` |
+| Reference period | `metadata.reference_period` |
+
+**Forbidden patterns:**
+- ❌ Writing a number from memory
+- ❌ Estimating values not in JSON
+- ❌ Using "plausible" numbers to fill gaps
+- ❌ Confusing similar terms (e.g., "Bank Rate" vs "Policy Rate")
+
+**If a value isn't in the JSON, don't include it in the article.**
+
 ## Workflow
 
 ```
@@ -18,19 +39,26 @@ Generate StatCan "The Daily"-style statistical bulletins from CANSIM data tables
    Rscript r-tools/fetch_cansim_enhanced.R <table-number> output
    → output/data_<table>_enhanced.json
 
-2. CREATE ENGLISH ARTICLE
+2. READ AND CONFIRM DATA (MANDATORY)
+   Before writing ANY article content:
+   - Read the JSON file completely
+   - State the headline value: "latest.yoy_pct_change is X.X%"
+   - State the reference period: "metadata.reference_period is YYYY-MM"
+   - If JSON doesn't exist or is stale, STOP - do not proceed
+
+3. CREATE ENGLISH ARTICLE
    docs/en/<slug>/index.md
 
-3. CREATE FRENCH ARTICLE
+4. CREATE FRENCH ARTICLE
    docs/fr/<slug-fr>/index.md
 
-4. UPDATE LANGUAGE MAP
+5. UPDATE LANGUAGE MAP
    Add slug pair to src/lang-map.js
 
-5. UPDATE INDEX PAGES
+6. UPDATE INDEX PAGES
    Add entry to docs/en/index.md and docs/fr/index.md
 
-6. PREVIEW AND VERIFY
+7. PREVIEW AND VERIFY
    npm run dev → http://localhost:3000
 ```
 

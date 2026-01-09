@@ -224,3 +224,24 @@ If the R script cannot fetch data:
 5. Try again later
 
 Never substitute synthetic data.
+
+## Known Failure Modes
+
+### Hardcoded Plausible Values (Jan 2026)
+
+**What happened**: Articles were generated with numbers that looked reasonable but weren't from the fetched data.
+
+**Examples**:
+- Interest rates article used 2.50% (the "Bank Rate") instead of 2.25% (the "Policy Rate" from JSON)
+- Manufacturing capacity used 80.8% instead of actual 80.7% from JSON
+
+**Root causes**:
+1. JSON file wasn't read before generating article text
+2. LLM used approximate values from training data instead of exact JSON values
+3. Similar-sounding terms confused (Bank Rate ≠ Policy Rate)
+
+**Prevention**:
+1. ALWAYS read JSON file before writing ANY numbers
+2. ALWAYS state headline value out loud: "The JSON shows X.X%"
+3. Copy-paste values from JSON, don't type from memory
+4. For financial data: verify exact terminology matches the JSON field name
