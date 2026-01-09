@@ -13,7 +13,7 @@ toc: false
 
 - The total value of building permits increased 14.9% to $13.8 billion in October 2025
 - Residential permits rose 14.6% to $8.6 billion
-- Non-residential permits increased 13.3% to $5.3 billion
+- Non-residential permits rose $702.8 million to $5.3 billion
 - On a year-over-year basis, permits were up 5.9%
 
 </div>
@@ -22,7 +22,7 @@ The total value of building permits increased 14.9% to $13.8 billion in October 
 
 Residential permits rose 14.6% to $8.6 billion, driven by increases in multi-family construction intentions which reached $5.9 billion. Single-family permits totalled $2.6 billion.
 
-Non-residential permits increased 13.3% to $5.3 billion, with gains across the commercial, industrial, and institutional components.
+Non-residential permits rose $702.8 million to $5.3 billion. The commercial component led the increase (+$394.9 million), followed by the institutional component (+$311.8 million), while the industrial component edged down $3.9 million.
 
 ```js
 import * as Plot from "npm:@observablehq/plot";
@@ -82,43 +82,38 @@ display(Plot.plot({
 
 ## Residential and non-residential components
 
-Residential building permits, which represent about 62% of the total, rose 14.6% in October to $8.6 billion. Multi-family permits reached $5.9 billion, while single-family permits totalled $2.6 billion.
+Residential building permits, which represent about 62% of the total, rose 14.6% in October to $8.6 billion. Multi-family permits reached $5.9 billion, with the largest increase in Ontario (+$876.4 million), followed by Quebec (+$81.4 million). Single-family permits totalled $2.6 billion.
 
-Non-residential permits increased 13.3% to $5.3 billion, with gains across the commercial, industrial, and institutional components.
+Non-residential permits rose to $5.3 billion, with the commercial component contributing the largest gain (+$394.9 million, led by office buildings in Toronto). The institutional component added $311.8 million, while the industrial component edged down $3.9 million.
 
 ```js
 const componentData = [
-  {component: "Residential (total)", change: 14.6},
-  {component: "Non-residential (total)", change: 13.3},
-  {component: "Multi-family", change: 15.2},
-  {component: "Single-family", change: 12.8},
-  {component: "Commercial", change: 14.1},
-  {component: "Industrial", change: 12.5},
-  {component: "Institutional", change: 11.8}
+  {component: "Commercial", change: 394.9},
+  {component: "Institutional", change: 311.8},
+  {component: "Industrial", change: -3.9}
 ];
 
 display(Plot.plot({
-  title: "Month-over-month change by component (%)",
+  title: "Non-residential component changes ($ millions)",
   width: 600,
-  height: 280,
-  marginLeft: 160,
-  marginRight: 50,
-  x: {domain: [0, 18], grid: true, label: "Percent change"},
+  height: 200,
+  marginLeft: 120,
+  marginRight: 60,
+  x: {domain: [-50, 450], grid: true, label: "Change ($ millions)"},
   y: {label: null},
   marks: [
     Plot.ruleX([0]),
     Plot.barX(componentData, {
       y: "component",
       x: "change",
-      fill: "#AF3C43",
+      fill: d => d.change >= 0 ? "#AF3C43" : "#1976d2",
       sort: {y: "-x"}
     }),
     Plot.text(componentData, {
       y: "component",
-      x: 18,
-      text: d => "+" + d.change.toFixed(1) + "%",
-      textAnchor: "start",
-      dx: 5,
+      x: "change",
+      text: d => (d.change >= 0 ? "+$" : "-$") + Math.abs(d.change).toFixed(1) + "M",
+      dx: d => d.change >= 0 ? 35 : -35,
       fill: "currentColor"
     })
   ]
@@ -127,18 +122,7 @@ display(Plot.plot({
 
 ## Provincial variation
 
-Building permits increased in most provinces in October. Broad-based gains were recorded across Canada, led by Ontario and British Columbia.
-
-| Province | October 2025 ($ millions) | Monthly change |
-|----------|--------------------------|----------------|
-| Ontario | 5,100 | +16.2% |
-| British Columbia | 2,150 | +15.8% |
-| Quebec | 2,890 | +14.5% |
-| Alberta | 1,620 | +13.1% |
-| Manitoba | 315 | +12.8% |
-| Saskatchewan | 225 | +11.5% |
-| Nova Scotia | 245 | +10.2% |
-| New Brunswick | 185 | +9.8% |
+Building permits increased in most provinces in October. Ontario contributed the most to the national growth, with the Toronto CMA recording the largest gains in both multi-family residential (+$408.9 million) and commercial office buildings. British Columbia also posted notable increases, leading gains in the institutional component (+$132.2 million).
 
 <div class="note-to-readers">
 
