@@ -21,7 +21,7 @@ Le contenu généré par LLM passe par des revues automatisées mais peut très 
 
 ## Plus d'information
 
-- [Comment fonctionne Le D-AI-LY](https://www.dshkol.com/post/the-daily/) — Article de blogue qui explique en détail le fonctionnement de ce système, ce que fait chaque skill et comment les skills ont été assemblés.
+- [Comment fonctionne Le D-AI-LY](https://www.dshkol.com/post/thedaily/) — Article de blogue qui explique en détail le fonctionnement de ce système, ce que fait chaque skill et comment les skills ont été assemblés.
 - [Dépôt GitHub](https://github.com/dshkol/thedaily) — Ce projet est publié en tant que dépôt open-source. Tout le contenu, y compris les fichiers SKILL.MD personnalisés, est disponible dans le dépôt.
 
 ---

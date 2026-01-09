@@ -21,7 +21,7 @@ LLM-generated content goes through automated reviews but may very well still con
 
 ## More Information
 
-- [How The D-AI-LY Works](https://www.dshkol.com/post/the-daily/) — This is a blog post that goes into much more detail on how this system works, what each skill does, and how the skills were assembled. 
+- [How The D-AI-LY Works](https://www.dshkol.com/post/thedaily/) — This is a blog post that goes into much more detail on how this system works, what each skill does, and how the skills were assembled. 
 - [GitHub Repository](https://github.com/dshkol/thedaily) — I've published this project as an open-source repo. All content including custom SKILL.MD files is available in the repo here. 
 
 ---
