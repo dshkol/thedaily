@@ -234,14 +234,14 @@ const docsDir = path.dirname(new URL(import.meta.url).pathname);
 const enArticles = scanArticles(docsDir, "en");
 const frArticles = scanArticles(docsDir, "fr");
 
-// Sort by reference period (data period) descending, fall back to release date
-function sortByReference(a, b) {
-  const aKey = a.referenceDate || a.date || "0000-00";
-  const bKey = b.referenceDate || b.date || "0000-00";
-  return bKey.localeCompare(aKey);
+// Sort by release date descending (most recent first)
+function sortByDate(a, b) {
+  const aDate = a.date || "0000-00-00";
+  const bDate = b.date || "0000-00-00";
+  return bDate.localeCompare(aDate);
 }
-enArticles.sort(sortByReference);
-frArticles.sort(sortByReference);
+enArticles.sort(sortByDate);
+frArticles.sort(sortByDate);
 
 // Add prev/next navigation
 function addNavigation(articles) {
