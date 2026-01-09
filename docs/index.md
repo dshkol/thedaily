@@ -68,6 +68,6 @@ The D-AI-LY is an experimental project using large language models to generate s
 
 **Not an official Statistics Canada publication.** Data comes from public sources; narrative and analysis are AI-generated. [Verify figures with Statistics Canada](https://www.statcan.gc.ca).
 
-Read about how it works in the accompanying [blog post](https://www.dshkol.com/post/the-daily/) and check out the repo on [GitHub](https://github.com/dshkol/thedaily).
+Read about how it works in the accompanying [blog post](https://www.dshkol.com/post/thedaily/) and check out the repo on [GitHub](https://github.com/dshkol/thedaily).
 
 </div>
