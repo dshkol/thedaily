@@ -1,69 +1,49 @@
 ---
-title: Les exportations de marchandises en hausse de 6,3 % en septembre 2025
+title: Le déficit commercial s'élargit à 2,6 milliards de dollars en octobre 2025
 toc: false
 ---
 
-# Les exportations de marchandises en hausse de 6,3 % en septembre 2025
+# Le déficit commercial s'élargit à 2,6 milliards de dollars en octobre 2025
 
-<p class="release-date">Diffusion : 14 novembre 2025</p>
+<p class="release-date">Diffusion : 18 décembre 2025 <span class="article-type-tag release">Nouvelle diffusion</span></p>
 
 <div class="highlights">
 
 **Faits saillants**
 
-- Les exportations de marchandises ont augmenté de 6,3 % pour atteindre 64,2 milliards de dollars en septembre 2025
-- Les importations de marchandises ont diminué de 4,1 % pour s'établir à 64,1 milliards de dollars
-- Le Canada a enregistré un excédent commercial de 0,2 milliard de dollars
-- D'une année à l'autre, les exportations ont progressé de 0,3 %
+- Les importations de marchandises ont augmenté de 4,2 % pour atteindre 66,8 milliards de dollars en octobre 2025
+- Les exportations sont demeurées essentiellement inchangées à 64,2 milliards de dollars
+- Le déficit commercial du Canada s'est élargi à 2,6 milliards de dollars, après un excédent de 0,2 milliard de dollars en septembre
+- Les États-Unis sont demeurés le principal partenaire commercial avec 45,8 milliards de dollars en exportations
 
 </div>
 
-Les exportations de marchandises ont augmenté de 6,3 % pour atteindre 64,2 milliards de dollars en septembre 2025, après une baisse de 3,1 % en août. D'une année à l'autre, les exportations ont progressé de 0,3 % par rapport à septembre 2024.
+Les importations de marchandises ont progressé de 4,2 % pour atteindre 66,8 milliards de dollars en octobre 2025, tandis que les exportations sont demeurées essentiellement inchangées à 64,2 milliards de dollars. Il en a résulté un élargissement du déficit commercial du Canada à 2,6 milliards de dollars, renversant le léger excédent de septembre.
 
-Les importations de marchandises ont diminué de 4,1 % pour s'établir à 64,1 milliards de dollars en septembre. Il en a résulté un excédent commercial de 0,2 milliard de dollars, comparativement à un déficit commercial de 6,4 milliards de dollars en août.
+D'une année à l'autre, les exportations ont reculé de 1,3 % par rapport à octobre 2024, tandis que les importations ont augmenté de 1,9 %.
 
 ```js
 import * as Plot from "npm:@observablehq/plot";
 
 // Données réelles du Tableau 12-10-0011 de Statistique Canada (valeurs en milliards $)
 const tradeData = [
-  {date: new Date("2023-01"), exports: 67.6, imports: 65.7},
-  {date: new Date("2023-02"), exports: 64.1, imports: 64.3},
-  {date: new Date("2023-03"), exports: 64.4, imports: 62.9},
-  {date: new Date("2023-04"), exports: 64.3, imports: 62.7},
-  {date: new Date("2023-05"), exports: 62.9, imports: 65.4},
-  {date: new Date("2023-06"), exports: 60.4, imports: 65.3},
-  {date: new Date("2023-07"), exports: 61.2, imports: 62.4},
-  {date: new Date("2023-08"), exports: 64.4, imports: 64.4},
-  {date: new Date("2023-09"), exports: 65.7, imports: 64.9},
-  {date: new Date("2023-10"), exports: 66.0, imports: 63.5},
-  {date: new Date("2023-11"), exports: 65.1, imports: 64.6},
-  {date: new Date("2023-12"), exports: 63.9, imports: 64.6},
-  {date: new Date("2024-01"), exports: 61.6, imports: 62.1},
-  {date: new Date("2024-02"), exports: 65.9, imports: 64.9},
-  {date: new Date("2024-03"), exports: 63.5, imports: 64.3},
-  {date: new Date("2024-04"), exports: 65.0, imports: 65.4},
-  {date: new Date("2024-05"), exports: 62.8, imports: 64.6},
-  {date: new Date("2024-06"), exports: 65.6, imports: 66.2},
-  {date: new Date("2024-07"), exports: 65.0, imports: 65.3},
-  {date: new Date("2024-08"), exports: 64.1, imports: 65.8},
-  {date: new Date("2024-09"), exports: 64.1, imports: 65.3},
-  {date: new Date("2024-10"), exports: 65.1, imports: 65.6},
-  {date: new Date("2024-11"), exports: 66.4, imports: 67.0},
-  {date: new Date("2024-12"), exports: 69.9, imports: 69.1},
-  {date: new Date("2025-01"), exports: 72.9, imports: 69.2},
-  {date: new Date("2025-02"), exports: 68.8, imports: 69.9},
-  {date: new Date("2025-03"), exports: 67.5, imports: 69.4},
-  {date: new Date("2025-04"), exports: 60.0, imports: 67.3},
-  {date: new Date("2025-05"), exports: 61.0, imports: 66.8},
-  {date: new Date("2025-06"), exports: 61.5, imports: 67.1},
-  {date: new Date("2025-07"), exports: 62.4, imports: 66.2},
-  {date: new Date("2025-08"), exports: 60.4, imports: 66.8},
-  {date: new Date("2025-09"), exports: 64.2, imports: 64.1}
+  {date: new Date("2024-10"), exports: 65.07, imports: 65.56},
+  {date: new Date("2024-11"), exports: 66.42, imports: 67.03},
+  {date: new Date("2024-12"), exports: 69.92, imports: 69.15},
+  {date: new Date("2025-01"), exports: 72.86, imports: 69.22},
+  {date: new Date("2025-02"), exports: 68.81, imports: 69.89},
+  {date: new Date("2025-03"), exports: 67.45, imports: 69.38},
+  {date: new Date("2025-04"), exports: 60.04, imports: 67.32},
+  {date: new Date("2025-05"), exports: 61.03, imports: 66.78},
+  {date: new Date("2025-06"), exports: 61.48, imports: 67.05},
+  {date: new Date("2025-07"), exports: 62.37, imports: 66.19},
+  {date: new Date("2025-08"), exports: 60.40, imports: 66.83},
+  {date: new Date("2025-09"), exports: 64.23, imports: 64.08},
+  {date: new Date("2025-10"), exports: 64.20, imports: 66.80}
 ];
 
 display(Plot.plot({
-  title: "Exportations et importations de marchandises (en milliards $)",
+  title: "Commerce de marchandises, octobre 2024 à octobre 2025 (en milliards $)",
   width: 680,
   height: 320,
   y: {domain: [55, 75], grid: true, label: "Milliards $"},
@@ -73,17 +53,17 @@ display(Plot.plot({
     Plot.lineY(tradeData, {x: "date", y: "imports", stroke: "#1f77b4", strokeWidth: 2}),
     Plot.dot(tradeData.slice(-1), {x: "date", y: "exports", fill: "#AF3C43", r: 5}),
     Plot.dot(tradeData.slice(-1), {x: "date", y: "imports", fill: "#1f77b4", r: 5}),
-    Plot.text([{x: new Date("2025-09"), y: 64.2, text: "Exportations"}], {x: "x", y: "y", text: "text", dy: -15, fill: "#AF3C43", fontWeight: 600}),
-    Plot.text([{x: new Date("2025-09"), y: 64.1, text: "Importations"}], {x: "x", y: "y", text: "text", dy: 15, fill: "#1f77b4", fontWeight: 600})
+    Plot.text([{x: new Date("2025-05"), y: 73, text: "Exportations"}], {x: "x", y: "y", text: "text", fill: "#AF3C43", fontSize: 12}),
+    Plot.text([{x: new Date("2025-05"), y: 70, text: "Importations"}], {x: "x", y: "y", text: "text", fill: "#1f77b4", fontSize: 12})
   ]
 }));
 ```
 
 ## Commerce avec les États-Unis
 
-Les exportations vers les États-Unis ont augmenté pour atteindre 45,8 milliards de dollars en septembre 2025, ce qui représente 71 % des exportations totales de marchandises. Les importations en provenance des États-Unis ont totalisé 37,2 milliards de dollars.
+Les exportations vers les États-Unis ont atteint 45,8 milliards de dollars en octobre 2025, ce qui représente 71 % des exportations totales de marchandises. Les importations en provenance des États-Unis ont totalisé 37,2 milliards de dollars.
 
-Le Canada a enregistré un excédent commercial de 8,6 milliards de dollars avec les États-Unis en septembre.
+Le Canada a enregistré un excédent commercial de 8,6 milliards de dollars avec les États-Unis en octobre.
 
 ## Principales destinations des exportations
 
@@ -109,7 +89,7 @@ const partnerData = [
 ];
 
 display(Plot.plot({
-  title: "Exportations de marchandises par destination (en milliards $)",
+  title: "Exportations de marchandises par destination, octobre 2025 (en milliards $)",
   width: 500,
   height: 280,
   marginLeft: 140,
@@ -137,17 +117,15 @@ display(Plot.plot({
 
 ## Note aux lecteurs
 
-Les données sur le commerce de marchandises sont présentées selon la balance des paiements, qui ajuste les données douanières pour se conformer aux concepts requis pour les comptes internationaux.
-
-La désaisonnalisation élimine l'effet des tendances saisonnières des données, ce qui permet de mieux cerner les tendances sous-jacentes.
+Les données sur le commerce international de marchandises sont exprimées en dollars courants et sont désaisonnalisées. Les données portent sur le commerce de biens entre le Canada et ses partenaires commerciaux.
 
 </div>
 
 <div class="source-info">
 
 **Source :** Statistique Canada, [Tableau 12-10-0011](https://www150.statcan.gc.ca/t1/tbl1/fr/tv.action?pid=1210001101)
-**Enquête :** Commerce international de marchandises
-**Période de référence :** Septembre 2025
+**Enquête :** Commerce international canadien de marchandises
+**Période de référence :** Octobre 2025
 **DOI :** [https://doi.org/10.25318/1210001101-fra](https://doi.org/10.25318/1210001101-fra)
 
 </div>

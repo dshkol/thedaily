@@ -1,9 +1,9 @@
 ---
-title: Merchandise exports up 6.3% in October 2025
+title: Trade deficit widens to $2.6 billion in October 2025
 toc: false
 ---
 
-# Merchandise exports up 6.3% in October 2025
+# Trade deficit widens to $2.6 billion in October 2025
 
 <p class="release-date">Released: December 18, 2025 <span class="article-type-tag release">New Release</span></p>
 
@@ -11,44 +11,49 @@ toc: false
 
 **Highlights**
 
-- Merchandise exports increased 6.3% to $64.2 billion in October 2025
-- Imports declined 4.1% to $66.8 billion
-- Canada's trade deficit narrowed to $2.6 billion
+- Merchandise imports rose 4.2% to $66.8 billion in October 2025
+- Exports were essentially unchanged at $64.2 billion
+- Canada's trade deficit widened to $2.6 billion from a $0.2 billion surplus in September
 - The United States remained the dominant trading partner at $45.8 billion in exports
 
 </div>
 
-Merchandise exports rose 6.3% to $64.2 billion in October 2025, following a decline in September. Imports fell 4.1% to $66.8 billion, narrowing Canada's trade deficit.
+Merchandise imports rose 4.2% to $66.8 billion in October 2025, while exports were essentially unchanged at $64.2 billion. This widened Canada's trade deficit to $2.6 billion, reversing September's small surplus.
 
-Year over year, exports were down 4.8% compared with October 2024, reflecting ongoing challenges in global demand.
+Year over year, exports were down 1.3% compared with October 2024, while imports rose 1.9%.
 
 ```js
 import * as Plot from "npm:@observablehq/plot";
 
 const tradeData = [
-  {date: new Date("2025-04"), exports: 60.9, imports: 66.4},
-  {date: new Date("2025-05"), exports: 61.8, imports: 66.3},
-  {date: new Date("2025-06"), exports: 61.3, imports: 66.5},
-  {date: new Date("2025-07"), exports: 62.4, imports: 65.6},
-  {date: new Date("2025-08"), exports: 60.5, imports: 65.9},
-  {date: new Date("2025-09"), exports: 60.4, imports: 69.7},
-  {date: new Date("2025-10"), exports: 64.2, imports: 66.8}
+  {date: new Date("2024-10"), exports: 65.07, imports: 65.56},
+  {date: new Date("2024-11"), exports: 66.42, imports: 67.03},
+  {date: new Date("2024-12"), exports: 69.92, imports: 69.15},
+  {date: new Date("2025-01"), exports: 72.86, imports: 69.22},
+  {date: new Date("2025-02"), exports: 68.81, imports: 69.89},
+  {date: new Date("2025-03"), exports: 67.45, imports: 69.38},
+  {date: new Date("2025-04"), exports: 60.04, imports: 67.32},
+  {date: new Date("2025-05"), exports: 61.03, imports: 66.78},
+  {date: new Date("2025-06"), exports: 61.48, imports: 67.05},
+  {date: new Date("2025-07"), exports: 62.37, imports: 66.19},
+  {date: new Date("2025-08"), exports: 60.40, imports: 66.83},
+  {date: new Date("2025-09"), exports: 64.23, imports: 64.08},
+  {date: new Date("2025-10"), exports: 64.20, imports: 66.80}
 ];
 
 display(Plot.plot({
-  title: "Merchandise trade, April to October 2025 ($ billions)",
+  title: "Merchandise trade, October 2024 to October 2025 ($ billions)",
   width: 680,
   height: 300,
   y: {domain: [55, 75], grid: true, label: "Billions $"},
   x: {type: "utc", label: null},
-  color: {legend: true},
   marks: [
     Plot.lineY(tradeData, {x: "date", y: "exports", stroke: "#AF3C43", strokeWidth: 2}),
     Plot.lineY(tradeData, {x: "date", y: "imports", stroke: "#1976d2", strokeWidth: 2}),
     Plot.dot(tradeData.slice(-1), {x: "date", y: "exports", fill: "#AF3C43", r: 5}),
     Plot.dot(tradeData.slice(-1), {x: "date", y: "imports", fill: "#1976d2", r: 5}),
-    Plot.text([{x: new Date("2025-10"), y: 64.2, label: "Exports $64.2B"}], {x: "x", y: "y", text: "label", dy: -12, fill: "#AF3C43", fontWeight: 600, fontSize: 11}),
-    Plot.text([{x: new Date("2025-10"), y: 66.8, label: "Imports $66.8B"}], {x: "x", y: "y", text: "label", dy: 15, fill: "#1976d2", fontWeight: 600, fontSize: 11})
+    Plot.text([{x: new Date("2025-05"), y: 73, text: "Exports"}], {x: "x", y: "y", text: "text", fill: "#AF3C43", fontSize: 12}),
+    Plot.text([{x: new Date("2025-05"), y: 70, text: "Imports"}], {x: "x", y: "y", text: "text", fill: "#1976d2", fontSize: 12})
   ]
 }));
 ```
