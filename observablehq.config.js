@@ -8,7 +8,7 @@ export default {
   base: "/thedaily",
 
   // GoatCounter analytics
-  head: `<script data-goatcounter="https://dshkol.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>`,
+  head: `<script data-goatcounter="https://dshkol.goatcounter.com/count" async src="https://gc.zgo.at/count.js"></script>`,
 
   root: "docs",
   output: "dist",
