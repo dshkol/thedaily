@@ -1,45 +1,45 @@
 ---
-title: Le déficit commercial s'élargit à 2,6 milliards de dollars en octobre 2025
+title: Le Canada affiche un déficit commercial de 583 millions de dollars en octobre 2025
 toc: false
 ---
 
-# Le déficit commercial s'élargit à 2,6 milliards de dollars en octobre 2025
+# Le Canada affiche un déficit commercial de 583 millions de dollars en octobre 2025
 
-<p class="release-date">Diffusion : 18 décembre 2025 <span class="article-type-tag release">Nouvelle diffusion</span></p>
+<p class="release-date">Diffusion : 8 janvier 2026 <span class="article-type-tag release">Nouvelle diffusion</span></p>
 
 <div class="highlights">
 
 **Faits saillants**
 
-- Les importations de marchandises ont augmenté de 4,2 % pour atteindre 66,8 milliards de dollars en octobre 2025
-- Les exportations sont demeurées essentiellement inchangées à 64,2 milliards de dollars
-- Le déficit commercial du Canada s'est élargi à 2,6 milliards de dollars, après un excédent de 0,2 milliard de dollars en septembre
-- Les États-Unis sont demeurés le principal partenaire commercial avec 45,8 milliards de dollars en exportations
+- Les exportations de marchandises ont augmenté de 2,1 % pour atteindre 65,6 milliards de dollars en octobre 2025
+- Les importations ont progressé de 3,4 % pour s'établir à 66,2 milliards de dollars
+- Le solde commercial du Canada est passé d'un excédent de 243 millions de dollars en septembre à un déficit de 583 millions de dollars en octobre
+- L'excédent commercial avec les États-Unis s'est rétréci de 8,4 milliards de dollars à 4,8 milliards de dollars
 
 </div>
 
-Les importations de marchandises ont progressé de 4,2 % pour atteindre 66,8 milliards de dollars en octobre 2025, tandis que les exportations sont demeurées essentiellement inchangées à 64,2 milliards de dollars. Il en a résulté un élargissement du déficit commercial du Canada à 2,6 milliards de dollars, renversant le léger excédent de septembre.
+Les exportations de marchandises ont augmenté de 2,1 % pour atteindre 65,6 milliards de dollars en octobre 2025, tandis que les importations ont progressé de 3,4 % pour s'établir à 66,2 milliards de dollars. Le solde commercial du Canada avec le monde est passé d'un léger excédent de 243 millions de dollars en septembre à un déficit de 583 millions de dollars en octobre.
 
-D'une année à l'autre, les exportations ont reculé de 1,3 % par rapport à octobre 2024, tandis que les importations ont augmenté de 1,9 %.
+Les exportations de métaux et de produits minéraux non métalliques ont augmenté de 27,3 % pour atteindre un niveau record, en raison des exportations d'or brut, d'argent et de métaux du groupe du platine. Excluant ce groupe de produits, les exportations totales ont diminué de 2,5 %.
 
 ```js
 import * as Plot from "npm:@observablehq/plot";
 
-// Données réelles du Tableau 12-10-0011 de Statistique Canada (valeurs en milliards $)
+// Données de Statistique Canada, Tableau 12-10-0011
 const tradeData = [
-  {date: new Date("2024-10"), exports: 65.07, imports: 65.56},
-  {date: new Date("2024-11"), exports: 66.42, imports: 67.03},
-  {date: new Date("2024-12"), exports: 69.92, imports: 69.15},
-  {date: new Date("2025-01"), exports: 72.86, imports: 69.22},
-  {date: new Date("2025-02"), exports: 68.81, imports: 69.89},
-  {date: new Date("2025-03"), exports: 67.45, imports: 69.38},
-  {date: new Date("2025-04"), exports: 60.04, imports: 67.32},
-  {date: new Date("2025-05"), exports: 61.03, imports: 66.78},
-  {date: new Date("2025-06"), exports: 61.48, imports: 67.05},
-  {date: new Date("2025-07"), exports: 62.37, imports: 66.19},
-  {date: new Date("2025-08"), exports: 60.40, imports: 66.83},
-  {date: new Date("2025-09"), exports: 64.23, imports: 64.08},
-  {date: new Date("2025-10"), exports: 64.20, imports: 66.80}
+  {date: new Date("2024-10"), exports: 65.1, imports: 65.6},
+  {date: new Date("2024-11"), exports: 66.4, imports: 67.0},
+  {date: new Date("2024-12"), exports: 69.9, imports: 69.2},
+  {date: new Date("2025-01"), exports: 72.9, imports: 69.2},
+  {date: new Date("2025-02"), exports: 68.8, imports: 69.9},
+  {date: new Date("2025-03"), exports: 67.5, imports: 69.4},
+  {date: new Date("2025-04"), exports: 60.0, imports: 67.3},
+  {date: new Date("2025-05"), exports: 61.0, imports: 66.8},
+  {date: new Date("2025-06"), exports: 61.5, imports: 67.1},
+  {date: new Date("2025-07"), exports: 62.4, imports: 66.2},
+  {date: new Date("2025-08"), exports: 60.4, imports: 66.8},
+  {date: new Date("2025-09"), exports: 64.3, imports: 64.0},
+  {date: new Date("2025-10"), exports: 65.6, imports: 66.2}
 ];
 
 display(Plot.plot({
@@ -61,63 +61,21 @@ display(Plot.plot({
 
 ## Commerce avec les États-Unis
 
-Les exportations vers les États-Unis ont atteint 45,8 milliards de dollars en octobre 2025, ce qui représente 71 % des exportations totales de marchandises. Les importations en provenance des États-Unis ont totalisé 37,2 milliards de dollars.
+L'excédent commercial du Canada avec les États-Unis s'est rétréci, passant de 8,4 milliards de dollars en septembre à 4,8 milliards de dollars en octobre. Les exportations canadiennes vers les États-Unis ont diminué de 3,4 %, tandis que les importations en provenance des États-Unis ont augmenté de 5,3 %.
 
-Le Canada a enregistré un excédent commercial de 8,6 milliards de dollars avec les États-Unis en octobre.
+Depuis le début de l'année, les exportations vers les États-Unis ont diminué de 4,1 % par rapport à la même période en 2024.
 
-## Principales destinations des exportations
+## Commerce avec les autres pays
 
-| Partenaire | Exportations (en milliards $) | Part du total |
-|------------|------------------------------|---------------|
-| États-Unis | 45,8 | 71,4 % |
-| Union européenne | 3,7 | 5,7 % |
-| Royaume-Uni | 3,2 | 5,1 % |
-| Chine | 2,5 | 4,0 % |
-| Japon | 1,1 | 1,8 % |
-| Suisse | 1,0 | 1,6 % |
-| Allemagne | 0,9 | 1,5 % |
-| Mexique | 0,8 | 1,3 % |
+Les exportations vers les pays autres que les États-Unis ont augmenté de 15,6 % pour atteindre un niveau record en octobre. La hausse des exportations vers le Royaume-Uni (or) et la Chine (pétrole brut) ont contribué le plus à cette croissance.
 
-```js
-const partnerData = [
-  {partner: "États-Unis", value: 45.8},
-  {partner: "Union européenne", value: 3.7},
-  {partner: "Royaume-Uni", value: 3.2},
-  {partner: "Chine", value: 2.5},
-  {partner: "Japon", value: 1.1},
-  {partner: "Autres", value: 7.9}
-];
-
-display(Plot.plot({
-  title: "Exportations de marchandises par destination, octobre 2025 (en milliards $)",
-  width: 500,
-  height: 280,
-  marginLeft: 140,
-  x: {grid: true, label: "Milliards $"},
-  y: {label: null},
-  marks: [
-    Plot.barX(partnerData, {
-      y: "partner",
-      x: "value",
-      fill: "#AF3C43",
-      sort: {y: "-x"}
-    }),
-    Plot.text(partnerData, {
-      y: "partner",
-      x: "value",
-      text: d => d.value.toFixed(1).replace(".", ",") + " G$",
-      dx: 30,
-      fill: "currentColor"
-    })
-  ]
-}));
-```
+Le déficit commercial du Canada avec les pays autres que les États-Unis s'est rétréci, passant de 8,1 milliards de dollars en septembre à 5,4 milliards de dollars en octobre — le plus bas déficit depuis janvier 2021.
 
 <div class="note-to-readers">
 
 ## Note aux lecteurs
 
-Les données sur le commerce international de marchandises sont exprimées en dollars courants et sont désaisonnalisées. Les données portent sur le commerce de biens entre le Canada et ses partenaires commerciaux.
+Les données sur le commerce international de marchandises mesurent la valeur des biens qui franchissent les frontières du Canada. Les données sont désaisonnalisées.
 
 </div>
 

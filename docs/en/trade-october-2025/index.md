@@ -1,44 +1,45 @@
 ---
-title: Trade deficit widens to $2.6 billion in October 2025
+title: Canada posts $583 million trade deficit in October 2025
 toc: false
 ---
 
-# Trade deficit widens to $2.6 billion in October 2025
+# Canada posts $583 million trade deficit in October 2025
 
-<p class="release-date">Released: December 18, 2025 <span class="article-type-tag release">New Release</span></p>
+<p class="release-date">Released: January 8, 2026 <span class="article-type-tag release">New Release</span></p>
 
 <div class="highlights">
 
 **Highlights**
 
-- Merchandise imports rose 4.2% to $66.8 billion in October 2025
-- Exports were essentially unchanged at $64.2 billion
-- Canada's trade deficit widened to $2.6 billion from a $0.2 billion surplus in September
-- The United States remained the dominant trading partner at $45.8 billion in exports
+- Merchandise exports rose 2.1% to $65.6 billion in October 2025
+- Imports increased 3.4% to $66.2 billion
+- Canada's trade balance shifted from a $243 million surplus in September to a $583 million deficit in October
+- The trade surplus with the United States narrowed from $8.4 billion to $4.8 billion
 
 </div>
 
-Merchandise imports rose 4.2% to $66.8 billion in October 2025, while exports were essentially unchanged at $64.2 billion. This widened Canada's trade deficit to $2.6 billion, reversing September's small surplus.
+Merchandise exports increased 2.1% to $65.6 billion in October 2025, while imports rose 3.4% to $66.2 billion. Canada's merchandise trade balance with the world went from a small surplus of $243 million in September to a deficit of $583 million in October.
 
-Year over year, exports were down 1.3% compared with October 2024, while imports rose 1.9%.
+Exports of metal and non-metallic mineral products increased 27.3% to a record high, driven by exports of unwrought gold, silver, and platinum group metals. Excluding this product group, total exports were down 2.5%.
 
 ```js
 import * as Plot from "npm:@observablehq/plot";
 
+// Data from Statistics Canada Table 12-10-0011
 const tradeData = [
-  {date: new Date("2024-10"), exports: 65.07, imports: 65.56},
-  {date: new Date("2024-11"), exports: 66.42, imports: 67.03},
-  {date: new Date("2024-12"), exports: 69.92, imports: 69.15},
-  {date: new Date("2025-01"), exports: 72.86, imports: 69.22},
-  {date: new Date("2025-02"), exports: 68.81, imports: 69.89},
-  {date: new Date("2025-03"), exports: 67.45, imports: 69.38},
-  {date: new Date("2025-04"), exports: 60.04, imports: 67.32},
-  {date: new Date("2025-05"), exports: 61.03, imports: 66.78},
-  {date: new Date("2025-06"), exports: 61.48, imports: 67.05},
-  {date: new Date("2025-07"), exports: 62.37, imports: 66.19},
-  {date: new Date("2025-08"), exports: 60.40, imports: 66.83},
-  {date: new Date("2025-09"), exports: 64.23, imports: 64.08},
-  {date: new Date("2025-10"), exports: 64.20, imports: 66.80}
+  {date: new Date("2024-10"), exports: 65.1, imports: 65.6},
+  {date: new Date("2024-11"), exports: 66.4, imports: 67.0},
+  {date: new Date("2024-12"), exports: 69.9, imports: 69.2},
+  {date: new Date("2025-01"), exports: 72.9, imports: 69.2},
+  {date: new Date("2025-02"), exports: 68.8, imports: 69.9},
+  {date: new Date("2025-03"), exports: 67.5, imports: 69.4},
+  {date: new Date("2025-04"), exports: 60.0, imports: 67.3},
+  {date: new Date("2025-05"), exports: 61.0, imports: 66.8},
+  {date: new Date("2025-06"), exports: 61.5, imports: 67.1},
+  {date: new Date("2025-07"), exports: 62.4, imports: 66.2},
+  {date: new Date("2025-08"), exports: 60.4, imports: 66.8},
+  {date: new Date("2025-09"), exports: 64.3, imports: 64.0},
+  {date: new Date("2025-10"), exports: 65.6, imports: 66.2}
 ];
 
 display(Plot.plot({
@@ -58,45 +59,17 @@ display(Plot.plot({
 }));
 ```
 
-## Trade by partner
+## Trade with the United States
 
-The United States remained Canada's largest trading partner, accounting for $45.8 billion in exports — 71% of total merchandise exports. Exports to the European Union totalled $3.7 billion, while the United Kingdom received $3.2 billion.
+Canada's trade surplus with the United States narrowed from $8.4 billion in September to $4.8 billion in October. Canadian exports to the United States fell 3.4%, while imports from the United States rose 5.3%.
 
-```js
-const partners = [
-  {partner: "United States", value: 45.8},
-  {partner: "European Union", value: 3.7},
-  {partner: "United Kingdom", value: 3.2},
-  {partner: "China", value: 2.5}
-];
+Year-to-date, exports to the United States were down 4.1% compared with the same period in 2024.
 
-display(Plot.plot({
-  title: "Merchandise exports by trading partner, October 2025 ($ billions)",
-  width: 640,
-  height: 220,
-  marginLeft: 130,
-  marginRight: 60,
-  x: {grid: true, label: "Billions $"},
-  y: {label: null},
-  marks: [
-    Plot.ruleX([0]),
-    Plot.barX(partners, {
-      y: "partner",
-      x: "value",
-      fill: "#AF3C43",
-      sort: {y: "-x"}
-    }),
-    Plot.text(partners, {
-      y: "partner",
-      x: 50,
-      text: d => "$" + d.value.toFixed(1) + "B",
-      textAnchor: "end",
-      fill: "currentColor",
-      fontSize: 11
-    })
-  ]
-}));
-```
+## Trade with other countries
+
+Exports to countries other than the United States rose 15.6% to reach a record high in October. Higher exports to the United Kingdom (gold) and China (crude oil) contributed the most to this growth.
+
+Canada's trade deficit with countries other than the United States narrowed from $8.1 billion in September to $5.4 billion in October — the lowest deficit since January 2021.
 
 <div class="note-to-readers">
 
@@ -105,40 +78,6 @@ display(Plot.plot({
 International merchandise trade data measure the value of goods crossing Canada's borders. Data are seasonally adjusted.
 
 </div>
-
-<details>
-<summary>Reproducibility: R code for data extraction</summary>
-
-```r
-library(cansim)
-library(dplyr)
-
-# Fetch international trade data
-trade <- get_cansim("12-10-0144")
-
-# Exports and imports
-trade_summary <- trade %>%
-  filter(GEO == "Canada",
-         `Principal trading partners` == "All countries",
-         `Trade` %in% c("Export", "Import")) %>%
-  select(REF_DATE, Trade, VALUE) %>%
-  arrange(desc(REF_DATE))
-
-# Trade balance calculation
-exports <- trade_summary %>% filter(Trade == "Export", REF_DATE == "2025-10") %>% pull(VALUE)
-imports <- trade_summary %>% filter(Trade == "Import", REF_DATE == "2025-10") %>% pull(VALUE)
-balance <- exports - imports
-
-# By trading partner
-by_partner <- trade %>%
-  filter(GEO == "Canada",
-         REF_DATE == "2025-10",
-         `Principal trading partners` != "All countries") %>%
-  select(`Principal trading partners`, Trade, VALUE) %>%
-  arrange(Trade, desc(VALUE))
-```
-
-</details>
 
 <div class="source-info">
 
