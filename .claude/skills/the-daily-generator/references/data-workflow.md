@@ -332,3 +332,90 @@ Never substitute synthetic data.
 1. Only show percentages when BOTH values (before and after) are available
 2. If source only provides dollar change, report dollar change (not invented %)
 3. Ask: "Can I calculate this percentage from values I have?" If no → don't show %
+
+### Missing Verification JSON (Jan 2026)
+
+**What happened**: 32 articles were generated without corresponding JSON verification files. During a verification audit, these articles could not be immediately validated because there was no saved data to compare against.
+
+**The evidence**:
+- Articles in categories: Manufacturing, Food Services, IPPI, RMPI, Electricity, EI Claims, etc.
+- No JSON files in `output/` for these indicators
+- Required manual re-fetch from CANSIM to verify article claims
+
+**Root cause**: Articles were generated using ad-hoc R fetches that didn't save JSON files. The data was correct (verified via re-fetch), but the audit trail was missing.
+
+**Detection**:
+- Run verification: check each article has corresponding JSON in `output/`
+- If `output/<indicator>.json` doesn't exist → audit trail gap
+
+**Prevention**:
+1. **EVERY article MUST have a verification JSON file**
+2. Use `save_verification_json.R` for indicators not covered by enhanced fetcher
+3. Record JSON path in article's source-info div
+4. Pre-commit hook should verify JSON exists for each article
+
+## Verification JSON System
+
+Every article must have a corresponding JSON file to enable post-publication verification.
+
+### Required JSON Files
+
+| Indicator | JSON File | Source |
+|-----------|-----------|--------|
+| CPI | `data_18_10_0004_enhanced.json` | Enhanced fetcher |
+| LFS | `lfs_real.json` | Enhanced fetcher |
+| GDP | `gdp_real.json` | Enhanced fetcher |
+| Retail | `retail_real.json` | Enhanced fetcher |
+| Trade | `trade_real.json` | Enhanced fetcher |
+| Manufacturing | `manufacturing_sales.json` | save_verification_json.R |
+| Food Services | `food_services.json` | save_verification_json.R |
+| IPPI | `ippi.json` | save_verification_json.R |
+| RMPI | `rmpi.json` | save_verification_json.R |
+| Electricity | `electricity.json` | save_verification_json.R |
+| EI Claims | `ei_claims.json` | save_verification_json.R |
+
+### Using save_verification_json.R
+
+For indicators not covered by the enhanced fetcher:
+
+```r
+source("r-tools/save_verification_json.R")
+
+# One-step fetch and save
+fetch_and_save_verification(
+  series_name = "EI Claims",
+  table_number = "14-10-0005",
+  GEO == "Canada",
+  `Type of claim` == "Initial and renewal claims, seasonally adjusted",
+  `Claim detail` == "Received",
+  unit = "claims"
+)
+# → Creates output/ei_claims.json
+```
+
+### JSON Structure
+
+```json
+{
+  "series": "EI Claims",
+  "ref_date": "2025-10",
+  "value": 267280,
+  "mom_pct": -1.1,
+  "yoy_pct": 2.1,
+  "time_series": [...],
+  "provenance": {
+    "table_number": "14-10-0005",
+    "fetched_at": "2026-01-10 14:30:00 EST",
+    "statcan_url": "https://www150.statcan.gc.ca/t1/tbl1/en/tv.action?pid=1410000501",
+    "filters_applied": {...},
+    "article_slug": "ei-claims-october-2025"
+  }
+}
+```
+
+### Verification Workflow
+
+1. **Before generating**: Confirm JSON exists or create it
+2. **During generation**: Pull all values from JSON
+3. **After generation**: Record JSON path in article
+4. **During audit**: Compare article claims to JSON values

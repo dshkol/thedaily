@@ -79,28 +79,112 @@ Before finalizing ANY article, verify all checks pass.
    Rscript r-tools/fetch_cansim_enhanced.R <table-number> output
    → output/data_<table>_enhanced.json
 
-2. READ AND CONFIRM DATA (MANDATORY)
+2. VERIFY JSON EXISTS (MANDATORY)
+   Check that verification JSON file exists in output/
+   If missing, create it using save_verification_json.R:
+
+   Rscript -e "source('r-tools/save_verification_json.R'); ..."
+
+   See "Verification JSON Requirement" section below.
+
+3. READ AND CONFIRM DATA (MANDATORY)
    Before writing ANY article content:
    - Read the JSON file completely
    - State the headline value: "latest.yoy_pct_change is X.X%"
    - State the reference period: "metadata.reference_period is YYYY-MM"
    - If JSON doesn't exist or is stale, STOP - do not proceed
 
-3. CREATE ENGLISH ARTICLE
+4. CREATE ENGLISH ARTICLE
    docs/en/<slug>/index.md
 
-4. CREATE FRENCH ARTICLE
+5. CREATE FRENCH ARTICLE
    docs/fr/<slug-fr>/index.md
 
-5. UPDATE LANGUAGE MAP
+6. LINK ARTICLE TO JSON (MANDATORY)
+   Record which JSON file this article uses in the article's source-info div:
+
+   **Verification JSON:** `output/<indicator>.json`
+
+   This creates the audit trail from article → data source.
+
+7. UPDATE LANGUAGE MAP
    Add slug pair to src/lang-map.js
 
-6. UPDATE INDEX PAGES
+8. UPDATE INDEX PAGES
    Add entry to docs/en/index.md and docs/fr/index.md
 
-7. PREVIEW AND VERIFY
+9. PREVIEW AND VERIFY
    npm run dev → http://localhost:3000
 ```
+
+## Verification JSON Requirement
+
+**Every article MUST have a corresponding JSON verification file.** This enables:
+- Audit trail for data provenance
+- Post-publication verification
+- Detection of fabricated data
+
+### For Tables with Enhanced Fetcher Support
+
+Tables like CPI (18-10-0004), LFS (14-10-0287), Retail (20-10-0008) use the enhanced fetcher:
+```bash
+Rscript r-tools/fetch_cansim_enhanced.R 18-10-0004 output
+```
+This automatically creates `output/data_18_10_0004_enhanced.json`.
+
+### For Other Tables (Simpler Indicators)
+
+Use the verification JSON utility:
+```r
+source("r-tools/save_verification_json.R")
+
+# Fetch and save in one step
+fetch_and_save_verification(
+  series_name = "Manufacturing Sales",
+  table_number = "16-10-0047",
+  GEO == "Canada",
+  `Seasonal adjustment` == "Seasonally adjusted",
+  `Principal statistics` == "Sales of goods manufactured (shipments)",
+  `North American Industry Classification System (NAICS)` == "Manufacturing",
+  unit = "millions"
+)
+```
+
+Or manually:
+```r
+source("r-tools/save_verification_json.R")
+
+# Your custom fetch
+data <- get_cansim("16-10-0047") %>%
+  filter(...) %>%
+  select(REF_DATE, VALUE) %>%
+  arrange(REF_DATE)
+
+# Save verification JSON
+save_verification_json(
+  series_name = "Manufacturing Sales",
+  table_number = "16-10-0047",
+  data = data,
+  unit = "millions",
+  article_slug = "manufacturing-sales-october-2025"
+)
+```
+
+### JSON File Naming Convention
+
+| Series Name | JSON Filename |
+|-------------|---------------|
+| Manufacturing Sales | `manufacturing_sales.json` |
+| Consumer Price Index | `data_18_10_0004_enhanced.json` |
+| EI Claims | `ei_claims.json` |
+| Industrial Product Prices | `ippi.json` |
+
+### Verification Before Publishing
+
+Before marking an article complete:
+1. Confirm JSON file exists in `output/`
+2. Confirm article values match JSON values
+3. Confirm article period ≤ JSON reference period
 
 ## Article Structure
 
@@ -243,6 +327,7 @@ import * as Plot from "npm:@observablehq/plot";
 ## Quality Checklist
 
 Before publishing:
+- [ ] **Verification JSON exists** in `output/` for this indicator
 - [ ] All values from fetched JSON (no made-up data)
 - [ ] Headline leads with key statistic
 - [ ] Charts render with #AF3C43 color
@@ -250,6 +335,7 @@ Before publishing:
 - [ ] Voice is neutral (no "surged", "plummeted")
 - [ ] French uses comma decimals (2,2 %)
 - [ ] R code reproducibility section included with correct table number
+- [ ] **Verification JSON path** noted in source-info div
 
 ## Review Mode
 
