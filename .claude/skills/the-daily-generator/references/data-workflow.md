@@ -284,3 +284,51 @@ Never substitute synthetic data.
 2. If time_series shows Oct 2024 = X and Oct 2025 = Y, verify (Y-X)/X × 100 matches claimed YoY
 3. Be especially careful with small percentage changes (<1%)
 4. Double-check decimal places: 0.04% ≠ 0.4% ≠ 4%
+
+### Article Generated for Unreleased Period (Jan 2026)
+
+**What happened**: International trade article claimed to cover October 2025, but JSON only contained September 2025 data. October data wasn't released until January 8, 2026.
+
+**The evidence**:
+- JSON `reference_period`: "2025-09"
+- JSON `end_period`: "2025-09"
+- JSON `fetched_at`: "2025-12-23"
+- Article claimed: October 2025
+- Official October release: 2026-01-08
+
+**Result**: LLM fabricated internally-consistent but completely wrong October figures:
+- Claimed: exports flat, imports +4.2%, deficit $2.6B
+- Actual (released Jan 8): exports +2.1%, imports +3.4%, deficit $583M
+
+**Root cause**: Article was requested for a period beyond what existed in the JSON. Without real data, LLM invented plausible-looking values that were self-consistent but externally wrong.
+
+**Detection**:
+- Internally consistent ≠ externally accurate
+- Compare JSON `reference_period` against article's claimed reference period
+- If article period > JSON period → data was fabricated
+
+**Prevention**:
+1. **NEVER generate articles for periods beyond `metadata.reference_period`**
+2. Before generating, verify: `article_period <= JSON.metadata.reference_period`
+3. If user requests future period, STOP and report: "Data not yet available"
+4. Check StatCan release schedule before attempting to generate
+
+### Percentage Fabrication from Dollar Values (Jan 2026)
+
+**What happened**: Building permits article showed industrial component +12.5%, but source only had dollar change ("edged down $3.9 million").
+
+**The evidence**:
+- Source text: "industrial component edged down $3.9 million"
+- Article claimed: Industrial +12.5%
+- No base value was available to calculate percentage
+
+**Root cause**: LLM invented a percentage when only absolute change was provided. Without the denominator, percentage cannot be calculated.
+
+**Detection**:
+- If source shows "$X change" but article shows "Y% change" → verify base value exists
+- Percentage requires: (new - old) / old × 100. If "old" is unknown, percentage is fabricated.
+
+**Prevention**:
+1. Only show percentages when BOTH values (before and after) are available
+2. If source only provides dollar change, report dollar change (not invented %)
+3. Ask: "Can I calculate this percentage from values I have?" If no → don't show %
