@@ -32,28 +32,45 @@ Every number in the article MUST come from the JSON file:
 
 **If a value isn't in the JSON, don't include it in the article.**
 
-## Red Flags: Fabrication Detection
+## Fabrication Prevention Checklist
 
-Before publishing ANY article, verify these checks pass:
+Before finalizing ANY article, verify all checks pass.
 
-### 1. Subseries/Component Data
-- [ ] Does `subseries[]` array exist in JSON? If empty/missing → omit breakdown from article
-- [ ] Can you cite the exact JSON path for EACH component value?
-- [ ] If multiple months generated: are component values DIFFERENT across months? (Identical = fabricated)
+### 1. Provenance (every number has a source)
 
-### 2. Provincial Data
-- [ ] Does `provincial[]` array exist in JSON? If empty/missing → omit provincial table
-- [ ] Can you cite the exact JSON path for EACH provincial value?
-- [ ] If multiple months generated: are provincial values DIFFERENT across months? (Identical = fabricated)
+**Principle:** Don't ask "does this look like real data?" — ask "can I trace every number to a verified source?"
 
-### 3. YoY Calculations
-- [ ] Cross-validate: Calculate YoY manually from time_series values
-- [ ] Formula: (current_value - year_ago_value) / year_ago_value × 100
-- [ ] If calculated YoY differs from claimed YoY by >0.1pp → STOP and investigate
+- [ ] Headline figure: cite JSON path (e.g., `latest.yoy_pct_change = 2.2`)
+- [ ] Each chart data point: from `time_series[N].value`
+- [ ] Each table cell: from `subseries[N]` or `provincial[N]`
+- [ ] **If you cannot cite the source → DO NOT include the number**
 
-### 4. Data-Article Period Match
-- [ ] Does JSON `metadata.reference_period` match the article's reference period?
-- [ ] If generating historical article: verify subseries/provincial data matches that period (not latest)
+### 2. Arithmetic Verification (math must be exact)
+
+- [ ] Recalculate YoY from time_series: `(current - year_ago) / year_ago × 100`
+- [ ] Recalculate MoM from time_series: `(current - previous) / previous × 100`
+- [ ] If trade data: verify `balance = exports - imports` exactly
+- [ ] If components shown: verify they sum to total correctly
+- [ ] **If calculated value differs from claimed by >0.1pp → STOP and investigate**
+
+### 3. Period Match (critical)
+
+- [ ] Article reference period ≤ JSON `metadata.reference_period`
+- [ ] **If article period > JSON period → STOP, data doesn't exist yet**
+
+**Example of failure:** Trade October 2025 article generated from September 2025 JSON → all figures fabricated.
+
+### 4. Variation Check (for batch generation)
+
+- [ ] Component values DIFFER across months generated
+- [ ] Provincial values DIFFER across months generated
+- [ ] **If values identical across months → you're copying stale data**
+
+### 5. Subseries/Provincial Data Exists
+
+- [ ] Does `subseries[]` array exist and have entries? If empty → omit breakdown
+- [ ] Does `provincial[]` array exist and have entries? If empty → omit provincial table
+- [ ] Can you cite exact JSON path for EACH breakdown value?
 
 ## Workflow
 
