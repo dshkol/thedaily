@@ -5,7 +5,8 @@
   "type": "module",
   "scripts": {
     "dev": "observable preview",
-    "build": "observable build && node scripts/fix-paths.js",
+    "build": "node scripts/validate-verification.js && observable build && node scripts/fix-paths.js",
+    "validate": "node scripts/validate-verification.js",
     "clean": "rm -rf dist .observablehq",
     "test": "node --test scripts/*.test.js"
   },

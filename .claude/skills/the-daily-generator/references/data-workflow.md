@@ -349,55 +349,45 @@ Never substitute synthetic data.
 - If `output/<indicator>.json` doesn't exist → audit trail gap
 
 **Prevention**:
-1. **EVERY article MUST have a verification JSON file**
-2. Use `save_verification_json.R` for indicators not covered by enhanced fetcher
-3. Record JSON path in article's source-info div
-4. Pre-commit hook should verify JSON exists for each article
+1. **EVERY article MUST declare `verification_json` in frontmatter**
+2. Use `fetch_cansim_enhanced.R --simple` for single-series indicators
+3. Build fails if verification JSON is missing or invalid
 
 ## Verification JSON System
 
-Every article must have a corresponding JSON file to enable post-publication verification.
+Every article must declare its verification JSON in frontmatter. Build-time validation enforces this.
 
-### Required JSON Files
+### Fetching Data
 
-| Indicator | JSON File | Source |
-|-----------|-----------|--------|
-| CPI | `data_18_10_0004_enhanced.json` | Enhanced fetcher |
-| LFS | `lfs_real.json` | Enhanced fetcher |
-| GDP | `gdp_real.json` | Enhanced fetcher |
-| Retail | `retail_real.json` | Enhanced fetcher |
-| Trade | `trade_real.json` | Enhanced fetcher |
-| Manufacturing | `manufacturing_sales.json` | save_verification_json.R |
-| Food Services | `food_services.json` | save_verification_json.R |
-| IPPI | `ippi.json` | save_verification_json.R |
-| RMPI | `rmpi.json` | save_verification_json.R |
-| Electricity | `electricity.json` | save_verification_json.R |
-| EI Claims | `ei_claims.json` | save_verification_json.R |
+**One tool for all tables:**
 
-### Using save_verification_json.R
+```bash
+# Complex tables (CPI, LFS, GDP, Retail)
+Rscript r-tools/fetch_cansim_enhanced.R 18-10-0004 output
 
-For indicators not covered by the enhanced fetcher:
-
-```r
-source("r-tools/save_verification_json.R")
-
-# One-step fetch and save
-fetch_and_save_verification(
-  series_name = "EI Claims",
-  table_number = "14-10-0005",
-  GEO == "Canada",
-  `Type of claim` == "Initial and renewal claims, seasonally adjusted",
-  `Claim detail` == "Received",
-  unit = "claims"
-)
-# → Creates output/ei_claims.json
+# Simple single-series indicators
+Rscript r-tools/fetch_cansim_enhanced.R 14-10-0005 output --simple \
+  --filter "GEO=Canada" \
+  --filter "Type of claim=Initial and renewal claims, seasonally adjusted" \
+  --filter "Claim detail=Received" \
+  --name "ei_claims"
 ```
 
-### JSON Structure
+### Article Frontmatter
+
+```yaml
+---
+title: EI claims down 1.1% in October 2025
+verification_json: output/ei_claims.json
+toc: false
+---
+```
+
+### JSON Structure (Simple Mode)
 
 ```json
 {
-  "series": "EI Claims",
+  "series": "Ei claims",
   "ref_date": "2025-10",
   "value": 267280,
   "mom_pct": -1.1,
@@ -405,17 +395,18 @@ fetch_and_save_verification(
   "time_series": [...],
   "provenance": {
     "table_number": "14-10-0005",
-    "fetched_at": "2026-01-10 14:30:00 EST",
+    "fetched_at": "2026-01-10 14:30:00 PST",
     "statcan_url": "https://www150.statcan.gc.ca/t1/tbl1/en/tv.action?pid=1410000501",
-    "filters_applied": {...},
-    "article_slug": "ei-claims-october-2025"
+    "filters_applied": {"GEO": "Canada", ...},
+    "r_version": "4.5.0",
+    "cansim_package_version": "0.4.4"
   }
 }
 ```
 
 ### Verification Workflow
 
-1. **Before generating**: Confirm JSON exists or create it
-2. **During generation**: Pull all values from JSON
-3. **After generation**: Record JSON path in article
-4. **During audit**: Compare article claims to JSON values
+1. **Fetch**: Run `fetch_cansim_enhanced.R` (with --simple if needed)
+2. **Declare**: Add `verification_json` to article frontmatter
+3. **Build**: Site validates JSON exists (fails if missing)
+4. **Audit**: Run `Rscript r-tools/check_verification_coverage.R`

@@ -76,121 +76,100 @@ Before finalizing ANY article, verify all checks pass.
 
 ```
 1. FETCH DATA
+   For complex tables (CPI, LFS, GDP, Retail):
    Rscript r-tools/fetch_cansim_enhanced.R <table-number> output
    → output/data_<table>_enhanced.json
 
-2. VERIFY JSON EXISTS (MANDATORY)
-   Check that verification JSON file exists in output/
-   If missing, create it using save_verification_json.R:
+   For simple single-series indicators:
+   Rscript r-tools/fetch_cansim_enhanced.R <table-number> output --simple \
+     --filter "GEO=Canada" \
+     --filter "Column Name=Filter Value" \
+     --name "indicator_name"
+   → output/indicator_name.json
 
-   Rscript -e "source('r-tools/save_verification_json.R'); ..."
-
-   See "Verification JSON Requirement" section below.
-
-3. READ AND CONFIRM DATA (MANDATORY)
+2. READ AND CONFIRM DATA (MANDATORY)
    Before writing ANY article content:
    - Read the JSON file completely
-   - State the headline value: "latest.yoy_pct_change is X.X%"
-   - State the reference period: "metadata.reference_period is YYYY-MM"
+   - State the headline value: "yoy_pct is X.X%"
+   - State the reference period: "ref_date is YYYY-MM"
    - If JSON doesn't exist or is stale, STOP - do not proceed
 
-4. CREATE ENGLISH ARTICLE
+3. CREATE ENGLISH ARTICLE WITH FRONTMATTER (MANDATORY)
    docs/en/<slug>/index.md
 
-5. CREATE FRENCH ARTICLE
-   docs/fr/<slug-fr>/index.md
+   MUST include verification_json in frontmatter:
+   ---
+   title: Manufacturing sales down 1.0% in October 2025
+   verification_json: output/manufacturing_sales.json
+   toc: false
+   ---
 
-6. LINK ARTICLE TO JSON (MANDATORY)
-   Record which JSON file this article uses in the article's source-info div:
+4. CREATE FRENCH ARTICLE
+   docs/fr/<slug-fr>/index.md (same frontmatter requirement)
 
-   **Verification JSON:** `output/<indicator>.json`
-
-   This creates the audit trail from article → data source.
-
-7. UPDATE LANGUAGE MAP
+5. UPDATE LANGUAGE MAP
    Add slug pair to src/lang-map.js
 
-8. UPDATE INDEX PAGES
+6. UPDATE INDEX PAGES
    Add entry to docs/en/index.md and docs/fr/index.md
 
-9. PREVIEW AND VERIFY
+7. PREVIEW AND VERIFY
    npm run dev → http://localhost:3000
 ```
 
 ## Verification JSON Requirement
 
-**Every article MUST have a corresponding JSON verification file.** This enables:
+**Every article MUST declare its verification JSON in frontmatter.** This enables:
+- Build-time validation (fails if JSON missing)
 - Audit trail for data provenance
-- Post-publication verification
 - Detection of fabricated data
 
-### For Tables with Enhanced Fetcher Support
+### Fetching Data
 
-Tables like CPI (18-10-0004), LFS (14-10-0287), Retail (20-10-0008) use the enhanced fetcher:
+**One tool for all tables** - use `fetch_cansim_enhanced.R`:
+
 ```bash
+# Complex tables with subseries/provincial breakdowns
 Rscript r-tools/fetch_cansim_enhanced.R 18-10-0004 output
-```
-This automatically creates `output/data_18_10_0004_enhanced.json`.
 
-### For Other Tables (Simpler Indicators)
-
-Use the verification JSON utility:
-```r
-source("r-tools/save_verification_json.R")
-
-# Fetch and save in one step
-fetch_and_save_verification(
-  series_name = "Manufacturing Sales",
-  table_number = "16-10-0047",
-  GEO == "Canada",
-  `Seasonal adjustment` == "Seasonally adjusted",
-  `Principal statistics` == "Sales of goods manufactured (shipments)",
-  `North American Industry Classification System (NAICS)` == "Manufacturing",
-  unit = "millions"
-)
+# Simple single-series indicators
+Rscript r-tools/fetch_cansim_enhanced.R 16-10-0047 output --simple \
+  --filter "GEO=Canada" \
+  --filter "Seasonal adjustment=Seasonally adjusted" \
+  --filter "Principal statistics=Sales of goods manufactured (shipments)" \
+  --filter "North American Industry Classification System (NAICS)=Manufacturing" \
+  --name "manufacturing_sales"
 ```
 
-Or manually:
-```r
-source("r-tools/save_verification_json.R")
+### Frontmatter Declaration
 
-# Your custom fetch
-data <- get_cansim("16-10-0047") %>%
-  filter(...) %>%
-  select(REF_DATE, VALUE) %>%
-  arrange(REF_DATE)
+Every article must include `verification_json` in its YAML frontmatter:
 
-# Save verification JSON
-save_verification_json(
-  series_name = "Manufacturing Sales",
-  table_number = "16-10-0047",
-  data = data,
-  unit = "millions",
-  article_slug = "manufacturing-sales-october-2025"
-)
+```yaml
+---
+title: Manufacturing sales down 1.0% in October 2025
+verification_json: output/manufacturing_sales.json
+toc: false
+---
 ```
 
-### JSON File Naming Convention
+This is **enforced at build time** - the site will not build if:
+- `verification_json` field is missing
+- The referenced JSON file doesn't exist
 
-| Series Name | JSON Filename |
-|-------------|---------------|
-| Manufacturing Sales | `manufacturing_sales.json` |
-| Consumer Price Index | `data_18_10_0004_enhanced.json` |
-| EI Claims | `ei_claims.json` |
-| Industrial Product Prices | `ippi.json` |
+### Verification Audit
 
-### Verification Before Publishing
-
-Before marking an article complete:
-1. Confirm JSON file exists in `output/`
-2. Confirm article values match JSON values
-3. Confirm article period ≤ JSON reference period
+Run the coverage checker to see which articles have valid verification:
+```bash
+Rscript r-tools/check_verification_coverage.R
+```
 
 ## Article Structure
 
 ```markdown
 ---
 title: Consumer prices up 2.2% year over year in November 2025
+verification_json: output/data_18_10_0004_enhanced.json
 toc: false
 ---
 
@@ -327,7 +306,7 @@ import * as Plot from "npm:@observablehq/plot";
 ## Quality Checklist
 
 Before publishing:
-- [ ] **Verification JSON exists** in `output/` for this indicator
+- [ ] **`verification_json` in frontmatter** pointing to valid JSON file
 - [ ] All values from fetched JSON (no made-up data)
 - [ ] Headline leads with key statistic
 - [ ] Charts render with #AF3C43 color
@@ -335,7 +314,6 @@ Before publishing:
 - [ ] Voice is neutral (no "surged", "plummeted")
 - [ ] French uses comma decimals (2,2 %)
 - [ ] R code reproducibility section included with correct table number
-- [ ] **Verification JSON path** noted in source-info div
 
 ## Review Mode
 

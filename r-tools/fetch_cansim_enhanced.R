@@ -30,12 +30,49 @@ tryCatch({
 # =============================================================================
 args <- commandArgs(trailingOnly = TRUE)
 table_number <- if (length(args) > 0) args[1] else "18-10-0004"
-output_dir <- if (length(args) > 1) args[2] else "output"
-# Use --refresh flag to force re-download
+output_dir <- if (length(args) > 1 && !startsWith(args[2], "--")) args[2] else "output"
+
+# Flags
 force_refresh <- "--refresh" %in% args
+simple_mode <- "--simple" %in% args
+
+# Parse --filter arguments: --filter "GEO=Canada" --filter "Type=Total"
+# Returns list of column=value pairs
+parse_filters <- function(args) {
+  filters <- list()
+  filter_indices <- which(args == "--filter")
+  for (i in filter_indices) {
+    if (i + 1 <= length(args)) {
+      filter_str <- args[i + 1]
+      parts <- strsplit(filter_str, "=", fixed = TRUE)[[1]]
+      if (length(parts) == 2) {
+        filters[[parts[1]]] <- parts[2]
+      }
+    }
+  }
+  return(filters)
+}
+
+# Parse --name argument for output filename
+parse_name <- function(args) {
+  name_idx <- which(args == "--name")
+  if (length(name_idx) > 0 && name_idx[1] + 1 <= length(args)) {
+    return(args[name_idx[1] + 1])
+  }
+  return(NULL)
+}
+
+cli_filters <- parse_filters(args)
+output_name <- parse_name(args)
 
 cat("Fetching CANSIM table:", table_number, "\n")
 if (force_refresh) cat("Force refresh enabled\n")
+if (simple_mode) {
+  cat("Simple mode enabled\n")
+  if (length(cli_filters) > 0) {
+    cat("Filters:", paste(names(cli_filters), cli_filters, sep = "=", collapse = ", "), "\n")
+  }
+}
 
 # Create output directory if needed
 dir.create(output_dir, showWarnings = FALSE, recursive = TRUE)
@@ -131,6 +168,102 @@ dimension_cols <- setdiff(
 )
 
 cat("\nDimensions:", paste(dimension_cols, collapse = ", "), "\n")
+
+# =============================================================================
+# SIMPLE MODE: Single-series extraction with CLI filters
+# =============================================================================
+if (simple_mode) {
+  cat("\n=== Simple Mode Processing ===\n")
+
+  # Apply CLI filters
+  filtered_data <- data
+  for (col_name in names(cli_filters)) {
+    filter_value <- cli_filters[[col_name]]
+    if (col_name %in% names(filtered_data)) {
+      filtered_data <- filtered_data %>%
+        filter(.data[[col_name]] == filter_value)
+      cat(sprintf("  Filter: %s = '%s' -> %d rows\n", col_name, filter_value, nrow(filtered_data)))
+    } else {
+      cat(sprintf("  WARNING: Column '%s' not found in data\n", col_name))
+    }
+  }
+
+  if (nrow(filtered_data) == 0) {
+    stop("No data after applying filters. Check filter column names and values.")
+  }
+
+  # Remove NA values and sort by date
+  filtered_data <- filtered_data %>%
+    filter(!is.na(VALUE)) %>%
+    arrange(Date)
+
+  cat(sprintf("Final filtered rows: %d\n", nrow(filtered_data)))
+
+  # Calculate changes
+  processed <- filtered_data %>%
+    select(Date, REF_DATE, GEO, VALUE) %>%
+    mutate(
+      prev_value = lag(VALUE, 1),
+      yoy_value = lag(VALUE, 12),
+      mom_pct_change = round((VALUE - prev_value) / prev_value * 100, 1),
+      yoy_pct_change = round((VALUE - yoy_value) / yoy_value * 100, 1)
+    )
+
+  latest <- tail(processed, 1)
+
+  # Build time series
+  time_series <- processed %>%
+    tail(24) %>%
+    transmute(
+      date = REF_DATE,
+      value = VALUE
+    )
+
+  # Determine output filename
+  if (!is.null(output_name)) {
+    output_filename <- paste0(output_name, ".json")
+  } else {
+    output_filename <- paste0("data_", gsub("-", "_", table_number), "_simple.json")
+  }
+
+  # Build simple output structure
+  simple_output <- list(
+    series = if (!is.null(output_name)) gsub("_", " ", tools::toTitleCase(output_name)) else table_info$`Cube Title`,
+    ref_date = latest$REF_DATE,
+    value = latest$VALUE,
+    mom_pct = latest$mom_pct_change,
+    yoy_pct = latest$yoy_pct_change,
+    time_series = lapply(1:nrow(time_series), function(i) {
+      list(date = time_series$date[i], value = time_series$value[i])
+    }),
+    provenance = list(
+      table_number = table_number,
+      fetched_at = format(Sys.time(), "%Y-%m-%d %H:%M:%S %Z"),
+      statcan_url = paste0("https://www150.statcan.gc.ca/t1/tbl1/en/tv.action?pid=", gsub("-", "", table_number), "01"),
+      filters_applied = cli_filters,
+      r_version = paste(R.version$major, R.version$minor, sep = "."),
+      cansim_package_version = as.character(packageVersion("cansim"))
+    )
+  )
+
+  # Write output
+  output_file <- file.path(output_dir, output_filename)
+  write_json(simple_output, output_file, pretty = TRUE, auto_unbox = TRUE)
+
+  cat("\n=== Simple Mode Complete ===\n")
+  cat(sprintf("Series: %s\n", simple_output$series))
+  cat(sprintf("Latest: %s = %.1f\n", latest$REF_DATE, latest$VALUE))
+  cat(sprintf("MoM: %.1f%%\n", latest$mom_pct_change))
+  cat(sprintf("YoY: %.1f%%\n", latest$yoy_pct_change))
+  cat(sprintf("Output: %s\n", output_file))
+
+  # Exit early - skip complex processing
+  quit(save = "no", status = 0)
+}
+
+# =============================================================================
+# ENHANCED MODE: Complex table type detection and multi-series extraction
+# =============================================================================
 
 # Determine table type and extract appropriate series
 if ("Products and product groups" %in% names(data)) {
