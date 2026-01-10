@@ -1,5 +1,6 @@
 ---
 title: L'indice des taux de salaire syndicaux dans la construction en hausse de 2,3 % sur un an en novembre 2025
+verification_json: output/data_18_10_0140_enhanced.json
 toc: false
 ---
 

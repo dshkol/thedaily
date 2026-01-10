@@ -1,8 +1,8 @@
 ---
 title: Consumer prices up 2.6% year over year in February 2025
+verification_json: output/data_18_10_0004_enhanced.json
 toc: false
 ---
-
 # Consumer prices up 2.6% year over year in February 2025
 
 <p class="release-date">Released: March 18, 2025</p>

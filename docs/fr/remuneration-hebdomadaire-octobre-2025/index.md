@@ -1,5 +1,6 @@
 ---
 title: La rémunération hebdomadaire moyenne en baisse de 0,2 % en octobre, mettant fin à une série de quatre mois
+verification_json: output/data_14_10_0223_enhanced.json
 toc: false
 ---
 

@@ -1,8 +1,8 @@
 ---
 title: New housing prices unchanged in November 2025
+verification_json: output/nhpi.json
 toc: false
 ---
-
 # New housing prices unchanged in November 2025
 
 <p class="release-date">Released: December 19, 2025 <span class="article-type-tag release">New Release</span></p>

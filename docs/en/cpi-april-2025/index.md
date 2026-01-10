@@ -1,8 +1,8 @@
 ---
 title: Consumer prices up 1.7% year over year in April 2025
+verification_json: output/data_18_10_0004_enhanced.json
 toc: false
 ---
-
 # Consumer prices up 1.7% year over year in April 2025
 
 <p class="release-date">Released: May 20, 2025</p>

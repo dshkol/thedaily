@@ -1,5 +1,6 @@
 ---
 title: L'emploi en légère hausse de 9 000 en mai 2025, le taux de chômage monte à 7,0 %
+verification_json: output/data_14_10_0287_enhanced.json
 toc: false
 ---
 

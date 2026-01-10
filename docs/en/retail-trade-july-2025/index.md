@@ -1,8 +1,8 @@
 ---
 title: Retail sales edge down 0.9% in July as motor vehicle sales slip
+verification_json: output/data_20_10_0056_enhanced.json
 toc: false
 ---
-
 # Retail sales edge down 0.9% in July as motor vehicle sales slip
 
 <p class="release-date">Released: December 28, 2025 <span class="article-type-tag backfill">Backfill</span></p>

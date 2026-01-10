@@ -1,7 +1,7 @@
 ---
 title: Canadian dollar strengthens 3.1% against U.S. dollar year over year in December 2025
+verification_json: output/data_33_10_0163_enhanced.json
 ---
-
 # Canadian dollar strengthens 3.1% against U.S. dollar year over year in December 2025
 
 <p class="release-date">Released: 2026-01-06</p>

@@ -1,5 +1,6 @@
 ---
 title: Les ventes au détail en baisse de 0,9 % en septembre 2025
+verification_json: output/data_20_10_0056_enhanced.json
 toc: false
 ---
 

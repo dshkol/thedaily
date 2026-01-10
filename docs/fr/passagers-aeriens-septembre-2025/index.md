@@ -1,5 +1,6 @@
 ---
 title: Le nombre de passagers aériens en baisse de 11,3 % en septembre 2025 à la fin de l'été
+verification_json: output/data_23_10_0079_enhanced.json
 toc: false
 ---
 

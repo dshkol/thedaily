@@ -1,5 +1,6 @@
 ---
 title: La production d'électricité en baisse de 6,7 % en septembre 2025
+verification_json: output/data_25_10_0015_enhanced.json
 toc: false
 ---
 

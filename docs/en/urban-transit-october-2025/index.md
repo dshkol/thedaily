@@ -1,8 +1,8 @@
 ---
 title: Urban transit ridership down 3.6% in October 2025 despite higher revenues
+verification_json: output/data_23_10_0253_enhanced.json
 toc: false
 ---
-
 # Urban transit ridership down 3.6% in October 2025 despite higher revenues
 
 <p class="release-date">Released: December 30, 2025 <span class="article-type-tag release">New Release</span></p>

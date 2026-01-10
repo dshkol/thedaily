@@ -1,7 +1,7 @@
 ---
 title: Bank of Canada policy rate at 2.25% in December 2025, down 275 basis points from peak
+verification_json: output/data_10_10_0164_enhanced.json
 ---
-
 # Bank of Canada policy rate at 2.25% in December 2025, down 275 basis points from peak
 
 <p class="release-date">Released: 2026-01-07</p>

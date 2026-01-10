@@ -1,7 +1,7 @@
 ---
 title: Frozen poultry stocks down 9.5% year over year in December 2025
+verification_json: output/data_23_10_0253_enhanced.json
 ---
-
 # Frozen poultry stocks down 9.5% year over year in December 2025
 
 <p class="release-date">Released: 2026-01-07</p>

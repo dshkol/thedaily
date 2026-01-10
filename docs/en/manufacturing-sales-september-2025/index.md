@@ -1,8 +1,8 @@
 ---
 title: Manufacturing sales up 3.6% in September 2025
+verification_json: output/data_16_10_0047_enhanced.json
 toc: false
 ---
-
 # Manufacturing sales up 3.6% in September 2025
 
 <p class="release-date">Released: November 15, 2025</p>

@@ -1,8 +1,8 @@
 ---
 title: Western Canadian grain deliveries up 14.2% year over year in November 2025
+verification_json: output/data_32_10_0352_enhanced.json
 toc: false
 ---
-
 # Western Canadian grain deliveries up 14.2% year over year in November 2025
 
 <p class="release-date">Released: December 30, 2025 <span class="article-type-tag release">New Release</span></p>

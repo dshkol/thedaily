@@ -1,8 +1,8 @@
 ---
 title: Employment down 33,000 in March 2025, unemployment rate rises to 6.7%
+verification_json: output/data_14_10_0287_enhanced.json
 toc: false
 ---
-
 # Employment down 33,000 in March 2025, unemployment rate rises to 6.7%
 
 <p class="release-date">Released: April 4, 2025</p>

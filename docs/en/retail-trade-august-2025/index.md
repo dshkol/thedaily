@@ -1,8 +1,8 @@
 ---
 title: Retail sales up 1.0% in August 2025
+verification_json: output/data_20_10_0056_enhanced.json
 toc: false
 ---
-
 # Retail sales up 1.0% in August 2025
 
 <p class="release-date">Released: October 18, 2025</p>

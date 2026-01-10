@@ -1,8 +1,8 @@
 ---
 title: Household credit up 4.5% year over year in October 2025
+verification_json: output/data_36_10_0639_enhanced.json
 toc: false
 ---
-
 # Household credit up 4.5% year over year in October 2025
 
 <p class="release-date">Released: December 29, 2025 <span class="article-type-tag release">New Release</span></p>

@@ -1,8 +1,8 @@
 ---
 title: Employment down 41,000 in July 2025, unemployment rate unchanged at 6.9%
+verification_json: output/data_14_10_0287_enhanced.json
 toc: false
 ---
-
 # Employment down 41,000 in July 2025, unemployment rate unchanged at 6.9%
 
 <p class="release-date">Released: August 8, 2025</p>

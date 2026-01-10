@@ -1,5 +1,6 @@
 ---
 title: Les ventes au détail en hausse de 0,4 % en août, quatre provinces affichent une croissance annuelle à deux chiffres
+verification_json: output/data_20_10_0056_enhanced.json
 toc: false
 ---
 

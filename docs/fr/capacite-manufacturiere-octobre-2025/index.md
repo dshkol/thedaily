@@ -1,5 +1,6 @@
 ---
 title: Le taux d'utilisation de la capacite industrielle inchange d'une annee a l'autre en octobre 2025
+verification_json: output/data_16_10_0012_enhanced.json
 toc: false
 ---
 

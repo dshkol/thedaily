@@ -1,8 +1,8 @@
 ---
 title: Crude oil production up 9% year over year in September despite monthly decline
+verification_json: output/data_25_10_0015_enhanced.json
 toc: false
 ---
-
 # Crude oil production up 9% year over year in September despite monthly decline
 
 <p class="release-date">Released: December 28, 2025 <span class="article-type-tag backfill">Backfill</span></p>

@@ -1,5 +1,6 @@
 ---
 title: Les ventes au détail reculent de 2,9 % en juillet, mais la croissance annuelle demeure forte à 7,9 %
+verification_json: output/data_20_10_0056_enhanced.json
 toc: false
 ---
 

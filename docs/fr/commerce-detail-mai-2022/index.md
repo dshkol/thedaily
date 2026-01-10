@@ -1,5 +1,6 @@
 ---
 title: Les ventes au détail bondissent de 15,6 % d'une année à l'autre en mai, l'Ontario affiche un gain exceptionnel de 27,8 %
+verification_json: output/data_20_10_0056_enhanced.json
 toc: false
 ---
 

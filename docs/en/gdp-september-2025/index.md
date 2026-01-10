@@ -1,8 +1,8 @@
 ---
 title: Real GDP up 0.2% in September 2025
+verification_json: output/data_36_10_0434_enhanced.json
 toc: false
 ---
-
 # Real GDP up 0.2% in September 2025
 
 <p class="release-date">Released: November 29, 2025</p>

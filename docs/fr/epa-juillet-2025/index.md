@@ -1,5 +1,6 @@
 ---
 title: L'emploi en baisse de 41 000 en juillet 2025, le taux de chômage inchangé à 6,9 %
+verification_json: output/data_14_10_0287_enhanced.json
 toc: false
 ---
 

@@ -1,8 +1,8 @@
 ---
 title: Gasoline prices up 1.7% in November 2025
+verification_json: output/data_18_10_0029_enhanced.json
 toc: false
 ---
-
 # Gasoline prices up 1.7% in November 2025
 
 <p class="release-date">Released: December 15, 2025</p>

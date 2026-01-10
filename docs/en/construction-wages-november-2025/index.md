@@ -1,8 +1,8 @@
 ---
 title: Construction union wage rate index up 2.3% year over year in November 2025
+verification_json: output/data_18_10_0140_enhanced.json
 toc: false
 ---
-
 # Construction union wage rate index up 2.3% year over year in November 2025
 
 <p class="release-date">Data released: December 15, 2025 | Published: January 4, 2026 <span class="article-type-tag release">New Release</span></p>

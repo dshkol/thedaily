@@ -1,8 +1,8 @@
 ---
 title: Electric power generation down 4.8% in August 2025
+verification_json: output/data_25_10_0015_enhanced.json
 toc: false
 ---
-
 # Electric power generation down 4.8% in August 2025
 
 <p class="release-date">Released: November 25, 2025</p>

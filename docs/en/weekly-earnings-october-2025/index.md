@@ -1,8 +1,8 @@
 ---
 title: Average weekly earnings down 0.2% in October, ending four-month streak
+verification_json: output/data_14_10_0223_enhanced.json
 toc: false
 ---
-
 # Average weekly earnings down 0.2% in October, ending four-month streak
 
 <p class="release-date">Released: December 28, 2025 <span class="article-type-tag backfill">Backfill</span></p>

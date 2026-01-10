@@ -1,8 +1,8 @@
 ---
 title: Wholesale sales down 0.9% in August 2025
+verification_json: output/data_20_10_0085_enhanced.json
 toc: false
 ---
-
 # Wholesale sales down 0.9% in August 2025
 
 <p class="release-date">Released: October 14, 2025</p>

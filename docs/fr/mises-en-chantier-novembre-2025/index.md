@@ -1,5 +1,6 @@
 ---
 title: Les mises en chantier en hausse de 9,4 % en novembre 2025
+verification_json: output/data_34_10_0158_enhanced.json
 toc: false
 ---
 

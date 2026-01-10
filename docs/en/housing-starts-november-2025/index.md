@@ -1,8 +1,8 @@
 ---
 title: Housing starts at 254,058 units in November 2025
+verification_json: output/data_34_10_0158_enhanced.json
 toc: false
 ---
-
 # Housing starts at 254,058 units in November 2025
 
 <p class="release-date">Released: December 19, 2025 <span class="article-type-tag release">New Release</span></p>

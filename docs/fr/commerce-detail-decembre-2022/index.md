@@ -1,5 +1,6 @@
 ---
 title: Les ventes au détail reculent de 1,1 % en décembre, clôturant une année solide avec une croissance annuelle de 5,5 %
+verification_json: output/data_20_10_0056_enhanced.json
 toc: false
 ---
 

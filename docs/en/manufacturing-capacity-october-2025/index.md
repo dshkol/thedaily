@@ -1,8 +1,8 @@
 ---
 title: Manufacturing capacity utilization unchanged year over year in October 2025
+verification_json: output/data_16_10_0012_enhanced.json
 toc: false
 ---
-
 # Manufacturing capacity utilization unchanged year over year in October 2025
 
 <p class="release-date">Released: December 30, 2025 <span class="article-type-tag release">New Release</span></p>

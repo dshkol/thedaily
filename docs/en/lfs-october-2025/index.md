@@ -1,8 +1,8 @@
 ---
 title: Employment up 67,000 in October 2025, unemployment rate falls to 6.9%
+verification_json: output/data_14_10_0287_enhanced.json
 toc: false
 ---
-
 # Employment up 67,000 in October 2025, unemployment rate falls to 6.9%
 
 <p class="release-date">Released: November 7, 2025</p>

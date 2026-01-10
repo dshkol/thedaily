@@ -1,5 +1,6 @@
 ---
 title: Les prix de l'essence en baisse de 4,9 % en octobre 2025
+verification_json: output/data_18_10_0029_enhanced.json
 toc: false
 ---
 

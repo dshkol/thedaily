@@ -1,5 +1,6 @@
 ---
 title: Les ventes au détail augmentent de 2,5 % en janvier, le Québec affiche un gain exceptionnel de 29,2 % d'une année à l'autre
+verification_json: output/data_20_10_0056_enhanced.json
 toc: false
 ---
 

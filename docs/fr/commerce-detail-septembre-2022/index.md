@@ -1,5 +1,6 @@
 ---
 title: Les ventes au détail reculent de 0,5 % en septembre, le Manitoba en tête avec une croissance annuelle de 6,6 %
+verification_json: output/data_20_10_0056_enhanced.json
 toc: false
 ---
 

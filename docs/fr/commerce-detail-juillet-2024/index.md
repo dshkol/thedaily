@@ -1,5 +1,6 @@
 ---
 title: Les ventes au détail augmentent de 1,5 % en juillet, rebondissant après deux mois de baisses
+verification_json: output/data_20_10_0056_enhanced.json
 toc: false
 ---
 

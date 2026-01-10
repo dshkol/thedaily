@@ -1,8 +1,8 @@
 ---
 title: Retail sales fall 2.9% in July, but annual growth remains strong at 7.9%
+verification_json: output/data_20_10_0056_enhanced.json
 toc: false
 ---
-
 # Retail sales fall 2.9% in July, but annual growth remains strong at 7.9%
 
 <p class="release-date">Released: December 29, 2025 <span class="article-type-tag backfill">Backfill</span></p>

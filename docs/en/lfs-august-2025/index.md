@@ -1,8 +1,8 @@
 ---
 title: Employment down 65,000 in August 2025, unemployment rate rises to 7.1%
+verification_json: output/data_14_10_0287_enhanced.json
 toc: false
 ---
-
 # Employment down 65,000 in August 2025, unemployment rate rises to 7.1%
 
 <p class="release-date">Released: September 6, 2025</p>

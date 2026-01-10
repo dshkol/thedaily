@@ -1,5 +1,6 @@
 ---
 title: Les ventes du secteur manufacturier en hausse de 3,6 % en septembre 2025
+verification_json: output/data_16_10_0047_enhanced.json
 toc: false
 ---
 

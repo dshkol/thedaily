@@ -1,8 +1,8 @@
 ---
 title: Retail sales down 0.2% in October 2025
+verification_json: output/data_20_10_0056_enhanced.json
 toc: false
 ---
-
 # Retail sales down 0.2% in October 2025
 
 <p class="release-date">Released: December 20, 2025</p>

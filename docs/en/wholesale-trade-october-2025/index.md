@@ -1,8 +1,8 @@
 ---
 title: Wholesale sales edge up 0.1% in October 2025
+verification_json: output/data_20_10_0085_enhanced.json
 toc: false
 ---
-
 # Wholesale sales edge up 0.1% in October 2025
 
 <p class="release-date">Released: December 12, 2025</p>

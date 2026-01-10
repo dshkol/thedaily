@@ -1,5 +1,6 @@
 ---
 title: Les ventes au détail augmentent de 1,1 % en mars pour atteindre 64,1 milliards de dollars, en hausse de 3,8 % d'une année à l'autre
+verification_json: output/data_20_10_0056_enhanced.json
 toc: false
 ---
 

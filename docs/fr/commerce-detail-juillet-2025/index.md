@@ -1,5 +1,6 @@
 ---
 title: Les ventes au détail reculent de 0,9 % en juillet, les ventes de véhicules automobiles en baisse
+verification_json: output/data_20_10_0056_enhanced.json
 toc: false
 ---
 

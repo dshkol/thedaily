@@ -1,5 +1,6 @@
 ---
 title: L'emploi en hausse de 83 000 en juin 2025, le taux de chômage en baisse à 6,9 %
+verification_json: output/data_14_10_0287_enhanced.json
 toc: false
 ---
 

@@ -1,5 +1,6 @@
 ---
 title: L'emploi en légère hausse de 7 000 en avril 2025, le taux de chômage monte à 6,9 %
+verification_json: output/data_14_10_0287_enhanced.json
 toc: false
 ---
 

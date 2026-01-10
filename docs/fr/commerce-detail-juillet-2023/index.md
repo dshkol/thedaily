@@ -1,5 +1,6 @@
 ---
 title: Les ventes au détail reculent de 0,2 % en juillet, le Yukon poursuit sa croissance exceptionnelle à 15,2 %
+verification_json: output/data_20_10_0056_enhanced.json
 toc: false
 ---
 

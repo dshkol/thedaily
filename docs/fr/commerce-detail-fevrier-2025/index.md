@@ -1,5 +1,6 @@
 ---
 title: Les ventes au détail reculent de 0,7 % en février, le Manitoba en tête des gains d'une année à l'autre
+verification_json: output/data_20_10_0056_enhanced.json
 toc: false
 ---
 

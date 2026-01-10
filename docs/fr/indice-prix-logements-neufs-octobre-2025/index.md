@@ -1,5 +1,6 @@
 ---
 title: Les prix des logements neufs en baisse de 0,4 % en octobre 2025
+verification_json: output/nhpi.json
 toc: false
 ---
 

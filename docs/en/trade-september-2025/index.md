@@ -1,8 +1,8 @@
 ---
 title: Merchandise exports up 6.3% in September 2025
+verification_json: output/data_12_10_0011_enhanced.json
 toc: false
 ---
-
 # Merchandise exports up 6.3% in September 2025
 
 <p class="release-date">Released: November 13, 2025</p>

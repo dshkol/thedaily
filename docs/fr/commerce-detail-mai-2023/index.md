@@ -1,5 +1,6 @@
 ---
 title: Les ventes au détail stables en mai alors que la croissance annuelle devient légèrement négative
+verification_json: output/data_20_10_0056_enhanced.json
 toc: false
 ---
 

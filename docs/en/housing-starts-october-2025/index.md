@@ -1,8 +1,8 @@
 ---
 title: Housing starts fell 17.4% to 232,000 units in October 2025
+verification_json: output/data_34_10_0158_enhanced.json
 toc: false
 ---
-
 # Housing starts fell 17.4% to 232,000 units in October 2025
 
 <p class="release-date">Released: December 28, 2025 <span class="article-type-tag backfill">Backfill</span></p>

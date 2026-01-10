@@ -1,5 +1,6 @@
 ---
 title: Les ventes au détail diminuent de 1,2 % en mai, quatre provinces affichant des baisses d'une année à l'autre
+verification_json: output/data_20_10_0056_enhanced.json
 toc: false
 ---
 

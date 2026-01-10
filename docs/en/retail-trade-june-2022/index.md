@@ -1,8 +1,8 @@
 ---
 title: Retail sales hit record $66.8 billion in June, all provinces post double-digit-worthy gains
+verification_json: output/data_20_10_0056_enhanced.json
 toc: false
 ---
-
 # Retail sales hit record $66.8 billion in June, all provinces post double-digit-worthy gains
 
 <p class="release-date">Released: December 29, 2025 <span class="article-type-tag backfill">Backfill</span></p>

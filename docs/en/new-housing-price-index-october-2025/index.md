@@ -1,8 +1,8 @@
 ---
 title: New housing prices down 0.4% in October 2025
+verification_json: output/nhpi.json
 toc: false
 ---
-
 # New housing prices down 0.4% in October 2025
 
 <p class="release-date">Released: December 28, 2025 <span class="article-type-tag backfill">Backfill</span></p>

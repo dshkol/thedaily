@@ -1,8 +1,8 @@
 ---
 title: International visitors up 4.9% year over year in October 2025
+verification_json: output/data_24_10_0002_enhanced.json
 toc: false
 ---
-
 # International visitors up 4.9% year over year in October 2025
 
 <p class="release-date">Released: 2025-12-29 <span class="article-type-tag release">New Release</span></p>

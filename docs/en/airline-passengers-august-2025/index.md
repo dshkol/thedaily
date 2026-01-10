@@ -1,8 +1,8 @@
 ---
 title: Airline passengers down 1.9% in August 2025 from summer peak
+verification_json: output/data_23_10_0079_enhanced.json
 toc: false
 ---
-
 # Airline passengers down 1.9% in August 2025 from summer peak
 
 <p class="release-date">Released: October 23, 2025</p>

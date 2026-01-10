@@ -1,8 +1,8 @@
 ---
 title: Manufacturing sales down 1.1% in August 2025
+verification_json: output/data_16_10_0047_enhanced.json
 toc: false
 ---
-
 # Manufacturing sales down 1.1% in August 2025
 
 <p class="release-date">Released: October 15, 2025</p>

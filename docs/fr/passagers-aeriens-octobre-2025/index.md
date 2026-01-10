@@ -1,5 +1,6 @@
 ---
 title: Le nombre de passagers aériens en hausse de 2,2 % en octobre 2025
+verification_json: output/data_23_10_0079_enhanced.json
 toc: false
 ---
 

@@ -1,8 +1,8 @@
 ---
 title: Building permits up 14.9% in October 2025
+verification_json: output/data_34_10_0175_enhanced.json
 toc: false
 ---
-
 # Building permits up 14.9% in October 2025
 
 <p class="release-date">Released: December 12, 2025</p>

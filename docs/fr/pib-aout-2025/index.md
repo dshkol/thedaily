@@ -1,5 +1,6 @@
 ---
 title: Le PIB réel en baisse de 0,1 % en août 2025
+verification_json: output/data_36_10_0434_enhanced.json
 toc: false
 ---
 

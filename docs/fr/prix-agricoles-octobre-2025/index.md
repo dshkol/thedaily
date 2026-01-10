@@ -1,5 +1,6 @@
 ---
 title: Prix du betail en hausse de plus de 25 % d'une annee a l'autre en octobre 2025
+verification_json: output/data_32_10_0107_enhanced.json
 toc: false
 ---
 

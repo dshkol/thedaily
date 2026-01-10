@@ -1,8 +1,8 @@
 ---
 title: Employment up 60,000 in September 2025, unemployment rate unchanged at 7.1%
+verification_json: output/data_14_10_0287_enhanced.json
 toc: false
 ---
-
 # Employment up 60,000 in September 2025, unemployment rate unchanged at 7.1%
 
 <p class="release-date">Released: October 11, 2025</p>

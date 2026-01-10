@@ -1,5 +1,6 @@
 ---
 title: Les ventes au détail stables en novembre, le Manitoba en tête de la croissance provinciale à 11,2 %
+verification_json: output/data_20_10_0056_enhanced.json
 toc: false
 ---
 

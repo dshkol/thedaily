@@ -1,5 +1,6 @@
 ---
 title: Les prix des produits industriels en hausse de 6,1 % d'une année à l'autre en novembre 2025
+verification_json: output/data_18_10_0265_enhanced.json
 toc: false
 ---
 

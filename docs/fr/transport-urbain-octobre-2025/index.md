@@ -1,5 +1,6 @@
 ---
 title: L'achalandage du transport en commun en baisse de 3,6 % en octobre 2025 malgre des revenus en hausse
+verification_json: output/data_23_10_0253_enhanced.json
 toc: false
 ---
 

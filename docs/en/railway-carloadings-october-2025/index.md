@@ -1,8 +1,8 @@
 ---
 title: Railway freight traffic down 0.9% year over year in October 2025
+verification_json: output/data_23_10_0216_enhanced.json
 toc: false
 ---
-
 # Railway freight traffic down 0.9% year over year in October 2025
 
 <p class="release-date">Released: December 29, 2025 <span class="article-type-tag release">New Release</span></p>

@@ -1,5 +1,6 @@
 ---
 title: Les ventes au détail en hausse de 0,8 % en octobre, toutes les provinces affichent des gains annuels
+verification_json: output/data_20_10_0056_enhanced.json
 toc: false
 ---
 

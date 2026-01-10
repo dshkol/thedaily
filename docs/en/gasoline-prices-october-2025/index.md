@@ -1,8 +1,8 @@
 ---
 title: Gasoline prices down 4.9% in October 2025
+verification_json: output/data_18_10_0029_enhanced.json
 toc: false
 ---
-
 # Gasoline prices down 4.9% in October 2025
 
 <p class="release-date">Released: December 28, 2025 <span class="article-type-tag backfill">Historical</span></p>

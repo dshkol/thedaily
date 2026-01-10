@@ -1,5 +1,6 @@
 ---
 title: Le taux directeur de la Banque du Canada à 2,25 % en décembre 2025, en baisse de 275 points de base par rapport au sommet
+verification_json: output/data_10_10_0164_enhanced.json
 ---
 
 # Le taux directeur de la Banque du Canada à 2,25 % en décembre 2025, en baisse de 275 points de base par rapport au sommet

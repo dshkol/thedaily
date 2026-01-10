@@ -1,5 +1,6 @@
 ---
 title: Les ventes au détail augmentent de 0,6 % en septembre, Terre-Neuve-et-Labrador affiche une croissance à deux chiffres
+verification_json: output/data_20_10_0056_enhanced.json
 toc: false
 ---
 

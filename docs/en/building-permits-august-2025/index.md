@@ -1,8 +1,8 @@
 ---
 title: Building permits down 3.4% in August 2025
+verification_json: output/data_34_10_0175_enhanced.json
 toc: false
 ---
-
 # Building permits down 3.4% in August 2025
 
 <p class="release-date">Released: October 10, 2025</p>

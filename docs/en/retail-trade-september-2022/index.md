@@ -1,8 +1,8 @@
 ---
 title: Retail sales dip 0.5% in September, Manitoba leads 6.6% annual growth
+verification_json: output/data_20_10_0056_enhanced.json
 toc: false
 ---
-
 # Retail sales dip 0.5% in September, Manitoba leads 6.6% annual growth
 
 <p class="release-date">Released: December 29, 2025 <span class="article-type-tag backfill">Backfill</span></p>

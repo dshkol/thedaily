@@ -1,5 +1,6 @@
 ---
 title: Les exportations de marchandises en hausse de 6,3 % en septembre 2025
+verification_json: output/data_12_10_0011_enhanced.json
 toc: false
 ---
 

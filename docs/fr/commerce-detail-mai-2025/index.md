@@ -1,5 +1,6 @@
 ---
 title: Les ventes au détail reculent de 1,2 % en mai tandis que toutes les provinces affichent des gains d'une année à l'autre
+verification_json: output/data_20_10_0056_enhanced.json
 toc: false
 ---
 

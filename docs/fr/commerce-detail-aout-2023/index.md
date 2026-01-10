@@ -1,5 +1,6 @@
 ---
 title: Les ventes au détail progressent de 0,1 % en août, le Yukon affiche une croissance exceptionnelle de 14,9 %
+verification_json: output/data_20_10_0056_enhanced.json
 toc: false
 ---
 

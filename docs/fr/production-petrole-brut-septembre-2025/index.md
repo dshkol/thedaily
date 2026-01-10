@@ -1,5 +1,6 @@
 ---
 title: La production de pétrole brut en hausse de 9 % d'une année à l'autre en septembre malgré un recul mensuel
+verification_json: output/data_25_10_0015_enhanced.json
 toc: false
 ---
 

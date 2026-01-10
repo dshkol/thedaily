@@ -1,5 +1,6 @@
 ---
 title: Le PIB réel en hausse de 0,2 % en septembre 2025
+verification_json: output/data_36_10_0434_enhanced.json
 toc: false
 ---
 

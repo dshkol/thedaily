@@ -1,8 +1,8 @@
 ---
 title: Real GDP down 0.1% in August 2025
+verification_json: output/data_36_10_0434_enhanced.json
 toc: false
 ---
-
 # Real GDP down 0.1% in August 2025
 
 <p class="release-date">Released: October 31, 2025</p>

@@ -1,5 +1,6 @@
 ---
 title: Les permis de bâtir en hausse de 14,9 % en octobre 2025
+verification_json: output/data_34_10_0175_enhanced.json
 toc: false
 ---
 

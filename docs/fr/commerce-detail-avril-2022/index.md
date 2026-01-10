@@ -1,5 +1,6 @@
 ---
 title: Les ventes au détail demeurent essentiellement inchangées en avril, en hausse de 9,7 % d'une année à l'autre
+verification_json: output/data_20_10_0056_enhanced.json
 toc: false
 ---
 

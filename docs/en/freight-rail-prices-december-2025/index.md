@@ -1,8 +1,8 @@
 ---
 title: Freight rail services prices little changed in December 2025
+verification_json: output/data_18_10_0212_enhanced.json
 toc: false
 ---
-
 # Freight rail services prices little changed in December 2025
 
 <p class="release-date">Released: December 27, 2025 <span class="article-type-tag release">New Release</span></p>

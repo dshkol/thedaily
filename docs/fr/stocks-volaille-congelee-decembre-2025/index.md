@@ -1,5 +1,6 @@
 ---
 title: Les stocks de volaille congelée en baisse de 9,5 % sur un an en décembre 2025
+verification_json: output/data_23_10_0253_enhanced.json
 ---
 
 # Les stocks de volaille congelée en baisse de 9,5 % sur un an en décembre 2025

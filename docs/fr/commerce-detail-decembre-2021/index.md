@@ -1,5 +1,6 @@
 ---
 title: Les ventes au détail reculent de 1,8 % en décembre, en hausse de 8,8 % d'une année à l'autre
+verification_json: output/data_20_10_0056_enhanced.json
 toc: false
 ---
 

@@ -1,5 +1,6 @@
 ---
 title: Le Canada affiche un déficit commercial de 583 millions de dollars en octobre 2025
+verification_json: output/data_12_10_0011_enhanced.json
 toc: false
 ---
 

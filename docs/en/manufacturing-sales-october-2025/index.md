@@ -1,8 +1,8 @@
 ---
 title: Manufacturing sales down 1.0% in October 2025
+verification_json: output/data_16_10_0047_enhanced.json
 toc: false
 ---
-
 # Manufacturing sales down 1.0% in October 2025
 
 <p class="release-date">Released: December 25, 2025 <span class="article-type-tag release">New Release</span></p>

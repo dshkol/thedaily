@@ -1,5 +1,6 @@
 ---
 title: Les ventes au détail augmentent de 1,4 % en juin, la plus forte hausse mensuelle depuis avril
+verification_json: output/data_20_10_0056_enhanced.json
 toc: false
 ---
 

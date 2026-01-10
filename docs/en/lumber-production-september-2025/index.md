@@ -1,8 +1,8 @@
 ---
 title: Lumber production down 2.7% year over year in September 2025
+verification_json: output/data_16_10_0047_enhanced.json
 toc: false
 ---
-
 # Lumber production down 2.7% year over year in September 2025
 
 <p class="release-date">Released: December 29, 2025 <span class="article-type-tag release">New Release</span></p>

@@ -1,5 +1,6 @@
 ---
 title: Les prix de l'essence en hausse de 1,7 % en novembre 2025
+verification_json: output/data_18_10_0029_enhanced.json
 toc: false
 ---
 

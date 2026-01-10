@@ -1,5 +1,6 @@
 ---
 title: Les ventes au détail augmentent de 1,0 % en septembre, le Yukon en tête des gains d'une année à l'autre
+verification_json: output/data_20_10_0056_enhanced.json
 toc: false
 ---
 

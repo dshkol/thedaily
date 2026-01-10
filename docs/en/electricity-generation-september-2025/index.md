@@ -1,8 +1,8 @@
 ---
 title: Electric power generation down 6.7% in September 2025
+verification_json: output/data_25_10_0015_enhanced.json
 toc: false
 ---
-
 # Electric power generation down 6.7% in September 2025
 
 <p class="release-date">Released: December 25, 2025 <span class="article-type-tag release">New Release</span></p>

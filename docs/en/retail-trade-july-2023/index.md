@@ -1,8 +1,8 @@
 ---
 title: Retail sales edge down 0.2% in July, Yukon continues exceptional growth at 15.2%
+verification_json: output/data_20_10_0056_enhanced.json
 toc: false
 ---
-
 # Retail sales edge down 0.2% in July, Yukon continues exceptional growth at 15.2%
 
 <p class="release-date">Released: December 29, 2025 <span class="article-type-tag backfill">Backfill</span></p>

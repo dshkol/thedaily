@@ -1,8 +1,8 @@
 ---
 title: Retail sales edge up 0.1% in August, Yukon posts exceptional 14.9% year-over-year growth
+verification_json: output/data_20_10_0056_enhanced.json
 toc: false
 ---
-
 # Retail sales edge up 0.1% in August, Yukon posts exceptional 14.9% year-over-year growth
 
 <p class="release-date">Released: December 29, 2025 <span class="article-type-tag backfill">Backfill</span></p>

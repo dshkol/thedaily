@@ -1,8 +1,8 @@
 ---
 title: Employment up 2,000 in February 2025, unemployment rate unchanged at 6.6%
+verification_json: output/data_14_10_0287_enhanced.json
 toc: false
 ---
-
 # Employment up 2,000 in February 2025, unemployment rate unchanged at 6.6%
 
 <p class="release-date">Released: March 7, 2025</p>

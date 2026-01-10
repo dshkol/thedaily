@@ -1,5 +1,6 @@
 ---
 title: Les prix des logements neufs inchangés en novembre 2025
+verification_json: output/nhpi.json
 toc: false
 ---
 

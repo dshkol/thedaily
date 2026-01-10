@@ -1,8 +1,8 @@
 ---
 title: Cattle prices up more than 25% year over year in October 2025
+verification_json: output/data_32_10_0107_enhanced.json
 toc: false
 ---
-
 # Cattle prices up more than 25% year over year in October 2025
 
 <p class="release-date">Released: December 29, 2025 <span class="article-type-tag release">New Release</span></p>

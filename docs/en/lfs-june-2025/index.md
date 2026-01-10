@@ -1,8 +1,8 @@
 ---
 title: Employment up 83,000 in June 2025, unemployment rate falls to 6.9%
+verification_json: output/data_14_10_0287_enhanced.json
 toc: false
 ---
-
 # Employment up 83,000 in June 2025, unemployment rate falls to 6.9%
 
 <p class="release-date">Released: July 4, 2025</p>

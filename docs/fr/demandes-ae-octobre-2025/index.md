@@ -1,5 +1,6 @@
 ---
 title: Les demandes d'assurance-emploi en hausse de 2,1 % d'une année à l'autre en octobre 2025
+verification_json: output/data_14_10_0005_enhanced.json
 toc: false
 ---
 

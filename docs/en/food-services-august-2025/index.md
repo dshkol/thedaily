@@ -1,8 +1,8 @@
 ---
 title: Food services sales up 0.6% in August 2025
+verification_json: output/data_21_10_0019_enhanced.json
 toc: false
 ---
-
 # Food services sales up 0.6% in August 2025
 
 <p class="release-date">Released: October 25, 2025</p>

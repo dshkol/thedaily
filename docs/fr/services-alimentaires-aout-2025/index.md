@@ -1,5 +1,6 @@
 ---
 title: Les ventes des services de restauration en hausse de 0,6 % en août 2025
+verification_json: output/data_21_10_0019_enhanced.json
 toc: false
 ---
 

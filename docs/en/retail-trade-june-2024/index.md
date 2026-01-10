@@ -1,8 +1,8 @@
 ---
 title: Retail sales edge down 0.1% in June as five provinces post year-over-year declines
+verification_json: output/data_20_10_0056_enhanced.json
 toc: false
 ---
-
 # Retail sales edge down 0.1% in June as five provinces post year-over-year declines
 
 <p class="release-date">Released: December 29, 2025 <span class="article-type-tag backfill">Historical</span></p>

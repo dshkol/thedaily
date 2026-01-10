@@ -1,5 +1,6 @@
 ---
 title: Le nombre de passagers aériens en baisse de 1,9 % en août 2025 par rapport au sommet estival
+verification_json: output/data_23_10_0079_enhanced.json
 toc: false
 ---
 

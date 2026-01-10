@@ -1,8 +1,8 @@
 ---
 title: New motor vehicle sales down 3.1% in October 2025
+verification_json: output/data_20_10_0085_enhanced.json
 toc: false
 ---
-
 # New motor vehicle sales down 3.1% in October 2025
 
 <p class="release-date">Released: December 28, 2025 <span class="article-type-tag release">New Release</span></p>

@@ -1,5 +1,6 @@
 ---
 title: Les ventes au détail atteignent un record de 66,8 milliards de dollars en juin, toutes les provinces affichent des gains solides
+verification_json: output/data_20_10_0056_enhanced.json
 toc: false
 ---
 

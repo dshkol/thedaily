@@ -1,5 +1,6 @@
 ---
 title: L'emploi en légère hausse de 2 000 en février 2025, le taux de chômage inchangé à 6,6 %
+verification_json: output/data_14_10_0287_enhanced.json
 toc: false
 ---
 

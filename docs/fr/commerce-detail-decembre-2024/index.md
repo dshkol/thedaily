@@ -1,5 +1,6 @@
 ---
 title: Les ventes au détail augmentent de 2,5 % en décembre, les achats des Fêtes portant les ventes à 70,0 milliards de dollars
+verification_json: output/data_20_10_0056_enhanced.json
 toc: false
 ---
 

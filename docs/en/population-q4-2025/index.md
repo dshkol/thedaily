@@ -1,8 +1,8 @@
 ---
 title: Canada's population declines for first time since 2020 as Ontario leads losses
+verification_json: output/data_17_10_0009_enhanced.json
 toc: false
 ---
-
 # Canada's population declines for first time since 2020 as Ontario leads losses
 
 <p class="release-date">Released: December 28, 2025 <span class="article-type-tag backfill">Backfill</span></p>

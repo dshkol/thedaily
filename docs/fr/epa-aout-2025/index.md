@@ -1,5 +1,6 @@
 ---
 title: L'emploi en baisse de 65 000 en août 2025, le taux de chômage monte à 7,1 %
+verification_json: output/data_14_10_0287_enhanced.json
 toc: false
 ---
 

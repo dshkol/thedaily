@@ -1,5 +1,6 @@
 ---
 title: Les ventes en gros en hausse de 0,6 % en septembre 2025
+verification_json: output/data_20_10_0085_enhanced.json
 toc: false
 ---
 

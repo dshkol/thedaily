@@ -1,5 +1,6 @@
 ---
 title: Les ventes au détail progressent de 0,5 % en juin alors que la croissance annuelle devient négative pour la première fois
+verification_json: output/data_20_10_0056_enhanced.json
 toc: false
 ---
 

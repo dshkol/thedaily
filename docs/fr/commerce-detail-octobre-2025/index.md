@@ -1,5 +1,6 @@
 ---
 title: Les ventes au détail reculent de 0,2 % en octobre 2025
+verification_json: output/data_20_10_0056_enhanced.json
 toc: false
 ---
 

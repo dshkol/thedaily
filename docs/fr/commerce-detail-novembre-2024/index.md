@@ -1,5 +1,6 @@
 ---
 title: Les ventes au détail progressent de 0,4 % en novembre alors que les achats des Fêtes commencent
+verification_json: output/data_20_10_0056_enhanced.json
 toc: false
 ---
 

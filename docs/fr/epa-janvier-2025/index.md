@@ -1,5 +1,6 @@
 ---
 title: L'emploi en hausse de 76 000 en janvier 2025, le taux de chômage recule à 6,6 %
+verification_json: output/data_14_10_0287_enhanced.json
 toc: false
 ---
 

@@ -1,5 +1,6 @@
 ---
 title: Les ventes au détail reculent de 0,1 % en octobre, le Québec et la Saskatchewan en tête des gains d'une année à l'autre
+verification_json: output/data_20_10_0056_enhanced.json
 toc: false
 ---
 

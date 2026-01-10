@@ -1,8 +1,8 @@
 ---
 title: Food services sales down 0.4% in September 2025
+verification_json: output/data_21_10_0019_enhanced.json
 toc: false
 ---
-
 # Food services sales down 0.4% in September 2025
 
 <p class="release-date">Released: November 25, 2025</p>

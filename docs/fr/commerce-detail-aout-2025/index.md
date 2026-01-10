@@ -1,5 +1,6 @@
 ---
 title: Les ventes au détail en hausse de 1,0 % en août 2025
+verification_json: output/data_20_10_0056_enhanced.json
 toc: false
 ---
 

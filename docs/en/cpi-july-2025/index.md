@@ -1,7 +1,7 @@
 ---
 title: Consumer prices up 1.7% year over year in July 2025
+verification_json: output/data_18_10_0004_enhanced.json
 ---
-
 # Consumer prices up 1.7% year over year in July 2025
 
 <p class="release-date">Released: 2025-12-25</p>

@@ -1,8 +1,8 @@
 ---
 title: Consumer prices up 1.8% year over year in December 2024
+verification_json: output/data_18_10_0004_enhanced.json
 toc: false
 ---
-
 # Consumer prices up 1.8% year over year in December 2024
 
 <p class="release-date">Released: January 21, 2025</p>

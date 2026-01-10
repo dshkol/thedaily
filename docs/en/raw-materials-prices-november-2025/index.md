@@ -1,8 +1,8 @@
 ---
 title: Raw materials prices up 6.4% year over year in November 2025
+verification_json: output/data_18_10_0268_enhanced.json
 toc: false
 ---
-
 # Raw materials prices up 6.4% year over year in November 2025
 
 <p class="release-date">Released: December 28, 2025 <span class="article-type-tag release">New release</span></p>

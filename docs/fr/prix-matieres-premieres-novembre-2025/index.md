@@ -1,5 +1,6 @@
 ---
 title: Les prix des matières premières en hausse de 6,4 % d'une année à l'autre en novembre 2025
+verification_json: output/data_18_10_0268_enhanced.json
 toc: false
 ---
 

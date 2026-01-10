@@ -1,5 +1,6 @@
 ---
 title: Les ventes au détail reculent de 0,9 % en février mais progressent de 3,6 % d'une année à l'autre
+verification_json: output/data_20_10_0056_enhanced.json
 toc: false
 ---
 

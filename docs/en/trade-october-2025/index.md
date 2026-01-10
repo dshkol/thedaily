@@ -1,8 +1,8 @@
 ---
 title: Canada posts $583 million trade deficit in October 2025
+verification_json: output/data_12_10_0011_enhanced.json
 toc: false
 ---
-
 # Canada posts $583 million trade deficit in October 2025
 
 <p class="release-date">Released: January 8, 2026 <span class="article-type-tag release">New Release</span></p>

@@ -1,5 +1,6 @@
 ---
 title: Les visiteurs internationaux en hausse de 4,9 % sur un an en octobre 2025
+verification_json: output/data_24_10_0002_enhanced.json
 toc: false
 ---
 

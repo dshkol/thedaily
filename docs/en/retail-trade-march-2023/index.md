@@ -1,8 +1,8 @@
 ---
 title: Retail sales down 0.5% in March, Prince Edward Island leads provinces at 5.8%
+verification_json: output/data_20_10_0056_enhanced.json
 toc: false
 ---
-
 # Retail sales down 0.5% in March, Prince Edward Island leads provinces at 5.8%
 
 <p class="release-date">Released: December 29, 2025 <span class="article-type-tag backfill">Backfill</span></p>

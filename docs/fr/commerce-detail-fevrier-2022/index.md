@@ -1,5 +1,6 @@
 ---
 title: Les ventes au détail augmentent de 0,8 % en février pour atteindre 63,4 milliards de dollars, en hausse de 7,9 % d'une année à l'autre
+verification_json: output/data_20_10_0056_enhanced.json
 toc: false
 ---
 

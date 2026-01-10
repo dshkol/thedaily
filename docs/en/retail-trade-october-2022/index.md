@@ -1,8 +1,8 @@
 ---
 title: Retail sales up 0.8% in October, all provinces post year-over-year gains
+verification_json: output/data_20_10_0056_enhanced.json
 toc: false
 ---
-
 # Retail sales up 0.8% in October, all provinces post year-over-year gains
 
 <p class="release-date">Released: December 29, 2025 <span class="article-type-tag backfill">Backfill</span></p>

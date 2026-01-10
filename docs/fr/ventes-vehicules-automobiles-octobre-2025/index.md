@@ -1,5 +1,6 @@
 ---
 title: Les ventes de véhicules automobiles neufs en baisse de 3,1 % en octobre 2025
+verification_json: output/data_20_10_0085_enhanced.json
 toc: false
 ---
 

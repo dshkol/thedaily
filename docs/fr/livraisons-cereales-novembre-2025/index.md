@@ -1,5 +1,6 @@
 ---
 title: Les livraisons de cereales de l'Ouest canadien en hausse de 14,2 % d'une annee a l'autre en novembre 2025
+verification_json: output/data_32_10_0352_enhanced.json
 toc: false
 ---
 

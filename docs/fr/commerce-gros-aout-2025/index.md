@@ -1,5 +1,6 @@
 ---
 title: Les ventes en gros en baisse de 0,9 % en août 2025
+verification_json: output/data_20_10_0085_enhanced.json
 toc: false
 ---
 

@@ -1,8 +1,8 @@
 ---
 title: Merchandise exports down 3.2% in August 2025
+verification_json: output/data_12_10_0011_enhanced.json
 toc: false
 ---
-
 # Merchandise exports down 3.2% in August 2025
 
 <p class="release-date">Released: October 8, 2025</p>

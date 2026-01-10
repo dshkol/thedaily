@@ -1,8 +1,8 @@
 ---
 title: Employment up 54,000 in November 2025, unemployment rate falls to 6.5%
+verification_json: output/data_14_10_0287_enhanced.json
 toc: false
 ---
-
 # Employment up 54,000 in November 2025, unemployment rate falls to 6.5%
 
 <p class="release-date">Released: December 5, 2025 <span class="article-type-tag release">New Release</span></p>

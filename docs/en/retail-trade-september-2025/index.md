@@ -1,8 +1,8 @@
 ---
 title: Retail sales down 0.9% in September 2025
+verification_json: output/data_20_10_0056_enhanced.json
 toc: false
 ---
-
 # Retail sales down 0.9% in September 2025
 
 <p class="release-date">Released: November 22, 2025</p>

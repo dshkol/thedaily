@@ -1,5 +1,6 @@
 ---
 title: Les prix des services de transport ferroviaire de marchandises peu changés en décembre 2025
+verification_json: output/data_18_10_0212_enhanced.json
 toc: false
 ---
 

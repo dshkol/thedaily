@@ -1,8 +1,8 @@
 ---
 title: Airline passengers up 2.2% in October 2025
+verification_json: output/data_23_10_0079_enhanced.json
 toc: false
 ---
-
 # Airline passengers up 2.2% in October 2025
 
 <p class="release-date">Released: December 23, 2025 <span class="article-type-tag release">New Release</span></p>

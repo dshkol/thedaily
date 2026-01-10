@@ -1,8 +1,8 @@
 ---
 title: Retail sales flat in May as year-over-year growth edges into negative territory
+verification_json: output/data_20_10_0056_enhanced.json
 toc: false
 ---
-
 # Retail sales flat in May as year-over-year growth edges into negative territory
 
 <p class="release-date">Released: December 29, 2025 <span class="article-type-tag backfill">Backfill</span></p>

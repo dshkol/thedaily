@@ -1,8 +1,8 @@
 ---
 title: Employment up 9,000 in May 2025, unemployment rate rises to 7.0%
+verification_json: output/data_14_10_0287_enhanced.json
 toc: false
 ---
-
 # Employment up 9,000 in May 2025, unemployment rate rises to 7.0%
 
 <p class="release-date">Released: June 6, 2025</p>

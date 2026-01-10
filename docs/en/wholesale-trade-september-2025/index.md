@@ -1,8 +1,8 @@
 ---
 title: Wholesale sales up 0.6% in September 2025
+verification_json: output/data_20_10_0085_enhanced.json
 toc: false
 ---
-
 # Wholesale sales up 0.6% in September 2025
 
 <p class="release-date">Released: November 14, 2025</p>

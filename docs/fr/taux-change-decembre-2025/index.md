@@ -1,5 +1,6 @@
 ---
 title: Le dollar canadien se renforce de 3,1 % par rapport au dollar américain en décembre 2025
+verification_json: output/data_33_10_0163_enhanced.json
 ---
 
 # Le dollar canadien se renforce de 3,1 % par rapport au dollar américain en décembre 2025

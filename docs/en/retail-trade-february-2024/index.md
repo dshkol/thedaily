@@ -1,8 +1,8 @@
 ---
 title: Retail sales edge up 0.2% in February, Alberta posts steepest decline
+verification_json: output/data_20_10_0056_enhanced.json
 toc: false
 ---
-
 # Retail sales edge up 0.2% in February, Alberta posts steepest decline
 
 <p class="release-date">Released: December 29, 2025 <span class="article-type-tag backfill">Backfill</span></p>

@@ -1,5 +1,6 @@
 ---
 title: Le transport ferroviaire de marchandises en baisse de 0,9 % d'une annee a l'autre en octobre 2025
+verification_json: output/data_23_10_0216_enhanced.json
 toc: false
 ---
 

@@ -1,8 +1,8 @@
 ---
 title: Retail sales essentially unchanged in April, up 9.7% year over year
+verification_json: output/data_20_10_0056_enhanced.json
 toc: false
 ---
-
 # Retail sales essentially unchanged in April, up 9.7% year over year
 
 <p class="release-date">Released: December 29, 2025 <span class="article-type-tag backfill">Backfill</span></p>

@@ -1,5 +1,6 @@
 ---
 title: L'emploi en hausse de 60 000 en septembre 2025, le taux de chômage inchangé à 7,1 %
+verification_json: output/data_14_10_0287_enhanced.json
 toc: false
 ---
 

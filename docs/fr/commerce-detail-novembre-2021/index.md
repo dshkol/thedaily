@@ -1,5 +1,6 @@
 ---
 title: Les ventes au détail augmentent de 1,3 % en novembre pour atteindre 62,4 milliards de dollars, en hausse de 6,3 % d'une année à l'autre
+verification_json: output/data_20_10_0056_enhanced.json
 toc: false
 ---
 

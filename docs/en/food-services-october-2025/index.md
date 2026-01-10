@@ -1,8 +1,8 @@
 ---
 title: Food services sales up 0.6% in October 2025
+verification_json: output/data_21_10_0019_enhanced.json
 toc: false
 ---
-
 # Food services sales up 0.6% in October 2025
 
 <p class="release-date">Released: December 25, 2025 <span class="article-type-tag release">New Release</span></p>

@@ -1,5 +1,6 @@
 ---
 title: Le credit aux menages en hausse de 4,5 % d'une annee a l'autre en octobre 2025
+verification_json: output/data_36_10_0639_enhanced.json
 toc: false
 ---
 

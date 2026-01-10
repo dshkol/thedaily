@@ -1,5 +1,6 @@
 ---
 title: Les prix à la consommation en hausse de 1,8 % d'une année à l'autre en décembre 2024
+verification_json: output/data_18_10_0004_enhanced.json
 toc: false
 ---
 

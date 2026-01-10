@@ -1,5 +1,6 @@
 ---
 title: La population du Canada recule pour la première fois depuis 2020, l'Ontario en tête des baisses
+verification_json: output/data_17_10_0009_enhanced.json
 toc: false
 ---
 

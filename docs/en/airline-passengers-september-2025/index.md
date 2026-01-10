@@ -1,8 +1,8 @@
 ---
 title: Airline passengers down 11.3% in September 2025 as summer travel ends
+verification_json: output/data_23_10_0079_enhanced.json
 toc: false
 ---
-
 # Airline passengers down 11.3% in September 2025 as summer travel ends
 
 <p class="release-date">Released: November 23, 2025</p>

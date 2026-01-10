@@ -1,8 +1,8 @@
 ---
 title: Employment insurance claims up 2.1% year over year in October 2025
+verification_json: output/data_14_10_0005_enhanced.json
 toc: false
 ---
-
 # Employment insurance claims up 2.1% year over year in October 2025
 
 <p class="release-date">Released: December 28, 2025 <span class="article-type-tag release">New release</span></p>

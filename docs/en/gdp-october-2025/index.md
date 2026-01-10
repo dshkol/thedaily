@@ -1,8 +1,8 @@
 ---
 title: Real GDP down 0.3% in October 2025
+verification_json: output/data_36_10_0434_enhanced.json
 toc: false
 ---
-
 # Real GDP down 0.3% in October 2025
 
 <p class="release-date">Released: December 23, 2025 <span class="article-type-tag release">New Release</span></p>

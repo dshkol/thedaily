@@ -1,5 +1,6 @@
 ---
 title: Les ventes au détail progressent de 0,4 % en avril, la Nouvelle-Écosse en tête avec un gain annuel de 9,0 %
+verification_json: output/data_20_10_0056_enhanced.json
 toc: false
 ---
 

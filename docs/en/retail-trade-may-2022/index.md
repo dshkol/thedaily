@@ -1,8 +1,8 @@
 ---
 title: Retail sales surge 15.6% year over year in May, Ontario posts exceptional 27.8% gain
+verification_json: output/data_20_10_0056_enhanced.json
 toc: false
 ---
-
 # Retail sales surge 15.6% year over year in May, Ontario posts exceptional 27.8% gain
 
 <p class="release-date">Released: December 29, 2025 <span class="article-type-tag backfill">Backfill</span></p>

@@ -1,8 +1,8 @@
 ---
 title: Retail sales increase 0.9% in March as Newfoundland leads year-over-year growth
+verification_json: output/data_20_10_0056_enhanced.json
 toc: false
 ---
-
 # Retail sales increase 0.9% in March as Newfoundland leads year-over-year growth
 
 <p class="release-date">Released: December 29, 2025 <span class="article-type-tag backfill">Backfill</span></p>

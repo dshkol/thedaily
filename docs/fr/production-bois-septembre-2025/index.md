@@ -1,5 +1,6 @@
 ---
 title: La production de bois d'oeuvre en baisse de 2,7 % sur un an en septembre 2025
+verification_json: output/data_16_10_0047_enhanced.json
 toc: false
 ---
 

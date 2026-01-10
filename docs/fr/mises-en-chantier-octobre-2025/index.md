@@ -1,5 +1,6 @@
 ---
 title: Les mises en chantier ont diminué de 17,4 % pour atteindre 232 000 unités en octobre 2025
+verification_json: output/data_34_10_0158_enhanced.json
 toc: false
 ---
 

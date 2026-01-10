@@ -1,5 +1,6 @@
 ---
 title: Les ventes du secteur manufacturier en baisse de 1,1 % en août 2025
+verification_json: output/data_16_10_0047_enhanced.json
 toc: false
 ---
 

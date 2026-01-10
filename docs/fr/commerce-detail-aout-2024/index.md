@@ -1,5 +1,6 @@
 ---
 title: Les ventes au détail augmentent de 0,3 % en août, le Yukon affiche la plus forte baisse provinciale à 9,0 %
+verification_json: output/data_20_10_0056_enhanced.json
 toc: false
 ---
 
