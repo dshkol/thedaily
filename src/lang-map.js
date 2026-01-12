@@ -126,5 +126,6 @@ export const slugMap = {
   'grain-deliveries-november-2025': 'livraisons-cereales-novembre-2025',
   'exchange-rates-december-2025': 'taux-change-decembre-2025',
   'interest-rates-december-2025': 'taux-interet-decembre-2025',
-  'frozen-poultry-stocks-december-2025': 'stocks-volaille-congelee-decembre-2025'
+  'frozen-poultry-stocks-december-2025': 'stocks-volaille-congelee-decembre-2025',
+  'international-reserves-december-2025': 'reserves-internationales-decembre-2025'
 };
