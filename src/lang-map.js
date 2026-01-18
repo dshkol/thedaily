@@ -127,5 +127,10 @@ export const slugMap = {
   'exchange-rates-december-2025': 'taux-change-decembre-2025',
   'interest-rates-december-2025': 'taux-interet-decembre-2025',
   'frozen-poultry-stocks-december-2025': 'stocks-volaille-congelee-decembre-2025',
-  'international-reserves-december-2025': 'reserves-internationales-decembre-2025'
+  'international-reserves-december-2025': 'reserves-internationales-decembre-2025',
+  'coal-production-october-2025': 'production-charbon-octobre-2025',
+  'merchandise-trade-october-2025': 'commerce-marchandises-octobre-2025',
+  'aircraft-movements-october-2025': 'mouvements-aeronefs-octobre-2025',
+  'screened-passengers-november-2025': 'passagers-controles-novembre-2025',
+  'natural-gas-october-2025': 'gaz-naturel-octobre-2025'
 };

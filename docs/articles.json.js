@@ -55,7 +55,12 @@ const indicatorMap = {
     "manufacturing-capacity": "Manufacturing Capacity",
     "exchange-rates": "Exchange Rates",
     "interest-rates": "Interest Rates",
-    "frozen-poultry-stocks": "Frozen Poultry Stocks"
+    "frozen-poultry-stocks": "Frozen Poultry Stocks",
+    "coal-production": "Coal Production",
+    "merchandise-trade": "Merchandise Trade",
+    "aircraft-movements": "Aircraft Movements",
+    "screened-passengers": "Screened Passengers",
+    "natural-gas": "Natural Gas Supply"
   },
   fr: {
     "ipc": "Indice des prix",
@@ -89,7 +94,12 @@ const indicatorMap = {
     "capacite-manufacturiere": "Capacite manufacturiere",
     "taux-change": "Taux de change",
     "taux-interet": "Taux d'interet",
-    "stocks-volaille-congelee": "Stocks de volaille congelee"
+    "stocks-volaille-congelee": "Stocks de volaille congelee",
+    "production-charbon": "Production de charbon",
+    "commerce-marchandises": "Commerce de marchandises",
+    "mouvements-aeronefs": "Mouvements d'aeronefs",
+    "passagers-controles": "Passagers controles",
+    "gaz-naturel": "Approvisionnement en gaz naturel"
   }
 };
 
